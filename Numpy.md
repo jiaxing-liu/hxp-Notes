@@ -26,7 +26,6 @@ np.array([(1, 2), (3, 4), (5, 6)])
 ```
 
 ## Use Functions to generate arrays ##
-
 ### np.arrange() ###
 
 ``` python
@@ -189,13 +188,37 @@ array([[0., 0., 0.],
 
 
 
-## Set the data type of an array ##
+
+### np.fromfunction() ###
+
+`Example`
+
+``` python
+np.fromfunction(lambda a, b: a + b, (5, 4))
+```
+
+`Output`
+
+``` python
+array([[0., 1., 2., 3.],
+       [1., 2., 3., 4.],
+       [2., 3., 4., 5.],
+       [3., 4., 5., 6.],
+       [4., 5., 6., 7.]])
+```
+
+Notes that the index of column and row counts from 0, not 1.
+
+
+
+## Operating with arrays ##
+### Set the data type of an array ###
 
 ```python
 a.astype(int)
 ```
 	
-## Get the type of an array ##
+### Get the type of an array ###
 
 ``` python
 a.dtype
@@ -203,4 +226,27 @@ a.dtype
 
 
 
+
+
+### Transpose an array ###
+
+``` python
+a.T
+```
+
+### Get the real and imaginary part ###
+
+``` python
+a.real
+a.imag
+```
+
+
+### Get size, shape and dimension ###
+
+``` python
+a.size
+a.ndim
+a.shape
+```
 
