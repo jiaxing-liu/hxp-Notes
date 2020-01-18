@@ -25,6 +25,59 @@ Example:
 np.array([(1, 2), (3, 4), (5, 6)])
 ```
 
+## Use Functions to generate arrays ##
+
+### np.arrange() ###
+
+``` python
+numpy.arange(start, stop, step, dtype=None)
+
+```
+
+*Example*
+``` python
+np.arange(3, 7, 0.5, dtype='float32')
+```
+
+*Output*
+
+``` python
+array([3. , 3.5, 4. , 4.5, 5. , 5.5, 6. , 6.5])
+```
+
+### linspace ###
+
+``` python
+numpy.linspace(start, stop, num=50, endpoint=True, retstep=False, dtype=None)
+```
+
+*Example (`endpoint=True`)*
+
+``` python
+np.linspace(0, 10, 10, endpoint=True)
+```
+
+*Output*
+
+``` python
+array([ 0.        ,  1.11111111,  2.22222222,  3.33333333,  4.44444444,
+        5.55555556,  6.66666667,  7.77777778,  8.88888889, 10.        ])
+```
+
+*Example (`endpoint=False`)*
+
+``` python
+np.linspace(0, 10, 10, endpoint=False)
+```
+
+*Output*
+
+``` python
+array([0., 1., 2., 3., 4., 5., 6., 7., 8., 9.])
+```
+
+
+
 ## Set the data type of an array ##
 
 ```python
