@@ -45,7 +45,7 @@ np.arange(3, 7, 0.5, dtype='float32')
 array([3. , 3.5, 4. , 4.5, 5. , 5.5, 6. , 6.5])
 ```
 
-### np.linspace ###
+### np.linspace() ###
 
 ``` python
 numpy.linspace(start, stop, num=50, endpoint=True, retstep=False, dtype=None)
@@ -78,17 +78,129 @@ array([0., 1., 2., 3., 4., 5., 6., 7., 8., 9.])
 
 
 
+### np.ones() ###
+
+`np.ones` is used for creating arrays whose elements are all 1.
+
+``` python
+numpy.ones(shape, dtype=None, order='C')
+
+```
+
+*Example*
+
+``` python
+np.ones((2, 3))
+```
+
+*Output*
+
+``` python
+array([[1., 1., 1.],
+       [1., 1., 1.]])
+```
+
+Note that the "2" is called "axis 0", while the "3" is called "axis 1".
+
+In 2 dimension arrays, "axis 0" is the column, "axis 1" is the line.
+
+### np.zeros() ###
+
+``` python
+numpy.zeros(shape, dtype=None, order='C')
+```
+
+*Example*
+
+``` python
+np.zeros((3, 2))
+```
+
+*Output*
+
+``` python
+array([[0., 0.],
+       [0., 0.],
+       [0., 0.]])
+```
+
+
+
+
+### np.eye() ###
+
+`numpy.eye()` creates an array which has value 1 on its diagonal and 0 on other positions.
+
+``` python
+numpy.eye(N, M=None, k=0, dtype=<type 'float'>)
+```
+
+Whereas `k` means the offset of diagonal. `N` defines the amount of elements on the column, `M` defines the amount of elements on the row. The default value of `M` is equal to `N`.
+
+See the 3 examples below.
+
+*Example*
+
+``` python
+np.eye(5)
+```
+
+*Output*
+
+``` python
+array([[1., 0., 0., 0., 0.],
+       [0., 1., 0., 0., 0.],
+       [0., 0., 1., 0., 0.],
+       [0., 0., 0., 1., 0.],
+       [0., 0., 0., 0., 1.]])
+```
+
+*Example*
+
+``` python
+np.eye(5,3)
+```
+
+*Output*
+
+``` python
+array([[1., 0., 0.],
+       [0., 1., 0.],
+       [0., 0., 1.],
+       [0., 0., 0.],
+       [0., 0., 0.]])
+```
+
+*Example*
+
+``` python
+np.eye(5, 3, -2)
+```
+
+*Output*
+
+``` python
+array([[0., 0., 0.],
+       [0., 0., 0.],
+       [1., 0., 0.],
+       [0., 1., 0.],
+       [0., 0., 1.]])
+```
+
+
+
 ## Set the data type of an array ##
 
 ```python
 a.astype(int)
 ```
-
+	
 ## Get the type of an array ##
 
 ``` python
 a.dtype
 ```
+
 
 
 
