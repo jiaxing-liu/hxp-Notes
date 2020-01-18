@@ -26,7 +26,7 @@ np.array([(1, 2), (3, 4), (5, 6)])
 ```
 
 ## Use Functions to generate arrays ##
-### np.arrange() ###
+### np.arange() ###
 
 ``` python
 numpy.arange(start, stop, step, dtype=None)
@@ -43,6 +43,23 @@ np.arange(3, 7, 0.5, dtype='float32')
 ``` python
 array([3. , 3.5, 4. , 4.5, 5. , 5.5, 6. , 6.5])
 ```
+
+``` python
+np.arange(number)
+```
+
+*Example*
+	
+``` python
+np.arrange(10)
+```
+
+*Output*
+
+``` python
+array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
+```
+
 
 ### np.linspace() ###
 
@@ -234,6 +251,18 @@ a.dtype
 a.T
 ```
 
+or you may use the `transpose` function
+
+``` python
+a = np.arange(4).reshape(2, 2)
+np.transpose(a)
+```
+
+``` python
+array([[0, 2],
+       [1, 3]])
+```
+
 ### Get the real and imaginary part ###
 
 ``` python
@@ -250,3 +279,263 @@ a.ndim
 a.shape
 ```
 
+
+### Reshape ###
+
+``` python
+np.reshape(newshape, order='C')
+```
+
+*Example*
+
+``` python
+a=np.arange(10)
+a.reshape((5, 2))
+```
+
+*Output*
+
+``` python
+array([[0, 1],
+       [2, 3],
+       [4, 5],
+       [6, 7],
+       [8, 9]])
+```
+
+*Example*
+
+``` python
+np.arange(10).reshape((5, 2), order='F')
+```
+
+*Output*
+
+``` python
+array([[0, 5],
+       [1, 6],
+       [2, 7],
+       [3, 8],
+       [4, 9]])
+```
+
+
+### Ravel ###
+
+``` python
+np.ravel(array, order='C')
+```
+
+*Example*
+
+``` python
+np.ravel(a)
+```
+
+*Output*
+
+``` python
+array([0, 5, 1, 6, 2, 7, 3, 8, 4, 9])
+```
+
+*Example*
+
+``` python
+np.ravel(a, order='F')
+```
+
+*Output*
+
+``` python
+array([0, 1, 2, 3, 4, 5, 6, 7, 8, 9])
+```
+
+### Change axis ###
+
+``` python
+np.moveaxis(a, source, destination)
+```
+
+*Example*
+
+``` python
+a = np.ones((1, 2, 3))
+print(a)
+np.moveaxis(a, 0, -1)
+```
+
+*Output*
+
+``` python
+[[[1. 1. 1.]
+  [1. 1. 1.]]]
+
+array([[[1.],
+        [1.],
+        [1.]],
+
+       [[1.],
+        [1.],
+        [1.]]])
+```
+
+Note that in a three dimension array, "axis 0" represents the height, "axis 1" and "axis 2" represents of "column" and "row"
+
+``` python
+np.swapaxis(a, axis1, axis2)
+```
+
+*Example*
+
+``` python
+a = np.ones((1, 4, 3))
+print(a)
+np.swapaxes(a, 0, 2)
+```
+
+*Output*
+
+``` python
+[[[1. 1. 1.]
+  [1. 1. 1.]
+  [1. 1. 1.]
+  [1. 1. 1.]]]
+
+array([[[1.],
+        [1.],
+        [1.],
+        [1.]],
+
+       [[1.],
+        [1.],
+        [1.],
+        [1.]],
+
+       [[1.],
+        [1.],
+        [1.],
+        [1.]]])
+```
+
+
+
+### Change the dimension ###
+
+``` python
+np.atleast_1d()
+np.atleast_2d()
+np.atleast_3d()
+```
+
+*Example*
+
+``` python
+print(np.atleast_1d([1, 2, 3]))
+print(np.atleast_2d([4, 5, 6]))
+print(np.atleast_3d([7, 8, 9]))
+```
+
+*Output*
+
+``` python
+[1 2 3]
+[[4 5 6]]
+[[[7]
+  [8]
+  [9]]]
+```
+
+
+### Concatenate ###
+
+``` python
+np.concatenate((a1, a2, ...), axis=0)
+```
+
+*Example*
+
+``` python
+a = np.array([[1, 2], [3, 4], [5, 6]])
+b = np.array([[7, 8], [9, 10]])
+c = np.array([[11, 12]])
+
+np.concatenate((a, b, c), axis=0)
+```
+
+*Output*
+
+``` python
+array([[ 1,  2],
+       [ 3,  4],
+       [ 5,  6],
+       [ 7,  8],
+       [ 9, 10],
+       [11, 12]])
+```
+
+*Example*
+
+``` python
+a = np.array([[1, 2], [3, 4], [5, 6]])
+b = np.array([[7, 8, 9]])
+
+np.concatenate((a, b.T), axis=1)
+```
+
+*Output*
+
+``` python
+array([[1, 2, 7],
+       [3, 4, 8],
+       [5, 6, 9]])
+```
+
+
+### Split ###
+
+*Example*
+
+``` python
+a = np.arange(10)
+np.split(a, 5)
+```
+
+*Output*
+
+``` python
+[array([0, 1]), array([2, 3]), array([4, 5]), array([6, 7]), array([8, 9])]
+```
+
+*Example*
+
+``` python
+a = np.arange(10).reshape(2, 5)
+np.split(a, 2)
+```
+
+*Output*
+
+``` python
+[array([[0, 1, 2, 3, 4]]), array([[5, 6, 7, 8, 9]])]
+```
+
+### Delete ###
+
+``` python
+np.delete(arr，obj，axis)
+```
+
+*Example*
+
+``` python
+a = np.arange(12).reshape(3, 4)
+np.delete(a, 2, 1)
+```
+
+*Output*
+
+``` python
+array([[ 0,  1,  3],
+       [ 4,  5,  7],
+       [ 8,  9, 11]])
+```
