@@ -1,4 +1,4 @@
-# Data Types (dtpye)#
+# Data Types (dtpye) #
 
 * bool
 * int
@@ -45,7 +45,7 @@ np.arange(3, 7, 0.5, dtype='float32')
 array([3. , 3.5, 4. , 4.5, 5. , 5.5, 6. , 6.5])
 ```
 
-### linspace ###
+### np.linspace ###
 
 ``` python
 numpy.linspace(start, stop, num=50, endpoint=True, retstep=False, dtype=None)
