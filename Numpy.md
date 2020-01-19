@@ -280,7 +280,9 @@ a.shape
 ```
 
 
-### Reshape ###
+### Reshape and Resize###
+
+#### Reshape ####
 
 ``` python
 np.reshape(newshape, order='C')
@@ -319,7 +321,28 @@ array([[0, 5],
        [4, 9]])
 ```
 
+#### Resize ####
 
+``` python
+np.resize(a，new_shape)
+```
+
+*Example*
+
+``` python
+a = np.arange(10)
+a.resize(2, 5)
+a
+```
+
+*Output*
+
+``` python
+array([[0, 1, 2, 3, 4],
+       [5, 6, 7, 8, 9]])
+```
+
+	
 ### Ravel ###
 
 ``` python
@@ -538,4 +561,147 @@ np.delete(a, 2, 1)
 array([[ 0,  1,  3],
        [ 4,  5,  7],
        [ 8,  9, 11]])
+```
+
+### Insert ###
+
+```python
+np.insert(arr，obj，values，axis)
+```
+
+*Example*
+
+``` python
+a = np.arange(12).reshape(3, 4)
+b = np.arange(4)
+
+np.insert(a, 2, b, 0)
+```
+
+*Output*
+
+``` python
+array([[ 0,  1,  2,  3],
+       [ 4,  5,  6,  7],
+       [ 0,  1,  2,  3],
+       [ 8,  9, 10, 11]])
+```
+
+### Append ###
+
+``` python
+np.append(arr，values，axis)
+```
+
+*Example*
+
+``` python
+a = np.arange(6).reshape(2, 3)
+b = np.arange(3)
+
+np.append(a, b)
+```
+
+*Output*
+
+``` python
+array([0, 1, 2, 3, 4, 5, 0, 1, 2])
+```
+
+
+
+### Flipping ###
+
+``` python
+a = np.arange(16).reshape(4, 4)
+print(np.fliplr(a))
+print(np.flipud(a))
+```
+
+``` python
+[[ 3  2  1  0]
+ [ 7  6  5  4]
+ [11 10  9  8]
+ [15 14 13 12]]
+[[12 13 14 15]
+ [ 8  9 10 11]
+ [ 4  5  6  7]
+ [ 0  1  2  3]]
+
+Markdown Code
+
+```
+
+## Random arrays ##
+
+``` python
+np.random.rand(2, 5)
+
+np.random.rand(2, 5)
+
+array([[0.09433914, 0.08680661, 0.23040579, 0.71954424, 0.54292341],
+       [0.22890897, 0.49553437, 0.01181691, 0.10668025, 0.71153526]])
+	   
+np.random.randint(2, 5, 10)
+
+array([3, 3, 4, 4, 2, 4, 4, 2, 4, 2])
+
+np.random.random_sample([10])
+
+array([0.80117316, 0.48038627, 0.40861977, 0.22925529, 0.91899056,
+       0.70100459, 0.21080387, 0.94939295, 0.374128  , 0.28534828])
+```
+
+### Uniform Distribution ###
+
+``` python
+np.random.rand(shape)
+```
+
+### Normal Distribution ###
+
+``` python
+np.random.randn(shape)
+```
+
+### Student Distribution ###
+
+``` python
+numpy.random.standard_t(df，size)
+``` 
+
+### Other Distributions ###
+
+``` python
+    numpy.random.beta(a，b，size)
+    numpy.random.binomial(n, p, size)
+    numpy.random.chisquare(df，size)
+    numpy.random.dirichlet(alpha，size)
+    numpy.random.exponential(scale，size)
+    numpy.random.f(dfnum，dfden，size)
+    numpy.random.gamma(shape，scale，size)
+    numpy.random.geometric(p，size)
+    numpy.random.gumbel(loc，scale，size)
+    numpy.random.hypergeometric(ngood, nbad, nsample, size)
+    numpy.random.laplace(loc，scale，size)
+    numpy.random.logistic(loc，scale，size)
+    numpy.random.lognormal(mean，sigma，size)
+    numpy.random.logseries(p，size)
+    numpy.random.multinomial(n，pvals，size)
+    numpy.random.multivariate_normal(mean, cov, size)
+    numpy.random.negative_binomial(n, p, size)
+    numpy.random.noncentral_chisquare(df，nonc，size)
+    numpy.random.noncentral_f(dfnum, dfden, nonc, size)
+    numpy.random.normal(loc，scale，size)
+    numpy.random.pareto(a，size)
+    numpy.random.poisson(lam，size)    numpy.random.standard_exponential(size)
+    numpy.random.standard_gamma(shape，size)
+    numpy.random.standard_normal(size)
+    numpy.random.standard_t(df，size)
+    numpy.random.triangular(left，mode，right，size)
+    numpy.random.uniform(low，high，size)
+    numpy.random.vonmises(mu，kappa，size)
+    numpy.random.wald(mean，scale，size)
+    numpy.random.weibull(a，size)
+    numpy.random.zipf(a，size)
 ```
