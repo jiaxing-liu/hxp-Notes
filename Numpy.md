@@ -705,3 +705,5 @@ numpy.random.standard_t(df，size)
     numpy.random.weibull(a，size)
     numpy.random.zipf(a，size)
 ```
+## Functions ##
+
