@@ -12,5 +12,10 @@ Add these in `/etc/docker/daemon`. (touch this file if it does not exist)
   ]
 }
 ```
+Then run
 
+``` shell
+$ sudo systemctl daemon-reload
+$ sudo systemctl restart docker
+```
 
