@@ -7,9 +7,12 @@ When I tired to install nginx in Ubuntu 14.04 server, I noticed that whatever pa
 ``` shell
 The following packages have unmet dependencies: 
 	linux-image-generic : 
-		Depends: linux-image-4.4.0-150-generic but it is not installed or                            linux-image-unsigned-4.4.0-150-generic but it is not installed             Recommends: thermald but it is not installed
+		Depends: linux-image-4.4.0-150-generic but it is not installed or
+		         linux-image-unsigned-4.4.0-150-generic but it is not installed             
+		Recommends: thermald but it is not installed
 	linux-modules-extra-4.4.0-150-generic : 
-		Depends: linux-image-4.4.0-150-generic but it is not installed or                            linux-image-unsigned-4.4.0-150-generic but it is not installed
+		Depends: linux-image-4.4.0-150-generic but it is not installed or
+			 linux-image-unsigned-4.4.0-150-generic but it is not installed
 ```
 
 Also, I've attempted to update the Linux kernel by using the script provided by [teddysun](https://teddysun.com/489.html), but failed.
