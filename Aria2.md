@@ -1,6 +1,6 @@
-Install [This Aria2 GUI is integrated with aria2c.exe](https://github.com/Xmader/aria-ng-gui)
+Install [aria-ng-gui](https://github.com/Xmader/aria-ng-gui)
 
-And use [this script](https://github.com/the1812/Bilibili-Evolved/blob/master/aria2-notice.md) to save videos from bilibili
+And use [Bilibili-Evolved](https://github.com/the1812/Bilibili-Evolved) to save videos from bilibili
 
 You need a Firefox Browser and [enable mixed content](https://docs.adobe.com/content/help/en/target/using/experiences/vec/troubleshoot-composer/mixed-content.html)
 
