@@ -3,3 +3,9 @@
 /Delete_old_kernel.md~
 *~
 *.html
+*.aux
+*.aug
+*.log
+*.synctex.gz
+*.out
+*.el

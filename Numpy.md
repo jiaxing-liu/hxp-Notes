@@ -28,9 +28,6 @@ np.array([(1, 2), (3, 4), (5, 6)])
 ## Use Functions to generate arrays ##
 ### np.arange() ###
 
-``` python
-numpy.arange(start, stop, step, dtype=None)
-
 ```
 
 *Example*
