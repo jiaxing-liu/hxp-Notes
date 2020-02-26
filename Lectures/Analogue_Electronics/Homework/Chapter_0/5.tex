@@ -38,27 +38,51 @@
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=\linewidth]{figures/1}
+  \includegraphics[width=\linewidth]{figures/5}
   \label{fig:}
 \end{figure}
 
 \paragraph{Solution}
 
-According to KVL:
+We separate the whole circuit into these two sub-circuits, as the picture below shows.
 
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{figures/9}
+  \label{fig:}
+\end{figure}
+
+For the circuit on the bottom left position, we write
 \begin{equation*}
   \begin{aligned}
-    - I R_1 - E_2 - I R_{02} - I R_2 - I R_{01} + E_1 = 0 \\   
+    I = 5 \  \mathrm{mA} \times \dfrac{10 \  \mathrm{k\Omega}}{2 \  \mathrm{k\Omega} + 8 \  \mathrm{k\Omega} + 10 \  \mathrm{k\Omega}} = 2.5 \  \mathrm{mA}
   \end{aligned}
 \end{equation*}
 \begin{equation*}
   \begin{aligned}
-    - I R_1 - I R_{02} - I R_2 - I R_{01} + E_1 = E_2\\
-    E_2 = - 12 - 1 - 10 - 1 + 48 = 24 \  \mathrm{V}
+    U = I R = 2.5 \  \mathrm{mA} \times 8 \  \mathrm{k\Omega} = 20 \  \mathrm{V}
+  \end{aligned}
+\end{equation*}
+For the circuit on the bottom right
+\begin{equation*}
+  \begin{aligned}
+    I = \dfrac{100 \  \mathrm{V}}{10 \  \mathrm{k\Omega} + 2 \  \mathrm{k\Omega} + 8 \  \mathrm{k\Omega}} = 5 \  \mathrm{mA} 
+  \end{aligned}
+\end{equation*}
+\begin{equation*}
+  \begin{aligned}
+    U = 5 \  \mathrm{mA} \times 8 \  \mathrm{k\Omega} = 40 \  \mathrm{V}
+  \end{aligned}
+\end{equation*}
+So, as for the original circuit
+\begin{equation*}
+  \begin{aligned}
+    U_b = 20 \  \mathrm{V} + 40 \  \mathrm{V} = 60 \  \mathrm{V}
   \end{aligned}
 \end{equation*}
 
-From the current direction, which is clock-wised, we can know that $E_1$ is providing power, $E_2$ is consuming power.
+
+
 
 
 \end{document}
