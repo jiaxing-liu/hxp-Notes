@@ -3,4 +3,236 @@
 %%% mode: latex
 %%% TeX-master: "main"
 %%% End:
-\chapter{Comparator}
+\chapter{Operational Amplifier}
+
+\section{Operational Amplifier}
+
+The abstracted model of a operational amplifier is like this figure below:
+
+\begin{figure}[H]
+  \centering
+  \begin{subfigure}{.5\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{figures/comparator}
+    \caption{the model of an operational amplifier}
+    \label{fig:}
+  \end{subfigure}%
+  \begin{subfigure}{.5\textwidth}
+    \centering
+    \includegraphics[width=0.6\linewidth]{figures/comparator-voltage-change}
+    \caption{How the output voltage varies}
+    \label{fig:}
+  \end{subfigure}
+  \caption{}
+  \label{fig:}
+\end{figure}
+
+We define $r_i$ as the input impedance, $r_o$ as the output impedance. $v_p$ as the non-inverting input, $v_n$  the inverting input.
+
+Usually, we have $v_p \approx v_n$, $r_i \approx \infty$, $r_o \approx 0$.
+
+Note that the output voltage of a operational amplifier has limits, called \textbf{Bandwidth}. When the input voltage exceeds the limits, it outputs the maximum or minimum value.
+
+\section{Ideal Operational Amplifier}
+
+For ideal operational amplifier:
+
+\begin{itemize}
+\item $v_p = v_n$, $i_i = 0$, $r_i = \infty$
+\item $r_o = 0$, $v_o = A_{vo} \left( v_p - v_n \right)$
+\item $bandwidth = \infty$
+  
+\end{itemize}
+
+Here is a model which shows all the feature of an ideal operational comparator:
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.5\linewidth]{figures/ideal-comparator}
+  \caption{An ideal operational amplifier}
+  \label{fig:}
+\end{figure}
+
+\section{Closed-looped Amplifier}
+
+
+Usually operational amplifiers are used with vegetative feedback to ensure its stability. We apply a portion of output voltage to input, reducing the gain of a circuit.
+
+\subsection{Non-inverting Operational Amplifier}
+
+If we connect the inverting input, to the ground, and use the non-inverting input, we get an non-inverting operational amplifier.
+
+The gain of the amplifier is:
+
+\begin{equation*}
+  \begin{aligned}
+    A_{vo} = \dfrac{R_2 + R_1}{R_1} 
+  \end{aligned}
+\end{equation*}
+
+The picture below is a non-inverting amplifier.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.9\linewidth]{figures/non-inverting-amplifier}
+  \caption{An non-inverting amplifier}
+  \label{fig:}
+\end{figure}
+
+Note that when $R_2\ll R_1$, $A_{vo} = 1$, $v_i = v_o$.
+
+\subsection{Inverting Operational Amplifier}
+
+If we connect the non-inverting input, to the ground, and use the inverting input, we get an inverting operational amplifier.
+
+The gain of this type of amplifier is:
+
+\begin{equation*}
+  \begin{aligned}
+    A_{vo} = - \dfrac{R_2}{R_1} 
+  \end{aligned}
+\end{equation*}
+
+The picture below shows as inverting operational amplifier:
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.5\linewidth]{figures/inverting-amplifier}
+  \caption{An inverting amplifier}
+  \label{fig:}
+\end{figure}
+
+\section{Applications of operational amplifiers}
+
+\subsection{Subtraction Amplifier}
+
+An subtraction amplifier can calculate the difference of inverting input and non-inverting input.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.5\linewidth]{figures/subtraction-amplifier}
+  \caption{A subtraction amplifier}
+  \label{fig:}
+\end{figure}
+
+Since we have
+
+\begin{equation*}
+  \begin{aligned}
+    i_p &= i_n = 0 \\
+    v_p &= v_n
+  \end{aligned}
+\end{equation*}
+
+According to Kirchhoff's Circuit Law:
+
+\begin{equation*}
+  \begin{aligned}
+    i_2 = i_3 \\
+    i_1 = i_4
+  \end{aligned}
+\end{equation*}
+
+So that
+
+\begin{equation*}
+  \begin{aligned}
+    \dfrac{v_{i2} - v_p}{R_2} =& \dfrac{v_p}{R_3} \\
+    \dfrac{v_{i1} - v_n}{R_1} =& \dfrac{v_n - v_o}{R_4}  
+  \end{aligned}
+\end{equation*}
+
+Then we have
+
+\begin{equation*}
+  \begin{aligned}
+    v_{i2} R_3 - v_p R_3 = v_p R_2 \\
+    v_n = v_p = \dfrac{R_3}{R_2 + R_3} v_{i2} \\
+  \end{aligned}
+\end{equation*}
+
+\begin{equation*}
+  \begin{aligned}
+    R_4 v_{i1} - R_4 v_n = R_1 v_n - R_1 v_o \\
+    R_1 v_o = - R_4 v_{i1} + \left( R_1 + R_4 \right) v_n \\
+  \end{aligned}
+\end{equation*}
+
+Finally, we get
+
+\begin{equation*}
+  \begin{aligned}
+    v_o &= - \dfrac{R_4}{R_1} v_{i1} + \dfrac{R_1 + R_4}{R_1}  \dfrac{R_3}{R_2 + R_3} v_{i2} \\
+        &= \left( 1 + \dfrac{R_4}{R_1} \right) \dfrac{R_3 / R_2 }{1 + R_3 / R_2} v_{i2} - \dfrac{R_4}{R_1} v_{i1}  
+  \end{aligned}
+\end{equation*}
+
+When we set
+
+\begin{equation*}
+  \begin{aligned}
+    R_3 / R_2 &= 0 \\
+    R_4 / R_1 &= 0
+  \end{aligned}
+\end{equation*}
+
+We have
+
+\begin{equation*}
+  \begin{aligned}
+    v_o = v_{i2} - v_{i1}
+  \end{aligned}
+\end{equation*}
+
+\subsection{Sum Amplifier}
+
+An sum amplifier adds the inverting input and the non-inverting input.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.5\linewidth]{figures/sum-amplifier}
+  \caption{Sum Amplifier}
+  \label{fig:}
+\end{figure}
+
+Similarly, we have
+
+\begin{equation*}
+  \begin{aligned}
+    \dfrac{v_{i1} - v_n}{R_1} + \dfrac{v_{i2}- v_n}{R_2} = \dfrac{v_n - v_o}{R_3} \\
+  \end{aligned}
+\end{equation*}
+
+Since
+
+\begin{equation*}
+  \begin{aligned}
+    v_n= v_p = 0
+  \end{aligned}
+\end{equation*}
+
+We may get
+
+\begin{equation*}
+  \begin{aligned}
+    \dfrac{v_{i1}}{R_1} + \dfrac{v_{i2}}{R_2} = \dfrac{- v_o}{R_3} \\
+  \end{aligned}
+\end{equation*}
+
+When we set
+
+\begin{equation*}
+  \begin{aligned}
+    R_1 = R_2 = R_3
+  \end{aligned}
+\end{equation*}
+
+We have
+
+\begin{equation*}
+  \begin{aligned}
+    v_o = - \left( v_{i1} + v_{i2} \right)
+  \end{aligned}
+\end{equation*}
+
+
