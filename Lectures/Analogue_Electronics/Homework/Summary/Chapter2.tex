@@ -97,21 +97,21 @@ The picture below shows as inverting operational amplifier:
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.5\linewidth]{figures/inverting-amplifier}
+  \includegraphics[width=0.4\linewidth]{figures/inverting-amplifier}
   \caption{An inverting amplifier}
   \label{fig:}
 \end{figure}
 
 \section{Applications of operational amplifiers}
 
-\subsection{Subtraction Amplifier}
+\subsection{Subtraction Circuit}
 
-An subtraction amplifier can calculate the difference of inverting input and non-inverting input.
+An subtraction circuit can calculate the difference of inverting input and non-inverting input.
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.5\linewidth]{figures/subtraction-amplifier}
-  \caption{A subtraction amplifier}
+  \includegraphics[width=0.4\linewidth]{figures/subtraction-amplifier}
+  \caption{A subtraction circuit}
   \label{fig:}
 \end{figure}
 
@@ -184,14 +184,14 @@ We have
   \end{aligned}
 \end{equation*}
 
-\subsection{Sum Amplifier}
+\subsection{Sum Circuit}
 
-An sum amplifier adds the inverting input and the non-inverting input.
+An sum circuit adds the inverting input and the non-inverting input.
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.5\linewidth]{figures/sum-amplifier}
-  \caption{Sum Amplifier}
+  \includegraphics[width=0.4\linewidth]{figures/sum-amplifier}
+  \caption{Sum Circuit}
   \label{fig:}
 \end{figure}
 
@@ -235,4 +235,49 @@ We have
   \end{aligned}
 \end{equation*}
 
+\subsection{Integrating Circuit}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.4\linewidth]{figures/integrating-circuit}
+  \caption{integrating circuit}
+  \label{fig:}
+\end{figure}
+
+\begin{equation*}
+  \begin{aligned}
+    - v_o = \dfrac{1}{C} \int \dfrac{v_{1}}{R} \mathrm{d} t
+  \end{aligned}
+\end{equation*}
+
+We define
+
+\begin{equation*}
+  \begin{aligned}
+    \tau = RC
+  \end{aligned}
+\end{equation*}
+
+Then
+
+\begin{equation*}
+  \begin{aligned}
+    - v_o = \dfrac{1}{\tau} \int v_{1} \mathrm{d} t
+  \end{aligned}
+\end{equation*}
+
+\subsection{Differential Circuit}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.4\linewidth]{figures/differential-circuit}
+  \caption{differential circuit}
+  \label{fig:}
+\end{figure}
+
+\begin{equation*}
+  \begin{aligned}
+    - v_o = R C \dfrac{\mathrm{d} v_i}{\mathrm{d} t} 
+  \end{aligned}
+\end{equation*}
 
