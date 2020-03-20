@@ -1,8 +1,161 @@
 
-\chapter{The Energy and Radiation of Atoms}
-
-
 %%% Local Variables:
 %%% mode: latex
 %%% TeX-master: "main"
 %%% End:
+
+\chapter{The Energy and Radiation of Atoms}
+
+\section{Rydberg Constant and Wavelength of Radiation}
+
+Balmer Formula for Hydrogen Atoms:
+
+\begin{equation*}
+  \begin{aligned}
+    \dfrac{1}{\lambda} = R_H \left[ \dfrac{1}{m^2} - \dfrac{1}{n^2}   \right] 
+  \end{aligned}
+\end{equation*}
+
+Let
+
+\begin{equation*}
+  \begin{aligned}
+    T(m) = \dfrac{R_H}{m^2} \\
+    T(n) = \dfrac{R_H}{n^2} 
+  \end{aligned}
+\end{equation*}
+
+Then
+
+\begin{equation*}
+  \begin{aligned}
+    \dfrac{h c}{\lambda} = hc \left[ T (m) - T (n) \right] = \dfrac{R_H h c}{m^2} - \dfrac{R_H h c}{n^2}  
+  \end{aligned}
+\end{equation*}
+
+\section{Bohr's Theory of Hydrogen Atoms}
+
+Energy of steady states:
+
+\begin{equation*}
+  \begin{aligned}
+    E_n = - \dfrac{1}{2} \dfrac{Z e^2}{4 \pi \varepsilon_0 r_n}  
+  \end{aligned}
+\end{equation*}
+
+Transition
+
+\begin{equation*}
+  \begin{aligned}
+    h \nu = E_n - E_m
+  \end{aligned}
+\end{equation*}
+
+Angular Momentum
+
+\begin{equation*}
+  \begin{aligned}
+    L = n \cdot \dfrac{h}{2 \pi} = n \hbar = m_e v_n r_n
+  \end{aligned}
+\end{equation*}
+\begin{equation*}
+  \begin{aligned}
+    m_e \dfrac{v_n^2}{r_n} = \dfrac{Z e^2}{4 \pi \varepsilon_0 r_n^2}  
+  \end{aligned}
+\end{equation*}
+
+From which we can indicate that the radius is qumntumized
+
+\begin{equation*}
+  \begin{aligned}
+    \dfrac{n^2 \hbar^2}{m_e r_n^3} = \dfrac{Z e^2}{4 \pi \varepsilon_0 r_n^2}
+  \end{aligned}
+\end{equation*}
+
+\begin{equation*}
+  \begin{aligned}
+    r_n = \dfrac{4 \pi \varepsilon_0 \hbar^2}{m_e e^2} \cdot \dfrac{n^2}{Z} = a_0 \cdot \dfrac{n^2}{Z} 
+  \end{aligned}
+\end{equation*}
+
+For hydrogen atoms, $Z = 1$. The energy is also qumntumized.
+
+\begin{equation*}
+  \begin{aligned}
+    E_n = - \dfrac{1}{2} \dfrac{Z e^2}{4 \pi \varepsilon_0} \dfrac{m_e e^2}{4 \pi \varepsilon_0 \hbar^2} \cdot \dfrac{Z}{n^2} = - \dfrac{m_e e^4}{2 \left( 4 \pi \varepsilon_0 \hbar \right)^2} \cdot \dfrac{Z^2}{n^2} 
+  \end{aligned}
+\end{equation*}
+
+The velocity is also qumntumized
+
+\begin{equation*}
+  \begin{aligned}
+    v_n = \dfrac{n \hbar}{m_e r_n} = \dfrac{n \hbar}{m_e}  \dfrac{m_e e^2}{4 \pi \varepsilon_0 \hbar^2} \cdot \dfrac{Z}{n^2} = \dfrac{e^2}{4 \pi \varepsilon_0 \hbar} \cdot \dfrac{Z}{n} =
+\dfrac{Z \alpha c}{n} 
+  \end{aligned}
+\end{equation*}
+\begin{equation*}
+  \begin{aligned}
+    \alpha = \dfrac{e^2}{4 \pi \varepsilon_0 \hbar c} = \dfrac{1}{137}  
+  \end{aligned}
+\end{equation*}
+
+Calculate the value of Rydberg Constant
+
+\begin{equation*}
+  \begin{aligned}
+    E = - \dfrac{m_e e^4}{2 \left( 4 \pi \varepsilon_0 \hbar \right)^2} \cdot \dfrac{Z^2}{n^2} = - \dfrac{2 \pi^2 m_e e^4}{\left( 4 \pi \varepsilon_0 h \right)^2} \cdot \dfrac{Z^2}{n^2}
+  \end{aligned}
+\end{equation*}
+\begin{equation*}
+  \begin{aligned}
+    \dfrac{h c}{\lambda} = E_2 - E_1 =  \dfrac{2 \pi^2 m_e e^4 Z^2}{\left( 4 \pi \varepsilon_0 h \right)^2} \left[ \dfrac{1}{n_1^2} - \dfrac{1}{n_2^2}   \right]
+  \end{aligned}
+\end{equation*}
+\begin{equation*}
+  \begin{aligned}
+    \dfrac{1}{\lambda} = \dfrac{2 \pi^2 m_e e^4 Z^2}{\left( 4 \pi \varepsilon_0 \right)^2 h^3 c} \left[ \dfrac{1}{n_1^2} - \dfrac{1}{n_2^2}   \right]
+  \end{aligned}
+\end{equation*}
+\begin{equation*}
+  \begin{aligned}
+    R = \dfrac{2 \pi^2 m_e e^4 Z^2}{\left( 4 \pi \varepsilon_0 \right)^2 h^3 c}
+  \end{aligned}
+\end{equation*}
+
+For hydrogen atoms
+
+\begin{equation*}
+  \begin{aligned}
+    R_H = \dfrac{2 \pi^2 m_e e^4}{\left( 4 \pi \varepsilon_0 \right)^2 h^3 c}
+  \end{aligned}
+\end{equation*}
+
+\section{Rydburg Constant of Different Atoms}
+
+In previous sections, we assumed that the nucleus is fixed at a point, with the electron surrounded. But in fact, the nucleus's mass is not infinity, and it moves as well. So that for different atoms, the Rydburg Constants varies. In a two-body system, we define the Reduced Mass of a system as
+
+\begin{equation*}
+  \begin{aligned}
+    \mu = \dfrac{Mm}{M + m} 
+  \end{aligned}
+\end{equation*}
+
+And we replace the Reduced Mass with $m_e$
+
+\begin{equation*}
+  \begin{aligned}
+    R_{\infty} &= \dfrac{2 \pi^2 m e^4}{\left( 4 \pi \varepsilon_0 \right)^2 h^3 c} \\
+    R_A &= R_{\infty} \cdot \dfrac{1}{1 + \dfrac{m}{M} } 
+  \end{aligned}
+\end{equation*}
+
+
+
+
+
+
+
+
+
+
