@@ -10,4 +10,5 @@
 *.synctex.gz
 *.out
 *.el
+*.toc
 auto/
