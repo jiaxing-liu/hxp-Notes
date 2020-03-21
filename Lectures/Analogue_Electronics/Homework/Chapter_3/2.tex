@@ -38,29 +38,58 @@
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=\linewidth]{figures/Problem1-1}
+  \includegraphics[width=\linewidth]{figures/Problem2-1}
   \label{fig:}
 \end{figure}
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.7\linewidth]{figures/Problem1-2}
+  \includegraphics[width=0.7\linewidth]{figures/Problem2-2}
   \label{fig:}
 \end{figure}
 
-From the circuit we shall know, if the forward voltage of the 2 dipoles are $0.7 \  \mathrm{V}$:
-\begin{itemize}
-\item A current flows in $D_1$ whenever $v_s > 3.7 \  \mathrm{V}$
-\item A current flows in $D_2$ whenever $v_s < - 3.7 \  \mathrm{V}$
-\end{itemize}
-
-So that the voltage is being restricted between $\pm 3.7 \  \mathrm{V}$ 
-
+We first assume that the dipoles are all off
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=\linewidth]{figures/Problem1-3}
+  \includegraphics[width=0.7\linewidth]{figures/Problem2-3}
   \label{fig:}
 \end{figure}
+
+As for (a):
+
+\begin{equation*}
+  \begin{aligned}
+    v_E &= \dfrac{5}{5 + 25} \times 15 = 2.5 \  \mathrm{V} \\
+    v_A &= \dfrac{10}{10 + 140} \times 15 = 1 \  \mathrm{V} \\
+    v_B &= \dfrac{2}{18 + 2} \times 10 + 2.5 = 3.5 \  \mathrm{V} 
+  \end{aligned}
+\end{equation*}
+
+Since $v_B > v_A$, the dipole is off.
+
+As for (b):
+
+\begin{equation*}
+  \begin{aligned}
+    v_E &= \dfrac{5}{5 + 25} \times 15 = 2.5 \  \mathrm{V} \\
+    v_A &= \dfrac{10}{10 + 140} \times 15 = 1 \  \mathrm{V} \\
+    v_B &= - \dfrac{2}{18 + 2} \times 10 + 2.5 = 1.5 \  \mathrm{V} 
+  \end{aligned}
+\end{equation*}
+
+Since $v_B > v_A$, the dipole is off.
+
+As for (c):
+
+\begin{equation*}
+  \begin{aligned}
+    v_E &= \dfrac{5}{5 + 25} \times 15 = 2.5 \  \mathrm{V} \\
+    v_A &= \dfrac{10}{10 + 140} \times 15 = 1 \  \mathrm{V} \\
+    v_B &= - \dfrac{2}{18 + 2} \times 20 + 2.5 = 0.5 \  \mathrm{V} 
+  \end{aligned}
+\end{equation*}
+
+Since $v_B < v_A$, the dipole is on.
 
 
 \end{document}
