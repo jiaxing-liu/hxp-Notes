@@ -1,8 +1,13 @@
-\documentclass{article}
+\documentclass{book}
+% Chinese
+% \documentclass[UTF8, nofonts, mathptmx, 12pt, onecolumn]{article}
+% \usepackage{xeCJK}
+% \setCJKmainfont{SimSun}
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{wasysym}
+% \usepackage{ctex}
 \usepackage{graphicx}
 \usepackage{float}
 \usepackage{geometry}
@@ -14,8 +19,8 @@
 \newcommand*{\md}{\mathop{}\!\mathrm{d}}
 \newcommand*{\me}{\mathrm{e}}
 
-\usepackage{parskip}
-\setlength{\parindent}{0cm}
+% \usepackage{parskip}
+% \setlength{\parindent}{0cm}
 
 \usepackage{bm}
 \let\Oldmathbf\mathbf
@@ -23,138 +28,19 @@
 \let\eqnarray\align
 
 \author{Xiping Hu}
+\usepackage{authblk}
+\author{Xiping Hu}
+\affil{https://hxp.plus/}
 \title{Optics}
 
 \begin{document}
 \maketitle
-
-\section{Introduction}
-
-Bing Wang wangbing@hust.edu.cn
-
-\section{Electromagnetic Theory and photons}
-
-\subsection{Maxwell's Equation}
-
-Faraday's Induction Law
-\begin{equation}
-  \oint_{c} \vec{E} \cdot \md \vec{l} = - \dfrac{\md}{\md t} \iint \vec{B} \cdot \md \vec{S}
-\end{equation}
-
-Gauss's Law
-\begin{equation}
-  \oiint_{A} \vec{E} \cdot \md \vec{S} = \dfrac{1}{\epsilon_{0}} \iiint_{v} \rho \md V 
-\end{equation}
-
-\begin{equation}
-  \oiint_{A} \vec{B} \cdot \md \vec{S} = 0
-\end{equation}
-
-Ampere's Circuital Law
-
-\begin{equation}
-  \oint_{C} \vec{B} \cdot \md \vec{l} = \mu_{0} \iint_{A} \left( \vec{J} + \epsilon_{0} \dfrac{\partial \vec{E}}{\partial t}  \right) \cdot \md \vec{S}
-\end{equation}
-
-We can now take the derivatives of the 4 equations
-
-\begin{equation}
-  \left\{
-  \begin{aligned}
-    \nabla \times \vec{E} &= - \dfrac{\partial B}{\partial t} \\
-    \nabla \times \vec{B} &= \mu_{0} \epsilon_{0} \dfrac{\partial \vec{E}}{\partial t}  \\
-    \nabla \cdot \vec{E} &= \dfrac{\rho}{\epsilon_{0}} \\
-    \nabla \cdot \vec{B} &= 0
-  \end{aligned}
-  \right.
-\end{equation}
-
-The Following Equation can be derived from Maxwell Equation above
-
-\begin{equation}
-  \begin{aligned}
-    \nabla^{2} \vec{E} = \mu_{0} \epsilon_{0} \dfrac{\partial^{2} \vec{E}}{\partial t^{2}}\\
-    \nabla^{2} \vec{B} = \mu_{0} \epsilon_{0} \dfrac{\partial^{2} \vec{B}}{\partial t^{2}} 
-  \end{aligned}
-\end{equation}
-
-Coincidentally
-\begin{equation}
-  c = \dfrac{1}{\sqrt{\mu_{0} \epsilon_{0}}} 
-\end{equation}
-
-Which indicates the speed of electromagnetic wave is the speed of light.
-
-Furthermore, it can be seen that the electric field and magnetic field are transverse. They are perpendicular to each other. We assume the electric field is parallel to the y-axis.
-
-\begin{equation}
-  \begin{aligned}
-    E_{y} (x,t) = E_{0} \cos \left[ \omega \left( t - x/c  \right) + \epsilon \right]
-  \end{aligned}
-\end{equation}
-According to Faraday's Law
-\begin{equation}
-  \begin{aligned}
-    \dfrac{\partial E_{y}}{\partial x} = - \dfrac{\partial B_{Z}}{\partial t}  
-  \end{aligned}
-\end{equation}
-We can calculate $B_{z}$
-
-\begin{equation}
-  \begin{aligned}
-    B_z = \dfrac{1}{c} E_{0} \cos \left[ \omega \left( t - x/c  \right) + \epsilon \right]
-  \end{aligned}
-\end{equation}
-So that
-\begin{equation}
-  \begin{aligned}
-    E_y = c B_z
-  \end{aligned}
-\end{equation}
-When not in vacuum, similarly
-\begin{equation}
-  \begin{aligned}
-    E_y=vB_z \\
-    v=\frac{1}{\epsilon\mu}
-  \end{aligned}
-\end{equation}
-
-\subsection{Energy}
-
-\begin{equation}
-  \begin{aligned}
-    u_{E} &= \dfrac{\epsilon_{0}}{2} E^{2} \\
-    u_{B} &= \dfrac{1}{2\mu_{0}} B^{2} \\
-    u_{E} &= u_{B} \\
-    u &= u_{E} + u_{B} = \epsilon_{0} E^{2} = \dfrac{\mu_{0}}{2} B^{2} \\ 
-    S &= uc \\
-    \vec{S} &= \dfrac{1}{\mu} \vec{E} \times \vec{B} \\
-    I &= \dfrac{1}{2} \epsilon v E_0^2
-  \end{aligned}
-\end{equation}
-
-\subsection{Radiation Pressure}
-
-\begin{equation}
-  \begin{aligned}
-    P(t) = \dfrac{S(t)}{c} = u = u_E + u_B
-  \end{aligned}
-\end{equation}
-
-\begin{equation}
-  \begin{aligned}
-    \left< P(t) \right>_T = \dfrac{I}{c} 
-  \end{aligned}
-\end{equation}
-
-\begin{equation}
-  \begin{aligned}
-    p_V = \dfrac{S}{c^{2}} 
-  \end{aligned}
-\end{equation}
+\tableofcontents
 
 
-
-
+\include{Chapter1}
+\include{Chapter2}
+\include{Chapter3}
+\include{Chapter4}
 
 \end{document}
