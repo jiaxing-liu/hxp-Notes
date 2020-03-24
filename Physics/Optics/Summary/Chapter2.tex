@@ -3,121 +3,218 @@
 \section{Maxwell's Equation}
 
 Faraday's Induction Law
-\begin{equation}
+\begin{equation*}
   \oint_{c} \vec{E} \cdot \md \vec{l} = - \dfrac{\md}{\md t} \iint \vec{B} \cdot \md \vec{S}
-\end{equation}
+\end{equation*}
 
 Gauss's Law
-\begin{equation}
-  \oiint_{A} \vec{E} \cdot \md \vec{S} = \dfrac{1}{\epsilon_{0}} \iiint_{v} \rho \md V 
-\end{equation}
+\begin{equation*}
+  \oiint_{A} \vec{E} \cdot \md \vec{S} = \dfrac{1}{\varepsilon_{0}} \iiint_{v} \rho \md V 
+\end{equation*}
 
-\begin{equation}
+\begin{equation*}
   \oiint_{A} \vec{B} \cdot \md \vec{S} = 0
-\end{equation}
+\end{equation*}
 
 Ampere's Circuital Law
 
-\begin{equation}
-  \oint_{C} \vec{B} \cdot \md \vec{l} = \mu_{0} \iint_{A} \left( \vec{J} + \epsilon_{0} \dfrac{\partial \vec{E}}{\partial t}  \right) \cdot \md \vec{S}
-\end{equation}
+\begin{equation*}
+  \oint_{C} \vec{B} \cdot \md \vec{l} = \mu_{0} \iint_{A} \left( \vec{J} + \varepsilon_{0} \dfrac{\partial \vec{E}}{\partial t}  \right) \cdot \md \vec{S}
+\end{equation*}
 
 We can now take the derivatives of the 4 equations
 
-\begin{equation}
+\begin{equation*}
   \left\{
   \begin{aligned}
     \nabla \times \vec{E} &= - \dfrac{\partial B}{\partial t} \\
-    \nabla \times \vec{B} &= \mu_{0} \epsilon_{0} \dfrac{\partial \vec{E}}{\partial t}  \\
-    \nabla \cdot \vec{E} &= \dfrac{\rho}{\epsilon_{0}} \\
+    \nabla \times \vec{B} &= \mu_{0} \varepsilon_{0} \dfrac{\partial \vec{E}}{\partial t}  \\
+    \nabla \cdot \vec{E} &= \dfrac{\rho}{\varepsilon_{0}} \\
     \nabla \cdot \vec{B} &= 0
   \end{aligned}
   \right.
-\end{equation}
+\end{equation*}
 
 The Following Equation can be derived from Maxwell Equation above
 
-\begin{equation}
+\begin{equation*}
   \begin{aligned}
-    \nabla^{2} \vec{E} = \mu_{0} \epsilon_{0} \dfrac{\partial^{2} \vec{E}}{\partial t^{2}}\\
-    \nabla^{2} \vec{B} = \mu_{0} \epsilon_{0} \dfrac{\partial^{2} \vec{B}}{\partial t^{2}} 
+    \nabla^{2} \vec{E} = \mu_{0} \varepsilon_{0} \dfrac{\partial^{2} \vec{E}}{\partial t^{2}}\\
+    \nabla^{2} \vec{B} = \mu_{0} \varepsilon_{0} \dfrac{\partial^{2} \vec{B}}{\partial t^{2}} 
   \end{aligned}
-\end{equation}
+\end{equation*}
 
 Coincidentally
-\begin{equation}
-  c = \dfrac{1}{\sqrt{\mu_{0} \epsilon_{0}}} 
-\end{equation}
+\begin{equation*}
+  c = \dfrac{1}{\sqrt{\mu_{0} \varepsilon_{0}}} 
+\end{equation*}
 
 Which indicates the speed of electromagnetic wave is the speed of light.
 
 Furthermore, it can be seen that the electric field and magnetic field are transverse. They are perpendicular to each other. We assume the electric field is parallel to the y-axis.
 
-\begin{equation}
+\begin{equation*}
   \begin{aligned}
-    E_{y} (x,t) = E_{0} \cos \left[ \omega \left( t - x/c  \right) + \epsilon \right]
+    E_{y} (x,t) = E_{0} \cos \left[ \omega \left( t - x/c  \right) + \varepsilon \right]
   \end{aligned}
-\end{equation}
+\end{equation*}
 According to Faraday's Law
-\begin{equation}
+\begin{equation*}
   \begin{aligned}
     \dfrac{\partial E_{y}}{\partial x} = - \dfrac{\partial B_{Z}}{\partial t}  
   \end{aligned}
-\end{equation}
+\end{equation*}
 We can calculate $B_{z}$
 
-\begin{equation}
+\begin{equation*}
   \begin{aligned}
-    B_z = \dfrac{1}{c} E_{0} \cos \left[ \omega \left( t - x/c  \right) + \epsilon \right]
+    B_z = \dfrac{1}{c} E_{0} \cos \left[ \omega \left( t - x/c  \right) + \varepsilon \right]
   \end{aligned}
-\end{equation}
+\end{equation*}
 So that
-\begin{equation}
+\begin{equation*}
   \begin{aligned}
     E_y = c B_z
   \end{aligned}
-\end{equation}
+\end{equation*}
 When not in vacuum, similarly
-\begin{equation}
+\begin{equation*}
   \begin{aligned}
     E_y=vB_z \\
-    v=\frac{1}{\epsilon\mu}
+    v=\frac{1}{\varepsilon\mu}
   \end{aligned}
-\end{equation}
+\end{equation*}
 
 \section{Energy}
 
-\begin{equation}
+\begin{equation*}
   \begin{aligned}
-    u_{E} &= \dfrac{\epsilon_{0}}{2} E^{2} \\
+    u_{E} &= \dfrac{\varepsilon_{0}}{2} E^{2} \\
     u_{B} &= \dfrac{1}{2\mu_{0}} B^{2} \\
     u_{E} &= u_{B} \\
-    u &= u_{E} + u_{B} = \epsilon_{0} E^{2} = \dfrac{\mu_{0}}{2} B^{2} \\ 
+    u &= u_{E} + u_{B} = \varepsilon_{0} E^{2} = \dfrac{1}{\mu_{0}} B^{2} \\ 
     S &= uc \\
-    \vec{S} &= \dfrac{1}{\mu} \vec{E} \times \vec{B} \\
-    I &= \dfrac{1}{2} \epsilon v E_0^2
+    \vec{S} &= \dfrac{1}{\mu} \vec{E} \times \vec{B} \quad \mathrm{(Poynting Vector)}\\
+    I &= \dfrac{1}{2} \varepsilon v E_0^2
   \end{aligned}
-\end{equation}
+\end{equation*}
 
 \section{Radiation Pressure}
 
-\begin{equation}
+\begin{equation*}
   \begin{aligned}
     P(t) = \dfrac{S(t)}{c} = u = u_E + u_B
   \end{aligned}
-\end{equation}
+\end{equation*}
 
-\begin{equation}
+\begin{equation*}
   \begin{aligned}
     \left< P(t) \right>_T = \dfrac{I}{c} 
   \end{aligned}
-\end{equation}
+\end{equation*}
 
-\begin{equation}
+\begin{equation*}
   \begin{aligned}
     p_V = \dfrac{S}{c^{2}} 
   \end{aligned}
-\end{equation} 
+\end{equation*}
+
+\section{Light in Bulk Matter}
+
+\subsection{Speed of light and Dielectric Constant}
+
+\begin{equation*}
+  \begin{aligned}
+    v = \dfrac{1}{\sqrt{\varepsilon \mu}} 
+  \end{aligned}
+\end{equation*}
+\begin{equation*}
+  \begin{aligned}
+    n = \dfrac{c}{v} = \sqrt{\dfrac{\varepsilon \mu}{\varepsilon_0 \mu_0} } = \sqrt{\dfrac{\varepsilon}{\varepsilon_0} }
+  \end{aligned}
+\end{equation*}
+
+\subsection{Dispersion}
+
+For gas and solid
+
+\begin{equation*}
+  \begin{aligned}
+    m_e \dfrac{\md ^2 x}{\md t^2} + \gamma m_e \dfrac{\md x}{\md t} + m_e \omega_0^2 x = - e E \left( t \right)
+  \end{aligned}
+\end{equation*}
+\begin{equation*}
+  \begin{aligned}
+    E \left( t \right) = E_0 \exp \left( - i \omega t \right)
+  \end{aligned}
+\end{equation*}
+Assume
+\begin{equation*}
+  \begin{aligned}
+    x = x_0 \exp \left( - i \omega t \right)
+  \end{aligned}
+\end{equation*}
+We got a solution
+\begin{equation*}
+  \begin{aligned}
+    x_0 \left( \omega_0^2 - \omega^2 - i \gamma \omega \right) = - \dfrac{e E_0}{m_e} 
+  \end{aligned}
+\end{equation*}
+\begin{equation*}
+  \begin{aligned}
+    x_0 = - \dfrac{e E_0}{m_e \left( \omega_0^2 - \omega^2 - i \gamma \omega \right)} 
+  \end{aligned}
+\end{equation*}
+\begin{equation*}
+  \begin{aligned}
+    x \left( t \right) = - \dfrac{e E \left( t \right)}{m_e \left( \omega_0^2 - \omega^2 - i \gamma \omega \right)}
+  \end{aligned}
+\end{equation*}
+\begin{equation*}
+  \begin{aligned}
+    P \left( t \right) = - N e x \left( t \right) = \dfrac{N e^2 E \left( t \right)}{m_e \left( \omega_0^2 - \omega^2 - i \gamma \omega \right)} 
+  \end{aligned}
+\end{equation*}
+\begin{equation*}
+  \begin{aligned}
+    \varepsilon_r = \dfrac{\varepsilon}{\varepsilon_0} = n^2 = 1 + \dfrac{P}{\varepsilon_0 E} = 1 + \dfrac{N e^2}{\varepsilon_0 m_e \left( \omega_0^2 - \omega^2 - i \gamma \omega \right)}  
+  \end{aligned}
+\end{equation*}
+\begin{equation*}
+  \left\{
+  \begin{aligned}
+    \mathrm{Re} \left( \varepsilon_{r} \right) &= 1 + \dfrac{N e^2 \left( \omega_0^2 - \omega^2 \right)}{\varepsilon_0 m_e \left[ \left( \omega_0^2 - \omega^2 \right)^2 + \gamma^2 \omega^2 \right]}  \\
+    \mathrm{Im} \left( \varepsilon_{r} \right) &= \dfrac{N e^2 \gamma \omega}{\varepsilon_0 m_e \left[ \left( \omega_0^2 - \omega^2 \right)^2 + \gamma^2 \omega^2 \right]}  
+  \end{aligned}
+  \right.
+\end{equation*}
+When $\gamma = 0$
+\begin{equation*}
+  \begin{aligned}
+    \varepsilon_r = n^2 = 1 + \dfrac{N e^2}{\varepsilon_0 m \left( \omega_0^2 - \omega^2 \right)} 
+  \end{aligned}
+\end{equation*}
+
+For metal
+
+\begin{equation*}
+  \begin{aligned}
+    m_e \dfrac{\md ^2 x}{\md t^2} + \gamma m_e \dfrac{\md x}{\md t} = - e E \left( t \right)
+  \end{aligned}
+\end{equation*}
+
+\begin{equation*}
+  \begin{aligned}
+    \varepsilon_r = 1 - \dfrac{N e^2}{\varepsilon_0 m_e \left(\omega^2 + i \gamma \omega \right)} = 1 - \dfrac{\omega_p^2}{\omega \left( \omega + i \gamma \right)}  
+  \end{aligned}
+\end{equation*}
+
+
+
+
+
+
+
 
 %%% Local Variables:
 %%% mode: latex
