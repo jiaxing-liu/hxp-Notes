@@ -114,7 +114,72 @@ Considered that $n_i \sin \theta_i = n_t \sin \theta_t$
 
 \begin{equation*}
   \begin{aligned}
-    \theta_C = \arcsin \left( \dfrac{n_t}{n_i}  \right)
+    \theta_c = \arcsin \left( \dfrac{n_t}{n_i}  \right)
   \end{aligned}
+\end{equation*}
+
+\section{Phase Shift}
+
+When $\theta_i = 0$
+
+\begin{equation*}
+  \begin{aligned}
+    r_{\perp} &= - r_{\parallel} = \dfrac{n_i - n_t}{n_i + n_t} \\
+    t_{\parallel} &= \phantom{+} t_{\perp} = \dfrac{2 n_i}{n_i + n_t} 
+  \end{aligned}
+\end{equation*}
+
+While $n_i > n_t$ (Inner reflection)
+
+\begin{equation*}
+  \begin{aligned}
+    r_{\parallel} &< 0 \\
+    r_{\perp} &> 0
+  \end{aligned}
+\end{equation*}
+
+No phase shift.
+
+While $n_i < n_t$ (Outer reflection)
+
+\begin{equation*}
+  \begin{aligned}
+    r_{\parallel} &> 0 \\
+    r_{\perp} &< 0
+  \end{aligned}
+\end{equation*}
+
+Phase shifted by $\pi$.
+
+\section{Reflectance and Transmittance}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.4\linewidth]{figures/Reflectance and Transmittance}
+  \label{fig:}
+\end{figure}
+
+
+\begin{equation*}
+  \left\{
+  \begin{aligned}
+    R &= \dfrac{I_t A \cos \theta_r}{I_i A \cos \theta_i} = \dfrac{I_t}{I_i} \\
+    T &= \dfrac{I_t A \cos \theta_t}{I_i A \cos \theta_i} = \dfrac{I_t \cos \theta_t}{I_i \cos \theta_i}
+  \end{aligned}
+  \right.
+\end{equation*}
+\begin{equation*}
+  \begin{aligned}
+    I = \dfrac{1}{2} \varepsilon v E_0^2 = \dfrac{1}{2} \varepsilon_0 \varepsilon_r v E_0^2 = \dfrac{1}{2} \varepsilon_0 n^2 v E_0^2 = \dfrac{1}{2} \varepsilon_0 n c E_0^2
+  \end{aligned}
+\end{equation*}
+
+\begin{equation*}
+  \left\{
+  \begin{aligned}
+    R &= \dfrac{I_t}{I_i} = \left( \dfrac{E_{0t}}{E_{0i}}  \right)^2 = r^2 \\
+    T &= \dfrac{I_t \cos \theta_t}{I_i \cos \theta_i} = \left( \dfrac{n_t \cos \theta_t}{n_i \cos \theta_i}  \right) \left( \dfrac{E_{0t}}{E_{0i}}  \right)^2 = \left( \dfrac{n_t \cos \theta_t}{n_i \cos \theta_i}  \right) t^2
+  \end{aligned}
+  \right.
 \end{equation*}
 
