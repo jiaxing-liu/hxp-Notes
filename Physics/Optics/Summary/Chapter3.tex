@@ -1,9 +1,3 @@
-
-%%% Local Variables:
-%%% mode: latex
-%%% TeX-master: "main"
-%%% End:
-
 \chapter{The Propagation of Light}
 
 \section{The Fresnel Equations}
@@ -183,3 +177,97 @@ Phase shifted by $\pi$.
   \right.
 \end{equation*}
 
+\section{The Evanescent Wave}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.5\linewidth]{figures/Evanescent wave}
+  \label{fig:}
+\end{figure}
+
+\begin{equation*}
+  \begin{aligned}
+    \vec{E}_t = \vec{E}_{0t} \exp \left[ i \left( \vec{k}_t  \cdot \vec{r} - \omega t \right) \right]
+  \end{aligned}
+\end{equation*}
+
+\begin{equation*}
+  \begin{aligned}
+    \vec{k}_t \cdot \vec{r} = k_{tx} x + k_{ty} y
+  \end{aligned}
+\end{equation*}
+
+\begin{equation*}
+  \begin{aligned}
+    k_{tx} &= k_t \sin \theta_t = \left( \dfrac{n_i}{n_t}  \right) k_t \sin \theta_i = n_i k_0 \sin \theta_i \\
+    k_{ty} &= k_t \cos \theta_t = i k_t \sqrt{\dfrac{n_i^2 \sin^2 \theta_i}{n_t^2} - 1} = i \beta
+  \end{aligned}
+\end{equation*}
+
+\begin{equation*}
+  \begin{aligned}
+    \vec{E}_t = \vec{E}_{0t} \exp \left( - \beta y \right) \exp \left[ i \left( n_i k_0 x \sin \theta_i - \omega t \right) \right]
+  \end{aligned}
+\end{equation*}
+
+\section{Optical Properties of Metals}
+
+The index of refraction of metal is complex
+
+\begin{equation*}
+  \begin{aligned}
+    \tilde{n} = n_R - i n_I
+  \end{aligned}
+\end{equation*}
+
+\begin{equation*}
+  \begin{aligned}
+    \nabla \times \vec{H} = \varepsilon_0 \varepsilon_r \dfrac{\partial \vec{E}}{\partial t} + \sigma \vec{E} = - i \omega \varepsilon_0 \varepsilon_r \vec{E} + \sigma \vec{E} = - i \omega \varepsilon_0 \tilde{\varepsilon}_r \vec{E}
+  \end{aligned}
+\end{equation*}
+
+Whereas
+
+\begin{equation*}
+  \begin{aligned}
+    \tilde{\varepsilon}_r = \varepsilon_r + i \dfrac{\sigma}{\omega \varepsilon_0} 
+  \end{aligned}
+\end{equation*}
+
+\begin{equation*}
+  \begin{aligned}
+    \tilde{n}^2 = \tilde{\varepsilon}_r = \varepsilon_r + i \dfrac{\sigma}{\omega \varepsilon_0} = \left( n_R + i n_I \right)^2
+  \end{aligned}
+\end{equation*}
+
+Since $\dfrac{\sigma}{\omega \varepsilon_0 \varepsilon_r} \gg 1 $
+
+\begin{equation*}
+  \begin{aligned}
+    n_I \approx n_R = \sqrt{\dfrac{\sigma}{2 \omega \varepsilon_0} }
+  \end{aligned}
+\end{equation*}
+
+Skin depth
+
+\begin{equation*}
+  \begin{aligned}
+    \delta = \sqrt{\dfrac{1}{2 \omega \mu_0 \sigma} }
+  \end{aligned}
+\end{equation*}
+
+Reflectance
+
+\begin{equation*}
+  \begin{aligned}
+    R = \left| \dfrac{n_i - n_t}{n_i + n_t}  \right|^2 = \left( \dfrac{\tilde{n} - 1}{\tilde{n} + 1}  \right) \left( \dfrac{\tilde{n} - 1}{\tilde{n} + 1}  \right)^{*} = \dfrac{\left( n_R - 1 \right)^2 + n_I^2}{\left( n_R + 1 \right)^2 + n_I^2} 
+  \end{aligned}
+\end{equation*}
+
+
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "main"
+%%% End:
