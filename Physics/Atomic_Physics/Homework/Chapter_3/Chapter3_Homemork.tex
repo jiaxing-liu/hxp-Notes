@@ -225,10 +225,182 @@ insert it into
   \includegraphics[width=\linewidth]{figures/7}
   \label{fig:}
 \end{figure}
+
+\paragraph{Solution for problem (1)}
+
+\begin{equation*}
+  \begin{aligned}
+    \dfrac{\md^2 \Psi}{\md x^2} + \dfrac{2 m \left( E - V \right)}{\hbar^2} \Psi = 0
+  \end{aligned}
+\end{equation*}
+
+For $x < 0$
+
+\begin{equation*}
+  \begin{aligned}
+    \dfrac{\md^2 \Psi}{\md x^2} - \dfrac{2 m \left( V_0 - E \right)}{\hbar^2} \Psi = 0
+  \end{aligned}
+\end{equation*}
+
+\begin{equation*}
+  \begin{aligned}
+    \Psi_1 \left( x \right) = A \exp \left[ \sqrt{\dfrac{2 m \left( V_0 - E \right)}{\hbar^2} } x \right]
+  \end{aligned}
+\end{equation*}
+
+For $0 < x < L$
+
+\begin{equation*}
+  \begin{aligned}
+     \dfrac{\md^2 \Psi}{\md x^2} + \dfrac{2 m E}{\hbar^2} \Psi = 0   
+  \end{aligned}
+\end{equation*}
+
+\begin{equation*}
+  \begin{aligned}
+    \Psi_2 \left( x \right) = B \sin \left[ \sqrt{\dfrac{2 m E}{\hbar^2} } x + \phi \right]
+  \end{aligned}
+\end{equation*}
+
+For $x > L$
+
+\begin{equation*}
+  \begin{aligned}
+    \dfrac{\md^2 \Psi}{\md x^2} - \dfrac{2 m \left( V_0 - E \right)}{\hbar^2} \Psi = 0
+  \end{aligned}
+\end{equation*}
+
+\begin{equation*}
+  \begin{aligned}
+    \Psi_3 \left( x \right) = C \exp \left[ - \sqrt{\dfrac{2 m \left( V_0 - E \right)}{\hbar^2} } x \right]
+  \end{aligned}
+\end{equation*}
+
+In conclusion
+
+\begin{equation*}
+  \left\{
+  \begin{aligned}
+    \Psi_1 \left( x \right) &= A \exp \left[ \sqrt{\dfrac{2 m \left( V_0 - E \right)}{\hbar^2} } x \right] = A \exp \left[ \alpha x \right] \\
+    \Psi_2 \left( x \right) &= B \sin \left[ \sqrt{\dfrac{2 m E}{\hbar^2} } x + \phi \right] = B \sin \left[ \beta x + \phi \right] \\
+    \Psi_3 \left( x \right) &= C \exp \left[ - \sqrt{\dfrac{2 m \left( V_0 - E \right)}{\hbar^2} } x \right] = C \exp \left[ - \alpha x \right]
+  \end{aligned}
+  \right.
+\end{equation*}
+
+By taking logarithms
+
+\begin{equation*}
+  \left\{
+  \begin{aligned}
+    & \log \left[ \Psi_1 \left( x \right) \right] =  \log A + \alpha x \\
+    & \log \left[ \Psi_2 \left( x \right) \right]  = \log B  + \log \left[ \sin \left( \beta x + \phi \right) \right] \\
+    & \log \left[ \Psi_3 \left( x \right) \right] = \log C - \alpha x
+  \end{aligned}
+  \right.
+\end{equation*}
+
+By taking derivatives
+
+\begin{equation*}
+  \left\{
+  \begin{aligned}
+    & \dfrac{1}{\Psi_1 \left( x \right)} \dfrac{\md \Psi_1 \left( x \right)}{\md x} = \alpha \\
+    & \dfrac{1}{\Psi_2 \left( x \right)} \dfrac{\md \Psi_2 \left( x \right)}{\md x} = \beta \cot \left[ \beta x + \phi \right] \\
+    & \dfrac{1}{\Psi_3 \left( x \right)} \dfrac{\md \Psi_3 \left( x \right)}{\md x} = - \alpha
+  \end{aligned}
+  \right.
+\end{equation*}
+
+Due to the continuity of $\Psi \left( x \right)$
+
+\begin{equation*}
+  \left\{
+  \begin{aligned}
+    & \alpha = \beta \cot \phi \\
+    & \beta \cot \left[ \beta L + \phi \right] = - \alpha
+  \end{aligned}
+  \right.
+\end{equation*}
+
+So that
+
+\begin{equation*}
+  \left\{
+  \begin{aligned}
+    & \tan \phi = \dfrac{\beta}{\alpha}  \\
+    & \tan \left[ \beta L + \phi \right] = - \dfrac{\beta}{\alpha} 
+  \end{aligned}
+  \right.
+\end{equation*}
+
+Finally
+
+\begin{equation*}
+  \begin{aligned}
+    \beta L = - 2 \phi + n \pi = - 2 \arctan \dfrac{\beta}{\alpha} + n \pi
+  \end{aligned}
+\end{equation*}
+
+Whereas
+
+\begin{equation*}
+  \begin{aligned}
+    & \alpha = \sqrt{\dfrac{2 m \left( V_0 - E \right)}{\hbar^2} } \\
+    & \beta = \sqrt{\dfrac{2 m E}{\hbar^2} }
+  \end{aligned}
+\end{equation*}
+
+\paragraph{Solution for Problem (2)}
+
+\begin{equation*}
+  \begin{aligned}
+    \beta L = - 2 \arctan \dfrac{\beta}{\alpha} + n \pi
+  \end{aligned}
+\end{equation*}
+
+\begin{equation*}
+  \begin{aligned}
+    \dfrac{\beta}{\alpha} = \tan \left( \dfrac{n \pi}{2} - \dfrac{\beta L}{2}   \right) 
+  \end{aligned}
+\end{equation*}
+
+When $n = 1,3,5...$
+
+\begin{equation*}
+  \begin{aligned}
+    \dfrac{\beta}{\alpha} = \cot \left(\dfrac{\beta L}{2}   \right) 
+  \end{aligned}
+\end{equation*}
+
+\begin{equation*}
+  \begin{aligned}
+    \sqrt{\dfrac{E}{V_0 - E} } = \cot \left( \dfrac{m E L^2}{2 \hbar^2}  \right)
+  \end{aligned}
+\end{equation*}
+
+When $n = 0,2,4...$
+
+\begin{equation*}
+  \begin{aligned}
+    \dfrac{\beta}{\alpha} = - \tan \left(\dfrac{\beta L}{2}   \right) 
+  \end{aligned}
+\end{equation*}
+
+\begin{equation*}
+  \begin{aligned}
+    \sqrt{\dfrac{E}{V_0 - E} } = - \tan \left( \dfrac{m E L^2}{2 \hbar^2}  \right)
+  \end{aligned}
+\end{equation*}
+
+So that $E$ is discontinued.
+
 \begin{figure}[H]
   \centering
   \includegraphics[width=\linewidth]{figures/8}
   \label{fig:}
 \end{figure}
+
+
 
 \end{document}
