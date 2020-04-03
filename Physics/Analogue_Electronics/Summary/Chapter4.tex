@@ -103,6 +103,162 @@ The only difference between Enhancement-mode and Depletion-mode is the charges i
   \label{fig:}
 \end{figure}
 
+\section{Static Working Point}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.5\linewidth]{figures/MOSFET-Static}
+  \label{fig:}
+\end{figure}
+
+To calculate the static working point of a MOSFET
+
+\begin{equation*}
+  \left\{
+  \begin{aligned}
+    V_{GSQ} &= V_{GG} \\
+    I_{DQ} &= K_n \left( V_{GSQ} - V_{TN} \right)^2 \\
+    V_{DSQ} &= V_{DD} - I_{DQ} R_d
+  \end{aligned}
+  \right.
+\end{equation*}
+
+Note that $V_{DSQ} > V_{GSQ} - V_{TN}$ must be verified to ensure that MOSFET is working in active mode. Then for small AC signal, the current at drain is
+
+\begin{equation*}
+  \begin{aligned}
+    i_D = 2 K_n \left( v_{GS} - V_{TN} \right) v_{GS} = g_m v_{GS}
+  \end{aligned}
+\end{equation*}
+
+\section{Three types of Amplifier Circuit}
+
+\subsection{Common Source Amplifier Circuit}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.5\linewidth]{figures/MOSFET-Common-S}
+  \label{fig:}
+\end{figure}
+
+\begin{equation*}
+  \left\{
+  \begin{aligned}
+    V_{GSQ} &= \left( \dfrac{R_{g2}}{R_{g1} + R_{g2}}  \right) V_{DD} \\
+    I_{DQ} &= K_n \left( V_{GSQ} - V_{TN} \right)^2 \\
+    V_{DSQ} &= V_{DD} - I_{DQ} R_tI_d
+  \end{aligned}
+  \right.
+\end{equation*}
+
+\begin{equation*}
+  \begin{aligned}
+    g_m = 2 K_n \left( V_{GSQ} - V_{TN} \right)
+  \end{aligned}
+\end{equation*}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.5\linewidth]{figures/MOSFET-Common-Ss}
+  \label{fig:}
+\end{figure}
+
+\begin{equation*}
+  \begin{aligned}
+    A_v = - g_m \left( r_{ds} \parallel R_d \right)
+  \end{aligned}
+\end{equation*}
+\begin{equation*}
+  \begin{aligned}
+    R_i &= R_{gs1} \parallel R_{gs2} \\
+    R_o &= R_d \parallel R_d \approx R_d
+  \end{aligned}
+\end{equation*}
+
+\subsection{Common Drain Amplifier Circuit}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.5\linewidth]{figures/MOSFET-Common-D}
+  \label{fig:}
+\end{figure}
+
+\begin{equation*}
+  \left\{
+  \begin{aligned}
+    V_{GSQ} &= \dfrac{R_{g2}}{R_{g1} + R_{g2}} \cdot V_{DD} - I_{DQ} R_s  \\
+    I_{DQ} &= K_n \left( V_{GSQ} - V_{TN} \right)^2 \\
+    V_{DSQ} &= V_{DD} - I_{DQ} R_s
+  \end{aligned}
+  \right.
+\end{equation*}
+
+\begin{equation*}
+  \begin{aligned}
+    g_m = 2 K_n \left( V_{GSQ} - V_{TN} \right)
+  \end{aligned}
+\end{equation*}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.5\linewidth]{figures/MOSFET-Common-Ds}
+  \label{fig:}
+\end{figure}
+
+\begin{equation*}
+  \begin{aligned}
+    A_v = \dfrac{g_m \left( R_s \parallel r_{ds} \right)}{1 + g_m \left( R_s \parallel r_{ds} \right)} \approx 1
+  \end{aligned}
+\end{equation*}
+
+\begin{equation*}
+  \begin{aligned}
+    R_i &= R_{g1} \parallel R_{g2} \\
+    R_o &= R_s \parallel r_{ds} \parallel \dfrac{1}{g_m} 
+  \end{aligned}
+\end{equation*}
+
+
+\subsection{Common Gate Amplifier Circuit}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.5\linewidth]{figures/MOSFET-Common-G}
+  \label{fig:}
+\end{figure}
+
+\begin{equation*}
+  \left\{
+  \begin{aligned}
+    I_{DQ} &= K_n \left( V_{GSQ} - V_{TN} \right)^2 = I\\
+    V_{DSQ} &= V_{DD} - I_{DQ} R_d + V_{GSQ}
+  \end{aligned}
+  \right.
+\end{equation*}
+
+\begin{equation*}
+  \begin{aligned}
+    g_m = 2 K_n \left( V_{GSQ} - V_{TN} \right)
+  \end{aligned}
+\end{equation*}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.5\linewidth]{figures/MOSFET-Common-Gs}
+  \label{fig:}
+\end{figure}
+
+\begin{equation*}
+  \begin{aligned}
+    A_v = g_m \left( R_d \parallel R_L \right)
+  \end{aligned}
+\end{equation*}
+\begin{equation*}
+  \begin{aligned}
+    R_i &\approx \dfrac{1}{g_m} \\
+    R_o &\approx R_d
+  \end{aligned}
+\end{equation*}
 
 
 
