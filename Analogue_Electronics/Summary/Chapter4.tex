@@ -131,6 +131,35 @@ Note that $V_{DSQ} > V_{GSQ} - V_{TN}$ must be verified to ensure that MOSFET is
   \end{aligned}
 \end{equation*}
 
+\section{Early Effect}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.3\linewidth]{figures/MOSFET-Early-Effect}
+  \caption{MOSFET-Early-Effect}
+  \label{fig:}
+\end{figure}
+
+\begin{equation*}
+  \begin{aligned}
+    i_D = K_n \left( v_{GS} - V_{TN} \right)^2 \left( 1 + \lambda v_{DS} \right)
+  \end{aligned}
+\end{equation*}
+
+\begin{equation*}
+  \begin{aligned}
+    r_{ds} = \left. \dfrac{\partial v_{DS}}{\partial i_D} \right|_{V_{GSQ}} = \dfrac{1}{\lambda K_n \left( V_{GSQ} - V_{TN} \right)^2} \approx \dfrac{1}{\lambda I_{DQ}} = \dfrac{V_A}{I_{DQ}}   
+  \end{aligned}
+\end{equation*}
+
+Where $V_A$ is called the Early Voltage
+
+\begin{equation*}
+  \begin{aligned}
+    V_A = \dfrac{1}{\lambda} 
+  \end{aligned}
+\end{equation*}
+
 \section{Three types of Amplifier Circuit}
 
 \subsection{Common Source Amplifier Circuit}
