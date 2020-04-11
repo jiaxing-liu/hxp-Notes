@@ -1,5 +1,3 @@
-
-
 \chapter{Diodes}
 
 \section{Semiconductors}
@@ -114,19 +112,42 @@ The last thing needed is a resistor to limit the current, as shown below:
 
 The real diode now can be replaced with the combined ideal diode, voltage source and resistor and the circuit then is modelled using just linear elements. If the sloped-line segment is tangent to the real diode curve at the Q-point, this approximate circuit has the same small-signal circuit at the Q-point as the real diode.
 
+\subsection{Diode in Small Signal Circuits}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.5\linewidth]{figures/Diode-Small-Signal}
+  \caption{I-V Characteristic of Diode in Small Signal}
+  \label{fig:}
+\end{figure}
+
+\begin{equation*}
+  \begin{aligned}
+    r_d = \dfrac{1}{g_d} = \dfrac{V_T}{I_{DQ}}  
+  \end{aligned}
+\end{equation*}
+
+Where, in the condition of $T = 300 \  \mathrm{K}$,
+
+\begin{equation*}
+  \begin{aligned}
+    V_T = 26 \  \mathrm{mV}
+  \end{aligned}
+\end{equation*}
+
 \section{Applications of Diodes}
 
 \subsection{Rectifier Circuit}
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.9\linewidth]{figures/RectifierCircuit}
+  \includegraphics[width=0.5\linewidth]{figures/RectifierCircuit}
   \caption{A Simple Rectifier Circuit}
   \label{fig:}
 \end{figure}
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.9\linewidth]{figures/BridgedRectifierCircuit}
+  \includegraphics[width=0.5\linewidth]{figures/BridgedRectifierCircuit}
   \caption{A Bridged Rectifier Circuit}
   \label{fig:}
 \end{figure}
@@ -135,7 +156,7 @@ The real diode now can be replaced with the combined ideal diode, voltage source
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.9\linewidth]{figures/LimitingCircuit}
+  \includegraphics[width=0.5\linewidth]{figures/LimitingCircuit}
   \caption{A Limiting Circuit}
   \label{fig:}
 \end{figure}
@@ -144,8 +165,8 @@ The real diode now can be replaced with the combined ideal diode, voltage source
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.9\linewidth]{figures/SwitchCircuit}
-  \caption{A Switching Circuit, $v_o = 5 \mathrm{V}$ holds only if all the input voltage is $5 \mathrm{V}$}
+  \includegraphics[width=0.5\linewidth]{figures/SwitchCircuit}
+  \caption{A Switching Circuit, $v_o = 5 \  \mathrm{V}$ holds only if all the input voltage is $5 \  \mathrm{V}$}
   \label{fig:}
 \end{figure}
 
@@ -157,7 +178,7 @@ A Zener diode is manufactured to be broken-through. It is used to stabilize volt
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.9\linewidth]{figures/Zener-diode-1}
+  \includegraphics[width=0.5\linewidth]{figures/Zener-diode-1}
   \caption{Zener Diode's electronic symbol and I-V characteristic}
   \label{fig:}
 \end{figure}
