@@ -1,22 +1,40 @@
-
 \chapter{The Energy and Radiation of Atoms}
 
 \section{Rydberg Constant and Wavelength of Radiation}
 
-Balmer Formula for Hydrogen Atoms:
+Wave number of Hydrogen Atoms:
 
 \begin{equation*}
   \begin{aligned}
-    \dfrac{1}{\lambda} = R_H \left[ \dfrac{1}{m^2} - \dfrac{1}{n^2}   \right] 
+    \tilde{\nu} = \dfrac{1}{\lambda} = Z^2 R \left[ \dfrac{1}{m^2} - \dfrac{1}{n^2}   \right] 
   \end{aligned}
 \end{equation*}
 
-Let
+Where $Z = 1$
+
+\begin{table*}[h]
+  \centering
+  \begin{tabular}{|Sc|Sc|Sc|}
+    \hline
+    Lyman Series & $\tilde{\nu} = R \left[ \dfrac{1}{1^2} - \dfrac{1}{n^2}   \right]$ & $n=2,3,4,\dots$ \\
+    \hline
+    Balmer Series & $\tilde{\nu} = R \left[ \dfrac{1}{2^2} - \dfrac{1}{n^2}   \right]$ & $n=3,4,5,\dots$ \\
+    \hline
+    Paschen Series & $\tilde{\nu} = R \left[ \dfrac{1}{3^2} - \dfrac{1}{n^2}   \right]$ & $n=4,5,6,\dots$ \\
+    \hline
+    Brackett Series & $\tilde{\nu} = R \left[ \dfrac{1}{4^2} - \dfrac{1}{n^2}   \right]$ & $n=5,6,7,\dots$ \\
+    \hline
+    Pfund Series & $\tilde{\nu} = R \left[ \dfrac{1}{5^2} - \dfrac{1}{n^2}   \right]$ & $n=6,7,8,\dots$ \\
+    \hline
+  \end{tabular}
+\end{table*}
+
+Spectroscopic term
 
 \begin{equation*}
   \begin{aligned}
-    T(m) = \dfrac{R_H}{m^2} \\
-    T(n) = \dfrac{R_H}{n^2} 
+    T(m) = \dfrac{Z^2 R}{m^2} \quad
+    T(n) = \dfrac{Z^2 R}{n^2}  
   \end{aligned}
 \end{equation*}
 
@@ -24,7 +42,15 @@ Then
 
 \begin{equation*}
   \begin{aligned}
-    \dfrac{h c}{\lambda} = hc \left[ T (m) - T (n) \right] = \dfrac{R_H h c}{m^2} - \dfrac{R_H h c}{n^2}  
+    \tilde{\nu} = T \left( m \right) - T \left( n \right)   
+  \end{aligned}
+\end{equation*}
+
+Energy of emitted light
+
+\begin{equation*}
+  \begin{aligned}
+    E = \dfrac{h c}{\lambda} = h c \tilde{v} = hc \left[ T (m) - T (n) \right] = \dfrac{R h c}{m^2} - \dfrac{R h c}{n^2}  
   \end{aligned}
 \end{equation*}
 
@@ -59,7 +85,7 @@ Angular Momentum
   \end{aligned}
 \end{equation*}
 
-From which we can indicate that the radius is qumntumized
+So that
 
 \begin{equation*}
   \begin{aligned}
@@ -67,13 +93,15 @@ From which we can indicate that the radius is qumntumized
   \end{aligned}
 \end{equation*}
 
-\begin{equation*}
-  \begin{aligned}
-    r_n = \dfrac{4 \pi \varepsilon_0 \hbar^2}{m_e e^2} \cdot \dfrac{n^2}{Z} = a_0 \cdot \dfrac{n^2}{Z} 
-  \end{aligned}
-\end{equation*}
+From which we can indicate that the radius is quantized.
 
-For hydrogen atoms, $Z = 1$. The energy is also qumntumized.
+\begin{equation}
+  \begin{aligned}
+    r_n = \dfrac{4 \pi \varepsilon_0 \hbar^2}{m_e e^2} \cdot \dfrac{n^2}{Z} = a_0 \cdot \dfrac{n^2}{Z} \quad \left( a_0 = \dfrac{4 \pi \varepsilon_0 \hbar}{m_e e^2}  \right)
+  \end{aligned}
+\end{equation}
+
+For hydrogen atoms, $Z = 1$. The energy is also quantized.
 
 \begin{equation*}
   \begin{aligned}
@@ -109,20 +137,15 @@ Calculate the value of Rydberg Constant
 \end{equation*}
 \begin{equation*}
   \begin{aligned}
-    \dfrac{1}{\lambda} = \dfrac{2 \pi^2 m_e e^4 Z^2}{\left( 4 \pi \varepsilon_0 \right)^2 h^3 c} \left[ \dfrac{1}{n_1^2} - \dfrac{1}{n_2^2}   \right]
-  \end{aligned}
-\end{equation*}
-\begin{equation*}
-  \begin{aligned}
-    R = \dfrac{2 \pi^2 m_e e^4 Z^2}{\left( 4 \pi \varepsilon_0 \right)^2 h^3 c}
+    \tilde{\nu} = \dfrac{1}{\lambda} = \dfrac{2 \pi^2 m_e e^4 Z^2}{\left( 4 \pi \varepsilon_0 \right)^2 h^3 c} \left[ \dfrac{1}{n_1^2} - \dfrac{1}{n_2^2}   \right]
   \end{aligned}
 \end{equation*}
 
-For hydrogen atoms
+$\Rightarrow$
 
 \begin{equation*}
   \begin{aligned}
-    R_H = \dfrac{2 \pi^2 m_e e^4}{\left( 4 \pi \varepsilon_0 \right)^2 h^3 c}
+    R = \dfrac{2 \pi^2 m_e e^4}{\left( 4 \pi \varepsilon_0 \right)^2 h^3 c}
   \end{aligned}
 \end{equation*}
 
@@ -138,12 +161,12 @@ In previous sections, we assumed that the nucleus is fixed at a point, with the 
 
 And we replace the Reduced Mass with $m_e$
 
-\begin{equation*}
+\begin{equation}
   \begin{aligned}
     R_{\infty} &= \dfrac{2 \pi^2 m e^4}{\left( 4 \pi \varepsilon_0 \right)^2 h^3 c} \\
-    R_A &= R_{\infty} \cdot \dfrac{1}{1 + \dfrac{m}{M} } 
+    R_A &= R_{\infty} \cdot \left[ \dfrac{1}{1 + \dfrac{m}{M} } \right]
   \end{aligned}
-\end{equation*}
+\end{equation}
 
 \section{Sommerfeld's Quantize Condition}
 
@@ -192,23 +215,13 @@ We have
 
 Let
 
-\begin{equation*}
+\begin{equation}
   \begin{aligned}
     \mu_B = \dfrac{eh}{4 \pi m} 
   \end{aligned}
-\end{equation*}
+\end{equation}
 
 Then $\mu_B$ is the minimum unit of magneton.
-
-
-
-
-
-
-
-
-
-
 
 %%% Local Variables:
 %%% mode: latex
