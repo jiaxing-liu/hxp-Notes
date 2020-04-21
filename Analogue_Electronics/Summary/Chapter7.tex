@@ -1,0 +1,182 @@
+\chapter{Analogue Integrated Circuits}
+
+\section{MOSFET Current Source}
+
+\subsection{MOSFET Current Mirror}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.3\linewidth]{figures/Current-Source}
+  \label{fig:}
+\end{figure}
+
+\begin{equation*}
+  \begin{aligned}
+    I_o = I_{D2} = K_n \left( V_{GS} - V_{TN} \right)^2
+  \end{aligned}
+\end{equation*}
+
+\subsection{Cascade Current Mirror}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.3\linewidth]{figures/Cascade-Current-Source}
+  \label{fig:}
+\end{figure}
+
+The larger output resistance, the more stability of output current.
+
+\begin{equation*}
+  \begin{aligned}
+    r_o = r_{ds4} + r_{ds2} \left( 1 + g_m r_{ds4} \right) \approx g_m r_{ds4} r_{ds2}
+  \end{aligned}
+\end{equation*}
+
+\subsection{Combined Current Mirror}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.6\linewidth]{figures/Combined-Current-Source}
+  \label{fig:}
+\end{figure}
+
+\begin{equation*}
+  \left\{
+    \begin{aligned}
+      & I_2 = \dfrac{\left( W / L \right)_2}{\left( W / L \right)_1} I_{REF} \\
+      & I_3 = \dfrac{\left( W / L \right)_3}{\left( W / L \right)_1} I_{REF} \\
+      & I_4 = I_3 \\
+      & I_5 = \dfrac{\left( W / L \right)_5}{\left( W / L \right)_4} I_4 \\
+    \end{aligned}
+  \right.
+\end{equation*}
+
+\subsection{JFET Current Mirror}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.7\linewidth]{figures/JFET-Current-Source}
+  \label{fig:}
+\end{figure}
+
+\begin{equation*}
+  \begin{aligned}
+    i_D = I_o = I_{DSS} \left( 1 + \lambda v_{DS} \right)
+  \end{aligned}
+\end{equation*}
+
+\begin{equation*}
+  \begin{aligned}
+    r_o = \dfrac{1}{\lambda I_{DSS}} 
+  \end{aligned}
+\end{equation*}
+
+\section{BJT Current Source}
+
+\subsection{BJT Current Mirror}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.5\linewidth]{figures/BJT-Current-Source}
+  \label{fig:}
+\end{figure}
+
+\begin{equation*}
+  \begin{aligned}
+    I_{C2} = I_{C1} \approx I_{REF} \approx \dfrac{V_{CC}}{R} 
+  \end{aligned}
+\end{equation*}
+
+\begin{equation*}
+  \begin{aligned}
+    r_o = r_{ce}
+  \end{aligned}
+\end{equation*}
+
+\subsection{Micro Current Source}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.4\linewidth]{figures/Micro-Current-Source}
+  \label{fig:}
+\end{figure}
+
+\begin{equation*}
+  \begin{aligned}
+    I_o = \dfrac{\Delta V_{BE}}{R_{e2}} 
+  \end{aligned}
+\end{equation*}
+
+\begin{equation*}
+  \begin{aligned}
+    r_o \approx r_{ce2} + \left( 1 + \dfrac{\beta R_{e2}}{r_{be2} + R_{e2}}  \right)
+  \end{aligned}
+\end{equation*}
+
+\subsection{Current Source with High Output Resistance}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.4\linewidth]{figures/High-Resistance-Current-Source}
+  \label{fig:}
+\end{figure}
+
+\begin{equation*}
+  \begin{aligned}
+    I_{REF} = \dfrac{V_{CC} - V_{BE3} - V_{BE2} + V_{EE}}{R} 
+  \end{aligned}
+\end{equation*}
+
+\begin{equation*}
+  \begin{aligned}
+    I_o \approx I_{C2} = \dfrac{A_3}{A_1} \cdot I_{REF} 
+  \end{aligned}
+\end{equation*}
+
+\subsection{Combined Current Source}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.4\linewidth]{figures/BJT-Combined-Current-Source}
+  \label{fig:}
+\end{figure}
+
+\begin{equation*}
+  \begin{aligned}
+    I_{REF} = \dfrac{V_{CC} + V_{EE} - V_{BE1} + V_{EB4}}{R_1} 
+  \end{aligned}
+\end{equation*}
+
+\section{Differential Amplifier}
+
+\subsection{MOSFET}
+
+\begin{figure}[H]
+  \centering
+  \begin{subfigure}{.5\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{figures/Differential-Amplifier-MOS-1}
+    \label{fig:}
+  \end{subfigure}%
+  \begin{subfigure}{.5\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{figures/Differential-Amplifier-MOS-2}
+    \label{fig:}
+  \end{subfigure}
+  \label{fig:}
+\end{figure}
+
+\subsection{BJT}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.5\linewidth]{figures/Differential-Amplifier-BJT-1}
+  \label{fig:}
+\end{figure}
+
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "Analogue_Electronics"
+%%% End:
