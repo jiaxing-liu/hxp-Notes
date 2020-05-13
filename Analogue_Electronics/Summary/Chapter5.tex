@@ -1,5 +1,15 @@
 \chapter{Bipolar Junction Transistor}
 
+\section{Electronic Symbol}
+
+The arrow represents the direction of current.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.7\linewidth]{figures/BJT-Symbol}
+  \label{fig:}
+\end{figure}
+
 \section{Control Principle}
 
 \begin{figure}[H]
@@ -10,11 +20,19 @@
 
 \begin{equation*}
   \begin{aligned}
-    \alpha &= \dfrac{I_{CN}}{I_E} \\
-    \beta &= \dfrac{I_{CN}}{I_{CBO}} \\
-    \alpha &= \dfrac{\beta}{1 + \beta} 
+    \alpha &= \dfrac{I_{c}}{I_e} \quad\quad 
+    \beta &= \dfrac{I_{c}}{I_{b}} \quad\quad 
+    \alpha &= \dfrac{\beta}{1 + \beta} \quad\quad
+    I_e &= \left( 1 + \beta \right) I_b
   \end{aligned}
 \end{equation*}
+
+\begin{equation*}
+  \begin{aligned}
+    I_E = I_{ES} \exp \left( V_{BE} / V_T \right) \quad\quad V_T = 26 \si{mV}
+  \end{aligned}
+\end{equation*}
+
 
 \section{Three Types of Amplifier Circuit}
 
@@ -55,7 +73,7 @@ When $T = 300 \  \mathrm{K}$
 
 \begin{equation*}
   \begin{aligned}
-    r_{be} = 200 \  \Omega + \left( 1 + \beta \right) \dfrac{26 \  \mathrm{mV}}{I_{CQ} \left( \mathrm{mA} \right)} 
+    r_{be} = 200 \si{\Omega} + \left( 1 + \beta \right) \dfrac{26 \si{mV}}{I_{CQ} \left( \Oldsi{mA} \right)} 
   \end{aligned}
 \end{equation*}
 

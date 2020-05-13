@@ -25,6 +25,9 @@
 \renewcommand{\mathbf}[1]{\boldsymbol{\Oldmathbf{#1}}}
 \let\eqnarray\align
 \usepackage{authblk}
+\usepackage{siunitx}
+\let\Oldsi\si
+\renewcommand{\si}[1]{\  \Oldsi{#1}}
 \author{Xiping Hu}
 \affil{https://hxp.plus/}
 \title{Analogue Electronics}
