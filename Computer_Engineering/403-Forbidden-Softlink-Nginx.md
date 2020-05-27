@@ -11,3 +11,7 @@ Expecting to access `data.txt` from `http://<ip address>/data.txt`
 Ruturned 403 Forbidden.
 
 Solution was to change the mod of `/root/qqbot/` to `755`
+
+```
+chmod -R 755 /root/qqbotl
+```
