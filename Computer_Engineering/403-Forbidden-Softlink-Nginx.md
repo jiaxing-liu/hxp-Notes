@@ -13,5 +13,5 @@ Ruturned 403 Forbidden.
 Solution was to change the mod of `/root/qqbot/` to `755`
 
 ```
-chmod -R 755 /root/qqbotl
+chmod -R 755 /root/qqbot/
 ```
