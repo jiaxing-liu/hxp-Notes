@@ -51,7 +51,7 @@
 \author{Xiping Hu}
 \affil{https://hxp.plus/}
 
-\title{Homework for Chapter 9}
+\title{Homework for Chapter 10}
 
 \begin{document}
 
@@ -59,33 +59,29 @@
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=\linewidth]{figures/Problem1089}
+  \includegraphics[width=\linewidth]{figures/Problem1089.png}
 \end{figure}
 
 \section{Problem 1}
 
-Adjust the value of $R_1$ and $R_3$ until: 
+\begin{equation*}
+  \begin{aligned}
+    v_{o2m} = \dfrac{5.1}{15} \cdot 8 \si{V} = 2.72 \si{V} 
+  \end{aligned}
+\end{equation*}
 
 \begin{equation*}
   \begin{aligned}
-    V_{C2} = \dfrac{V_{CC}}{2} = 6 \si{V} 
+    \dfrac{1}{C} \int_0^{T/2} \dfrac{V_Z}{R} \md t = 2 v_{o2m} \quad \Rightarrow \quad T = 4 R C \cdot \dfrac{v_{o2m}}{V_Z} = 0.000325992 \si{s} \quad \Rightarrow \quad f = 3067.56 \si{Hz}
   \end{aligned}
 \end{equation*}
 
 \section{Problem 2}
 
-Adjust the value of $R_2$ should solve the Crossover Distortion issue.
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{figures/Problem1089.eps}
+\end{figure}
 
-\section{Problem 3}
-
-When $D_1$, $D_2$ or $R_2$ is open-circuited
-
-\begin{equation*}
-  \begin{aligned}
-    P_{T1} = P_{T2} = \beta I_B V_{CE} = \beta \cdot \dfrac{V_{CC} - 2 |V_{BE}|}{R_1 + R_3} \cdot \dfrac{V_{CC}}{2} = 1156 \si{mW} > P_{CM}  
-  \end{aligned}
-\end{equation*}
-
-Either $T_1$ or $T_2$ will be damaged.
 
 \end{document}

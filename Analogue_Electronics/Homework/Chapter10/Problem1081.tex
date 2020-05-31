@@ -51,7 +51,7 @@
 \author{Xiping Hu}
 \affil{https://hxp.plus/}
 
-\title{Homework for Chapter 9}
+\title{Homework for Chapter 10}
 
 \begin{document}
 
@@ -59,33 +59,36 @@
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=\linewidth]{figures/Problem1081}
+  \includegraphics[width=\linewidth]{figures/Problem1081.png}
 \end{figure}
 
 \section{Problem 1}
 
-Adjust the value of $R_1$ and $R_3$ until: 
+\begin{equation*}
+  \begin{aligned}
+    v_{o1} = 1 \si{V} \quad v_{o2} = 12 \si{V} \quad I_B = \dfrac{12 \si{V}}{51 \si{k \Omega}} = 235.3 \si{\mu A}
+  \end{aligned}
+\end{equation*}
 
 \begin{equation*}
   \begin{aligned}
-    V_{C2} = \dfrac{V_{CC}}{2} = 6 \si{V} 
+    I_{BS} = \dfrac{6 \si{V}}{R_c \beta} = 23.5 \si{\mu A} \quad \ll \quad I_B = 235.3 \si{\mu A} \quad \Rightarrow \quad v_o = 0 \si{V}
   \end{aligned}
 \end{equation*}
 
 \section{Problem 2}
 
-Adjust the value of $R_2$ should solve the Crossover Distortion issue.
-
-\section{Problem 3}
-
-When $D_1$, $D_2$ or $R_2$ is open-circuited
-
 \begin{equation*}
   \begin{aligned}
-    P_{T1} = P_{T2} = \beta I_B V_{CE} = \beta \cdot \dfrac{V_{CC} - 2 |V_{BE}|}{R_1 + R_3} \cdot \dfrac{V_{CC}}{2} = 1156 \si{mW} > P_{CM}  
+    v_1 = 3 \si{V} \quad v_{o1} = 3 \si{V} \quad v_{o2} = - 12 \si{V} \quad v_o = 6 \si{V}
   \end{aligned}
 \end{equation*}
 
-Either $T_1$ or $T_2$ will be damaged.
+\section{Problem 3}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{figures/Problem1081.eps}
+\end{figure}
 
 \end{document}
