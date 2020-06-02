@@ -2,23 +2,18 @@
 
 \section{Operational Amplifier}
 
-
 \begin{figure}[H]
   \centering
-  \begin{subfigure}{.5\textwidth}
+  \begin{subfigure}{.45\textwidth}
     \centering
     \includegraphics[width=\linewidth]{figures/comparator}
     \caption{the model of an operational amplifier}
-    \label{fig:}
-  \end{subfigure}%
+  \end{subfigure}
   \begin{subfigure}{.5\textwidth}
     \centering
     \includegraphics[width=0.6\linewidth]{figures/comparator-voltage-change}
     \caption{How the output voltage varies}
-    \label{fig:}
   \end{subfigure}
-  \caption{}
-  \label{fig:}
 \end{figure}
 
 We define $r_i$ as the input impedance, $r_o$ as the output impedance. $v_p$ as the non-inverting input, $v_n$  the inverting input.
@@ -26,6 +21,19 @@ We define $r_i$ as the input impedance, $r_o$ as the output impedance. $v_p$ as 
 Usually, we have $v_p \approx v_n$, $r_i \approx \infty$, $r_o \approx 0$.
 
 Note that the output voltage of a operational amplifier has limits, called \textbf{Bandwidth}. When the input voltage exceeds the limits, it outputs the maximum or minimum value.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.45\linewidth]{figures/op-amp-model}
+\end{figure}
+
+\begin{equation*}
+  \begin{aligned}
+    A_v = \dfrac{v_o}{v_i} = A_{vo} \cdot \dfrac{R_L}{R_o + R_L}  
+  \end{aligned}
+\end{equation*}
+
+The output resistance may infect the gain of amplifier. The larger $R_L$ is, the more $A_v$ approaches $A_{vo}$, while the ideal case is when $R_o = 0$
 
 \section{Ideal Operational Amplifier}
 
@@ -42,55 +50,32 @@ Here is a model which shows all the feature of an ideal operational comparator:
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.5\linewidth]{figures/ideal-comparator}
+  \begin{subfigure}{.6\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{figures/ideal-comparator}
+  \end{subfigure}
+  \begin{subfigure}{.35\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{figures/ideal-comparator-2}
+  \end{subfigure}
   \caption{An ideal operational amplifier}
-  \label{fig:}
 \end{figure}
 
 \section{Closed-looped Amplifier}
-
 
 Usually operational amplifiers are used with vegetative feedback to ensure its stability. We apply a portion of output voltage to input, reducing the gain of a circuit.
 
 \subsection{Non-inverting Operational Amplifier}
 
-If we connect the inverting input, to the ground, and use the non-inverting input, we get an non-inverting operational amplifier.
-
-The gain of the amplifier is:
-
-\begin{equation*}
-  \begin{aligned}
-    A_{vo} = \dfrac{R_2 + R_1}{R_1} 
-  \end{aligned}
-\end{equation*}
-
-The picture below is a non-inverting amplifier.
-
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.9\linewidth]{figures/non-inverting-amplifier}
   \caption{An non-inverting amplifier}
-  \label{fig:}
 \end{figure}
 
 \begin{equation*}
-  \left\{
   \begin{aligned}
-    & i_R = \dfrac{v_o - v_n}{R_2} = \dfrac{v_n}{R_1} \\
-    & v_n = v_p = v_i
-  \end{aligned}
-  \right.
-\end{equation*}
-
-\begin{equation*}
-  \begin{aligned}
-    \dfrac{v_o - v_n}{R_2} = \dfrac{v_i}{R_1}  
-  \end{aligned}
-\end{equation*}
-
-\begin{equation*}
-  \begin{aligned}
-    A_v = \dfrac{v_o}{v_i} = \dfrac{R_1 + R_2}{R_1}  
+    A_{vo} = \dfrac{R_2 + R_1}{R_1} = 1 + \dfrac{R_2}{R_1} 
   \end{aligned}
 \end{equation*}
 
@@ -98,45 +83,15 @@ Note that when $R_2\ll R_1$, $A_{vo} = 1$, $v_i = v_o$.
 
 \subsection{Inverting Operational Amplifier}
 
-If we connect the non-inverting input, to the ground, and use the inverting input, we get an inverting operational amplifier.
-
-The gain of this type of amplifier is:
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.6\linewidth]{figures/inverting-amplifier}
+  \caption{An inverting amplifier}
+\end{figure}
 
 \begin{equation*}
   \begin{aligned}
     A_{vo} = - \dfrac{R_2}{R_1} 
-  \end{aligned}
-\end{equation*}
-
-The picture below shows as inverting operational amplifier:
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.4\linewidth]{figures/inverting-amplifier}
-  \caption{An inverting amplifier}
-  \label{fig:}
-\end{figure}
-
-\begin{equation*}
-  \left\{
-  \begin{aligned}
-    & \dfrac{v_o - v_n}{R_2} = \dfrac{v_n - v_i}{R_1} \\
-    & v_n = v_p = 0
-  \end{aligned}
-  \right.
-\end{equation*}
-
-\begin{equation*}
-  \begin{aligned}
-    \dfrac{v_o}{R_2} = \dfrac{- v_i}{R_1}  
-  \end{aligned}
-\end{equation*}
-
-
-
-\begin{equation*}
-  \begin{aligned}
-    A_v = \dfrac{v_o}{v_i} = - \dfrac{R_2}{R_1}  
   \end{aligned}
 \end{equation*}
 
@@ -148,9 +103,8 @@ An subtraction circuit can calculate the difference of inverting input and non-i
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.4\linewidth]{figures/subtraction-amplifier}
+  \includegraphics[width=0.5\linewidth]{figures/subtraction-amplifier}
   \caption{A subtraction circuit}
-  \label{fig:}
 \end{figure}
 
 \begin{equation*}
@@ -211,9 +165,8 @@ An sum circuit adds the inverting input and the non-inverting input.
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.4\linewidth]{figures/sum-amplifier}
+  \includegraphics[width=0.6\linewidth]{figures/sum-amplifier}
   \caption{Sum Circuit}
-  \label{fig:}
 \end{figure}
 
 Similarly, we have
@@ -261,7 +214,7 @@ We have
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.4\linewidth]{figures/integrating-circuit}
+  \includegraphics[width=0.6\linewidth]{figures/integrating-circuit}
   \caption{integrating circuit}
   \label{fig:}
 \end{figure}
@@ -306,7 +259,7 @@ Then
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.4\linewidth]{figures/differential-circuit}
+  \includegraphics[width=0.6\linewidth]{figures/differential-circuit}
   \caption{differential circuit}
   \label{fig:}
 \end{figure}

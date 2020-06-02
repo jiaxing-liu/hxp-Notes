@@ -1,6 +1,3 @@
-
-
-
 \chapter{Basics of Circuits}
 
 \section{The direction of current and voltage}
@@ -65,8 +62,6 @@ For each node in the circuit, as the node can not accumulate charges, the sum of
   \end{aligned}
 \end{equation*}
 
-
-
 \subsection{Kirchhoff's Voltage Law}
 
 For each loop in circuit, the sum of the voltage in of all branches is zero.
@@ -76,6 +71,21 @@ For each loop in circuit, the sum of the voltage in of all branches is zero.
     \sum U = 0
   \end{aligned}
 \end{equation*}
+
+\section{Gain of an Amplifier Circuit}
+
+\begin{table*}[htbp]
+  \centering
+  \begin{tabular}{|Sc|Sc|Sc|Sc|Sc|Sc|}
+    \hline
+    & Voltage & Current & Transresistance & Transconductance & Power \\
+    \hline
+    Gain & $A_v = \dfrac{v_o}{v_i}$ & $A_i = \dfrac{i_o}{i_i}$ & $A_r = \dfrac{v_o}{i_i}$ & $A_g = \dfrac{i_o}{v_i}$ & $A_p = \dfrac{P_o}{P_i}$ \\
+    \hline
+    Gain in dB & $20\lg \left| A_v \right|$ & $20\lg \left| A_i \right|$ & $20\lg \left| A_r \right|$ & $20\lg \left| A_g \right|$ & $10\lg A_p$ \\
+    \hline
+  \end{tabular}
+\end{table*}
 
 
 %%% Local Variables:
