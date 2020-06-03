@@ -37,7 +37,6 @@ To ease the effect above, we need to add some positive voltage at p-type semicon
   \centering
   \includegraphics[width=0.5\linewidth]{figures/Pn-junction-equilibrium.png}
   \caption{PN Junction at equilibrium state}
-  \label{fig:}
 \end{figure}
 
 In conclusion, if we add forward voltage (from p to n), the diode acts as a short circuit. If we add reversed voltage, the diode acts like an open circuit. And if the reversed voltage is big enough, it will cause the diode broken-through, and the current flow through it will increase tremendously.
@@ -60,7 +59,6 @@ Firstly, consider a mathematically idealized diode. In such an ideal diode, if t
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.4\linewidth]{figures/Diode_Modelling_Image5.png}
-  \label{fig:}
   \caption{I-V characteristic of an ideal diode.}
 \end{figure}
 
@@ -76,16 +74,13 @@ When forward biased, the ideal diode is simply a short circuit and when reverse 
     \centering
     \includegraphics[width=\linewidth]{figures/Diode_Modelling_Image6}
     \caption{Ideal diode with a series voltage source.}
-    \label{fig:}
-  \end{subfigure}%
+  \end{subfigure}
   \begin{subfigure}{.4\textwidth}
     \centering
     \includegraphics[width=\linewidth]{figures/Diode_Modelling_Image8}
     \caption{I-V characteristic of an ideal diode with a series voltage source.}
-    \label{fig:}
   \end{subfigure}
   \caption{Ideal diode in series with voltage source}
-  \label{fig:}
 \end{figure}
 
 \subsection{Diode with voltage source and current-limiting resistor}
@@ -98,16 +93,13 @@ The last thing needed is a resistor to limit the current, as shown below:
     \centering
     \includegraphics[width=\linewidth]{figures/Diode_Modelling_Image9}
     \caption{Ideal diode with a series voltage source and resistor.}
-    \label{fig:}
-  \end{subfigure}%
+  \end{subfigure}
   \begin{subfigure}{.4\textwidth}
     \centering
     \includegraphics[width=\linewidth]{figures/Diode_Modelling_Image11}
     \caption{I-V characteristic of an ideal diode with a series voltage source and resistor.}
-    \label{fig:}
   \end{subfigure}
   \caption{Diode with voltage source and current-limiting resistor}
-  \label{fig:}
 \end{figure}
 
 The real diode now can be replaced with the combined ideal diode, voltage source and resistor and the circuit then is modelled using just linear elements. If the sloped-line segment is tangent to the real diode curve at the Q-point, this approximate circuit has the same small-signal circuit at the Q-point as the real diode.
@@ -116,9 +108,8 @@ The real diode now can be replaced with the combined ideal diode, voltage source
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.5\linewidth]{figures/Diode-Small-Signal}
+  \includegraphics[width=0.7\linewidth]{figures/Diode-Small-Signal}
   \caption{I-V Characteristic of Diode in Small Signal}
-  \label{fig:}
 \end{figure}
 
 \begin{equation*}
@@ -139,35 +130,49 @@ Where, in the condition of $T = 300 \  \mathrm{K}$,
 
 \subsection{Rectifier Circuit}
 
+\subsubsection{Half-wave Rectifier}
+
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.5\linewidth]{figures/RectifierCircuit}
-  \caption{A Simple Rectifier Circuit}
-  \label{fig:}
+  \begin{subfigure}{.5\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{figures/Half-Wave-Rect}
+  \end{subfigure}
+  \begin{subfigure}{.4\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{figures/Half-Wave-Rect-diag}
+  \end{subfigure}
+  \caption{Half-wave Rectifier, using the model of ideal diode in series with voltage source}
 \end{figure}
+
+\subsubsection{Full-wave Rectifier}
+
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.5\linewidth]{figures/BridgedRectifierCircuit}
+  \includegraphics[width=0.9\linewidth]{figures/BridgedRectifierCircuit}
   \caption{A Bridged Rectifier Circuit}
-  \label{fig:}
 \end{figure}
+
+\begin{equation*}
+  \begin{aligned}
+    V_L \approx 0.9 V_S \quad\quad \quad\quad \quad\quad \quad\quad  I_{DI} = I_{D2} = I_{D3} = I_{D4} = \dfrac{0.45 V_S}{R_L} 
+  \end{aligned}
+\end{equation*}
 
 \subsection{Limiting Circuit}
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.5\linewidth]{figures/LimitingCircuit}
+  \includegraphics[width=0.8\linewidth]{figures/LimitingCircuit}
   \caption{A Limiting Circuit}
-  \label{fig:}
 \end{figure}
 
 \subsection{Switching Circuit}
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.5\linewidth]{figures/SwitchCircuit}
+  \includegraphics[width=0.8\linewidth]{figures/SwitchCircuit}
   \caption{A Switching Circuit, $v_o = 5 \  \mathrm{V}$ holds only if all the input voltage is $5 \  \mathrm{V}$}
-  \label{fig:}
 \end{figure}
 
 \section{Diodes for Special Usage}
@@ -180,7 +185,6 @@ A Zener diode is manufactured to be broken-through. It is used to stabilize volt
   \centering
   \includegraphics[width=0.5\linewidth]{figures/Zener-diode-1}
   \caption{Zener Diode's electronic symbol and I-V characteristic}
-  \label{fig:}
 \end{figure}
 
 \subsection{Photodiode}
@@ -194,8 +198,6 @@ A light-emitting diode (LED) is a semiconductor light source that emits light wh
 \subsection{Schottky diode}
 
 The Schottky diode (named after the German physicist Walter H. Schottky), also known as Schottky barrier diode or hot-carrier diode, is a semiconductor diode formed by the junction of a semiconductor with a metal. It has a low forward voltage drop and a very fast switching action.
-
-
 
 %%% Local Variables:
 %%% mode: latex
