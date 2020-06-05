@@ -166,8 +166,14 @@ Where $V_A$ is called the Early Voltage
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.5\linewidth]{figures/MOSFET-Common-S}
-  \label{fig:}
+  \begin{subfigure}{.3\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{figures/MOSFET-Common-S}
+  \end{subfigure}
+  \begin{subfigure}{.6\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{figures/MOSFET-Common-Ss}
+  \end{subfigure}
 \end{figure}
 
 \begin{equation*}
@@ -186,12 +192,6 @@ Where $V_A$ is called the Early Voltage
   \end{aligned}
 \end{equation*}
 
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.5\linewidth]{figures/MOSFET-Common-Ss}
-  \label{fig:}
-\end{figure}
-
 \begin{equation*}
   \begin{aligned}
     A_v = - g_m \left( r_{ds} \parallel R_d \right)
@@ -208,8 +208,14 @@ Where $V_A$ is called the Early Voltage
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.5\linewidth]{figures/MOSFET-Common-D}
-  \label{fig:}
+  \begin{subfigure}{.3\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{figures/MOSFET-Common-D}
+  \end{subfigure}
+  \begin{subfigure}{.6\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{figures/MOSFET-Common-Ds}
+  \end{subfigure}
 \end{figure}
 
 \begin{equation*}
@@ -227,12 +233,6 @@ Where $V_A$ is called the Early Voltage
     g_m = 2 K_n \left( V_{GSQ} - V_{TN} \right)
   \end{aligned}
 \end{equation*}
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.5\linewidth]{figures/MOSFET-Common-Ds}
-  \label{fig:}
-\end{figure}
 
 \begin{equation*}
   \begin{aligned}
@@ -252,8 +252,14 @@ Where $V_A$ is called the Early Voltage
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.5\linewidth]{figures/MOSFET-Common-G}
-  \label{fig:}
+  \begin{subfigure}{.45\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{figures/MOSFET-Common-G}
+  \end{subfigure}
+  \begin{subfigure}{.45\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{figures/MOSFET-Common-Gs}
+  \end{subfigure}
 \end{figure}
 
 \begin{equation*}
@@ -271,12 +277,6 @@ Where $V_A$ is called the Early Voltage
   \end{aligned}
 \end{equation*}
 
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.5\linewidth]{figures/MOSFET-Common-Gs}
-  \label{fig:}
-\end{figure}
-
 \begin{equation*}
   \begin{aligned}
     A_v = g_m \left( R_d \parallel R_L \right)
@@ -289,8 +289,53 @@ Where $V_A$ is called the Early Voltage
   \end{aligned}
 \end{equation*}
 
+\section{Summary}
 
+\subsection{Features of Three Types of MOSFET Amplifing Circuits}
 
+\begin{table*}[htbp]
+  \centering
+  \begin{tabular}{|Sc|Sc|Sc|Sc|Sc|}
+    \hline
+    Type & $A_v$ & $A_i$ & $R_i$ & $R_o$ \\
+    \hline
+    Common Source & high,inverse & - & high & - \\
+    \hline
+    Common Drain & 1 & - & high & low \\
+    \hline
+    Common Gate & high,non-inverse & 1 & low & - \\
+    \hline
+  \end{tabular}
+\end{table*}
+
+\subsection{Small Signal Model of MOSFET}
+
+\begin{equation*}
+  \begin{aligned}
+    I_{DQ} = K_n \left( V_{GSQ} - V_{TN} \right)^2 \quad\quad
+    g_m = 2 K_n \left( V_{GSQ} - V_{TN} \right) \quad\quad
+    r_{ds} = \dfrac{1}{\lambda K_n \left( V_{GSQ} - V_{TN} \right)^2} 
+  \end{aligned}
+\end{equation*}
+
+\subsection{Saturation Mode of MOSFET}
+
+\begin{table*}[htbp]
+  \centering
+  \begin{tabular}{|Sc|Sc|Sc|}
+    \hline
+    MOSFET Type & $V_{GS}$ & $V_{DS}$ \\
+    \hline
+    N-type enhancement & $V_{GS} > V_{TN}$ & $V_{DS} > V_{GS} - V_{TN}$ \\
+    \hline
+    N-type depletion & $V_{GS} > V_{PN}$ & $V_{DS} > V_{GS} - V_{PN}$ \\
+    \hline
+    P-type enhancement & $V_{GS} < V_{TP}$ & $V_{DS} < V_{GS} - V_{TP}$ \\
+    \hline
+    P-type depletion & $V_{GS} < V_{PP}$ & $V_{DS} < V_{GS} - V_{PP}$ \\
+    \hline
+  \end{tabular}
+\end{table*}
 
 %%% Local Variables:
 %%% mode: latex
