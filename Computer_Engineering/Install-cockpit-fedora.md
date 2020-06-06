@@ -135,4 +135,8 @@ Origins = https://pan.hxp.plus http://127.0.0.1:9090
 UrlRoot = /panel/
 LoginTitle = hxp-us-server
 ```
+Change the compression behavior of pcp in `/etc/pcp/pmlogger/control`, uncomment
 
+```
+$PCP_COMPRESSAFTER=never
+```
