@@ -1,20 +1,59 @@
 \chapter{Frequency Response}
 
+\section{Sketch of Gain vs Frequency of All Circuits }
+
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.6\linewidth]{figures/Frequency-Response}
-  \caption{Sketch of the gain of amplifier versus frequency}
-  \label{fig:}
+  \includegraphics[width=0.9\linewidth]{figures/Frequency-Response}
 \end{figure}
 
-\section{Low-Frequency}
+\section{R-C Series Circuit}
 
-\subsection{Common-Source Amplifier}
+\subsection{Low-Frequency Response of R-C High Pass Filter}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.3\linewidth]{figures/R-C-High}
+\end{figure}
+
+\begin{equation*}
+  \begin{aligned}
+    f_L = \dfrac{1}{2 \pi R_1 C_1} \quad\quad \left| A_{vL} \right| = \dfrac{1}{\sqrt{1 + \left( f_L / f \right)^2}} \quad\quad \varphi_L = \arctan \left( f_L / f \right)
+  \end{aligned}
+\end{equation*}
+
+\subsection{Mid-Frequency}
+
+In mid-frequency, capacitors are equal to open circuit while only resistors remain in the circuit. Where
+
+\begin{equation*}
+  \begin{aligned}
+    A_{vM} = 1 \quad\quad \varphi = 0
+  \end{aligned}
+\end{equation*}
+
+\subsection{High-Frequency Response of R-C Low Pass Filter}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.3\linewidth]{figures/R-C-Low}
+\end{figure}
+
+\begin{equation*}
+  \begin{aligned}
+    f_H = \dfrac{1}{2 \pi R_1 C_1} \quad\quad \left| A_{vH} \right| = \dfrac{1}{\sqrt{1 + \left( f_H / f \right)^2}} \quad\quad \varphi_H = - \arctan \left( f_H / f \right)
+  \end{aligned}
+\end{equation*}
+
+\section{Frequency Response of Amplifiers}
+
+\subsection{Low-Frequency}
+
+\subsubsection{Common-Source Amplifier}
 
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.6\linewidth]{figures/Frequency-Response-CS}
-  \label{fig:}
 \end{figure}
 
 \begin{equation*}
@@ -40,21 +79,19 @@
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.6\linewidth]{figures/Frequency-Response-CS-freq}
-  \label{fig:}
 \end{figure}
 
 \begin{equation*}
   \begin{aligned}
-    f_L \approx f_{p2} = \dfrac{\omega_{p2}}{2 \pi} = \dfrac{1}{2 \pi \left( C_s / g_m  \right)} 
+    f_L \approx f_{p2} = \dfrac{\omega_{p2}}{2 \pi} = \dfrac{1}{2 \pi \left( C_S / g_m  \right)} 
   \end{aligned}
 \end{equation*}
 
-\subsection{Common-Emitter Amplifier}
+\subsubsection{Common-Emitter Amplifier}
 
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.4\linewidth]{figures/Frequency-Response-CE}
-  \label{fig:}
 \end{figure}
 
 \begin{equation*}
@@ -74,7 +111,6 @@
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.5\linewidth]{figures/Frequency-Response-CE-freq}
-  \label{fig:}
 \end{figure}
 
 \begin{equation*}
@@ -83,16 +119,15 @@
   \end{aligned}
 \end{equation*}
 
-\section{High-Frequency}
+\subsection{High-Frequency}
 
-\subsection{Unity-Gain Frequency}
+\subsubsection{Unity-Gain Frequency}
 
-\subsubsection{MOSFET}
+\subsubsubsection{MOSFET}
 
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.5\linewidth]{figures/Frequency-Response-UG-MOS}
-  \label{fig:}
 \end{figure}
 
 \begin{equation*}
@@ -101,12 +136,11 @@
   \end{aligned}
 \end{equation*}
 
-\subsubsection{BJT}
+\subsubsubsection{BJT}
 
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.7\linewidth]{figures/Frequency-Response-UG-BJT}
-  \label{fig:}
 \end{figure}
 
 \begin{equation*}
@@ -115,24 +149,21 @@
   \end{aligned}
 \end{equation*}
 
-\subsection{Common-Source Amplifier}
+\subsubsection{Common-Source Amplifier}
 
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.9\linewidth]{figures/Frequency-Response-CS-High-1}
-  \label{fig:}
 \end{figure}
 
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.9\linewidth]{figures/Frequency-Response-CS-High-2}
-  \label{fig:}
 \end{figure}
 
 \begin{figure}[H]
   \centering
   \includegraphics[width=\linewidth]{figures/Frequency-Response-CS-High-3}
-  \label{fig:}
 \end{figure}
 
 \begin{equation*}
@@ -141,24 +172,21 @@
   \end{aligned}
 \end{equation*}
 
-\subsection{Common-Emitter Amplifier}
+\subsubsection{Common-Emitter Amplifier}
 
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.9\linewidth]{figures/Frequency-Response-CE-High-1}
-  \label{fig:}
 \end{figure}
 
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.8\linewidth]{figures/Frequency-Response-CE-High-2}
-  \label{fig:}
 \end{figure}
 
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.8\linewidth]{figures/Frequency-Response-CE-High-3}
-  \label{fig:}
 \end{figure}
 
 \begin{equation*}
