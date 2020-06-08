@@ -7,12 +7,10 @@
   \begin{subfigure}{.45\textwidth}
     \centering
     \includegraphics[width=\linewidth]{figures/comparator}
-    \caption{the model of an operational amplifier}
   \end{subfigure}
   \begin{subfigure}{.5\textwidth}
     \centering
     \includegraphics[width=0.6\linewidth]{figures/comparator-voltage-change}
-    \caption{How the output voltage varies}
   \end{subfigure}
 \end{figure}
 
@@ -24,7 +22,7 @@ Note that the output voltage of a operational amplifier has limits, called \text
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.45\linewidth]{figures/op-amp-model}
+  \includegraphics[width=0.55\linewidth]{figures/op-amp-model}
 \end{figure}
 
 \begin{equation*}
@@ -58,7 +56,6 @@ Here is a model which shows all the feature of an ideal operational comparator:
     \centering
     \includegraphics[width=\linewidth]{figures/ideal-comparator-2}
   \end{subfigure}
-  \caption{An ideal operational amplifier}
 \end{figure}
 
 \section{Closed-looped Amplifier}
@@ -69,8 +66,7 @@ Usually operational amplifiers are used with vegetative feedback to ensure its s
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.9\linewidth]{figures/non-inverting-amplifier}
-  \caption{An non-inverting amplifier}
+  \includegraphics[width=\linewidth]{figures/non-inverting-amplifier}
 \end{figure}
 
 \begin{equation*}
@@ -85,8 +81,7 @@ Note that when $R_2\ll R_1$, $A_{vo} = 1$, $v_i = v_o$.
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.6\linewidth]{figures/inverting-amplifier}
-  \caption{An inverting amplifier}
+  \includegraphics[width=0.7\linewidth]{figures/inverting-amplifier}
 \end{figure}
 
 \begin{equation*}
@@ -103,8 +98,7 @@ An subtraction circuit can calculate the difference of inverting input and non-i
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.5\linewidth]{figures/subtraction-amplifier}
-  \caption{A subtraction circuit}
+  \includegraphics[width=0.6\linewidth]{figures/subtraction-amplifier}
 \end{figure}
 
 \begin{equation*}
@@ -159,14 +153,15 @@ If $R_4 / R_1 = R_3 / R_2 = r$, then
   \end{aligned}
 \end{equation*}
 
+Input Resistance $R_{id} = R_1 + R_2$, When $v_{i2} = 0$, $R_{i1} = R_1$, When $v_{i1}  = 0$, $R_{i2} = R_2 + R_3$.
+
 \subsection{Sum Circuit}
 
 An sum circuit adds the inverting input and the non-inverting input.
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.6\linewidth]{figures/sum-amplifier}
-  \caption{Sum Circuit}
+  \includegraphics[width=0.75\linewidth]{figures/sum-amplifier}
 \end{figure}
 
 Similarly, we have
@@ -177,12 +172,8 @@ Similarly, we have
     & \dfrac{v_{i1} - v_n}{R_1} + \dfrac{v_{i2}- v_n}{R_2} = \dfrac{v_n - v_o}{R_3} \\
     & v_n= v_p = 0
   \end{aligned}
-  \right.
-\end{equation*}
-
-$\Rightarrow$
-
-\begin{equation*}
+  \right. \quad\quad
+  \Rightarrow \quad\quad 
   \begin{aligned}
     \dfrac{v_{i1}}{R_1} + \dfrac{v_{i2}}{R_2} = \dfrac{- v_o}{R_3} \\
   \end{aligned}
@@ -210,17 +201,39 @@ We have
   \end{aligned}
 \end{equation*}
 
-\subsection{Integrating Circuit}
+\subsection{Instrumentation Amplifier}
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.6\linewidth]{figures/integrating-circuit}
-  \caption{integrating circuit}
+  \includegraphics[width=0.8\linewidth]{figures/Instrumentation-Amplifier}
 \end{figure}
 
 \begin{equation*}
   \begin{aligned}
-    C = \dfrac{Q}{U} \Rightarrow U = \dfrac{Q}{C} = \dfrac{1}{C} \int I \md t = \dfrac{1}{C} \int \dfrac{v_i}{R} \md t = \dfrac{1}{RC} \int v_i \md t
+    A_{vd} = - \dfrac{R_4}{R_3} \left( 1 + \dfrac{2 R_2}{R_1}  \right) \quad\quad v_o = A_{vd} \left( v_1 - v_2 \right)
+  \end{aligned}
+\end{equation*}
+
+\subsection{Integrating Circuit}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.7\linewidth]{figures/integrating-circuit}
+\end{figure}
+
+Since
+
+\begin{equation*}
+  \begin{aligned}
+    C = \dfrac{Q}{U}
+  \end{aligned}
+\end{equation*}
+
+$\Rightarrow $
+
+\begin{equation*}
+  \begin{aligned}
+    U = \dfrac{Q}{C} = \dfrac{1}{C} \int I \md t = \dfrac{1}{C} \int \dfrac{v_i}{R} \md t = \dfrac{1}{RC} \int v_i \md t
   \end{aligned}
 \end{equation*}
 
@@ -258,8 +271,7 @@ Then
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.6\linewidth]{figures/differential-circuit}
-  \caption{differential circuit}
+  \includegraphics[width=0.7\linewidth]{figures/differential-circuit}
 \end{figure}
 
 \begin{equation*}
