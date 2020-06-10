@@ -4,9 +4,7 @@
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.5\linewidth]{figures/MOSFET-BLOCK-DIAGRAM.png}
-  \caption{MOSFET Block diagram}
-  \label{fig:}
+  \includegraphics[width=0.7\linewidth]{figures/MOSFET-BLOCK-DIAGRAM.png}
 \end{figure}
 
 \subsection{N-type Enhancement-mode MOSFET}
@@ -14,7 +12,6 @@
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.7\linewidth]{figures/ENMOS}
-  \label{fig:}
 \end{figure}
 
 Only when $V_{GS} > V_{TN} > 0$, N-Channel will be formed, MOSFET is conductive. $V_{TN}$ is called the Threshold Voltage.
@@ -22,23 +19,18 @@ Only when $V_{GS} > V_{TN} > 0$, N-Channel will be formed, MOSFET is conductive.
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.5\linewidth]{figures/ENMOS2}
-  \label{fig:}
 \end{figure}
 
 \begin{figure}[H]
   \centering
-  \begin{subfigure}{.5\textwidth}
+  \begin{subfigure}{.45\textwidth}
     \centering
     \includegraphics[width=\linewidth]{figures/ENMOSIV1}
-    \label{fig:}
-  \end{subfigure}%
+  \end{subfigure}
   \begin{subfigure}{.5\textwidth}
     \centering
     \includegraphics[width=\linewidth]{figures/ENMOSIV2}
-    \label{fig:}
   \end{subfigure}
-  \caption{The I-V Characteristic of N-type Enhancement-mode MOSFET}
-  \label{fig:}
 \end{figure}
 
 \subsection{N-type Depletion-mode MOSFET}
@@ -47,60 +39,47 @@ The only difference between Enhancement-mode and Depletion-mode is the charges i
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.7\linewidth]{figures/DNMOS}
-  \label{fig:}
+  \includegraphics[width=0.75\linewidth]{figures/DNMOS}
 \end{figure}
 
 \begin{figure}[H]
   \centering
-  \begin{subfigure}{.5\textwidth}
+  \begin{subfigure}{.45\textwidth}
     \centering
     \includegraphics[width=\linewidth]{figures/DNMOSIV1}
-    \label{fig:}
-  \end{subfigure}%
+  \end{subfigure}
   \begin{subfigure}{.5\textwidth}
     \centering
     \includegraphics[width=\linewidth]{figures/DNMOSIV2}
-    \label{fig:}
   \end{subfigure}
-  \caption{The I-V Characteristic of N-type Depletion-mode MOSFET}
-  \label{fig:}
 \end{figure}
 
 \subsection{P-type MOSFET}
 
 \begin{figure}[H]
   \centering
-  \begin{subfigure}{.3\textwidth}
+  \begin{subfigure}{.45\textwidth}
     \centering
-    \includegraphics[width=\linewidth]{figures/EPMOS}
+    \includegraphics[width=0.8\linewidth]{figures/EPMOS}
     \caption{Enhancement-mode}
-    \label{fig:}
-  \end{subfigure}%
-  \begin{subfigure}{.3\textwidth}
-    \centering
-    \includegraphics[width=\linewidth]{figures/DPMOS}
-    \caption{Depletion-mode}
-    \label{fig:}
   \end{subfigure}
-  \caption{The Electronic Symbol of P-type MOSFET}
-  \label{fig:}
+  \begin{subfigure}{.45\textwidth}
+    \centering
+    \includegraphics[width=0.8\linewidth]{figures/DPMOS}
+    \caption{Depletion-mode}
+  \end{subfigure}
 \end{figure}
 
 \begin{figure}[H]
   \centering
-  \begin{subfigure}{.3\textwidth}
+  \begin{subfigure}{.45\textwidth}
     \centering
     \includegraphics[width=\linewidth]{figures/PMOSIV1}
-    \label{fig:}
-  \end{subfigure}%
-  \begin{subfigure}{.3\textwidth}
+  \end{subfigure}
+  \begin{subfigure}{.45\textwidth}
     \centering
     \includegraphics[width=\linewidth]{figures/PMOSIV2}
-    \label{fig:}
   \end{subfigure}
-  \caption{The I-V Characteristic of N-type Depletion-mode MOSFET}
-  \label{fig:}
 \end{figure}
 
 \section{Static Working Point}
@@ -108,10 +87,9 @@ The only difference between Enhancement-mode and Depletion-mode is the charges i
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.5\linewidth]{figures/MOSFET-Static}
-  \label{fig:}
 \end{figure}
 
-To calculate the static working point of a MOSFET
+To calculate the DC bias point of a MOSFET
 
 \begin{equation*}
   \left\{
@@ -135,9 +113,7 @@ Note that $V_{DSQ} > V_{GSQ} - V_{TN}$ must be verified to ensure that MOSFET is
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.3\linewidth]{figures/MOSFET-Early-Effect}
-  \caption{MOSFET-Early-Effect}
-  \label{fig:}
+  \includegraphics[width=0.5\linewidth]{figures/MOSFET-Early-Effect}
 \end{figure}
 
 \begin{equation*}
@@ -166,15 +142,17 @@ Where $V_A$ is called the Early Voltage
 
 \begin{figure}[H]
   \centering
-  \begin{subfigure}{.3\textwidth}
+  \begin{subfigure}{.5\textwidth}
     \centering
     \includegraphics[width=\linewidth]{figures/MOSFET-Common-S}
   \end{subfigure}
-  \begin{subfigure}{.6\textwidth}
+  \begin{subfigure}{.45\textwidth}
     \centering
     \includegraphics[width=\linewidth]{figures/MOSFET-Common-Ss}
   \end{subfigure}
 \end{figure}
+
+DC bias point:
 
 \begin{equation*}
   \left\{
@@ -186,21 +164,29 @@ Where $V_A$ is called the Early Voltage
   \right.
 \end{equation*}
 
+Transconductance:
+
 \begin{equation*}
   \begin{aligned}
     g_m = 2 K_n \left( V_{GSQ} - V_{TN} \right)
   \end{aligned}
 \end{equation*}
 
+Gain:
+
 \begin{equation*}
   \begin{aligned}
-    A_v = - g_m \left( r_{ds} \parallel R_d \right)
+    A_v = - g_m \left( r_{ds} \parallel R_d \right) \quad\quad \quad\quad 
+    A_{vs} = \dfrac{v_o}{v_s} = \dfrac{v_o}{v_i} \cdot \dfrac{v_i}{v_s} = \dfrac{v_i}{v_s} A_v
   \end{aligned}
 \end{equation*}
+
+Resistance:
+
 \begin{equation*}
   \begin{aligned}
-    R_i &= R_{gs1} \parallel R_{gs2} \\
-    R_o &= R_d \parallel R_d \approx R_d
+    R_i = R_{gs1} \parallel R_{gs2} \quad\quad \quad\quad 
+    R_o = R_d \parallel R_d \approx R_d
   \end{aligned}
 \end{equation*}
 
@@ -208,15 +194,17 @@ Where $V_A$ is called the Early Voltage
 
 \begin{figure}[H]
   \centering
-  \begin{subfigure}{.3\textwidth}
+  \begin{subfigure}{.5\textwidth}
     \centering
     \includegraphics[width=\linewidth]{figures/MOSFET-Common-D}
   \end{subfigure}
-  \begin{subfigure}{.6\textwidth}
+  \begin{subfigure}{.45\textwidth}
     \centering
     \includegraphics[width=\linewidth]{figures/MOSFET-Common-Ds}
   \end{subfigure}
 \end{figure}
+
+DC bias point:
 
 \begin{equation*}
   \left\{
@@ -228,31 +216,37 @@ Where $V_A$ is called the Early Voltage
   \right.
 \end{equation*}
 
+Transconductance:
+
 \begin{equation*}
   \begin{aligned}
     g_m = 2 K_n \left( V_{GSQ} - V_{TN} \right)
   \end{aligned}
 \end{equation*}
 
-\begin{equation*}
-  \begin{aligned}
-    A_v = \dfrac{g_m \left( R_s \parallel r_{ds} \right)}{1 + g_m \left( R_s \parallel r_{ds} \right)} \approx 1
-  \end{aligned}
-\end{equation*}
+Gain:
 
 \begin{equation*}
   \begin{aligned}
-    R_i &= R_{g1} \parallel R_{g2} \\
-    R_o &= R_s \parallel r_{ds} \parallel \dfrac{1}{g_m} 
+    A_v = \dfrac{g_m \left( R_s \parallel r_{ds} \right)}{1 + g_m \left( R_s \parallel r_{ds} \right)} \approx 1 \quad\quad \quad\quad 
+    A_{vs} = \dfrac{v_o}{v_s} = \dfrac{v_o}{v_i} \cdot \dfrac{v_i}{v_s} = \dfrac{v_i}{v_s} A_v
   \end{aligned}
 \end{equation*}
 
+Resistance:
+
+\begin{equation*}
+  \begin{aligned}
+    R_i = R_{g1} \parallel R_{g2} \quad\quad \quad\quad 
+    R_o = R_s \parallel r_{ds} \parallel \dfrac{1}{g_m} 
+  \end{aligned}
+\end{equation*}
 
 \subsection{Common Gate Amplifier Circuit}
 
 \begin{figure}[H]
   \centering
-  \begin{subfigure}{.45\textwidth}
+  \begin{subfigure}{.5\textwidth}
     \centering
     \includegraphics[width=\linewidth]{figures/MOSFET-Common-G}
   \end{subfigure}
@@ -262,14 +256,18 @@ Where $V_A$ is called the Early Voltage
   \end{subfigure}
 \end{figure}
 
+DC bias point:
+
 \begin{equation*}
   \left\{
   \begin{aligned}
-    I_{DQ} &= K_n \left( V_{GSQ} - V_{TN} \right)^2 = I\\
+    I_{DQ} &= K_n \left( V_{GSQ} - V_{TN} \right)^2 = I \\
     V_{DSQ} &= V_{DD} - I_{DQ} R_d + V_{GSQ}
   \end{aligned}
   \right.
 \end{equation*}
+
+Transconductance:
 
 \begin{equation*}
   \begin{aligned}
@@ -277,15 +275,21 @@ Where $V_A$ is called the Early Voltage
   \end{aligned}
 \end{equation*}
 
+Gain:
+
 \begin{equation*}
   \begin{aligned}
-    A_v = g_m \left( R_d \parallel R_L \right)
+    A_v = g_m \left( R_d \parallel R_L \right) \quad\quad \quad\quad 
+    A_{vs} = \dfrac{v_o}{v_s} = \dfrac{v_o}{v_i} \cdot \dfrac{v_i}{v_s} = \dfrac{v_i}{v_s} A_v
   \end{aligned}
 \end{equation*}
+
+Resistance:
+
 \begin{equation*}
   \begin{aligned}
-    R_i &\approx \dfrac{1}{g_m} \\
-    R_o &\approx R_d
+    R_i \approx \dfrac{1}{g_m} \quad\quad \quad\quad 
+    R_o \approx R_d
   \end{aligned}
 \end{equation*}
 
