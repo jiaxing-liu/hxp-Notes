@@ -186,7 +186,7 @@ Resistance:
 \begin{equation*}
   \begin{aligned}
     R_i = R_{gs1} \parallel R_{gs2} \quad\quad \quad\quad 
-    R_o = R_d \parallel R_d \approx R_d
+    R_o = r_{ds} \parallel R_d \approx R_d
   \end{aligned}
 \end{equation*}
 
@@ -259,12 +259,9 @@ Resistance:
 DC bias point:
 
 \begin{equation*}
-  \left\{
   \begin{aligned}
-    I_{DQ} &= K_n \left( V_{GSQ} - V_{TN} \right)^2 = I \\
-    V_{DSQ} &= V_{DD} - I_{DQ} R_d + V_{GSQ}
+    I = I_{DQ} = K_n \left( V_{GSQ} - V_{TN} \right)^2
   \end{aligned}
-  \right.
 \end{equation*}
 
 Transconductance:
@@ -279,8 +276,8 @@ Gain:
 
 \begin{equation*}
   \begin{aligned}
-    A_v = g_m \left( R_d \parallel R_L \right) \quad\quad \quad\quad 
-    A_{vs} = \dfrac{v_o}{v_s} = \dfrac{v_o}{v_i} \cdot \dfrac{v_i}{v_s} = \dfrac{v_i}{v_s} A_v
+    A_{vs} = \dfrac{g_m \left( R_d \parallel R_L \right)}{1 + g_m R_{si}}  \quad\quad \quad\quad 
+    A_{is} = \left( \dfrac{R_d}{R_d + R_L}  \right) \left( \dfrac{g_m R_{si}}{1 + g_m R_{si}}  \right)
   \end{aligned}
 \end{equation*}
 
@@ -288,7 +285,7 @@ Resistance:
 
 \begin{equation*}
   \begin{aligned}
-    R_i \approx \dfrac{1}{g_m} \quad\quad \quad\quad 
+    R_i = \dfrac{1}{g_m} \quad\quad \quad\quad 
     R_o \approx R_d
   \end{aligned}
 \end{equation*}
