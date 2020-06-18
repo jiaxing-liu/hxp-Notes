@@ -228,7 +228,7 @@ Gain:
 
 \begin{equation*}
   \begin{aligned}
-    A_v = \dfrac{g_m \left( R_s \parallel r_{ds} \right)}{1 + g_m \left( R_s \parallel r_{ds} \right)} \approx 1 \quad\quad \quad\quad 
+    A_v = \dfrac{R_s \parallel r_{ds} \parallel R_L}{\dfrac{1}{g_m} + R_s \parallel r_{ds} \parallel R_L} \approx 1 \quad\quad \quad\quad 
     A_{vs} = \dfrac{v_o}{v_s} = \dfrac{v_o}{v_i} \cdot \dfrac{v_i}{v_s} = \dfrac{v_i}{v_s} A_v
   \end{aligned}
 \end{equation*}
@@ -259,9 +259,12 @@ Resistance:
 DC bias point:
 
 \begin{equation*}
+  \left\{
   \begin{aligned}
-    I = I_{DQ} = K_n \left( V_{GSQ} - V_{TN} \right)^2
+    I &= I_{DQ} = K_n \left( V_{GSQ} - V_{TN} \right)^2 \\
+    V_{DSQ} &= V_{DD} - I_{DQ} R_d + V_{GSQ}
   \end{aligned}
+  \right.
 \end{equation*}
 
 Transconductance:
@@ -276,6 +279,7 @@ Gain:
 
 \begin{equation*}
   \begin{aligned}
+    A_v = g_m \left( R_d \parallel R_L  \right) \quad\quad \quad\quad 
     A_{vs} = \dfrac{g_m \left( R_d \parallel R_L \right)}{1 + g_m R_{si}}  \quad\quad \quad\quad 
     A_{is} = \left( \dfrac{R_d}{R_d + R_L}  \right) \left( \dfrac{g_m R_{si}}{1 + g_m R_{si}}  \right)
   \end{aligned}

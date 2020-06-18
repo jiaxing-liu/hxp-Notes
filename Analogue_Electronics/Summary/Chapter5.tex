@@ -56,11 +56,70 @@ The arrow represents the direction of current.
 
 Note that the static working point is not associated with small signals discussed below.
 
+\section{Determine the working state of BJT}
+
+$\beta = 80, V_{BE} = 0.6 \si{V}$
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.5\linewidth]{figures/Working-State-BJT}
+\end{figure}
+
+$S \rightarrow A$
+
+\begin{equation*}
+  \begin{aligned}
+    I_B = \dfrac{\left( 12 - 0.6 \si{V} \right)}{40 \si{k \Omega}} = 0.3 \si{mA} \quad\quad
+    I_{CS} = \dfrac{V_{CC}}{R_C} = 0.038 \si{mA} \quad\quad
+    I_{BS} = \dfrac{I_{CS}}{\beta} = 3 \si{mA} 
+  \end{aligned}
+\end{equation*}
+
+Since
+
+\begin{equation*}
+  \begin{aligned}
+    I_B > I_{BS}
+  \end{aligned}
+\end{equation*}
+
+BJT works in \textbf{saturation} mode.
+
+$S \rightarrow B$
+
+\begin{equation*}
+  \begin{aligned}
+    I_B = \dfrac{\left( 12 - 0.6 \si{V} \right)}{500 \si{k \Omega}} = 0.023 \si{mA} \quad\quad
+    I_{CS} = \dfrac{V_{CC}}{R_C} = 0.038 \si{mA} \quad\quad
+    I_{BS} = \dfrac{I_{CS}}{\beta} = 3 \si{mA} 
+  \end{aligned}
+\end{equation*}
+
+Since
+
+\begin{equation*}
+  \begin{aligned}
+    I_B < I_{BS}
+  \end{aligned}
+\end{equation*}
+
+BJT works in \textbf{active} mode.
+
+$S \rightarrow C$, since
+
+\begin{equation*}
+  \begin{aligned}
+    V_B < V_E
+  \end{aligned}
+\end{equation*}
+
+The Emitter-Base Junction is reverse biased, BJT works in \textbf{cutoff} mode.
+
 \section{Model of Small Signal}
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.7\linewidth]{figures/BJT-small-signal}
+  \includegraphics[width=0.5\linewidth]{figures/BJT-small-signal}
 \end{figure}
 
 When $T = 300 \  \mathrm{K}$
