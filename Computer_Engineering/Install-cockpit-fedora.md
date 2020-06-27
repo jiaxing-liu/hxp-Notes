@@ -1,7 +1,7 @@
 ```
 yum install -y firewalld storaged cockpit cockpit-storaged
-systemctl enable --now cockpit
-firewall-cmd --add-service=cockpit
+systemctl enable --now cockpit.socket
+firewall-cmd --add-service=cockpit --permanent
 ```
 
 `/etc/nginx/nginx.conf`
