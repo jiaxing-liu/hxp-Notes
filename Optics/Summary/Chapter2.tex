@@ -1,5 +1,54 @@
 \chapter{Electromagnetic Theory and photons}
 
+\section{Longitudinal and Transverse}
+
+\begin{itemize}
+\item Longitudinal: medium is in the direction of motion of wave.
+\item Transverse: medium is perpendicular to the motion of wave.
+  
+\end{itemize}
+
+\section{Wave Equation}
+
+\begin{equation*}
+  \begin{aligned}
+    \psi \left( x, t \right) = f \left( x + v t \right) \\
+  \end{aligned}
+\end{equation*}
+
+\begin{equation*}
+  \left\{
+  \begin{aligned}
+    \dfrac{\partial}{\partial x} &= \dfrac{\partial}{\partial \left( x + v t \right)} \cdot \dfrac{\partial \left( x + v t \right)}{\partial x} = \dfrac{\partial}{\partial \left( x + v t \right)} \\   
+    \dfrac{\partial}{\partial t} &= \dfrac{\partial}{\partial \left( x + v t \right)} \cdot \dfrac{\partial \left( x + v t \right)}{t} = v \cdot \dfrac{\partial}{\partial \left( x + v t \right)}     
+  \end{aligned}
+  \right.
+  \quad \Rightarrow \quad  
+  \left\{
+  \begin{aligned}
+    \dfrac{\partial^2}{\partial x^2} &= \dfrac{\partial^2}{\partial \left( x + v t \right)^2} \\
+    \dfrac{\partial^2}{\partial t^2} &= v^2 \cdot \dfrac{\partial^2}{\partial \left( x + v t \right)^2}  
+  \end{aligned}
+  \right.
+  \quad \Rightarrow \quad  
+  \left\{
+  \begin{aligned}
+    \dfrac{\partial^2 \psi}{\partial x^2} &= \dfrac{\partial^2 \psi}{\partial \left( x + v t \right)^2} \\
+    \dfrac{\partial^2 \psi}{\partial t^2} &= v^2 \cdot \dfrac{\partial^2 \psi}{\partial \left( x + v t \right)^2}  
+  \end{aligned}
+  \right.
+\end{equation*}
+
+\begin{equation*}
+  \begin{aligned}
+    \Rightarrow \dfrac{\partial^2 \psi}{\partial x^2} = \dfrac{1}{v^2} \cdot \dfrac{\partial^2 \psi}{\partial t^2}   
+    \quad \Rightarrow \quad
+    \nabla^2 \psi \left( x,y,z \right) = \dfrac{1}{v^2} \cdot \dfrac{\partial^2 \psi \left( x,y,z \right)}{\partial t^2}  
+  \end{aligned}
+\end{equation*}
+
+
+
 \section{Maxwell's Equation}
 
 Faraday's Induction Law
