@@ -47,28 +47,36 @@
   \end{aligned}
 \end{equation*}
 
-
-
 \section{Maxwell's Equation}
 
 Faraday's Induction Law
+
 \begin{equation*}
   \oint_{c} \vec{E} \cdot \md \vec{l} = - \dfrac{\md}{\md t} \iint \vec{B} \cdot \md \vec{S}
+  \quad \Rightarrow \quad
+  \nabla \times \vec{E} = - \dfrac{\partial \vec{B}}{\partial t}    
 \end{equation*}
 
 Gauss's Law
+
 \begin{equation*}
   \oiint_{A} \vec{E} \cdot \md \vec{S} = \dfrac{1}{\varepsilon_{0}} \iiint_{v} \rho \md V 
+  \quad \Rightarrow \quad
+  \nabla \cdot \vec{E} = \dfrac{\rho}{\varepsilon_0} 
 \end{equation*}
 
 \begin{equation*}
   \oiint_{A} \vec{B} \cdot \md \vec{S} = 0
+  \quad \Rightarrow \quad
+  \nabla \cdot \vec{B} = 0
 \end{equation*}
 
 Ampere's Circuital Law
 
 \begin{equation*}
   \oint_{C} \vec{B} \cdot \md \vec{l} = \mu_{0} \iint_{A} \left( \vec{J} + \varepsilon_{0} \dfrac{\partial \vec{E}}{\partial t}  \right) \cdot \md \vec{S}
+  \quad \Rightarrow \quad
+  \nabla \times \vec{B} = \mu_0 \varepsilon_0 \cdot \dfrac{\partial \vec{E}}{\partial t} 
 \end{equation*}
 
 We can now take the derivatives of the 4 equations
@@ -77,28 +85,21 @@ We can now take the derivatives of the 4 equations
   \left\{
   \begin{aligned}
     \nabla \times \vec{E} &= - \dfrac{\partial B}{\partial t} \\
-    \nabla \times \vec{B} &= \mu_{0} \varepsilon_{0} \dfrac{\partial \vec{E}}{\partial t}  \\
+    \nabla \times \vec{B} &= \mu_{0} \varepsilon_{0} \cdot \dfrac{\partial \vec{E}}{\partial t}  \\
     \nabla \cdot \vec{E} &= \dfrac{\rho}{\varepsilon_{0}} \\
     \nabla \cdot \vec{B} &= 0
   \end{aligned}
   \right.
-\end{equation*}
-
-The Following Equation can be derived from Maxwell Equation above
-
-\begin{equation*}
+  \quad \Rightarrow \quad
+  \left\{
   \begin{aligned}
-    \nabla^{2} \vec{E} = \mu_{0} \varepsilon_{0} \dfrac{\partial^{2} \vec{E}}{\partial t^{2}}\\
-    \nabla^{2} \vec{B} = \mu_{0} \varepsilon_{0} \dfrac{\partial^{2} \vec{B}}{\partial t^{2}} 
+    \nabla^{2} \vec{E} = \mu_{0} \varepsilon_{0} \cdot \dfrac{\partial^{2} \vec{E}}{\partial t^{2}}= \dfrac{1}{c^2} \cdot \dfrac{\partial^2 \vec{E}}{\partial t^2}  \\
+    \nabla^{2} \vec{B} = \mu_{0} \varepsilon_{0} \cdot \dfrac{\partial^{2} \vec{B}}{\partial t^{2}}  = \dfrac{1}{c^2} \cdot \dfrac{\partial^2 \vec{B}}{\partial t^2}  
   \end{aligned}
+  \right.
 \end{equation*}
 
-Coincidentally
-\begin{equation*}
-  c = \dfrac{1}{\sqrt{\mu_{0} \varepsilon_{0}}} 
-\end{equation*}
-
-Which indicates the speed of electromagnetic wave is the speed of light.
+Which indicates the speed of electromagnetic wave is exactly the speed of light.
 
 Furthermore, it can be seen that the electric field and magnetic field are transverse. They are perpendicular to each other. We assume the electric field is parallel to the y-axis.
 
@@ -107,44 +108,61 @@ Furthermore, it can be seen that the electric field and magnetic field are trans
     E_{y} (x,t) = E_{0} \cos \left[ \omega \left( t - x/c  \right) + \varepsilon \right]
   \end{aligned}
 \end{equation*}
+
 According to Faraday's Law
+
 \begin{equation*}
   \begin{aligned}
-    \dfrac{\partial E_{y}}{\partial x} = - \dfrac{\partial B_{Z}}{\partial t}  
+    \dfrac{\partial E_{y}}{\partial x} = - \dfrac{\partial B_{z}}{\partial t}  
   \end{aligned}
 \end{equation*}
+
 We can calculate $B_{z}$
 
 \begin{equation*}
   \begin{aligned}
-    B_z = \dfrac{1}{c} E_{0} \cos \left[ \omega \left( t - x/c  \right) + \varepsilon \right]
+    B_z = \dfrac{1}{c} \cdot E_{0} \cos \left[ \omega \left( t - x/c  \right) + \varepsilon \right]
   \end{aligned}
 \end{equation*}
+
 So that
+
 \begin{equation*}
   \begin{aligned}
-    E_y = c B_z
+    E_y=v B_z =
   \end{aligned}
-\end{equation*}
-When not in vacuum, similarly
-\begin{equation*}
+  \left\{
   \begin{aligned}
-    E_y=vB_z \\
-    v=\frac{1}{\varepsilon\mu}
+    & \dfrac{1}{\sqrt{\mu_0 \varepsilon_0}} \cdot B_z && \quad \text{in vacuum} \\
+    & \dfrac{1}{\sqrt{\mu \varepsilon}} \cdot B_z && \quad \text{not in vacuum}
   \end{aligned}
+  \right.
 \end{equation*}
 
 \section{Energy}
 
 \begin{equation*}
   \begin{aligned}
-    u_{E} &= \dfrac{\varepsilon_{0}}{2} E^{2} \\
-    u_{B} &= \dfrac{1}{2\mu_{0}} B^{2} \\
-    u_{E} &= u_{B} \\
-    u &= u_{E} + u_{B} = \varepsilon_{0} E^{2} = \dfrac{1}{\mu_{0}} B^{2} \\ 
-    S &= uc \\
-    \vec{S} &= \dfrac{1}{\mu} \vec{E} \times \vec{B} \quad \mathrm{(Poynting Vector)}\\
-    I &= \dfrac{1}{2} \varepsilon v E_0^2
+    u_{E} = \dfrac{1}{2} \cdot \dfrac{\varepsilon_0}{1} \cdot E^{2} \quad\quad 
+    u_{B} = \dfrac{1}{2} \cdot \dfrac{1}{\mu_0} \cdot  B^{2} \quad\quad 
+    u_{E} = u_{B} \quad\quad 
+    u = u_{E} + u_{B} = \varepsilon_{0} E^{2} = \dfrac{1}{\mu_{0}} B^{2}
+  \end{aligned}
+\end{equation*}
+
+\begin{equation*}
+  \begin{aligned}
+    S = uc = \varepsilon_0 c E^2 \quad\quad \text{(Power: Transport of Energy per unit time across a unit area)}
+  \end{aligned}
+\end{equation*}
+
+\begin{equation*}
+  \begin{aligned}
+    \vec{S} = \dfrac{1}{\mu} \cdot \vec{E} \times \vec{B} = c^2 \varepsilon \cdot \vec{E} \times \vec{B} \quad\quad \text{(Poynting Vector)}
+  \end{aligned}
+  \quad\quad 
+  \begin{aligned}
+    I = \dfrac{S}{2} = \dfrac{\varepsilon_0 c}{2} E_0^2 \quad\quad \text{(Irradiance)}
   \end{aligned}
 \end{equation*}
 
@@ -152,19 +170,23 @@ When not in vacuum, similarly
 
 \begin{equation*}
   \begin{aligned}
-    P(t) = \dfrac{S(t)}{c} = u = u_E + u_B
+    P(t) = u = u_E + u_B = \dfrac{S}{c} \quad\quad \text{Radiation Pressure equals energy density of the EM wave} 
   \end{aligned}
 \end{equation*}
 
 \begin{equation*}
   \begin{aligned}
-    \left< P(t) \right>_T = \dfrac{I}{c} 
+    \left< P(t) \right>_T = \dfrac{1}{2} \cdot \dfrac{S}{c} = \dfrac{I}{c} \quad\quad \text{Average Radiation Pressure} 
   \end{aligned}
 \end{equation*}
 
 \begin{equation*}
   \begin{aligned}
-    p_V = \dfrac{S}{c^{2}} 
+    AP = \dfrac{\Delta p}{\Delta t}
+    \quad \Rightarrow \quad
+    Ac \Delta t P = c \Delta p
+    \quad \Rightarrow \quad 
+    p_V = \dfrac{P}{c} = \dfrac{S}{c^2} \quad\quad \text{Momentum per Volume} 
   \end{aligned}
 \end{equation*}
 
@@ -175,10 +197,7 @@ When not in vacuum, similarly
 \begin{equation*}
   \begin{aligned}
     v = \dfrac{1}{\sqrt{\varepsilon \mu}} 
-  \end{aligned}
-\end{equation*}
-\begin{equation*}
-  \begin{aligned}
+    \quad\quad 
     n = \dfrac{c}{v} = \sqrt{\dfrac{\varepsilon \mu}{\varepsilon_0 \mu_0} } = \sqrt{\dfrac{\varepsilon}{\varepsilon_0} }
   \end{aligned}
 \end{equation*}
