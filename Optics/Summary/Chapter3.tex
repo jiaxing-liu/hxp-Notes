@@ -11,14 +11,39 @@ Destructive interference of the scattering light
 \item All molecules have electronic resonances in UV, the closer driving frequency is to a resonance, the more vigorously the oscillator responds. Blue and violet response more than red, sky is blue.
 \end{itemize}
 
+\section{Speed of Light in Medium}
+
+\begin{figure}[H]
+  \centering
+  \begin{subfigure}{.45\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{figures/Light-speed-in-dielectric1.png}
+  \end{subfigure}
+  \begin{subfigure}{.45\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{figures/Light-speed-in-dielectric2.png}
+  \end{subfigure}
+\end{figure}
+
+
+If the phase of light in dielectric lags behind vacuum one, the resultant lags, and vice versa.
+
+\section{Internal and External Reflection}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.8\linewidth]{figures/internal-external-reflection}
+\end{figure}
+
+Beam I (internal reflection) and Beam II (external reflection) has $180^{\circ}$ phase shift, when the gap between right part and left part of the glass in picture b becomes zero, two beams diminishes. This case is the same as picture a where the glass has not been cut.
+
 \section{The Fresnel Equations}
 
 \subsection{Electric Field Perpendicular to Plane of Incidence}
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.5\linewidth]{figures/Fresnel-perpendicular}
-  \label{fig:}
+  \includegraphics[width=0.4\linewidth]{figures/Fresnel-perpendicular}
 \end{figure}
 
 \begin{equation*}
@@ -28,9 +53,7 @@ Destructive interference of the scattering light
     & B_i \cos \theta_i = B_r \cos \theta_r + B_t \cos \theta_t
   \end{aligned}
   \right.
-\end{equation*}
-
-\begin{equation*}
+  \quad \Rightarrow \quad
   \left\{
   \begin{aligned}
     & E = v B \\
@@ -42,27 +65,30 @@ Destructive interference of the scattering light
 We define the amplitude reflection coefficient $r$, the amplitude transmission coefficient $t$
 
 \begin{equation*}
+  \left\{
   \begin{aligned}
     r = \dfrac{n_i \cos \theta_i - n_t \cos \theta_t}{n_i \cos \theta_i + n_t \cos \theta_t} \\
     t = \dfrac{2 n_i \cos \theta_i}{n_i \cos \theta_i + n_t \cos \theta_t} 
   \end{aligned}
-\end{equation*}
-
-Considered that $n_i \sin \theta_i = n_t \sin \theta_t$
-
-\begin{equation*}
+  \right.
+  \quad + \quad
+  \begin{aligned}
+    n_i \sin \theta_i = n_t \sin \theta_t
+  \end{aligned}
+  \quad \Rightarrow \quad
+  \left\{
   \begin{aligned}
     r_{\perp} &= \dfrac{\sin \left( \theta_i - \theta_t \right)}{\sin \left( \theta_i + \theta_t \right)} \\
     t_{\perp} &= \dfrac{2 \sin \theta_t \cos \theta_i}{\sin \left( \theta_i + \theta_t \right)} 
   \end{aligned}
+  \right.
 \end{equation*}
 
 \subsection{Electric Field Parallel to Plane of Incidence}
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.5\linewidth]{figures/Fresnel-parallel}
-  \label{fig:}
+  \includegraphics[width=0.4\linewidth]{figures/Fresnel-parallel}
 \end{figure}
 
 \begin{equation*}
@@ -72,9 +98,7 @@ Considered that $n_i \sin \theta_i = n_t \sin \theta_t$
     & E_i \cos \theta_i = E_r \cos \theta_r + E_t \cos \theta_t
   \end{aligned}
   \right.
-\end{equation*}
-
-\begin{equation*}
+  \quad \Rightarrow \quad
   \left\{
   \begin{aligned}
     & E = v B \\
@@ -86,19 +110,23 @@ Considered that $n_i \sin \theta_i = n_t \sin \theta_t$
 We define the amplitude reflection coefficient $r$, the amplitude transmission coefficient $t$
 
 \begin{equation*}
+  \left\{
   \begin{aligned}
     r = \dfrac{n_t \cos \theta_i - n_i \cos \theta_t}{n_t \cos \theta_i + n_i \cos \theta_t} \\
     t = \dfrac{2 n_i \cos \theta_i}{n_t \cos \theta_i + n_i \cos \theta_t} 
   \end{aligned}
-\end{equation*}
-
-Considered that $n_i \sin \theta_i = n_t \sin \theta_t$
-
-\begin{equation*}
+  \right.
+  \quad + \quad
+  \begin{aligned}
+    n_i \sin \theta_i = n_t \sin \theta_t
+  \end{aligned}
+  \quad \Rightarrow \quad
+  \left\{
   \begin{aligned}
     r_{\parallel} &= \dfrac{\sin \left( 2 \theta_i \right) - \sin \left( 2 \theta_t \right)}{\sin \left( 2 \theta_i \right) + \sin \left( 2 \theta_t \right)} = \dfrac{\tan \left( \theta_i - \theta_t \right)}{\tan \left( \theta_i + \theta_t \right)} \\
     t_{\parallel} &= \dfrac{2 \sin \theta_t \theta_i}{\sin \left( \theta_i + \theta_t \right) \cos \left( \theta_i - \theta_t \right)} 
   \end{aligned}
+  \right.
 \end{equation*}
 
 \section{Polarization Angle}
@@ -112,7 +140,6 @@ Considered that $n_i \sin \theta_i = n_t \sin \theta_t$
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.3\linewidth]{figures/Polarization-angle}
-  \label{fig:}
 \end{figure}
 
 \section{Critical Angle}
@@ -161,19 +188,22 @@ Phase shifted by $\pi$.
 \begin{figure}[H]
   \centering
   \includegraphics[width=0.4\linewidth]{figures/Reflectance-and-Transmittance}
-  \label{fig:}
 \end{figure}
-
 
 \begin{equation*}
   \left\{
   \begin{aligned}
-    R &= \dfrac{I_t A \cos \theta_r}{I_i A \cos \theta_i} = \dfrac{I_t}{I_i} \\
+    R &= \dfrac{I_r A \cos \theta_r}{I_i A \cos \theta_i} = \dfrac{I_r}{I_i} \\
     T &= \dfrac{I_t A \cos \theta_t}{I_i A \cos \theta_i} = \dfrac{I_t \cos \theta_t}{I_i \cos \theta_i}
   \end{aligned}
   \right.
 \end{equation*}
+
 \begin{equation*}
+  \begin{aligned}
+    \vec{S} = c^2 \varepsilon_0 \vec{E} \times \vec{B}
+  \end{aligned}
+  \quad \Rightarrow \quad
   \begin{aligned}
     I = \dfrac{1}{2} \varepsilon v E_0^2 = \dfrac{1}{2} \varepsilon_0 \varepsilon_r v E_0^2 = \dfrac{1}{2} \varepsilon_0 n^2 v E_0^2 = \dfrac{1}{2} \varepsilon_0 n c E_0^2
   \end{aligned}
@@ -182,8 +212,36 @@ Phase shifted by $\pi$.
 \begin{equation*}
   \left\{
   \begin{aligned}
-    R &= \dfrac{I_t}{I_i} = \left( \dfrac{E_{0t}}{E_{0i}}  \right)^2 = r^2 \\
+    R &= \dfrac{I_r}{I_i} = \left( \dfrac{E_{0r}}{E_{0i}}  \right)^2 = r^2 \\
     T &= \dfrac{I_t \cos \theta_t}{I_i \cos \theta_i} = \left( \dfrac{n_t \cos \theta_t}{n_i \cos \theta_i}  \right) \left( \dfrac{E_{0t}}{E_{0i}}  \right)^2 = \left( \dfrac{n_t \cos \theta_t}{n_i \cos \theta_i}  \right) t^2
+  \end{aligned}
+  \right.
+  \quad \Rightarrow \quad
+  \left\{
+  \begin{aligned}
+    & R_{\perp} = r_{\perp}^2 \\
+    & R_{\parallel} = r_{\parallel}^2 \\
+    & T_{\perp} = \left( \dfrac{n_t \cos \theta_t}{n_i \cos \theta_i}  \right) t_{\perp}^2 \\
+    & T_{\parallel} = \left( \dfrac{n_t \cos \theta_t}{n_i \cos \theta_i}  \right) t_{\parallel}^2
+  \end{aligned}
+  \right.
+  \quad \Rightarrow \quad
+  \left\{
+  \begin{aligned}
+    & R_{\perp} + T_{\perp} = 1 \\
+    & R_{\parallel} + T_{\parallel} = 1 \\
+    & R + T = 1 \\
+  \end{aligned}
+  \right.
+\end{equation*}
+
+When $\theta_i = 0$, any distinction between the parallel and perpendicular components of R and T vanishes. Thus
+
+\begin{equation*}
+  \left\{
+  \begin{aligned}
+    & R = R_{\parallel} = R_{\perp} = \left( \dfrac{n_t - n_i}{n_t + n_i}  \right)^2 \\
+    & T = T_{\parallel} = T_{\perp} = \dfrac{4 n_t n_i}{\left( n_i + n_t \right)^2} 
   \end{aligned}
   \right.
 \end{equation*}
