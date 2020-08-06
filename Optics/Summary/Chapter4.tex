@@ -4,6 +4,8 @@
 
 \subsection{The Algebraic Method}
 
+Wave function
+
 \begin{equation*}
   \begin{aligned}
     E \left( x, t \right) = E_0 \sin \left[ \omega t - \left( k x + \varepsilon \right) \right]
@@ -25,6 +27,8 @@ Then
     E \left( x , t \right) = E_0 \sin \left[ \omega t + \alpha \left( x , \varepsilon \right) \right]
   \end{aligned}
 \end{equation*}
+
+Waves for which $\epsilon$ are same are \textbf{coherent}.
 
 Two waves of the same frequency
 
@@ -53,7 +57,7 @@ Two waves of the same frequency
       & E_0 \sin \alpha = E_{01} \sin \alpha_1 + E_{02} \sin \alpha_2 \\
     \end{aligned}
   \right.
-  \Rightarrow
+  \quad \Rightarrow \quad 
   \left\{
     \begin{aligned}
       & E_0^2 = E_{01}^2 + E_{02}^2 + 2 E_{01} E_{02} \cos \left( \alpha_2 - \alpha_1 \right) \\
@@ -66,11 +70,36 @@ The phase difference
 
 \begin{equation*}
   \begin{aligned}
-    \delta = \left( k x_1 + \varepsilon_1 \right) - \left( k x_2 + \varepsilon_2 \right) = \dfrac{2 \pi}{\lambda} \left( x_1 - x_2 \right) + \left( \varepsilon_1 - \varepsilon_2 \right)
+    \alpha_2 - \alpha_1 = \delta = \left( k x_1 + \varepsilon_1 \right) - \left( k x_2 + \varepsilon_2 \right) = \dfrac{2 \pi}{\lambda} \left( x_1 - x_2 \right) + \left( \varepsilon_1 - \varepsilon_2 \right)
   \end{aligned}
 \end{equation*}
 
-When $E_{01} = E_{02}$ and $\alpha_2 - \alpha_1 = \Delta x$
+When $E_{01} = E_{02}$ and $\alpha_2 - \alpha_1 = k \Delta x$, two beams of light are coherent and have the same amplification.
+
+\begin{equation*}
+  \left\{
+  \begin{aligned}
+    E_1 &= E_{01} \sin \left[ \omega t - k \left( x + \Delta x \right) \right] \\
+    E_2 &= E_{02} \sin \left[ \omega t - k x \right] \\
+  \end{aligned}
+  \right.
+\end{equation*}
+
+$E_2$ leads $E_1$ by $\Delta x$
+
+\begin{equation*}
+  \begin{aligned}
+    E = 2 E_{01} \cos \left( \dfrac{k \Delta x}{2}  \right) \sin \left[ \omega t - k \left( x + \dfrac{\Delta x}{2}  \right) \right]
+  \end{aligned}
+\end{equation*}
+
+The add resultant $E$ lags behind $E_1$ but leads $E_2$.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.9\linewidth]{figures/add-resultant.png}
+\end{figure}
+
 \begin{equation*}
   \begin{aligned}
       & E_0^2 = 2 E_{01}^2 + 2 E_{01}^2 \cos \left( k \Delta x \right) = 2 E_{01}^2 \left[ 1 + \cos \left( k \Delta x \right) \right] \\
@@ -90,6 +119,17 @@ $\Rightarrow$
     E_0^2 = 2 E_{01}^2 \cos^2 \left( \dfrac{k \Delta x}{2}  \right)
   \end{aligned}
 \end{equation*}
+
+\begin{equation*}
+  \begin{aligned}
+    k \Delta x = \dfrac{2 \pi}{\lambda} \left( x_1 - x_2 \right) = \dfrac{2 \pi}{\lambda_0} n \left( x_1 - x_2 \right) = \Lambda \dfrac{2 \pi}{\lambda_0} \quad\quad \Lambda = n \left( x_1 - x_2 \right)
+  \end{aligned}
+\end{equation*}
+
+\begin{alignat*}{3}
+  \Lambda &= n \lambda_0 && \quad \Rightarrow \quad \text{constructive} \\
+  \Lambda &= \left( n + 0.5 \right) \lambda_0 && \quad \Rightarrow \quad \text{destructive}
+\end{alignat*}
 
 Period of the amplitude of addition
 
@@ -128,30 +168,29 @@ Period of the amplitude of addition
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.3\linewidth]{figures/Phasor-Addition}
-  \caption{Phasor Addition Method}
-  \label{fig:}
+  \includegraphics[width=0.7\linewidth]{figures/Phasor-Addition}
 \end{figure}
 
 \section{Standing Waves}
 
-\begin{equation*}
-  \begin{aligned}
-    & E_L = E_{0t} \sin \left( k x - \omega t \right) \\
-    & E_R = E_{0t} \sin \left( k x - \omega t \right)
-    & E = E_L + E_R
-  \end{aligned}
-\end{equation*}
+Incoming wave $E_{I}$ strikes a mirror and reflected. The reflected wave have a phase shift $\pi$.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.7\linewidth]{figures/standing-wave.png}
+\end{figure}
 
 \begin{equation*}
+  \begin{aligned}
+    & E_I = E_{0t} \sin \left( k x + \omega t \right) \\
+    & E_R = E_{0t} \sin \left( k x - \omega t \right) \\
+    & E = E_I + E_R
+  \end{aligned}
+  \quad + \quad 
   \begin{aligned}
     \sin \alpha + \sin \beta = 2 \sin \dfrac{\alpha + \beta}{2} \cos \dfrac{\alpha - \beta}{2}  
   \end{aligned}
-\end{equation*}
-
-$\Rightarrow$
-
-\begin{equation*}
+  \quad \Rightarrow \quad 
   \begin{aligned}
     E = 2 E_{0t} \sin kx \cos \omega t
   \end{aligned}
@@ -167,15 +206,11 @@ $\Rightarrow$
       & E = E_1 + E_2
     \end{aligned}
   \right.
-\end{equation*}
-
-\begin{equation*}
+  \quad + \quad 
   \begin{aligned}
     \cos \alpha + \cos \beta = 2 \cos \dfrac{\alpha + \beta}{2} \cos \dfrac{\alpha - \beta}{2}  
   \end{aligned}
 \end{equation*}
-
-
 
 $\Rightarrow$
 
@@ -204,7 +239,23 @@ Then
 
 \begin{equation*}
   \begin{aligned}
-    E = 2 E_{01} \cos \left( k_m x - \omega_m t \right) \cos \left( \bar{k} x - \bar{\omega} t \right) = E_0 \left( x , t \right) \cos \left( \bar{k} x - \bar{\omega} t \right)
+    E = 2 E_{01} \cos \left( k_m x - \omega_m t \right) \cos \left( \bar{k} x - \bar{\omega} t \right)
+  \end{aligned}
+\end{equation*}
+
+Define
+
+\begin{equation*}
+  \begin{aligned}
+    E_0 \left( x,t \right) = 2 E_{01} \cos \left( k_m x - \omega_m t \right)
+  \end{aligned}
+\end{equation*}
+
+Then
+
+\begin{equation*}
+  \begin{aligned}
+    E = E_0 \left( x , t \right) \cos \left( \bar{k} x - \bar{\omega} t \right)
   \end{aligned}
 \end{equation*}
 
@@ -222,31 +273,25 @@ Noted that
   \end{aligned}
 \end{equation*}
 
-$E_0 = 2 E_{01} \cos \left( k_m x - \omega_m t \right)$ varies far less frequently than $\cos \left( \bar{k} x - \bar{\omega} t \right)$
+$E_0 \left( x,t \right) = 2 E_{01} \cos \left( k_m x - \omega_m t \right)$ varies far less frequently than $\cos \left( \bar{k} x - \bar{\omega} t \right)$
 
 \begin{figure}[H]
   \centering
   \includegraphics[width=\linewidth]{figures/Standing-Wave}
-  \caption{Standing Wave}
-  \label{fig:}
 \end{figure}
+
+The picture above shows what a standing wave looks like. So we define
 
 \begin{table*}[h]
   \centering
-  \begin{tabular}{|Sc|Sc|}
-    \hline
-    Beat Frequency (Time) & $2 \omega_m $ \\
-    \hline
-    Beat Frequency (Space) & $ 2 k_m $ \\
-    \hline
+  \begin{tabular}{Sl Sl}
+    Beat Frequency (Time): & $2 \omega_m $ \\
+    Beat Frequency (Space): & $ 2 k_m $ \\
   \end{tabular}
-  \quad\quad\quad\quad
-  \begin{tabular}{|Sc|Sc|}
-    \hline
-    Group Frequency & $v_g = \omega_m / k_m $ \\
-    \hline
-    Phase Velocity & $ v_p = \bar{\omega} / \bar{k}$ \\
-    \hline
+  \quad\quad\quad\quad\quad\quad\quad\quad
+  \begin{tabular}{Sl Sl}
+    Group Frequency: & $v_g = \omega_m / k_m $ \\
+    Phase Velocity: & $ v_p = \bar{\omega} / \bar{k}$ \\
   \end{tabular}
 \end{table*}
 
@@ -254,20 +299,14 @@ $E_0 = 2 E_{01} \cos \left( k_m x - \omega_m t \right)$ varies far less frequent
 
 \begin{table*}[h]
   \centering
-  \begin{tabular}{|Sc|Sc|}
-    \hline
-    Average Phase Velocity & $\bar{v}_p = \dfrac{c}{\bar{n}} $ \\
-    \hline
-    Group Velocity & $v_g = \dfrac{c}{\bar{n}} \left( 1 + \dfrac{\bar{\lambda}}{\bar{n}} \dfrac{\Delta n}{\Delta \lambda}   \right) $ \\
-    \hline
+  \begin{tabular}{Sl Sl}
+    Average Phase Velocity: & $\bar{v}_p = \dfrac{c}{\bar{n}} $ \\
+    Group Velocity: & $v_g = \dfrac{c}{\bar{n}} \left( 1 + \dfrac{\bar{\lambda}}{\bar{n}} \dfrac{\Delta n}{\Delta \lambda}   \right) $ \\
   \end{tabular}
   \quad\quad\quad\quad
-  \begin{tabular}{|Sc|Sc|}
-    \hline
-    Normal Dispersion Media & $\bar{v}_p > v_g $ \\
-    \hline
-    Anomalous Dispersion Media & $ \bar{v}_p < v_g $ \\
-    \hline
+  \begin{tabular}{Sl Sl}
+    Normal Dispersion Media: & $\bar{v}_p > v_g $ \\
+    Anomalous Dispersion Media: & $ \bar{v}_p < v_g $ \\
   \end{tabular}
 \end{table*}
 
