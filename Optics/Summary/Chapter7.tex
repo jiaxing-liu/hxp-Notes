@@ -1,131 +1,46 @@
-\chapter{Interference}
+\chapter{Diffraction}
 
-\section{Young's Experiment}
+\chapter{Fraunhofer and Fresnel Diffraction}
 
-\begin{figure}[H]
-  \centering
-  \begin{subfigure}{.55\textwidth}
-    \centering
-    \includegraphics[width=\linewidth]{figures/Young-Exp}
-  \end{subfigure}
-  \begin{subfigure}{.35\textwidth}
-    \centering
-    \includegraphics[width=\linewidth]{figures/Young-Exp-2}
-  \end{subfigure}
-\end{figure}
-
-\begin{equation*}
-  \begin{aligned}
-    \Delta x = \dfrac{D}{d} \lambda 
-  \end{aligned}
-  \quad\quad 
-  \begin{aligned}
-    b \leq \lambda R \dfrac{1}{d} 
-  \end{aligned}
-  \quad\quad 
-  \begin{aligned}
-    I = I_0 \cos^2 \left( \dfrac{d \pi}{D \lambda} x  \right)
-  \end{aligned}
-  \quad\quad 
-  \begin{aligned}
-    x_0 = - \dfrac{D}{R} \xi
-  \end{aligned}
-\end{equation*}
-
-\section{Fresnel's Double Mirror}
+\section{Fraunhofer Diffraction}
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.9\linewidth]{figures/Fresnel-Double-Mirror}
+  \includegraphics[width=0.6\linewidth]{figures/Fraunhofer-Fresnel-Diffraction}
 \end{figure}
-
-\begin{equation*}
-  \begin{aligned}
-    x_{white} = k \lambda \dfrac{D}{d} \quad\quad x_{black} = \dfrac{2 k + 1}{2} \lambda \dfrac{D}{d}   
-  \end{aligned}
-\end{equation*}
-
-\section{Fresnel's Double Prism}
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.9\linewidth]{figures/Fresnel-double-prism}
+  \includegraphics[width=0.7\linewidth]{figures/Fraunhofer-Diffraction-Irradance}
 \end{figure}
 
-\begin{equation*}
-  \begin{aligned}
-    x_{white} = k \lambda \dfrac{D}{d} \quad\quad x_{black} = \dfrac{2 k + 1}{2} \lambda \dfrac{D}{d}   
-  \end{aligned}
-\end{equation*}
-
-\section{Equal Inclination Interference}
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.4\linewidth]{figures/Equal-inclination}
-\end{figure}
+White fringes:
 
 \begin{equation*}
-  \begin{aligned}
-    \Lambda =
-  \end{aligned}
   \left\{
     \begin{aligned}
-      & 2nk_0 d \cos \theta_2 \pm \pi && \quad\quad n_1 > n_2 < n_3 \ \text{OR} \  n_1 < n_2 > n_3 \\
-      & 2nk_0 d \cos \theta_2 && \quad\quad n_1 < n_2 < n_3 \  \text{OR} \  n_1 > n_2 > n_3 \\
+      b \sin \theta &= 0 && \quad\quad \text{Central Fringe} \\
+      \sin \theta &= \pm \left( 2 m + 1 \right) \cdot \dfrac{\lambda}{2b} && \quad\quad m = 1,2,3,\dots
+    \end{aligned}
+  \right.
+  \quad\quad 
+  \left\{
+    \begin{aligned}
+      \Delta \theta_0 &= 2 \cdot \dfrac{\lambda}{b} \\
+      \Delta \theta &= \dfrac{\lambda}{b} 
     \end{aligned}
   \right.
 \end{equation*}
 
-\section{Equal Thickness Interference}
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.4\linewidth]{figures/Equal-thickness}
-\end{figure}
+Dark fringes:
 
 \begin{equation*}
   \begin{aligned}
-    e = \Delta h = \dfrac{\lambda}{2 n} \quad\quad l = \dfrac{e}{\sin \alpha} = \dfrac{\lambda}{2 n \alpha} \approx \dfrac{\lambda}{2 n \alpha}   
+    \sin \theta = \pm m \cdot \dfrac{\lambda}{b} \quad\quad m = 1,2,3,\dots
   \end{aligned}
 \end{equation*}
 
-\section{Newton's Rings}
 
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.4\linewidth]{figures/Newton-Ring}
-\end{figure}
-
-\begin{equation*}
-  \begin{aligned}
-    \Delta = 2 n h + \dfrac{\lambda}{2} = 
-  \end{aligned}
-  \left\{
-    \begin{aligned}
-      & k \lambda && \quad\quad \text{White} \\
-      & \left( k + \dfrac{1}{2}  \right) \lambda && \quad\quad \text{Black}
-    \end{aligned}
-  \right.
-\end{equation*}
-
-\begin{equation*}
-  \begin{aligned}
-    h = R - \sqrt{R^2 - r^2} = R \left[ 1 - \sqrt{1 - \left( \dfrac{r}{R}  \right)^2 } \right] \approx \dfrac{r^2}{2R} 
-  \end{aligned}
-\end{equation*}
-
-\begin{equation*}
-  \begin{aligned}
-    r^2 = 
-  \end{aligned}
-  \left\{
-    \begin{aligned}
-      & \left( k - \dfrac{1}{2}  \right) \dfrac{R \lambda}{n} && \quad\quad \text{White} \\
-      & \dfrac{k R \lambda}{n} && \quad\quad \text{Black} 
-    \end{aligned}
-  \right.
-\end{equation*}
 
 %%% Local Variables:
 %%% mode: latex

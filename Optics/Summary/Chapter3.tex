@@ -1,340 +1,273 @@
-\chapter{The Propagation of Light}
+\chapter{Geometrical Optics}
 
-\section{Scattering and Interference}
+\section{Aspherical Surface}
 
-Destructive interference of the scattering light
+\begin{figure}[H]
+  \centering
+  \begin{subfigure}{.25\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{figures/hyperbolic-surf.png}
+  \end{subfigure}
+  \begin{subfigure}{.65\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{figures/ellipsoidal-surf.png}
+  \end{subfigure}
+\end{figure}
 
-\begin{itemize}
-\item The denser the substance through which light advances, the less the lateral scattering.
-\item The longer the wavelength, the less the lateral scattering.
-\item On an overcast day, sky looks white because of large water droplets scatters all lights. On sunny day, sky only scatters blue light. And if there were no atmosphere, sky would be black as it is on moon.
-\item All molecules have electronic resonances in UV, the closer driving frequency is to a resonance, the more vigorously the oscillator responds. Blue and violet response more than red, sky is blue.
-\end{itemize}
+\section{Refraction at a Spherical Interface}
 
-\section{Speed of Light in Medium}
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.5\linewidth]{figures/Refraction-at-a-Spherical-Interface}
+\end{figure}
+
+\begin{equation*}
+  \begin{aligned}
+    \dfrac{n_1}{s_o} + \dfrac{n_2}{s_i} = \dfrac{n_2 - n_1}{R} = \Phi 
+  \end{aligned}
+  \quad \Rightarrow \quad
+  \left\{
+  \begin{aligned}
+    f_0 = \dfrac{n_1}{n_2 - n_1} R \quad\quad (s_i = \infty) \\
+    f_i = \dfrac{n_2}{n_2 - n_1} R \quad\quad (s_o = \infty)  
+  \end{aligned}
+  \right.
+\end{equation*}
+
+\begin{figure}[H]
+  \centering
+  \begin{subfigure}{.3\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{figures/Refraction-at-a-Spherical-Interface-1.jpg}
+  \end{subfigure}
+  \hspace{2cm}
+  \begin{subfigure}{.4\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{figures/Refraction-at-a-Spherical-Interface-2.jpg}
+  \end{subfigure}
+\end{figure}
+
+\section{Lenses}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.5\linewidth]{figures/Thin-Lens.jpg}
+\end{figure}
+
+\begin{equation*}
+  \begin{aligned}
+    \dfrac{n_m}{s_{o1}} + \dfrac{n_m}{s_{i2}} = \left( n_l - n_m \right) \left( \dfrac{1}{R_1} - \dfrac{1}{R_2}   \right) + \dfrac{n_l d}{\left( s_{i1} - d \right) s_{i1}} 
+  \end{aligned}
+\end{equation*}
+
+For lenses in the air, where $n_m = 1$
+
+\begin{equation*}
+  \begin{aligned}
+    \dfrac{1}{s_{o1}} + \dfrac{1}{s_{i2}} = \left( n_l - 1 \right) \left( \dfrac{1}{R_1} - \dfrac{1}{R_2}   \right) + \dfrac{n_l d}{\left( s_{i1} - d \right) s_{i1}} 
+  \end{aligned}
+\end{equation*}
+
+For thin lenses, $d \approx 0$
+
+\begin{equation*}
+  \begin{aligned}
+    \dfrac{1}{s_{o1}} + \dfrac{1}{s_{i2}} = \left( n_l - 1 \right) \left( \dfrac{1}{R_1} - \dfrac{1}{R_2}   \right) = \dfrac{1}{f} 
+  \end{aligned}
+\end{equation*}
+
+Which is the Lensmaker's Formula.
+
+\section{Magnification}
 
 \begin{figure}[H]
   \centering
   \begin{subfigure}{.45\textwidth}
     \centering
-    \includegraphics[width=\linewidth]{figures/Light-speed-in-dielectric1.png}
+      \includegraphics[width=\linewidth]{figures/Magnification-transverse.jpg}
   \end{subfigure}
   \begin{subfigure}{.45\textwidth}
     \centering
-    \includegraphics[width=\linewidth]{figures/Light-speed-in-dielectric2.png}
+      \includegraphics[width=\linewidth]{figures/Magnification-longitudinal.jpg}
   \end{subfigure}
 \end{figure}
 
-
-If the phase of light in dielectric lags behind vacuum one, the resultant lags, and vice versa.
-
-\section{Internal and External Reflection}
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.8\linewidth]{figures/internal-external-reflection}
-\end{figure}
-
-Beam I (internal reflection) and Beam II (external reflection) has $180^{\circ}$ phase shift, when the gap between right part and left part of the glass in picture b becomes zero, two beams diminishes. This case is the same as picture a where the glass has not been cut.
-
-\section{The Fresnel Equations}
-
-\subsection{Electric Field Perpendicular to Plane of Incidence}
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.4\linewidth]{figures/Fresnel-perpendicular}
-\end{figure}
-
 \begin{equation*}
- \left\{
+  \left\{
   \begin{aligned}
-    & E_i + E_r = E_t \\
-    & B_i \cos \theta_i = B_r \cos \theta_r + B_t \cos \theta_t
+    \dfrac{y_o}{|y_i|} = \dfrac{f}{x_i} \\
+    \dfrac{|y_i|}{y_o} = \dfrac{f}{x_o}  
   \end{aligned}
   \right.
   \quad \Rightarrow \quad
-  \left\{
   \begin{aligned}
-    & E = v B \\
-    & v = \dfrac{c}{n}
+    x_o x_i = f^2 \quad\quad \left( \text{Newton's formula} \right)
   \end{aligned}
-  \right.
 \end{equation*}
 
-We define the amplitude reflection coefficient $r$, the amplitude transmission coefficient $t$
+
+Transverse Magnification
 
 \begin{equation*}
-  \left\{
   \begin{aligned}
-    r = \dfrac{n_i \cos \theta_i - n_t \cos \theta_t}{n_i \cos \theta_i + n_t \cos \theta_t} \\
-    t = \dfrac{2 n_i \cos \theta_i}{n_i \cos \theta_i + n_t \cos \theta_t} 
+    M_T = \dfrac{y_i}{|y_o|} = - \dfrac{s_o}{s_i} = - \dfrac{f}{x_o} = - \dfrac{x_i}{f}  
   \end{aligned}
-  \right.
+\end{equation*}
+
+Longitudinal Magnification
+
+\begin{equation*}
+  \begin{aligned}
+    M_L = \dfrac{\md x_i}{\md x_o} = \dfrac{\md}{\md x_o} \left( \dfrac{f^2}{x_o}  \right) = - \dfrac{f^2}{x_o^2} = - M_T^2   
+  \end{aligned}
+\end{equation*}
+
+\section{Mirrors}
+
+\subsection{Aspherical Mirrors}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.7\linewidth]{figures/aspherical-mirror.png}
+\end{figure}
+
+Precise aspheric surface are difficult and expensive to fabricate.
+
+\subsection{Spherical Mirrors}
+
+The difference between spherical and paraboloidal mirror will be appreciable only if y is large.
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.7\linewidth]{figures/spherical-aspherical.png}
+\end{figure}
+
+\subsubsection{Mirror Formula}
+
+\begin{figure}[H]
+  \centering
+  \begin{subfigure}{.45\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{figures/mirror-formula-0.png}
+  \end{subfigure}
+  \begin{subfigure}{.45\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{figures/mirror-formula-1.png}
+  \end{subfigure}
+\end{figure}
+
+\begin{equation*}
+  \begin{aligned}
+    \dfrac{\overline{SC}}{\overline{SA}} = \dfrac{\overline{CP}}{\overline{PA}}  
+  \end{aligned}
   \quad + \quad
-  \begin{aligned}
-    n_i \sin \theta_i = n_t \sin \theta_t
-  \end{aligned}
-  \quad \Rightarrow \quad
   \left\{
   \begin{aligned}
-    r_{\perp} &= \dfrac{\sin \left( \theta_i - \theta_t \right)}{\sin \left( \theta_i + \theta_t \right)} \\
-    t_{\perp} &= \dfrac{2 \sin \theta_t \cos \theta_i}{\sin \left( \theta_i + \theta_t \right)} 
-  \end{aligned}
-  \right.
-\end{equation*}
-
-\subsection{Electric Field Parallel to Plane of Incidence}
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.4\linewidth]{figures/Fresnel-parallel}
-\end{figure}
-
-\begin{equation*}
- \left\{
-  \begin{aligned}
-    & B_i + B_r = B_t \\
-    & E_i \cos \theta_i = E_r \cos \theta_r + E_t \cos \theta_t
+    \overline{SC} &= \phantom{-} s_o - \left| R \right| = \phantom{-(} s_o + R \phantom{)} \\ 
+    \overline{CP} &= - s_i + \left| R \right| = -  \left( s_i + R \right) \\
+    \overline{SA} &= s_o \\
+    \overline{PA} &= s_i
   \end{aligned}
   \right.
   \quad \Rightarrow \quad
-  \left\{
   \begin{aligned}
-    & E = v B \\
-    & v = \dfrac{c}{n}
-  \end{aligned}
-  \right.
-\end{equation*}
-
-We define the amplitude reflection coefficient $r$, the amplitude transmission coefficient $t$
-
-\begin{equation*}
-  \left\{
-  \begin{aligned}
-    r = \dfrac{n_t \cos \theta_i - n_i \cos \theta_t}{n_t \cos \theta_i + n_i \cos \theta_t} \\
-    t = \dfrac{2 n_i \cos \theta_i}{n_t \cos \theta_i + n_i \cos \theta_t} 
-  \end{aligned}
-  \right.
-  \quad + \quad
-  \begin{aligned}
-    n_i \sin \theta_i = n_t \sin \theta_t
+    \dfrac{s_o + R}{s_o} = - \dfrac{s_i + R}{s_i}  
   \end{aligned}
   \quad \Rightarrow \quad
+  \begin{aligned}
+    \dfrac{1}{s_o} + \dfrac{1}{s_i} = - \dfrac{2}{R}   
+  \end{aligned}
+\end{equation*}
+
+\begin{equation*}
   \left\{
   \begin{aligned}
-    r_{\parallel} &= \dfrac{\sin \left( 2 \theta_i \right) - \sin \left( 2 \theta_t \right)}{\sin \left( 2 \theta_i \right) + \sin \left( 2 \theta_t \right)} = \dfrac{\tan \left( \theta_i - \theta_t \right)}{\tan \left( \theta_i + \theta_t \right)} \\
-    t_{\parallel} &= \dfrac{2 \sin \theta_t \theta_i}{\sin \left( \theta_i + \theta_t \right) \cos \left( \theta_i - \theta_t \right)} 
+    s_o = \infty \quad \Rightarrow \quad s_i = f = - R / 2 \\
+    s_i = \infty \quad \Rightarrow \quad s_o = f = - R / 2 
+  \end{aligned}
+  \right.
+  \quad \Rightarrow \quad 
+  \left\{
+  \begin{aligned}
+    s_o = 2f \quad \Rightarrow \quad s_i = 2f \\
+    s_o = \phantom{1} f \quad \Rightarrow \quad s_i = \infty \\
+    s_i = \phantom{1} f \quad \Rightarrow \quad s_o = \infty
   \end{aligned}
   \right.
 \end{equation*}
 
-\section{Polarization Angle}
-
-\begin{equation*}
-  \begin{aligned}
-    \theta_p = \arctan \left( \dfrac{\theta_p}{\theta_i}  \right)
-  \end{aligned}
-\end{equation*}
+\section{Prism}
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.3\linewidth]{figures/Polarization-angle}
-\end{figure}
-
-\section{Critical Angle}
-
-\begin{equation*}
-  \begin{aligned}
-    \theta_c = \arcsin \left( \dfrac{n_t}{n_i}  \right)
-  \end{aligned}
-\end{equation*}
-
-\section{Phase Shift}
-
-When $\theta_i = 0$
-
-\begin{equation*}
-  \begin{aligned}
-    r_{\perp} &= - r_{\parallel} = \dfrac{n_i - n_t}{n_i + n_t} \\
-    t_{\parallel} &= \phantom{+} t_{\perp} = \dfrac{2 n_i}{n_i + n_t} 
-  \end{aligned}
-\end{equation*}
-
-While $n_i > n_t$ (Inner reflection)
-
-\begin{equation*}
-  \begin{aligned}
-    r_{\parallel} &< 0 \\
-    r_{\perp} &> 0
-  \end{aligned}
-\end{equation*}
-
-No phase shift.
-
-While $n_i < n_t$ (Outer reflection)
-
-\begin{equation*}
-  \begin{aligned}
-    r_{\parallel} &> 0 \\
-    r_{\perp} &< 0
-  \end{aligned}
-\end{equation*}
-
-Phase shifted by $\pi$.
-
-\section{Reflectance and Transmittance}
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.4\linewidth]{figures/Reflectance-and-Transmittance}
+  \includegraphics[width=0.5\linewidth]{figures/Prism}
 \end{figure}
 
 \begin{equation*}
   \left\{
   \begin{aligned}
-    R &= \dfrac{I_r A \cos \theta_r}{I_i A \cos \theta_i} = \dfrac{I_r}{I_i} \\
-    T &= \dfrac{I_t A \cos \theta_t}{I_i A \cos \theta_i} = \dfrac{I_t \cos \theta_t}{I_i \cos \theta_i}
+    \delta &= \left( \theta_{i1} - \theta_{t1} \right) + \left( \theta_{t2} - \theta_{i2} \right) \\
+    \alpha &= \theta_{t1} + \theta_{i2}
   \end{aligned}
   \right.
+  \quad \Rightarrow \quad 
+  \begin{aligned}
+    \delta &= \theta_{i1} + \theta_{t2} - \alpha
+  \end{aligned}
 \end{equation*}
 
 \begin{equation*}
   \begin{aligned}
-    \vec{S} = c^2 \varepsilon_0 \vec{E} \times \vec{B}
-  \end{aligned}
-  \quad \Rightarrow \quad
-  \begin{aligned}
-    I = \dfrac{1}{2} \varepsilon v E_0^2 = \dfrac{1}{2} \varepsilon_0 \varepsilon_r v E_0^2 = \dfrac{1}{2} \varepsilon_0 n^2 v E_0^2 = \dfrac{1}{2} \varepsilon_0 n c E_0^2
+    \theta_{t2} &= \sin^{-1} \left( n \sin \theta_{i2} \right) 
+    = \sin^{-1} \left[ n \sin \left( \alpha - \theta_{t1} \right) \right] 
+    = \sin^{-1} \left[ n \left( \sin \alpha \cos \theta_{t1} - \cos \alpha \sin \theta_{t1} \right) \right] \\
+    &= \sin^{-1} \left[ n \left( \sin \alpha \sqrt{1 - \sin^2 \theta_{t1}} - \cos \alpha \sin \theta_{t1} \right) \right] 
+    = \sin^{-1} \left[ \sin \alpha \sqrt{n^2 - \sin^2 \theta_{i1}} - \cos \alpha \sin \theta_{i1} \right] \\
   \end{aligned}
 \end{equation*}
+  
+\begin{equation*}
+  \begin{aligned}
+    \delta &= \theta_{i1} + \sin^{-1} \left[ \sin \alpha \sqrt{n^2 - \sin^2 \theta_{i1}} - \cos \alpha \sin \theta_{i1} \right] - \alpha
+  \end{aligned}
+\end{equation*}
+
+Minimum deviation:
 
 \begin{equation*}
   \left\{
   \begin{aligned}
-    R &= \dfrac{I_r}{I_i} = \left( \dfrac{E_{0r}}{E_{0i}}  \right)^2 = r^2 \\
-    T &= \dfrac{I_t \cos \theta_t}{I_i \cos \theta_i} = \left( \dfrac{n_t \cos \theta_t}{n_i \cos \theta_i}  \right) \left( \dfrac{E_{0t}}{E_{0i}}  \right)^2 = \left( \dfrac{n_t \cos \theta_t}{n_i \cos \theta_i}  \right) t^2
+    & \dfrac{\md \delta}{\md \theta_{i1}} = 0 \quad \Rightarrow \quad 1 + \dfrac{\md \theta_{t2}}{\md \theta_{i1}} = 0 \quad \Rightarrow \quad \md \theta_{i1} = - \md \theta_{t2} \\
+    & \md \alpha = 0 \quad \Rightarrow \quad \md \left( \theta_{t1} + \theta_{i2} \right) = 0 \quad \Rightarrow \quad \md \theta_{t1} = - \md \theta_{i2} \\
+    & \sin \theta_{i1} = n \sin \theta_{t1} \quad \Rightarrow \quad \cos \theta_{i1}\md \theta_{i1} = n \cos \theta_{t1} \md \theta_{t1} \\
+    & \sin \theta_{t2} = n \sin \theta_{i2} \quad \Rightarrow \quad \cos \theta_{t2}\md \theta_{t2} = n \cos \theta_{i2} \md \theta_{i2}
   \end{aligned}
   \right.
-  \quad \Rightarrow \quad
-  \left\{
+  \quad \Rightarrow \quad 
   \begin{aligned}
-    & R_{\perp} = r_{\perp}^2 \\
-    & R_{\parallel} = r_{\parallel}^2 \\
-    & T_{\perp} = \left( \dfrac{n_t \cos \theta_t}{n_i \cos \theta_i}  \right) t_{\perp}^2 \\
-    & T_{\parallel} = \left( \dfrac{n_t \cos \theta_t}{n_i \cos \theta_i}  \right) t_{\parallel}^2
+    \dfrac{\cos \theta_{i1}}{\cos \theta_{t2}} = \dfrac{\cos \theta_{t1}}{\cos \theta_{i2}}  
   \end{aligned}
-  \right.
-  \quad \Rightarrow \quad
-  \left\{
-  \begin{aligned}
-    & R_{\perp} + T_{\perp} = 1 \\
-    & R_{\parallel} + T_{\parallel} = 1 \\
-    & R + T = 1 \\
-  \end{aligned}
-  \right.
 \end{equation*}
 
-When $\theta_i = 0$, any distinction between the parallel and perpendicular components of R and T vanishes. Thus
-
-\begin{equation*}
-  \left\{
-  \begin{aligned}
-    & R = R_{\parallel} = R_{\perp} = \left( \dfrac{n_t - n_i}{n_t + n_i}  \right)^2 \\
-    & T = T_{\parallel} = T_{\perp} = \dfrac{4 n_t n_i}{\left( n_i + n_t \right)^2} 
-  \end{aligned}
-  \right.
-\end{equation*}
-
-\section{The Evanescent Wave}
-
-\begin{figure}[H]
-  \centering
-  \includegraphics[width=0.5\linewidth]{figures/Evanescent-wave}
-  \label{fig:}
-\end{figure}
+$\Rightarrow $
 
 \begin{equation*}
   \begin{aligned}
-    \vec{E}_t = \vec{E}_{0t} \exp \left[ i \left( \vec{k}_t  \cdot \vec{r} - \omega t \right) \right]
+    \dfrac{1 - \sin^2 \theta_{i1}}{1 - \sin^2 \theta_{t2}} = \dfrac{1 - n^2 \sin^2 \theta_{i1}}{1 - n^2 \sin^2 \theta_{t2}}  
+  \end{aligned}
+  \quad \Rightarrow \quad 
+  \begin{aligned}
+    \theta_{i1} = \theta_{t2}
   \end{aligned}
 \end{equation*}
+
+This means that the ray for which the deviation is a minimum traverses the prism symmetrically.
 
 \begin{equation*}
   \begin{aligned}
-    \vec{k}_t \cdot \vec{r} = k_{tx} x + k_{ty} y
+    \theta_{t1} = \theta_{i2} = \alpha / 2 \quad\quad \theta_{i1} = \theta_{t2} = \dfrac{\delta_m + \alpha}{2} \quad\quad n = \dfrac{\sin \left[ \left( \delta_m + \alpha \right) / 2 \right]}{\sin \alpha / 2}  
   \end{aligned}
 \end{equation*}
-
-\begin{equation*}
-  \begin{aligned}
-    k_{tx} &= k_t \sin \theta_t = \left( \dfrac{n_i}{n_t}  \right) k_t \sin \theta_i = n_i k_0 \sin \theta_i \\
-    k_{ty} &= k_t \cos \theta_t = i k_t \sqrt{\dfrac{n_i^2 \sin^2 \theta_i}{n_t^2} - 1} = i \beta
-  \end{aligned}
-\end{equation*}
-
-\begin{equation*}
-  \begin{aligned}
-    \vec{E}_t = \vec{E}_{0t} \exp \left( - \beta y \right) \exp \left[ i \left( n_i k_0 x \sin \theta_i - \omega t \right) \right]
-  \end{aligned}
-\end{equation*}
-
-\section{Optical Properties of Metals}
-
-The index of refraction of metal is complex
-
-\begin{equation*}
-  \begin{aligned}
-    \tilde{n} = n_R - i n_I
-  \end{aligned}
-\end{equation*}
-
-\begin{equation*}
-  \begin{aligned}
-    \nabla \times \vec{H} = \varepsilon_0 \varepsilon_r \dfrac{\partial \vec{E}}{\partial t} + \sigma \vec{E} = - i \omega \varepsilon_0 \varepsilon_r \vec{E} + \sigma \vec{E} = - i \omega \varepsilon_0 \tilde{\varepsilon}_r \vec{E}
-  \end{aligned}
-\end{equation*}
-
-Whereas
-
-\begin{equation*}
-  \begin{aligned}
-    \tilde{\varepsilon}_r = \varepsilon_r + i \dfrac{\sigma}{\omega \varepsilon_0} 
-  \end{aligned}
-\end{equation*}
-
-\begin{equation*}
-  \begin{aligned}
-    \tilde{n}^2 = \tilde{\varepsilon}_r = \varepsilon_r + i \dfrac{\sigma}{\omega \varepsilon_0} = \left( n_R + i n_I \right)^2
-  \end{aligned}
-\end{equation*}
-
-Since $\dfrac{\sigma}{\omega \varepsilon_0 \varepsilon_r} \gg 1 $
-
-\begin{equation*}
-  \begin{aligned}
-    n_I \approx n_R = \sqrt{\dfrac{\sigma}{2 \omega \varepsilon_0} }
-  \end{aligned}
-\end{equation*}
-
-Skin depth
-
-\begin{equation*}
-  \begin{aligned}
-    \delta = \sqrt{\dfrac{1}{2 \omega \mu_0 \sigma} }
-  \end{aligned}
-\end{equation*}
-
-Reflectance
-
-\begin{equation*}
-  \begin{aligned}
-    R = \left| \dfrac{n_i - n_t}{n_i + n_t}  \right|^2 = \left( \dfrac{\tilde{n} - 1}{\tilde{n} + 1}  \right) \left( \dfrac{\tilde{n} - 1}{\tilde{n} + 1}  \right)^{*} = \dfrac{\left( n_R - 1 \right)^2 + n_I^2}{\left( n_R + 1 \right)^2 + n_I^2} 
-  \end{aligned}
-\end{equation*}
-
-
-
 
 %%% Local Variables:
 %%% mode: latex

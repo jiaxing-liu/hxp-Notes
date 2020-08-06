@@ -1,190 +1,131 @@
-\chapter{Polarization}
+\chapter{Interference}
 
-\section{Circular Polarization}
-
-\begin{equation*}
-  \left\{
-    \begin{aligned}
-      & \vec{E}_x \left( z,t \right) = \vec{\imath} E_0 \cos \left( k x - \omega t \right) \\
-      & \vec{E}_y \left( z,t \right) = \vec{\jmath} E_0 \sin \left( k x - \omega t \right)
-    \end{aligned}
-  \right.
-  \Rightarrow 
-  \begin{aligned}
-    \vec{E} = E_0 \left[ \vec{\imath} \cos \left( k x - \omega t \right) + \vec{\jmath} \sin \left( k x - \omega t \right) \right]
-  \end{aligned}
-  \quad\quad \text{Right-circularly polarized}
-\end{equation*}
-
-\begin{equation*}
-  \left\{
-    \begin{aligned}
-      & \vec{E}_x \left( z,t \right) = \vec{\imath} E_0 \cos \left( k z - \omega t \right) \\
-      & \vec{E}_y \left( z,t \right) = - \vec{\jmath} E_0 \sin \left( k z - \omega t \right)
-    \end{aligned}
-  \right.
-  \Rightarrow 
-  \begin{aligned}
-    \vec{E} = E_0 \left[ \vec{\imath} \cos \left( k x - \omega t \right) - \vec{\jmath} \sin \left( k x - \omega t \right) \right]
-  \end{aligned}
-  \quad\quad \text{Left-circularly polarized}
-\end{equation*}
-
-\section{Elliptical Polarization}
-
-\begin{equation*}
-  \left\{
-    \begin{aligned}
-      & \vec{E}_x = E_{0x} \cos \left( k x - \omega t \right) \\
-      & \vec{E}_y = E_{0y} \cos \left( k z - \omega t + \epsilon \right)
-    \end{aligned}
-  \right.
-  \quad\quad \text{Elliptical Polarization}
-\end{equation*}
-
-\section{Angular Momentum}
-
-\begin{equation*}
-  \begin{aligned}
-    \dfrac{\md E}{\md t} = \omega M = \omega \dfrac{\md L}{\md t}  
-  \end{aligned}
-  \Rightarrow 
-  \begin{aligned}
-    L = \dfrac{E}{\omega} = \dfrac{h \nu}{\omega} = \pm \hbar = 
-  \end{aligned}
-  \left\{
-    \begin{aligned}
-      & - \hbar \quad\quad \text{Right-circularly polarized} \\
-      & + \hbar \quad\quad \text{Left-circularly polarized}
-    \end{aligned}
-  \right.
-\end{equation*}
-
-\section{Malus's Law}
+\section{Young's Experiment}
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.7\linewidth]{figures/Malus}
-  \label{fig:}
-\end{figure}
-
-\begin{equation*}
-  \left\{
-    \begin{aligned}
-      & E_{02} = E_{01} \cos \theta \\
-      & I \left( \theta \right) = \dfrac{c \varepsilon_0}{2} E_{01}^2 \cos^2 \theta = I \left( 0 \right) \cos^2 \theta
-    \end{aligned}
-  \right.
-\end{equation*}
-
-\section{Dichroism}
-
-\subsection{The Wire-Grid Polarizer and Dichroic Crystals, Polaroid}
-
-\begin{figure}[H]
-  \centering
-  \begin{subfigure}{.4\textwidth}
+  \begin{subfigure}{.55\textwidth}
     \centering
-    \includegraphics[width=\linewidth]{figures/WireGrid}
-    \label{fig:}
+    \includegraphics[width=\linewidth]{figures/Young-Exp}
   \end{subfigure}
-  \begin{subfigure}{.18\textwidth}
+  \begin{subfigure}{.35\textwidth}
     \centering
-    \includegraphics[width=\linewidth]{figures/Dichroic-Crystals}
-    \label{fig:}
+    \includegraphics[width=\linewidth]{figures/Young-Exp-2}
   \end{subfigure}
-  \label{fig:}
-  \begin{subfigure}{.4\textwidth}
-    \centering
-    \includegraphics[width=0.6\linewidth]{figures/Polaroid}
-    \label{fig:}
-  \end{subfigure}
-  \label{fig:}
-\end{figure}
-
-\section{Birefringent Crystals}
-
-\begin{figure}[H]
-  \centering
-  \begin{subfigure}{.5\textwidth}
-    \centering
-    \includegraphics[width=0.7\linewidth]{figures/negative-uniaxial}
-    \caption{$v_{\perp} < v_{\parallel} \Rightarrow n_o > n_e \Rightarrow \text{negative uniaxial}$}
-    \label{fig:}
-  \end{subfigure}%
-  \begin{subfigure}{.5\textwidth}
-    \centering
-    \includegraphics[width=0.7\linewidth]{figures/positive-uniaxial}
-    \caption{$v_{\perp} > v_{\parallel} \Rightarrow n_o > n_e \Rightarrow \text{positive uniaxial}$}
-    \label{fig:}
-  \end{subfigure}
-  \caption{negative and positive uniaxial}
-  \label{fig:}
-\end{figure}
-
-\section{Polarizers}
-
-\begin{figure}[H]
-  \centering
-  \begin{subfigure}{.5\textwidth}
-    \centering
-    \includegraphics[width=0.75\linewidth]{figures/Polarizer1}
-    \caption{The Glan-Foucault Prism}
-    \label{fig:}
-  \end{subfigure}%
-  \begin{subfigure}{.5\textwidth}
-    \centering
-    \includegraphics[width=0.75\linewidth]{figures/Polarizer2}
-    \caption{The Wollaston Prism}
-    \label{fig:}
-  \end{subfigure}
-  \caption{Tow Birefringent Polarizers}
-  \label{fig:}
-\end{figure}
-
-\section{Scattering and Polarization}
-
-\begin{figure}[H]
-  \centering
-  \begin{subfigure}{.6\textwidth}
-    \centering
-    \includegraphics[width=\linewidth]{figures/Scattering-Polarization-1}
-    \label{fig:}
-  \end{subfigure}%
-  \begin{subfigure}{.3\textwidth}
-    \centering
-    \includegraphics[width=0.9\linewidth]{figures/Scattering-Polarization-2}
-    \label{fig:}
-  \end{subfigure}
-  \label{fig:}
-\end{figure}
-
-\section{Retarders}
-
-\begin{figure}[H]
-  \centering
-  \begin{subfigure}{.5\textwidth}
-    \centering
-    \includegraphics[width=0.8\linewidth]{figures/Retarder}
-    \caption{Quarter-wave Retarder}
-    \label{fig:}
-  \end{subfigure}%
-  \begin{subfigure}{.5\textwidth}
-    \centering
-    \includegraphics[width=0.9\linewidth]{figures/Retarder2}
-    \caption{Two Linear Polarizers and Two Quarter-wave Retarders}
-    \label{fig:}
-  \end{subfigure}
-  \label{fig:}
-  \caption{Quarter-wave Retarder and its Application}
 \end{figure}
 
 \begin{equation*}
   \begin{aligned}
-    d \left( n_o - n_e \right) = \dfrac{4 m + 1}{4} \lambda_0 
+    \Delta x = \dfrac{D}{d} \lambda 
+  \end{aligned}
+  \quad\quad 
+  \begin{aligned}
+    b \leq \lambda R \dfrac{1}{d} 
+  \end{aligned}
+  \quad\quad 
+  \begin{aligned}
+    I = I_0 \cos^2 \left( \dfrac{d \pi}{D \lambda} x  \right)
+  \end{aligned}
+  \quad\quad 
+  \begin{aligned}
+    x_0 = - \dfrac{D}{R} \xi
   \end{aligned}
 \end{equation*}
 
+\section{Fresnel's Double Mirror}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.9\linewidth]{figures/Fresnel-Double-Mirror}
+\end{figure}
+
+\begin{equation*}
+  \begin{aligned}
+    x_{white} = k \lambda \dfrac{D}{d} \quad\quad x_{black} = \dfrac{2 k + 1}{2} \lambda \dfrac{D}{d}   
+  \end{aligned}
+\end{equation*}
+
+\section{Fresnel's Double Prism}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.9\linewidth]{figures/Fresnel-double-prism}
+\end{figure}
+
+\begin{equation*}
+  \begin{aligned}
+    x_{white} = k \lambda \dfrac{D}{d} \quad\quad x_{black} = \dfrac{2 k + 1}{2} \lambda \dfrac{D}{d}   
+  \end{aligned}
+\end{equation*}
+
+\section{Equal Inclination Interference}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.4\linewidth]{figures/Equal-inclination}
+\end{figure}
+
+\begin{equation*}
+  \begin{aligned}
+    \Lambda =
+  \end{aligned}
+  \left\{
+    \begin{aligned}
+      & 2nk_0 d \cos \theta_2 \pm \pi && \quad\quad n_1 > n_2 < n_3 \ \text{OR} \  n_1 < n_2 > n_3 \\
+      & 2nk_0 d \cos \theta_2 && \quad\quad n_1 < n_2 < n_3 \  \text{OR} \  n_1 > n_2 > n_3 \\
+    \end{aligned}
+  \right.
+\end{equation*}
+
+\section{Equal Thickness Interference}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.4\linewidth]{figures/Equal-thickness}
+\end{figure}
+
+\begin{equation*}
+  \begin{aligned}
+    e = \Delta h = \dfrac{\lambda}{2 n} \quad\quad l = \dfrac{e}{\sin \alpha} = \dfrac{\lambda}{2 n \alpha} \approx \dfrac{\lambda}{2 n \alpha}   
+  \end{aligned}
+\end{equation*}
+
+\section{Newton's Rings}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.4\linewidth]{figures/Newton-Ring}
+\end{figure}
+
+\begin{equation*}
+  \begin{aligned}
+    \Delta = 2 n h + \dfrac{\lambda}{2} = 
+  \end{aligned}
+  \left\{
+    \begin{aligned}
+      & k \lambda && \quad\quad \text{White} \\
+      & \left( k + \dfrac{1}{2}  \right) \lambda && \quad\quad \text{Black}
+    \end{aligned}
+  \right.
+\end{equation*}
+
+\begin{equation*}
+  \begin{aligned}
+    h = R - \sqrt{R^2 - r^2} = R \left[ 1 - \sqrt{1 - \left( \dfrac{r}{R}  \right)^2 } \right] \approx \dfrac{r^2}{2R} 
+  \end{aligned}
+\end{equation*}
+
+\begin{equation*}
+  \begin{aligned}
+    r^2 = 
+  \end{aligned}
+  \left\{
+    \begin{aligned}
+      & \left( k - \dfrac{1}{2}  \right) \dfrac{R \lambda}{n} && \quad\quad \text{White} \\
+      & \dfrac{k R \lambda}{n} && \quad\quad \text{Black} 
+    \end{aligned}
+  \right.
+\end{equation*}
 
 %%% Local Variables:
 %%% mode: latex

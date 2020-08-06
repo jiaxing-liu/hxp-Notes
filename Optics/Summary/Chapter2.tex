@@ -1,281 +1,340 @@
-\chapter{Electromagnetic Theory and photons}
+\chapter{The Propagation of Light}
 
-\section{Longitudinal and Transverse}
+\section{Scattering and Interference}
+
+Destructive interference of the scattering light
 
 \begin{itemize}
-\item Longitudinal: medium is in the direction of motion of wave.
-\item Transverse: medium is perpendicular to the motion of wave.
-  
+\item The denser the substance through which light advances, the less the lateral scattering.
+\item The longer the wavelength, the less the lateral scattering.
+\item On an overcast day, sky looks white because of large water droplets scatters all lights. On sunny day, sky only scatters blue light. And if there were no atmosphere, sky would be black as it is on moon.
+\item All molecules have electronic resonances in UV, the closer driving frequency is to a resonance, the more vigorously the oscillator responds. Blue and violet response more than red, sky is blue.
 \end{itemize}
 
-\section{Wave Equation}
+\section{Speed of Light in Medium}
+
+\begin{figure}[H]
+  \centering
+  \begin{subfigure}{.45\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{figures/Light-speed-in-dielectric1.png}
+  \end{subfigure}
+  \begin{subfigure}{.45\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{figures/Light-speed-in-dielectric2.png}
+  \end{subfigure}
+\end{figure}
+
+
+If the phase of light in dielectric lags behind vacuum one, the resultant lags, and vice versa.
+
+\section{Internal and External Reflection}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.8\linewidth]{figures/internal-external-reflection}
+\end{figure}
+
+Beam I (internal reflection) and Beam II (external reflection) has $180^{\circ}$ phase shift, when the gap between right part and left part of the glass in picture b becomes zero, two beams diminishes. This case is the same as picture a where the glass has not been cut.
+
+\section{The Fresnel Equations}
+
+\subsection{Electric Field Perpendicular to Plane of Incidence}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.4\linewidth]{figures/Fresnel-perpendicular}
+\end{figure}
 
 \begin{equation*}
+ \left\{
   \begin{aligned}
-    \psi \left( x, t \right) = f \left( x + v t \right) \\
-  \end{aligned}
-\end{equation*}
-
-\begin{equation*}
-  \left\{
-  \begin{aligned}
-    \dfrac{\partial}{\partial x} &= \dfrac{\partial}{\partial \left( x + v t \right)} \cdot \dfrac{\partial \left( x + v t \right)}{\partial x} = \dfrac{\partial}{\partial \left( x + v t \right)} \\   
-    \dfrac{\partial}{\partial t} &= \dfrac{\partial}{\partial \left( x + v t \right)} \cdot \dfrac{\partial \left( x + v t \right)}{t} = v \cdot \dfrac{\partial}{\partial \left( x + v t \right)}     
-  \end{aligned}
-  \right.
-  \quad \Rightarrow \quad  
-  \left\{
-  \begin{aligned}
-    \dfrac{\partial^2}{\partial x^2} &= \dfrac{\partial^2}{\partial \left( x + v t \right)^2} \\
-    \dfrac{\partial^2}{\partial t^2} &= v^2 \cdot \dfrac{\partial^2}{\partial \left( x + v t \right)^2}  
-  \end{aligned}
-  \right.
-  \quad \Rightarrow \quad  
-  \left\{
-  \begin{aligned}
-    \dfrac{\partial^2 \psi}{\partial x^2} &= \dfrac{\partial^2 \psi}{\partial \left( x + v t \right)^2} \\
-    \dfrac{\partial^2 \psi}{\partial t^2} &= v^2 \cdot \dfrac{\partial^2 \psi}{\partial \left( x + v t \right)^2}  
-  \end{aligned}
-  \right.
-\end{equation*}
-
-\begin{equation*}
-  \begin{aligned}
-    \Rightarrow \dfrac{\partial^2 \psi}{\partial x^2} = \dfrac{1}{v^2} \cdot \dfrac{\partial^2 \psi}{\partial t^2}   
-    \quad \Rightarrow \quad
-    \nabla^2 \psi \left( x,y,z \right) = \dfrac{1}{v^2} \cdot \dfrac{\partial^2 \psi \left( x,y,z \right)}{\partial t^2}  
-  \end{aligned}
-\end{equation*}
-
-\section{Maxwell's Equation}
-
-Faraday's Induction Law
-
-\begin{equation*}
-  \oint_{c} \vec{E} \cdot \md \vec{l} = - \dfrac{\md}{\md t} \iint \vec{B} \cdot \md \vec{S}
-  \quad \Rightarrow \quad
-  \nabla \times \vec{E} = - \dfrac{\partial \vec{B}}{\partial t}    
-\end{equation*}
-
-Gauss's Law
-
-\begin{equation*}
-  \oiint_{A} \vec{E} \cdot \md \vec{S} = \dfrac{1}{\varepsilon_{0}} \iiint_{v} \rho \md V 
-  \quad \Rightarrow \quad
-  \nabla \cdot \vec{E} = \dfrac{\rho}{\varepsilon_0} 
-\end{equation*}
-
-\begin{equation*}
-  \oiint_{A} \vec{B} \cdot \md \vec{S} = 0
-  \quad \Rightarrow \quad
-  \nabla \cdot \vec{B} = 0
-\end{equation*}
-
-Ampere's Circuital Law
-
-\begin{equation*}
-  \oint_{C} \vec{B} \cdot \md \vec{l} = \mu_{0} \iint_{A} \left( \vec{J} + \varepsilon_{0} \dfrac{\partial \vec{E}}{\partial t}  \right) \cdot \md \vec{S}
-  \quad \Rightarrow \quad
-  \nabla \times \vec{B} = \mu_0 \varepsilon_0 \cdot \dfrac{\partial \vec{E}}{\partial t} 
-\end{equation*}
-
-We can now take the derivatives of the 4 equations
-
-\begin{equation*}
-  \left\{
-  \begin{aligned}
-    \nabla \times \vec{E} &= - \dfrac{\partial B}{\partial t} \\
-    \nabla \times \vec{B} &= \mu_{0} \varepsilon_{0} \cdot \dfrac{\partial \vec{E}}{\partial t}  \\
-    \nabla \cdot \vec{E} &= \dfrac{\rho}{\varepsilon_{0}} \\
-    \nabla \cdot \vec{B} &= 0
+    & E_i + E_r = E_t \\
+    & B_i \cos \theta_i = B_r \cos \theta_r + B_t \cos \theta_t
   \end{aligned}
   \right.
   \quad \Rightarrow \quad
   \left\{
   \begin{aligned}
-    \nabla^{2} \vec{E} = \mu_{0} \varepsilon_{0} \cdot \dfrac{\partial^{2} \vec{E}}{\partial t^{2}}= \dfrac{1}{c^2} \cdot \dfrac{\partial^2 \vec{E}}{\partial t^2}  \\
-    \nabla^{2} \vec{B} = \mu_{0} \varepsilon_{0} \cdot \dfrac{\partial^{2} \vec{B}}{\partial t^{2}}  = \dfrac{1}{c^2} \cdot \dfrac{\partial^2 \vec{B}}{\partial t^2}  
+    & E = v B \\
+    & v = \dfrac{c}{n}
   \end{aligned}
   \right.
 \end{equation*}
 
-Which indicates the speed of electromagnetic wave is exactly the speed of light.
+We define the amplitude reflection coefficient $r$, the amplitude transmission coefficient $t$
 
-Furthermore, it can be seen that the electric field and magnetic field are transverse. They are perpendicular to each other. We assume the electric field is parallel to the y-axis.
-
-\begin{equation*}
-  \begin{aligned}
-    E_{y} (x,t) = E_{0} \cos \left[ \omega \left( t - x/c  \right) + \varepsilon \right]
-  \end{aligned}
-\end{equation*}
-
-According to Faraday's Law
-
-\begin{equation*}
-  \begin{aligned}
-    \dfrac{\partial E_{y}}{\partial x} = - \dfrac{\partial B_{z}}{\partial t}  
-  \end{aligned}
-\end{equation*}
-
-We can calculate $B_{z}$
-
-\begin{equation*}
-  \begin{aligned}
-    B_z = \dfrac{1}{c} \cdot E_{0} \cos \left[ \omega \left( t - x/c  \right) + \varepsilon \right]
-  \end{aligned}
-\end{equation*}
-
-So that
-
-\begin{equation*}
-  \begin{aligned}
-    E_y=v B_z =
-  \end{aligned}
-  \left\{
-  \begin{aligned}
-    & \dfrac{1}{\sqrt{\mu_0 \varepsilon_0}} \cdot B_z && \quad \text{in vacuum} \\
-    & \dfrac{1}{\sqrt{\mu \varepsilon}} \cdot B_z && \quad \text{not in vacuum}
-  \end{aligned}
-  \right.
-\end{equation*}
-
-\section{Energy}
-
-\begin{equation*}
-  \begin{aligned}
-    u_{E} = \dfrac{1}{2} \cdot \dfrac{\varepsilon_0}{1} \cdot E^{2} \quad\quad 
-    u_{B} = \dfrac{1}{2} \cdot \dfrac{1}{\mu_0} \cdot  B^{2} \quad\quad 
-    u_{E} = u_{B} \quad\quad 
-    u = u_{E} + u_{B} = \varepsilon_{0} E^{2} = \dfrac{1}{\mu_{0}} B^{2}
-  \end{aligned}
-\end{equation*}
-
-\begin{equation*}
-  \begin{aligned}
-    S = uc = \varepsilon_0 c E^2 \quad\quad \text{(Power: Transport of Energy per unit time across a unit area)}
-  \end{aligned}
-\end{equation*}
-
-\begin{equation*}
-  \begin{aligned}
-    \vec{S} = \dfrac{1}{\mu} \cdot \vec{E} \times \vec{B} = c^2 \varepsilon \cdot \vec{E} \times \vec{B} \quad\quad \text{(Poynting Vector)}
-  \end{aligned}
-  \quad\quad 
-  \begin{aligned}
-    I = \dfrac{S}{2} = \dfrac{\varepsilon_0 c}{2} E_0^2 \quad\quad \text{(Irradiance)}
-  \end{aligned}
-\end{equation*}
-
-\section{Radiation Pressure}
-
-\begin{equation*}
-  \begin{aligned}
-    P(t) = u = u_E + u_B = \dfrac{S}{c} \quad\quad \text{Radiation Pressure equals energy density of the EM wave} 
-  \end{aligned}
-\end{equation*}
-
-\begin{equation*}
-  \begin{aligned}
-    \left< P(t) \right>_T = \dfrac{1}{2} \cdot \dfrac{S}{c} = \dfrac{I}{c} \quad\quad \text{Average Radiation Pressure} 
-  \end{aligned}
-\end{equation*}
-
-\begin{equation*}
-  \begin{aligned}
-    AP = \dfrac{\Delta p}{\Delta t}
-    \quad \Rightarrow \quad
-    Ac \Delta t P = c \Delta p
-    \quad \Rightarrow \quad 
-    p_V = \dfrac{P}{c} = \dfrac{S}{c^2} \quad\quad \text{Momentum per Volume} 
-  \end{aligned}
-\end{equation*}
-
-\section{Light in Bulk Matter}
-
-\subsection{Speed of light and Dielectric Constant}
-
-\begin{equation*}
-  \begin{aligned}
-    v = \dfrac{1}{\sqrt{\varepsilon \mu}} 
-    \quad\quad 
-    n = \dfrac{c}{v} = \sqrt{\dfrac{\varepsilon \mu}{\varepsilon_0 \mu_0} } = \sqrt{\dfrac{\varepsilon}{\varepsilon_0} }
-  \end{aligned}
-\end{equation*}
-
-\subsection{Dispersion}
-
-For gas and solid
-
-\begin{equation*}
-  \begin{aligned}
-    m_e \dfrac{\md ^2 x}{\md t^2} + \gamma m_e \dfrac{\md x}{\md t} + m_e \omega_0^2 x = - e E \left( t \right)
-  \end{aligned}
-\end{equation*}
-\begin{equation*}
-  \begin{aligned}
-    E \left( t \right) = E_0 \exp \left( - i \omega t \right)
-  \end{aligned}
-\end{equation*}
-Assume
-\begin{equation*}
-  \begin{aligned}
-    x = x_0 \exp \left( - i \omega t \right)
-  \end{aligned}
-\end{equation*}
-We got a solution
-\begin{equation*}
-  \begin{aligned}
-    x_0 \left( \omega_0^2 - \omega^2 - i \gamma \omega \right) = - \dfrac{e E_0}{m_e} 
-  \end{aligned}
-\end{equation*}
-\begin{equation*}
-  \begin{aligned}
-    x_0 = - \dfrac{e E_0}{m_e \left( \omega_0^2 - \omega^2 - i \gamma \omega \right)} 
-  \end{aligned}
-\end{equation*}
-\begin{equation*}
-  \begin{aligned}
-    x \left( t \right) = - \dfrac{e E \left( t \right)}{m_e \left( \omega_0^2 - \omega^2 - i \gamma \omega \right)}
-  \end{aligned}
-\end{equation*}
-\begin{equation*}
-  \begin{aligned}
-    P \left( t \right) = - N e x \left( t \right) = \dfrac{N e^2 E \left( t \right)}{m_e \left( \omega_0^2 - \omega^2 - i \gamma \omega \right)} 
-  \end{aligned}
-\end{equation*}
-\begin{equation*}
-  \begin{aligned}
-    \varepsilon_r = \dfrac{\varepsilon}{\varepsilon_0} = n^2 = 1 + \dfrac{P}{\varepsilon_0 E} = 1 + \dfrac{N e^2}{\varepsilon_0 m_e \left( \omega_0^2 - \omega^2 - i \gamma \omega \right)}  
-  \end{aligned}
-\end{equation*}
 \begin{equation*}
   \left\{
   \begin{aligned}
-    \mathrm{Re} \left( \varepsilon_{r} \right) &= 1 + \dfrac{N e^2 \left( \omega_0^2 - \omega^2 \right)}{\varepsilon_0 m_e \left[ \left( \omega_0^2 - \omega^2 \right)^2 + \gamma^2 \omega^2 \right]}  \\
-    \mathrm{Im} \left( \varepsilon_{r} \right) &= \dfrac{N e^2 \gamma \omega}{\varepsilon_0 m_e \left[ \left( \omega_0^2 - \omega^2 \right)^2 + \gamma^2 \omega^2 \right]}  
+    r = \dfrac{n_i \cos \theta_i - n_t \cos \theta_t}{n_i \cos \theta_i + n_t \cos \theta_t} \\
+    t = \dfrac{2 n_i \cos \theta_i}{n_i \cos \theta_i + n_t \cos \theta_t} 
+  \end{aligned}
+  \right.
+  \quad + \quad
+  \begin{aligned}
+    n_i \sin \theta_i = n_t \sin \theta_t
+  \end{aligned}
+  \quad \Rightarrow \quad
+  \left\{
+  \begin{aligned}
+    r_{\perp} &= \dfrac{\sin \left( \theta_i - \theta_t \right)}{\sin \left( \theta_i + \theta_t \right)} \\
+    t_{\perp} &= \dfrac{2 \sin \theta_t \cos \theta_i}{\sin \left( \theta_i + \theta_t \right)} 
   \end{aligned}
   \right.
 \end{equation*}
-When $\gamma = 0$
+
+\subsection{Electric Field Parallel to Plane of Incidence}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.4\linewidth]{figures/Fresnel-parallel}
+\end{figure}
+
+\begin{equation*}
+ \left\{
+  \begin{aligned}
+    & B_i + B_r = B_t \\
+    & E_i \cos \theta_i = E_r \cos \theta_r + E_t \cos \theta_t
+  \end{aligned}
+  \right.
+  \quad \Rightarrow \quad
+  \left\{
+  \begin{aligned}
+    & E = v B \\
+    & v = \dfrac{c}{n}
+  \end{aligned}
+  \right.
+\end{equation*}
+
+We define the amplitude reflection coefficient $r$, the amplitude transmission coefficient $t$
+
+\begin{equation*}
+  \left\{
+  \begin{aligned}
+    r = \dfrac{n_t \cos \theta_i - n_i \cos \theta_t}{n_t \cos \theta_i + n_i \cos \theta_t} \\
+    t = \dfrac{2 n_i \cos \theta_i}{n_t \cos \theta_i + n_i \cos \theta_t} 
+  \end{aligned}
+  \right.
+  \quad + \quad
+  \begin{aligned}
+    n_i \sin \theta_i = n_t \sin \theta_t
+  \end{aligned}
+  \quad \Rightarrow \quad
+  \left\{
+  \begin{aligned}
+    r_{\parallel} &= \dfrac{\sin \left( 2 \theta_i \right) - \sin \left( 2 \theta_t \right)}{\sin \left( 2 \theta_i \right) + \sin \left( 2 \theta_t \right)} = \dfrac{\tan \left( \theta_i - \theta_t \right)}{\tan \left( \theta_i + \theta_t \right)} \\
+    t_{\parallel} &= \dfrac{2 \sin \theta_t \theta_i}{\sin \left( \theta_i + \theta_t \right) \cos \left( \theta_i - \theta_t \right)} 
+  \end{aligned}
+  \right.
+\end{equation*}
+
+\section{Polarization Angle}
+
 \begin{equation*}
   \begin{aligned}
-    \varepsilon_r = n^2 = 1 + \dfrac{N e^2}{\varepsilon_0 m \left( \omega_0^2 - \omega^2 \right)} 
+    \theta_p = \arctan \left( \dfrac{\theta_p}{\theta_i}  \right)
   \end{aligned}
 \end{equation*}
 
-For metal
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.3\linewidth]{figures/Polarization-angle}
+\end{figure}
+
+\section{Critical Angle}
 
 \begin{equation*}
   \begin{aligned}
-    m_e \dfrac{\md ^2 x}{\md t^2} + \gamma m_e \dfrac{\md x}{\md t} = - e E \left( t \right)
+    \theta_c = \arcsin \left( \dfrac{n_t}{n_i}  \right)
+  \end{aligned}
+\end{equation*}
+
+\section{Phase Shift}
+
+When $\theta_i = 0$
+
+\begin{equation*}
+  \begin{aligned}
+    r_{\perp} &= - r_{\parallel} = \dfrac{n_i - n_t}{n_i + n_t} \\
+    t_{\parallel} &= \phantom{+} t_{\perp} = \dfrac{2 n_i}{n_i + n_t} 
+  \end{aligned}
+\end{equation*}
+
+While $n_i > n_t$ (Inner reflection)
+
+\begin{equation*}
+  \begin{aligned}
+    r_{\parallel} &< 0 \\
+    r_{\perp} &> 0
+  \end{aligned}
+\end{equation*}
+
+No phase shift.
+
+While $n_i < n_t$ (Outer reflection)
+
+\begin{equation*}
+  \begin{aligned}
+    r_{\parallel} &> 0 \\
+    r_{\perp} &< 0
+  \end{aligned}
+\end{equation*}
+
+Phase shifted by $\pi$.
+
+\section{Reflectance and Transmittance}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.4\linewidth]{figures/Reflectance-and-Transmittance}
+\end{figure}
+
+\begin{equation*}
+  \left\{
+  \begin{aligned}
+    R &= \dfrac{I_r A \cos \theta_r}{I_i A \cos \theta_i} = \dfrac{I_r}{I_i} \\
+    T &= \dfrac{I_t A \cos \theta_t}{I_i A \cos \theta_i} = \dfrac{I_t \cos \theta_t}{I_i \cos \theta_i}
+  \end{aligned}
+  \right.
+\end{equation*}
+
+\begin{equation*}
+  \begin{aligned}
+    \vec{S} = c^2 \varepsilon_0 \vec{E} \times \vec{B}
+  \end{aligned}
+  \quad \Rightarrow \quad
+  \begin{aligned}
+    I = \dfrac{1}{2} \varepsilon v E_0^2 = \dfrac{1}{2} \varepsilon_0 \varepsilon_r v E_0^2 = \dfrac{1}{2} \varepsilon_0 n^2 v E_0^2 = \dfrac{1}{2} \varepsilon_0 n c E_0^2
+  \end{aligned}
+\end{equation*}
+
+\begin{equation*}
+  \left\{
+  \begin{aligned}
+    R &= \dfrac{I_r}{I_i} = \left( \dfrac{E_{0r}}{E_{0i}}  \right)^2 = r^2 \\
+    T &= \dfrac{I_t \cos \theta_t}{I_i \cos \theta_i} = \left( \dfrac{n_t \cos \theta_t}{n_i \cos \theta_i}  \right) \left( \dfrac{E_{0t}}{E_{0i}}  \right)^2 = \left( \dfrac{n_t \cos \theta_t}{n_i \cos \theta_i}  \right) t^2
+  \end{aligned}
+  \right.
+  \quad \Rightarrow \quad
+  \left\{
+  \begin{aligned}
+    & R_{\perp} = r_{\perp}^2 \\
+    & R_{\parallel} = r_{\parallel}^2 \\
+    & T_{\perp} = \left( \dfrac{n_t \cos \theta_t}{n_i \cos \theta_i}  \right) t_{\perp}^2 \\
+    & T_{\parallel} = \left( \dfrac{n_t \cos \theta_t}{n_i \cos \theta_i}  \right) t_{\parallel}^2
+  \end{aligned}
+  \right.
+  \quad \Rightarrow \quad
+  \left\{
+  \begin{aligned}
+    & R_{\perp} + T_{\perp} = 1 \\
+    & R_{\parallel} + T_{\parallel} = 1 \\
+    & R + T = 1 \\
+  \end{aligned}
+  \right.
+\end{equation*}
+
+When $\theta_i = 0$, any distinction between the parallel and perpendicular components of R and T vanishes. Thus
+
+\begin{equation*}
+  \left\{
+  \begin{aligned}
+    & R = R_{\parallel} = R_{\perp} = \left( \dfrac{n_t - n_i}{n_t + n_i}  \right)^2 \\
+    & T = T_{\parallel} = T_{\perp} = \dfrac{4 n_t n_i}{\left( n_i + n_t \right)^2} 
+  \end{aligned}
+  \right.
+\end{equation*}
+
+\section{The Evanescent Wave}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.5\linewidth]{figures/Evanescent-wave}
+  \label{fig:}
+\end{figure}
+
+\begin{equation*}
+  \begin{aligned}
+    \vec{E}_t = \vec{E}_{0t} \exp \left[ i \left( \vec{k}_t  \cdot \vec{r} - \omega t \right) \right]
   \end{aligned}
 \end{equation*}
 
 \begin{equation*}
   \begin{aligned}
-    \varepsilon_r = 1 - \dfrac{N e^2}{\varepsilon_0 m_e \left(\omega^2 + i \gamma \omega \right)} = 1 - \dfrac{\omega_p^2}{\omega \left( \omega + i \gamma \right)}  
+    \vec{k}_t \cdot \vec{r} = k_{tx} x + k_{ty} y
   \end{aligned}
 \end{equation*}
+
+\begin{equation*}
+  \begin{aligned}
+    k_{tx} &= k_t \sin \theta_t = \left( \dfrac{n_i}{n_t}  \right) k_t \sin \theta_i = n_i k_0 \sin \theta_i \\
+    k_{ty} &= k_t \cos \theta_t = i k_t \sqrt{\dfrac{n_i^2 \sin^2 \theta_i}{n_t^2} - 1} = i \beta
+  \end{aligned}
+\end{equation*}
+
+\begin{equation*}
+  \begin{aligned}
+    \vec{E}_t = \vec{E}_{0t} \exp \left( - \beta y \right) \exp \left[ i \left( n_i k_0 x \sin \theta_i - \omega t \right) \right]
+  \end{aligned}
+\end{equation*}
+
+\section{Optical Properties of Metals}
+
+The index of refraction of metal is complex
+
+\begin{equation*}
+  \begin{aligned}
+    \tilde{n} = n_R - i n_I
+  \end{aligned}
+\end{equation*}
+
+\begin{equation*}
+  \begin{aligned}
+    \nabla \times \vec{H} = \varepsilon_0 \varepsilon_r \dfrac{\partial \vec{E}}{\partial t} + \sigma \vec{E} = - i \omega \varepsilon_0 \varepsilon_r \vec{E} + \sigma \vec{E} = - i \omega \varepsilon_0 \tilde{\varepsilon}_r \vec{E}
+  \end{aligned}
+\end{equation*}
+
+Whereas
+
+\begin{equation*}
+  \begin{aligned}
+    \tilde{\varepsilon}_r = \varepsilon_r + i \dfrac{\sigma}{\omega \varepsilon_0} 
+  \end{aligned}
+\end{equation*}
+
+\begin{equation*}
+  \begin{aligned}
+    \tilde{n}^2 = \tilde{\varepsilon}_r = \varepsilon_r + i \dfrac{\sigma}{\omega \varepsilon_0} = \left( n_R + i n_I \right)^2
+  \end{aligned}
+\end{equation*}
+
+Since $\dfrac{\sigma}{\omega \varepsilon_0 \varepsilon_r} \gg 1 $
+
+\begin{equation*}
+  \begin{aligned}
+    n_I \approx n_R = \sqrt{\dfrac{\sigma}{2 \omega \varepsilon_0} }
+  \end{aligned}
+\end{equation*}
+
+Skin depth
+
+\begin{equation*}
+  \begin{aligned}
+    \delta = \sqrt{\dfrac{1}{2 \omega \mu_0 \sigma} }
+  \end{aligned}
+\end{equation*}
+
+Reflectance
+
+\begin{equation*}
+  \begin{aligned}
+    R = \left| \dfrac{n_i - n_t}{n_i + n_t}  \right|^2 = \left( \dfrac{\tilde{n} - 1}{\tilde{n} + 1}  \right) \left( \dfrac{\tilde{n} - 1}{\tilde{n} + 1}  \right)^{*} = \dfrac{\left( n_R - 1 \right)^2 + n_I^2}{\left( n_R + 1 \right)^2 + n_I^2} 
+  \end{aligned}
+\end{equation*}
+
+
+
 
 %%% Local Variables:
 %%% mode: latex
