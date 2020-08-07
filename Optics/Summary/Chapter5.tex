@@ -2,11 +2,13 @@
 
 \section{Circular Polarization}
 
+Phase shift: $\varepsilon = - \pi/2 + 2 m \pi$
+
 \begin{equation*}
   \left\{
     \begin{aligned}
-      & \vec{E}_x \left( z,t \right) = \vec{\imath} E_0 \cos \left( k x - \omega t \right) \\
-      & \vec{E}_y \left( z,t \right) = \vec{\jmath} E_0 \sin \left( k x - \omega t \right)
+      & \vec{E}_x \left( z,t \right) = \phantom{+} \vec{\imath} E_0 \cos \left( k x - \omega t \right) \\
+      & \vec{E}_y \left( z,t \right) = \phantom{+} \vec{\jmath} E_0 \sin \left( k x - \omega t \right)
     \end{aligned}
   \right.
   \Rightarrow 
@@ -16,10 +18,12 @@
   \quad\quad \text{Right-circularly polarized}
 \end{equation*}
 
+Phase shift: $\varepsilon = + \pi/2 + 2 m \pi$
+
 \begin{equation*}
   \left\{
     \begin{aligned}
-      & \vec{E}_x \left( z,t \right) = \vec{\imath} E_0 \cos \left( k z - \omega t \right) \\
+      & \vec{E}_x \left( z,t \right) = \phantom{+} \vec{\imath} E_0 \cos \left( k z - \omega t \right) \\
       & \vec{E}_y \left( z,t \right) = - \vec{\jmath} E_0 \sin \left( k z - \omega t \right)
     \end{aligned}
   \right.
@@ -30,7 +34,11 @@
   \quad\quad \text{Left-circularly polarized}
 \end{equation*}
 
+When a Right-circularly polarized light reflected by a mirror, $\vec{E}_x$ and $\vec{E}_y$ all gain a phase shift by $\pi$, the reflected light will be also Right-circularly polarized, but only in the same coordinates as before. In the new coordinates, light will be Left-circularly polarized. 
+
 \section{Elliptical Polarization}
+
+When the phase shift of the two perpendicular light is not $m \pi$, elliptical-polarized light will form.
 
 \begin{equation*}
   \left\{
@@ -39,8 +47,13 @@
       & \vec{E}_y = E_{0y} \cos \left( k z - \omega t + \epsilon \right)
     \end{aligned}
   \right.
-  \quad\quad \text{Elliptical Polarization}
+  \quad\quad \quad\quad \quad\quad \quad\quad  \text{Elliptical Polarization}
 \end{equation*}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{figures/elliptical-polarized.png}
+\end{figure}
 
 \section{Angular Momentum}
 
@@ -64,118 +77,103 @@
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.7\linewidth]{figures/Malus}
-  \label{fig:}
+  \includegraphics[width=0.5\linewidth]{figures/Malus}
 \end{figure}
 
 \begin{equation*}
-  \left\{
     \begin{aligned}
-      & E_{02} = E_{01} \cos \theta \\
-      & I \left( \theta \right) = \dfrac{c \varepsilon_0}{2} E_{01}^2 \cos^2 \theta = I \left( 0 \right) \cos^2 \theta
+      E_{02} = E_{01} \cos \theta \quad\quad \quad\quad \quad\quad 
+      I \left( \theta \right) = \dfrac{c \varepsilon_0}{2} E_{01}^2 \cos^2 \theta = I \left( 0 \right) \cos^2 \theta
     \end{aligned}
-  \right.
 \end{equation*}
 
 \section{Dichroism}
 
 \subsection{The Wire-Grid Polarizer and Dichroic Crystals, Polaroid}
 
+\begin{itemize}
+\item Extraordinary wave: parallel to optic axis
+\item Ordinary wave: perpendicular to optic axis
+\end{itemize}
+
 \begin{figure}[H]
   \centering
-  \begin{subfigure}{.4\textwidth}
+  \begin{subfigure}{.3\textwidth}
     \centering
     \includegraphics[width=\linewidth]{figures/WireGrid}
-    \label{fig:}
   \end{subfigure}
-  \begin{subfigure}{.18\textwidth}
+  \begin{subfigure}{.2\textwidth}
     \centering
     \includegraphics[width=\linewidth]{figures/Dichroic-Crystals}
-    \label{fig:}
   \end{subfigure}
-  \label{fig:}
-  \begin{subfigure}{.4\textwidth}
+  \begin{subfigure}{.3\textwidth}
     \centering
     \includegraphics[width=0.6\linewidth]{figures/Polaroid}
-    \label{fig:}
   \end{subfigure}
-  \label{fig:}
 \end{figure}
 
 \section{Birefringent Crystals}
 
 \begin{figure}[H]
   \centering
-  \begin{subfigure}{.5\textwidth}
+  \begin{subfigure}{.45\textwidth}
     \centering
     \includegraphics[width=0.7\linewidth]{figures/negative-uniaxial}
     \caption{$v_{\perp} < v_{\parallel} \Rightarrow n_o > n_e \Rightarrow \text{negative uniaxial}$}
-    \label{fig:}
-  \end{subfigure}%
-  \begin{subfigure}{.5\textwidth}
+  \end{subfigure}
+  \begin{subfigure}{.45\textwidth}
     \centering
     \includegraphics[width=0.7\linewidth]{figures/positive-uniaxial}
     \caption{$v_{\perp} > v_{\parallel} \Rightarrow n_o > n_e \Rightarrow \text{positive uniaxial}$}
-    \label{fig:}
   \end{subfigure}
   \caption{negative and positive uniaxial}
-  \label{fig:}
 \end{figure}
 
 \section{Polarizers}
 
 \begin{figure}[H]
   \centering
-  \begin{subfigure}{.5\textwidth}
+  \begin{subfigure}{.45\textwidth}
     \centering
     \includegraphics[width=0.75\linewidth]{figures/Polarizer1}
     \caption{The Glan-Foucault Prism}
-    \label{fig:}
-  \end{subfigure}%
-  \begin{subfigure}{.5\textwidth}
+  \end{subfigure}
+  \begin{subfigure}{.45\textwidth}
     \centering
     \includegraphics[width=0.75\linewidth]{figures/Polarizer2}
     \caption{The Wollaston Prism}
-    \label{fig:}
   \end{subfigure}
   \caption{Tow Birefringent Polarizers}
-  \label{fig:}
 \end{figure}
 
 \section{Scattering and Polarization}
 
 \begin{figure}[H]
   \centering
-  \begin{subfigure}{.6\textwidth}
+  \begin{subfigure}{.55\textwidth}
     \centering
     \includegraphics[width=\linewidth]{figures/Scattering-Polarization-1}
-    \label{fig:}
-  \end{subfigure}%
+  \end{subfigure}
   \begin{subfigure}{.3\textwidth}
     \centering
     \includegraphics[width=0.9\linewidth]{figures/Scattering-Polarization-2}
-    \label{fig:}
   \end{subfigure}
-  \label{fig:}
 \end{figure}
 
 \section{Retarders}
 
 \begin{figure}[H]
   \centering
-  \begin{subfigure}{.5\textwidth}
+  \begin{subfigure}{.45\textwidth}
     \centering
     \includegraphics[width=0.8\linewidth]{figures/Retarder}
     \caption{Quarter-wave Retarder}
-    \label{fig:}
-  \end{subfigure}%
+  \end{subfigure}
   \begin{subfigure}{.5\textwidth}
     \centering
     \includegraphics[width=0.9\linewidth]{figures/Retarder2}
     \caption{Two Linear Polarizers and Two Quarter-wave Retarders}
-    \label{fig:}
   \end{subfigure}
-  \label{fig:}
   \caption{Quarter-wave Retarder and its Application}
 \end{figure}
 
@@ -184,7 +182,6 @@
     d \left( n_o - n_e \right) = \dfrac{4 m + 1}{4} \lambda_0 
   \end{aligned}
 \end{equation*}
-
 
 %%% Local Variables:
 %%% mode: latex
