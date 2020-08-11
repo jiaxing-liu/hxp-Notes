@@ -25,7 +25,6 @@ Destructive interference of the scattering light
   \end{subfigure}
 \end{figure}
 
-
 If the phase of light in dielectric lags behind vacuum one, the resultant lags, and vice versa.
 
 \section{Internal and External Reflection}
@@ -112,8 +111,8 @@ We define the amplitude reflection coefficient $r$, the amplitude transmission c
 \begin{equation*}
   \left\{
   \begin{aligned}
-    r = \dfrac{n_t \cos \theta_i - n_i \cos \theta_t}{n_t \cos \theta_i + n_i \cos \theta_t} \\
-    t = \dfrac{2 n_i \cos \theta_i}{n_t \cos \theta_i + n_i \cos \theta_t} 
+    r_{\parallel} = \dfrac{n_t \cos \theta_i - n_i \cos \theta_t}{n_t \cos \theta_i + n_i \cos \theta_t} \\
+    t_{\parallel} = \dfrac{2 n_i \cos \theta_i}{n_t \cos \theta_i + n_i \cos \theta_t} 
   \end{aligned}
   \right.
   \quad + \quad
@@ -133,13 +132,13 @@ We define the amplitude reflection coefficient $r$, the amplitude transmission c
 
 \begin{equation*}
   \begin{aligned}
-    \theta_p = \arctan \left( \dfrac{\theta_p}{\theta_i}  \right)
+    \theta_p = \theta_i = \dfrac{\pi}{2} - \theta_t \quad + \quad  n_i \sin \theta_i = n_t \sin \theta_t \quad \Rightarrow \quad \theta_p = \arctan \dfrac{n_t}{n_i} 
   \end{aligned}
 \end{equation*}
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.3\linewidth]{figures/Polarization-angle}
+  \includegraphics[width=0.5\linewidth]{figures/Polarization-angle}
 \end{figure}
 
 \section{Critical Angle}
@@ -152,36 +151,57 @@ We define the amplitude reflection coefficient $r$, the amplitude transmission c
 
 \section{Phase Shift}
 
-When $\theta_i = 0$
+\subsection{Outer reflection}
+
+While $n_i < n_t$ (Outer reflection)
+
+$\theta_i = 0$
 
 \begin{equation*}
   \begin{aligned}
     r_{\perp} &= - r_{\parallel} = \dfrac{n_i - n_t}{n_i + n_t} \\
     t_{\parallel} &= \phantom{+} t_{\perp} = \dfrac{2 n_i}{n_i + n_t} 
   \end{aligned}
+  \quad \Rightarrow \quad 
+  \left\{
+  \begin{aligned}
+    & r_{\perp} + t_{\parallel} = 1 \\
+    & r_{\parallel} > 0 \quad\quad \left( \text{inverted} \right) \\
+    & r_{\perp} < 0 \quad\quad \left( \text{inverted} \right)
+  \end{aligned}
+  \right.
 \end{equation*}
 
-While $n_i > n_t$ (Inner reflection)
+$\theta_i = \dfrac{\pi}{2} $
 
 \begin{equation*}
   \begin{aligned}
-    r_{\parallel} &< 0 \\
-    r_{\perp} &> 0
+    r_{\perp} = -1 \quad \left( \text{inverted} \right) \quad\quad r_{\parallel} = -1 \quad \left( \text{inverted} \right) \quad\quad t_{\perp} = 0 \quad\quad t_{\parallel} = 0
   \end{aligned}
 \end{equation*}
 
-No phase shift.
+Outer reflection $\quad \Rightarrow \quad $ phase shifted by $\pi$.
 
-While $n_i < n_t$ (Outer reflection)
+\subsection{Inner reflection}
+
+$\theta_i = 0$
 
 \begin{equation*}
   \begin{aligned}
-    r_{\parallel} &> 0 \\
-    r_{\perp} &< 0
+    r_{\perp} &= - r_{\parallel} = \dfrac{n_i - n_t}{n_i + n_t} \\
+    t_{\parallel} &= \phantom{+} t_{\perp} = \dfrac{2 n_i}{n_i + n_t} 
   \end{aligned}
+  \quad \Rightarrow \quad 
+  \left\{
+  \begin{aligned}
+    & r_{\perp} + t_{\parallel} = 1 \\
+    & r_{\parallel} < 0 \quad\quad \left( \text{non-inverted} \right) \\
+    & r_{\perp} > 0 \quad\quad \left( \text{non-inverted} \right)
+  \end{aligned}
+  \right.
 \end{equation*}
 
-Phase shifted by $\pi$.
+Inner reflection $\quad \Rightarrow \quad $ phase shifted by $0$.
 
 \section{Reflectance and Transmittance}
 
@@ -250,30 +270,31 @@ When $\theta_i = 0$, any distinction between the parallel and perpendicular comp
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=0.5\linewidth]{figures/Evanescent-wave}
-  \label{fig:}
+  \includegraphics[width=0.6\linewidth]{figures/Evanescent-wave}
 \end{figure}
 
 \begin{equation*}
   \begin{aligned}
     \vec{E}_t = \vec{E}_{0t} \exp \left[ i \left( \vec{k}_t  \cdot \vec{r} - \omega t \right) \right]
   \end{aligned}
-\end{equation*}
-
-\begin{equation*}
+  \quad\quad 
   \begin{aligned}
     \vec{k}_t \cdot \vec{r} = k_{tx} x + k_{ty} y
+  \end{aligned}
+  \quad\quad 
+  \begin{aligned}
+    k_t = n_t k_0 = \dfrac{2\pi}{\lambda} 
   \end{aligned}
 \end{equation*}
 
 \begin{equation*}
+  \left\{
   \begin{aligned}
     k_{tx} &= k_t \sin \theta_t = \left( \dfrac{n_i}{n_t}  \right) k_t \sin \theta_i = n_i k_0 \sin \theta_i \\
     k_{ty} &= k_t \cos \theta_t = i k_t \sqrt{\dfrac{n_i^2 \sin^2 \theta_i}{n_t^2} - 1} = i \beta
   \end{aligned}
-\end{equation*}
-
-\begin{equation*}
+  \right.
+  \quad \Rightarrow \quad 
   \begin{aligned}
     \vec{E}_t = \vec{E}_{0t} \exp \left( - \beta y \right) \exp \left[ i \left( n_i k_0 x \sin \theta_i - \omega t \right) \right]
   \end{aligned}
@@ -332,9 +353,6 @@ Reflectance
     R = \left| \dfrac{n_i - n_t}{n_i + n_t}  \right|^2 = \left( \dfrac{\tilde{n} - 1}{\tilde{n} + 1}  \right) \left( \dfrac{\tilde{n} - 1}{\tilde{n} + 1}  \right)^{*} = \dfrac{\left( n_R - 1 \right)^2 + n_I^2}{\left( n_R + 1 \right)^2 + n_I^2} 
   \end{aligned}
 \end{equation*}
-
-
-
 
 %%% Local Variables:
 %%% mode: latex
