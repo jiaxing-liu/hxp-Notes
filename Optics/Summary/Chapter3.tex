@@ -269,6 +269,50 @@ This means that the ray for which the deviation is a minimum traverses the prism
   \end{aligned}
 \end{equation*}
 
+\section{Magnifiers}
+
+\begin{minipage}[htbp]{0.7\linewidth}
+  \includegraphics[width=\linewidth]{figures/magnifier.png}
+\end{minipage}
+\begin{minipage}[htbp]{0.3\linewidth}
+  \begin{equation*}
+    \begin{aligned}
+      M &= \dfrac{\dfrac{y_i}{L} }{\dfrac{y_o}{d_0} } = \dfrac{y_i}{y_o} \dfrac{d_o}{L} = - \dfrac{s_i}{s_o} \dfrac{d_0}{L} \\
+      &= - \left( \dfrac{1}{f} - \dfrac{1}{s_i}   \right) \dfrac{s_i}{d_0 L}  \\
+      &= \left( 1 - \dfrac{s_i}{f}  \right) \dfrac{d_0}{L} \\
+      &= \left( 1 + \dfrac{L - l}{f}  \right)\dfrac{d_0}{L} \\
+      \Phi &= \dfrac{1}{f} \quad \Rightarrow \quad \\
+      M &= \left[ 1 + \Phi \left( L + l \right) \right] \dfrac{d_0}{L} \\
+      M_{max} &= d_0 \Phi + 1  = \dfrac{d_0}{f} + 1 \quad\quad \left( l = 0 \right)
+    \end{aligned}
+  \end{equation*}
+\end{minipage}
+
+\section{Optic Fiber}
+
+\begin{minipage}[htbp]{0.6\linewidth}
+  \includegraphics[width=\linewidth]{figures/optic-fiber.png}
+\end{minipage}
+\begin{minipage}[htbp]{0.4\linewidth}
+  \begin{equation*}
+    \left\{
+    \begin{aligned}
+      & n_i \sin \theta_{i_m} = n_f \sin \theta_f \\
+      & n_f \sin \left( \dfrac{\pi}{2} - \theta_f  \right) = n_c \sin \dfrac{\pi}{2}
+    \end{aligned}
+    \right.
+  \end{equation*}
+  $\Rightarrow$
+  \begin{equation*}
+    \left\{ 
+    \begin{aligned}
+      \sin \theta_i &= \dfrac{1}{n_i} \sqrt{n_f^2 - n_c^2} \\
+      \text{NA} &= n_i \sin \theta_{i_m} = \sqrt{n_f^2 - n_c^2}
+    \end{aligned}
+    \right. 
+  \end{equation*}
+\end{minipage}
+
 %%% Local Variables:
 %%% mode: latex
 %%% TeX-master: "Optics"
