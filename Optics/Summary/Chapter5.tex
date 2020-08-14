@@ -119,15 +119,52 @@ When the phase shift of the two perpendicular light is not $m \pi$, elliptical-p
   \begin{subfigure}{.45\textwidth}
     \centering
     \includegraphics[width=0.7\linewidth]{figures/negative-uniaxial}
-    \caption{$v_{\perp} < v_{\parallel} \Rightarrow n_o > n_e \Rightarrow \text{negative uniaxial}$}
+    \caption{$v_{\perp} < v_{\parallel} \Rightarrow n_o > n_e \Rightarrow \text{negative uniaxial}$ (Calcite)}
   \end{subfigure}
   \begin{subfigure}{.45\textwidth}
     \centering
     \includegraphics[width=0.7\linewidth]{figures/positive-uniaxial}
-    \caption{$v_{\perp} > v_{\parallel} \Rightarrow n_o > n_e \Rightarrow \text{positive uniaxial}$}
+    \caption{$v_{\perp} > v_{\parallel} \Rightarrow n_o < n_e \Rightarrow \text{positive uniaxial}$ (Quartz)}
   \end{subfigure}
-  \caption{negative and positive uniaxial}
 \end{figure}
+
+\begin{equation*}
+  \begin{aligned}
+    \dfrac{k_x^2}{n_o^2} + \dfrac{k_z^2}{n_e^2} = k_0^2 = \dfrac{\omega^2}{c^2}   
+  \end{aligned}
+\end{equation*}
+
+\section{Group Velocity}
+
+The direction light wave transmits is the same as group velocity. For e-wave:
+
+\begin{equation*}
+  \begin{aligned}
+    \dfrac{k_x^2}{n_e^2} + \dfrac{k_y^2}{n_o^2} = \left( \dfrac{\omega}{c}  \right)^2
+    \quad\quad
+    \vec{v}_g = \left( \dfrac{\partial \omega}{\partial x}, \dfrac{\partial \omega}{\partial z}   \right)
+  \end{aligned}
+\end{equation*}
+
+\begin{equation*}
+  \begin{aligned}
+    v_{gx} = \dfrac{c^2}{\omega} \dfrac{k_x}{n_e^2} \quad\quad v_{gz} = \dfrac{c^2}{\omega} \dfrac{k_z}{n_o^2}    
+  \end{aligned}
+\end{equation*}
+
+\begin{equation*}
+  \begin{aligned}
+    \dfrac{v_{gx}^2}{v_e^2} + \dfrac{v_{gz}^2}{v_o^2} = 1  
+  \end{aligned}
+\end{equation*}
+
+For o-wave:
+
+\begin{equation*}
+  \begin{aligned}
+    \dfrac{v_{gx}^2}{v_o^2} + \dfrac{v_{gz}^2}{v_o^2} = 1 
+  \end{aligned}
+\end{equation*}
 
 \section{Polarizers}
 
@@ -143,7 +180,6 @@ When the phase shift of the two perpendicular light is not $m \pi$, elliptical-p
     \includegraphics[width=0.75\linewidth]{figures/Polarizer2}
     \caption{The Wollaston Prism}
   \end{subfigure}
-  \caption{Tow Birefringent Polarizers}
 \end{figure}
 
 \section{Scattering and Polarization}
@@ -180,6 +216,47 @@ When the phase shift of the two perpendicular light is not $m \pi$, elliptical-p
 \begin{equation*}
   \begin{aligned}
     d \left( n_o - n_e \right) = \dfrac{4 m + 1}{4} \lambda_0 
+  \end{aligned}
+\end{equation*}
+
+\section{Jones Vector}
+
+Retarder with a phase shift $\delta$:
+
+\begin{equation*}
+  \begin{aligned}
+    \left[
+      \begin{array}{ccc}
+       1 & 0 \\
+       0 & \exp{i\delta} \\
+      \end{array}
+    \right ]
+  \end{aligned}
+\end{equation*}
+
+Matrix of rotation (rotate by $\theta$, counter-clock-wised):
+
+\begin{equation*}
+  \begin{aligned}
+    \left[
+      \begin{array}{ccc}
+       x' \\
+       y' \\
+      \end{array}
+    \right]
+    =
+    \left[
+      \begin{array}{ccc}
+       \cos \theta & \sin \theta \\
+       - \sin \theta & \cos \theta \\
+      \end{array}
+    \right]
+    \left[
+      \begin{array}{ccc}
+       x \\
+       y \\
+      \end{array}
+    \right]
   \end{aligned}
 \end{equation*}
 
