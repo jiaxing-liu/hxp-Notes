@@ -153,6 +153,81 @@ Two wave of light $\vec{E}_1$ and $\vec{E}_2$
   \right.
 \end{equation*}
 
+\section{Double Beam F-P Interference}
+
+\begin{minipage}[htbp]{0.4\linewidth}
+  \includegraphics[width=\linewidth]{figures/double-beam-interference.png}
+\end{minipage}
+\begin{minipage}[htbp]{0.6\linewidth}
+  \begin{equation*}
+    \begin{aligned}
+      & \left( m - \dfrac{\phi}{\pi}  \right) \lambda = 2 h \cos \theta_2 \\
+      \\
+      & \text{Same level, different wavelength} \\
+      & \left( m - \dfrac{\phi}{\pi}  \right) \Delta \lambda = - 2 h \sin \theta_2 \Delta \theta_2 \approx - 2 h \theta_2 \Delta \theta_2 \\
+      & \Delta e = f \Delta \theta_2 = - f \left( m - \dfrac{\phi}{\pi}  \right) \dfrac{\Delta \lambda}{2 h \theta_2} \\
+      \\
+      & \text{Same wavelength, different level} \\
+      & \Delta m \lambda = - 2 h \sin \theta_2 \Delta \theta_2 \approx - 2 h \theta_2 \Delta \theta_2 \\
+      & e = f \Delta \theta_2 = - f \dfrac{\lambda}{2 h \theta_2}  
+    \end{aligned}
+  \end{equation*}
+\end{minipage}
+
+Maximum wave length: 
+
+\begin{equation*}
+  \begin{aligned}
+    \dfrac{\Delta e}{e} = \left( m - \dfrac{\phi}{\pi}  \right) \dfrac{\Delta \lambda}{\lambda} = 2 h \cos \theta_2 \dfrac{\Delta \lambda}{\lambda^2} \approx 2 h \dfrac{\Delta \lambda}{\lambda^2}
+    \quad \Rightarrow \quad
+    \Delta \lambda \approx \dfrac{\Delta e}{2 h e} \lambda^2
+    \quad + \quad
+    \Delta e = e
+    \quad \Rightarrow \quad
+    \left( \Delta \lambda \right)_{SR} = \dfrac{\lambda^2}{2h} 
+  \end{aligned}
+\end{equation*}
+
+Minimum wavelength:
+
+\begin{equation*}
+  \begin{aligned}
+    \dfrac{\lambda}{\Delta \lambda_{min}} = \dfrac{\pi m}{2} \sqrt{F}
+    \quad\quad
+    F = \dfrac{4 R}{\left( 1 - R \right)^2} 
+  \end{aligned}
+\end{equation*}
+
+\section{Film}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.5\linewidth]{figures/film.png}
+\end{figure}
+
+Phase shift
+
+\begin{equation*}
+  \Delta \phi = 
+  \left\{
+  \begin{aligned}
+    & 2 d k_0 n_1 - 0 \quad\quad n_1 < n_2 \quad\quad \text{half wave loss happened in both of the 2 reflected wave}\\
+    & 2 d k_0 n_1 - \pi \quad\quad n_1 > n_2 \quad\quad \text{half wave loss happened only once}
+  \end{aligned}
+  \right.
+\end{equation*}
+
+Reflective index
+
+\begin{equation*}
+  R = \left\{
+  \begin{aligned}
+    \left( \dfrac{n_0 n_2 - n_1^2}{n_0 n_2 + n_1^2}  \right)^2 & \quad\quad n_1 < n_2 \\
+    \left( \dfrac{n_0 - n_2}{n_0 + n_2}  \right)^2 & \quad\quad n_1 > n_2 
+  \end{aligned}
+  \right.
+\end{equation*}
+
 %%% Local Variables:
 %%% mode: latex
 %%% TeX-master: "Optics"
