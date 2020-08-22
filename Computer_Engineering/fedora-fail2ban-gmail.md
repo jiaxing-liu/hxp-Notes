@@ -1,4 +1,4 @@
-# Set up fail2ban with postfix to protect server from ssh brute force attack
+# Setting up fail2ban with Gmail notification to secure your Fedora server from brute force
 
 ## Step 0: Install fial2ban
 
