@@ -144,3 +144,9 @@ Add my hostname `hxp-us-server` to `/etc/hosts` solved the problem
 ::1         localhost localhost.localdomain localhost6 localhost6.localdomain6 hxp-us-server
 ```
 
+Step 3: Check if an ip is really banned
+
+```
+ipset list
+```
+
