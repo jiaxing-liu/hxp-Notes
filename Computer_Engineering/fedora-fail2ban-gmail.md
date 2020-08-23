@@ -1,6 +1,6 @@
 # Setting up fail2ban with Gmail notification to secure your Fedora server from brute force
 
-## Step 0: Install fial2ban
+## Step 0: Install fail2ban
 
 ```
 yum install fail2ban
@@ -144,7 +144,7 @@ Add my hostname `hxp-us-server` to `/etc/hosts` solved the problem
 ::1         localhost localhost.localdomain localhost6 localhost6.localdomain6 hxp-us-server
 ```
 
-Step 3: Check if an ip is really banned
+# Step 3: Check if an ip is really banned
 
 ```
 ipset list
