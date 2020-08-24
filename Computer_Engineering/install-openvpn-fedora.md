@@ -29,6 +29,20 @@ iptables -t nat -L -n -v
 sysctl net.ipv4.ip_forward
 ```
 
+### Add log feature to vpn
+
+Edit `/etc/openvpn/server.conf `, add
+
+```
+log-append /var/log/openvpn.log
+```
+
+And restart
+
+```
+systemctl restart openvpn-server@server.service
+```
+
 ## Client
 
 Download the ovpn file
