@@ -43,6 +43,14 @@ And restart
 systemctl restart openvpn-server@server.service
 ```
 
+## Add or Remove User
+
+Just simply run the installation script again
+
+```
+./openvpn-install.sh
+```
+
 ## Client
 
 Download the ovpn file
