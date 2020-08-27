@@ -51,6 +51,12 @@ Just simply run the installation script again
 ./openvpn-install.sh
 ```
 
+## Assign an Static IP for a Client
+
+```
+echo "ifconfig-push 10.8.0.50 255.255.255.0" > /etc/openvpn/ccd/<vpn-username>
+```
+
 ## Client
 
 Download the ovpn file
