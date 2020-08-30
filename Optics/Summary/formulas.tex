@@ -51,14 +51,10 @@
 
 % Multi-line author information
 \usepackage{authblk}
-\author{胡喜平}
-\affil{https://hxp.plus/}
 
-\title{光学要背的公式}
+\pagestyle{empty}
 
 \begin{document}
-
-\maketitle
 
 \begin{multicols}{2}
 
@@ -80,6 +76,8 @@
 
 \section{光的传播}
 
+反射率透射率
+\\\\
 $r_{\parallel} = \dfrac{n_t \cos \theta_i - n_i \cos \theta_t}{n_t \cos \theta_i + n_i \cos \theta_t} $
 \\\\
 $r_{\perp} = \dfrac{n_i \cos \theta_i - n_t \cos \theta_t}{n_i \cos \theta_i + n_t \cos \theta_t} $
@@ -139,7 +137,7 @@ e光方程 $\dfrac{k_{\parallel}^2}{n_o^2} + \dfrac{k_{prep}^2}{n_e^2} = k_0^2  
 琼斯矢量 $\left[
   \begin{array}{cc}
    E_{0x} \\
-   E_{0y} \exp \left( i \theta \right)  \\
+   E_{0y} \exp \left( i \delta \right)  \\
   \end{array}
 \right ]
 $ ($x$ 比 $y$ 领先 $\delta$)
@@ -150,10 +148,15 @@ $ ($x$ 比 $y$ 领先 $\delta$)
 
 \section{光的衍射}
 
-夫琅禾费衍射亮纹 $\sin \theta_i = \dfrac{k \lambda}{d} $
+多缝夫琅禾费衍射亮纹 $\sin \theta_i = \dfrac{k \lambda}{d} $
 \\\\
-夫琅禾费衍射缺级 $\sin \theta_i = \dfrac{k \lambda}{a} $
-
+多缝夫琅禾费衍射缺级 $\sin \theta_i = \dfrac{k \lambda}{a} $
+\\\\
+菲涅耳衍射 $r_n = r_0 + \dfrac{n \lambda}{2} $ n是偶数时暗条纹
+\\\\
+菲涅耳衍射计算 $a_n = \dfrac{a_{n-1} + a_{n+1}}{2} $
+\\\\
+菲涅耳衍射波带数 $N = \dfrac{\rho_N^2}{\lambda} \left( \dfrac{1}{r_0} + \dfrac{1}{R}   \right)} $
 \end{multicols}
 
 \end{document}
