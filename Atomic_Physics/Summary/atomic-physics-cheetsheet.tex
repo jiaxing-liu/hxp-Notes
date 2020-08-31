@@ -1,0 +1,185 @@
+\documentclass{article}
+
+% Chinese Support using xeCJK
+% \usepackage{xeCJK}
+% \setCJKmainfont{SimSun}
+
+% Chinese Support using CTeX
+\usepackage{ctex}
+
+% Math Support
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{wasysym}
+\newcommand{\angstrom}{\text{\normalfont\AA}}
+
+% Graphics Support
+\usepackage{graphicx}
+\usepackage{float}
+
+% Reduced page margin
+\usepackage{geometry}
+\geometry{a4paper,scale=0.85}
+
+\usepackage{caption}
+\usepackage{subcaption}
+
+% d and e should be math operators
+\newcommand*{\dif}{\mathop{}\!\mathrm{d}}
+\newcommand*{\md}{\mathop{}\!\mathrm{d}}
+\newcommand*{\me}{\mathrm{e}}
+
+% No indent for each paragraph
+\usepackage{parskip}
+\setlength{\parindent}{0cm}
+
+% Bold style for Greek letters
+\usepackage{bm}
+\let\Oldmathbf\mathbf
+\renewcommand{\mathbf}[1]{\boldsymbol{\Oldmathbf{#1}}}
+
+% More space for dfrac in cell
+\usepackage{cellspace}
+\setlength{\cellspacetoplimit}{2pt}
+\setlength{\cellspacebottomlimit}{2pt}
+
+% SI units
+\newcommand{\si}[1]{\  \mathrm{#1}}
+
+\usepackage{multicol}
+
+% Multi-line author information
+\usepackage{authblk}
+
+\pagestyle{empty}
+
+\begin{document}
+
+\begin{multicols}{2}
+
+\section{粒子的散射}
+
+库仑散射公式 $b = \dfrac{Z e^2}{4 \pi \varepsilon_0} \cdot \dfrac{1}{\dfrac{1}{2} mv^2 } \cdot \cot \dfrac{\theta}{2}   $
+\\\\
+金属箔 $\dfrac{\md n}{n} = \dfrac{N t A \md \sigma}{A}  $，$\md \sigma = 2 \pi b \md b$
+  
+\section{量子力学初步}
+
+定态薛定谔方程 $Hu=Eu$，$H = - \dfrac{\hbar^2}{2m} \nabla^2 + V $
+\\\\
+不确定性原理 $\Delta p \Delta x = \Delta E \Delta t \geq \dfrac{\hbar}{2} $
+
+\section{原子的能级和辐射}
+
+里德伯常数 $R = \dfrac{R_{\infty}}{1 + \dfrac{m}{M} } $
+\\\\
+\begin{tabular}[H]{@{}|Sl|Sl|}
+  \hline
+  线系 & 波数(氢原子) \\
+  \hline
+  赖曼系 & $\tilde{\nu} = R_H \left[ \dfrac{1}{1^2} - \dfrac{1}{n^2}   \right]$ \\
+  \hline
+  巴耳末系 & $\tilde{\nu} = R_H \left[ \dfrac{1}{2^2} - \dfrac{1}{n^2}   \right]$ \\
+  \hline
+  帕邢系 & $\tilde{\nu} = R_H \left[ \dfrac{1}{3^2} - \dfrac{1}{n^2}   \right]$ \\
+  \hline
+  布喇开系 & $\tilde{\nu} = R_H \left[ \dfrac{1}{4^2} - \dfrac{1}{n^2}   \right]$ \\
+  \hline
+  普丰特系 & $\tilde{\nu} = R_H \left[ \dfrac{1}{5^2} - \dfrac{1}{n^2}   \right]$ \\
+  \hline
+\end{tabular}
+
+波数 $\tilde{\nu} = Z^2 R \left( \dfrac{1}{m^2} - \dfrac{1}{n^2}   \right)$
+
+\section{原子的精细结构}
+
+\begin{tabular}[H]{@{}|Sl|Sl|Sl|}
+  \hline
+  线系&别名&跃迁 \\
+  \hline
+  主线系&主线系&P$\rightarrow$S \\
+  \hline
+  第二辅线系&锐线系&S$\rightarrow$P \\
+  \hline
+  第一辅线系&漫线系&D$\rightarrow$P \\
+  \hline
+  伯格曼系&基线系&F$\rightarrow$D \\
+  \hline
+\end{tabular}
+
+选择定则
+
+\begin{tabular}[H]{@{}|Sl|Sl|}
+  \hline
+  LS耦合 & jj耦合 \\
+  \hline
+  $\Delta S = 0$& $\Delta j_1 = 0, \pm 1$ \\
+  \hline
+  $\Delta L = 0, \pm 1$ & $\Delta j_2 = 0, \pm 1$ \\
+  \hline
+  $\Delta J = 0, \pm 1 \ \left( 0 \nrightarrow 0 \right)$ & $\Delta J = 0, \pm 1 \ \left( 0 \nrightarrow 0 \right)$ \\
+  \hline
+\end{tabular}
+
+泡利不相容原理：nsns的三重态不存在
+
+洪特定则：先看S再看L，S、L大能级低
+
+朗德间隔定则：间隔的比例等于较大的J的比
+
+\section{磁场中的原子}
+
+玻尔磁子 $\mu_B = \dfrac{\hbar}{2m} e $
+
+朗德g因子 $g = 1 + \dfrac{- L \left( L + 1 \right) + S \left( S + 1 \right) + J \left( J + 1 \right)}{2 J \left( J + 1 \right)} $
+
+跃迁选择定则
+
+\begin{itemize}
+\item $\Delta M = \phantom{\pm} 0$ 产生 $\pi$ 线，沿着磁场方向看不到
+  \item $\Delta M = \pm 1$ 产生 $\sigma$ 线，沿着磁场方向看得到
+\end{itemize}
+
+跃迁能量 $\Delta E = \left( M_2 g_2 - M_1 g_1\right) \mu_B B$
+
+波数 $\tilde{\nu} = \dfrac{\Delta E}{hc} = \left( M_2 g_2 - M_1 g_1 \right) \dfrac{eB}{4 \pi m c} $
+
+因此定义 $L = \dfrac{eB}{4 \pi m c} $
+
+\section{原子的壳层结构}
+
+对某个$n$，$l$可以取值$0,\dots,n-1$，一共$n$个
+
+对某个$l$，$m_l$可以取值$-l,\dots,+l$，一共$2l+1$个
+
+对某个$m_l$，$m_s$可以取值$-1/2,+1/2$，一共$2$个
+
+$n$壳层一共能容纳$2n^2$个电子
+
+\section{分子物理}
+
+振动光谱（近红外）
+
+$\tilde{\nu} = \dfrac{E_{v2} - E_{v1}}{hc} = \dfrac{f}{c} $ \quad $f = \dfrac{1}{2\pi} \sqrt{\dfrac{K}{M} } $ 
+
+转动光谱（远红外）
+
+$p = \sqrt{J \left( J + 1 \right)} \hbar$ \quad $E_r = \dfrac{1}{2} I \omega^2 = \dfrac{p^2}{2I}  $ 
+
+定义 $B=\dfrac{h}{8 \pi^2 I c} $ 则 $\tilde{\nu} = 2 B J_2$
+
+振动转动光谱（近红外）
+
+$\tilde{\nu} = \left\{
+\begin{aligned}
+  \tilde{\nu}_0 + 2 J_2 \quad \Delta J = + 1 \\
+  \tilde{\nu}_0 - 2 J_1 \quad \Delta J = - 1
+\end{aligned}
+\right.
+\quad\quad
+\tilde{\nu}_0 = \dfrac{E_{v2} - E_{v1}}{hc} 
+$
+\end{multicols}
+
+\end{document}
