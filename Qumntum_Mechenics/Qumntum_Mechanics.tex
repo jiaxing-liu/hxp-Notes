@@ -1,0 +1,61 @@
+\documentclass{book}
+
+% Chinese Support using xeCJK
+% \usepackage{xeCJK}
+% \setCJKmainfont{SimSun}
+
+% Chinese Support using CTeX
+\usepackage{ctex}
+
+% Math Support
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{wasysym}
+
+% Graphics Support
+\usepackage{graphicx}
+\usepackage{float}
+
+% Reduced page margin
+\usepackage{geometry}
+\geometry{a4paper,scale=0.8}
+
+\usepackage{caption}
+\usepackage{subcaption}
+
+% d and e should be math operators
+\newcommand*{\dif}{\mathop{}\!\mathrm{d}}
+\newcommand*{\md}{\mathop{}\!\mathrm{d}}
+\newcommand*{\me}{\mathrm{e}}
+
+% No indent for each paragraph
+\usepackage{parskip}
+\setlength{\parindent}{0cm}
+
+% Bold style for Greek letters
+\usepackage{bm}
+\let\Oldmathbf\mathbf
+\renewcommand{\mathbf}[1]{\boldsymbol{\Oldmathbf{#1}}}
+
+% More space for dfrac in cell
+\usepackage{cellspace}
+\setlength{\cellspacetoplimit}{5pt}
+\setlength{\cellspacebottomlimit}{5pt}
+
+% SI units
+%\usepackage{siunitx}
+%\let\Oldsi\si
+%\renewcommand{\si}[1]{\  \Oldsi{#1}}
+\newcommand{\si}[1]{\  \mathrm{#1}}
+
+\usepackage{authblk}
+\title{量子力学}
+\author{Xiping Hu}
+\affil{https://hxp.plus/}
+
+\begin{document}
+\maketitle
+\tableofcontents
+\include{Chapter1}
+\end{document} 
