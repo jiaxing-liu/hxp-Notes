@@ -1,0 +1,149 @@
+\documentclass{article}
+
+% Chinese Support using xeCJK
+% \usepackage{xeCJK}
+% \setCJKmainfont{SimSun}
+
+% Chinese Support using CTeX
+\usepackage{ctex}
+
+% Math Support
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{wasysym}
+\newcommand{\angstrom}{\text{\normalfont\AA}}
+
+\usepackage{fancyhdr}
+
+% Graphics Support
+\usepackage{graphicx}
+\usepackage{float}
+
+% Reduced page margin
+\usepackage{geometry}
+\geometry{a4paper,scale=0.8}
+
+\usepackage{caption}
+\usepackage{subcaption}
+
+% d and e should be math operators
+\newcommand*{\dif}{\mathop{}\!\mathrm{d}}
+\newcommand*{\md}{\mathop{}\!\mathrm{d}}
+\newcommand*{\me}{\mathrm{e}}
+
+% No indent for each paragraph
+% \usepackage{parskip}
+% \setlength{\parindent}{0cm}
+
+% Bold style for Greek letters
+\usepackage{bm}
+\let\Oldmathbf\mathbf
+\renewcommand{\mathbf}[1]{\boldsymbol{\Oldmathbf{#1}}}
+
+% More space for dfrac in cell
+\usepackage{cellspace}
+\setlength{\cellspacetoplimit}{5pt}
+\setlength{\cellspacebottomlimit}{5pt}
+
+% SI units
+\newcommand{\si}[1]{\  \mathrm{#1}}
+
+% Multi-line author information
+\usepackage{authblk}
+\author{物理（4+4）1801 \quad 胡喜平 \quad 学号 U201811966}
+
+\affil{网站 https://hxp.plus/ \quad 邮件 hxp201406@gmail.com}
+
+\title{《量子力学教程》课后习题——第一章\ 绪论}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{https://hxp.plus/}
+\lhead{本文档TeX源代码地址:GitHub源码地址}
+\rfoot{第 \thepage 页}
+\renewcommand{\headrulewidth}{1pt}
+\renewcommand{\footrulewidth}{1pt}
+
+\begin{document}
+
+\maketitle\thispagestyle{fancy}
+
+\paragraph{1.1}
+
+黑体辐射公式为
+
+\begin{equation*}
+  \begin{aligned}
+    \rho_{\nu} \md \nu = \dfrac{8 \pi h \nu^3}{c^3} \cdot \dfrac{1}{\exp \left[\dfrac{h \nu}{k_B T} \right] - 1} \md \nu  
+  \end{aligned}
+\end{equation*}
+
+其中 $\rho_{\nu} \md \nu$ 是频率在 $\nu$ 到 $\nu + \md \nu$ 之内辐射能量密度。频率 $\nu$ 和波长 $\lambda$ 的关系为
+
+\begin{equation*}
+  \begin{aligned}
+    \nu = \dfrac{c}{\lambda} 
+  \end{aligned}
+\end{equation*}
+
+因此
+
+\begin{equation*}
+  \begin{aligned}
+    \md \nu = - \dfrac{c}{\lambda^2} \md \lambda 
+  \end{aligned}
+\end{equation*}
+
+设波长在 $\lambda$ 到 $\lambda + \md \lambda$ 之间的辐射能量密度为 $\rho_{\lambda}$，则
+
+\begin{equation*}
+  \begin{aligned}
+    \rho_{\lambda} \md \lambda = \dfrac{8 \pi h}{c^3} \cdot \dfrac{c^3 / \lambda ^3}{\exp \left[ \dfrac{h c}{k_B} \cdot \dfrac{1}{\lambda T}   \right] - 1} \cdot \left( \dfrac{c}{\lambda^2} \md \lambda  \right)
+    = 8 \pi h c \cdot \dfrac{\lambda^{-5}}{\exp \left[ \dfrac{h c}{k_B} \cdot \dfrac{1}{\lambda T}   \right] - 1 } \md \lambda 
+  \end{aligned}
+\end{equation*}
+
+求极大值需要 $\dfrac{\md \rho_{\lambda}}{\md \lambda} = 0 $，即
+
+\begin{equation*}
+  \begin{aligned}
+    \left\{ \exp \left[ \dfrac{hc}{k_B} \cdot \dfrac{1}{\lambda T}   \right] - 1 \right\} \left( - 5 \lambda^{-6} \right) - \lambda^{-5} \cdot \exp \left[ \dfrac{hc}{k_B} \cdot \dfrac{1}{\lambda T}   \right] \cdot \dfrac{hc}{k_B} \cdot \dfrac{1}{T} \cdot \left( - \dfrac{1}{\lambda^2}  \right) = 0
+  \end{aligned}
+\end{equation*}
+
+化简后得到
+
+\begin{equation*}
+  \begin{aligned}
+    \left\{ 5 - \dfrac{hc}{k_B} \cdot \dfrac{1}{\lambda T}   \right\} \cdot \exp \left[ \dfrac{hc}{k_B} \cdot \dfrac{1}{\lambda T}   \right] = 5
+  \end{aligned}
+\end{equation*}
+
+令 $\alpha = \dfrac{hc}{k_B} \cdot \dfrac{1}{\lambda T}  $，化简得到
+
+\begin{equation*}
+  \begin{aligned}
+    5 + \left( - \alpha \right) = 5 \me^{-\alpha}
+  \end{aligned}
+\end{equation*}
+
+用计算器解得 $\alpha = 4.96$，即
+
+\begin{equation*}
+  \begin{aligned}
+    \dfrac{hc}{k_B} \cdot \dfrac{1}{\lambda T} = 4.96  
+  \end{aligned}
+\end{equation*}
+
+则
+
+\begin{equation*}
+  \begin{aligned}
+    \lambda T = \dfrac{h c}{k_B \alpha} = 2.90 \times 10^3 \si{m \cdot K} 
+  \end{aligned}
+\end{equation*}
+
+
+
+\end{document} 
