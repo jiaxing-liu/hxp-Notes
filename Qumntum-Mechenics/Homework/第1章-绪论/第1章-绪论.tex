@@ -31,6 +31,7 @@
 \newcommand*{\dif}{\mathop{}\!\mathrm{d}}
 \newcommand*{\md}{\mathop{}\!\mathrm{d}}
 \newcommand*{\me}{\mathrm{e}}
+\newcommand*{\mh}{\mathrm{h}}
 
 % No indent for each paragraph
 % \usepackage{parskip}
@@ -168,6 +169,90 @@
 \begin{equation*}
   \begin{aligned}
     \lambda = \dfrac{h}{\sqrt{2 m E}} = \dfrac{h}{\sqrt{6 \left( m_p + m_n \right) k_B T}} = 1.26 \si{nm}  
+  \end{aligned}
+\end{equation*}
+
+\paragraph{1.4 (1)}
+
+波尔-索末菲量子化条件为
+
+\begin{equation*}
+  \begin{aligned}
+    \oint m \dfrac{\md x}{\md t} \md x = \oint m \left( \dfrac{\md x}{\md t}  \right)^2 \md t = \left( n + \dfrac{1}{2}  \right) \mh 
+  \end{aligned}
+\end{equation*}
+
+即
+
+\begin{equation*}
+  \begin{aligned}
+    \oint E - E_p \md t = \oint E_k \md t = \oint \dfrac{1}{2} m \left( \dfrac{\md x}{\md t}  \right)^2 \md t = \left( 2 n + 1  \right) \mh  
+  \end{aligned}
+\end{equation*}
+
+其中$E$是简谐振子总能量，$E_k$是动能，$E_p$是势能，设简谐运动
+
+\begin{equation*}
+  \begin{aligned}
+    m \left( \dfrac{\md x}{\md t}  \right)^2 = k x
+  \end{aligned}
+\end{equation*}
+
+则
+
+\begin{equation*}
+  \begin{aligned}
+    x = A \cos \left( \omega t \right)
+  \end{aligned}
+\end{equation*}
+
+其中
+
+\begin{equation*}
+  \begin{aligned}
+    \omega^2 = \dfrac{k}{m}
+  \end{aligned}
+\end{equation*}
+
+量子化条件可以展开为
+
+\begin{equation*}
+  \begin{aligned}
+    \oint E \md t - \oint \dfrac{1}{2} k x^2 \md t = \dfrac{2 \pi E}{\omega} - \oint \dfrac{1}{2} k \cdot A^2 \cos^2 \left( \omega t \right) \md t = \dfrac{2 \pi E}{\omega} - \dfrac{\pi}{\omega} \cdot \dfrac{1}{2}  k A^2 = \dfrac{2 \pi}{\omega} E - \dfrac{\pi}{\omega} E = \dfrac{\pi}{\omega} E   
+  \end{aligned}
+\end{equation*}
+
+因此
+
+\begin{equation*}
+  \begin{aligned}
+    \dfrac{\pi}{\omega} E = \left( 2 n + 1 \right) \mh 
+  \end{aligned}
+\end{equation*}
+
+简谐振子能量表达式
+
+\begin{equation*}
+  \begin{aligned}
+    E = \left( 2n + 1 \right) \mh \cdot \dfrac{\omega}{\pi} = \left( n + \dfrac{1}{2}  \right) \hbar \omega 
+  \end{aligned}
+\end{equation*}
+
+\paragraph{1.5}
+
+光子波长最大的情况下能量最小，恰好等于电子能量
+
+\begin{equation*}
+  \begin{aligned}
+    \dfrac{h c}{\lambda_{max}} = m_e c^2 
+  \end{aligned}
+\end{equation*}
+
+计算得出光子最大波长
+
+\begin{equation*}
+  \begin{aligned}
+    \lambda_{max} = \dfrac{h}{m_e c} = 2.243 \times 10^{-12} \si{m} 
   \end{aligned}
 \end{equation*}
 
