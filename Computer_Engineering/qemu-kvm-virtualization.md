@@ -16,8 +16,11 @@ qemu-img resize disk_image +10G
 
 Install System
 
-```baso
-qemu-system-x86_64 -cdrom ubuntu-20.04.1-desktop-amd64.iso -boot order=d -m 8096 -drive file=ubuntu-disk.cow,format=qcow2 -vnc :0 -smp $(nproc) -usb -device usb-tablet -enable-kvm -vga qxl
+```bash
+qemu-system-x86_64 -cdrom ubuntu-20.04.1-desktop-amd64.iso \
+  -boot order=d -m 8096 -drive file=ubuntu-disk.cow,format=qcow2 \
+  -vnc :0 -smp $(nproc) -usb -device usb-tablet \
+  -enable-kvm -vga qxl
 ```
 
 Run System
