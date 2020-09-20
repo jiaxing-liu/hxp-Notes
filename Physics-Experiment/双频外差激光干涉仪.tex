@@ -1,0 +1,92 @@
+\documentclass{article}
+
+% Chinese Support using xeCJK
+% \usepackage{xeCJK}
+% \setCJKmainfont{SimSun}
+
+% Chinese Support using CTeX
+\usepackage{ctex}
+
+% Math Support
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{wasysym}
+\newcommand{\angstrom}{\text{\normalfont\AA}}
+\usepackage{fancyhdr}
+
+% Graphics Support
+\usepackage{graphicx}
+\usepackage{float}
+
+% Reduced page margin
+\usepackage{geometry}
+\geometry{a4paper,scale=0.8}
+
+\usepackage{caption}
+\usepackage{subcaption}
+
+% d and e should be math operators
+\newcommand*{\dif}{\mathop{}\!\mathrm{d}}
+\newcommand*{\md}{\mathop{}\!\mathrm{d}}
+\newcommand*{\me}{\mathrm{e}}
+
+% No indent for each paragraph
+% \usepackage{parskip}
+% \setlength{\parindent}{0cm}
+
+% Bold style for Greek letters
+\usepackage{bm}
+\let\Oldmathbf\mathbf
+\renewcommand{\mathbf}[1]{\boldsymbol{\Oldmathbf{#1}}}
+
+% More space for dfrac in cell
+\usepackage{cellspace}
+\setlength{\cellspacetoplimit}{5pt}
+\setlength{\cellspacebottomlimit}{5pt}
+
+% SI units
+\newcommand{\si}[1]{\  \mathrm{#1}}
+
+% Multi-line author information
+\usepackage{authblk}
+\author{物理（4+4）1801 \quad  胡喜平 \quad U201811966}
+\affil{个人网站 https://hxp.plus/ \quad 电子邮件 hxp201406@gmail.com}
+
+\title{近代物理实验预习笔记——双频外差激光干涉仪}
+
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{源码地址：https://github.com/hxp-plus/Notes/tree/master/Physics-Experiment}
+\rfoot{第 \thepage 页}
+\renewcommand{\headrulewidth}{1pt}
+\renewcommand{\footrulewidth}{1pt}
+
+\begin{document}
+
+\maketitle\thispagestyle{fancy}
+
+\section{实验内容}
+
+\begin{itemize}
+\item 使用声光调制器（AOM）对激光光束进行调制，产生不同频率的激光。并搭建干涉仪光路。
+\item 不考虑偏振的情况下，观察和比较参考光和测量光的干涉信号，通过两者相位差测量决定光程差，得出相位差与反射镜移动位移的函数关系。
+\end{itemize}
+
+\section{实验原理和注意事项}
+
+非偏振双频激光干涉仪如图所示，其中两束氦氖激光存在无论是到PD1还是PD2都存在一定的光程差，为了方便讨论将图上四个位置用字母A、B、C、D表示。PD表示光电测量器，AOM表示声光调制器。
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.9\linewidth]{figures/非偏振双频激光干涉仪}
+  \caption{非偏振双频激光干涉仪示意图}
+\end{figure}
+
+其中抵达PD1的是参考光，抵达PD2的是测量光。实验中直接测量的量是两组干涉激光的测量信号相位差，间接测量反射镜M2与M1的相对位移。
+
+我们假设刚开始两个反射镜水平方向是没有位移的，那么对于\textbf{参考光}，频率为$f_2$的光比频率为$f_1$的光多走的距离是$2 \overline{AB}$。而对于\textbf{测量光}，频率为$f_2$的光比频率为$f_1$的光多走的距离是$2 \overline{BC}$。
+
+因此为了防止出现奇怪的情况，在搭建实验光路的时候，应当使得\textbf{矩形ABCD}是\textbf{正方形}。
+
+\end{document} 
