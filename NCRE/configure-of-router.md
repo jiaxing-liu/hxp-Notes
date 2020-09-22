@@ -98,3 +98,5 @@
 ```
 (config-if) # ip access-group <acl_id> <in|out>
 ```
+
+## DHCP的配置
