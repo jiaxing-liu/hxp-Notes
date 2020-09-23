@@ -94,4 +94,10 @@ nmcli connection import type openvpn file <vpn-username>.ovpn
 
 Every time I add the vpn via kde gui, it fails. Maybe there are some bugs in importing openvpn configs.
 
+## Troubleshooting
 
+Linux client cannot get DNS resolution proxied: Add these to your `client.conf`
+
+```
+
+```
