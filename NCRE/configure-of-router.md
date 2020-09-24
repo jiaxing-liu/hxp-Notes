@@ -100,3 +100,13 @@
 ```
 
 ## DHCP的配置
+
+```
+(config) # ip dhcp excluded-address <ip_start> <ip_end>
+(config) # ip dhcp pool <pool_name>
+(dhcp-config) # network <network_ip> <mask>
+(dhcp-config) # default-router <gateway>
+(dhcp-config) # domain-name <domain_name>
+(dhcp-config) # dns-server address <dns1> <dns2>
+(dhcp-config) # lease <days> <hours> <minutes>
+```
