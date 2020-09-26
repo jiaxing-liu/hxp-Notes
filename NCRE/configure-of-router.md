@@ -38,7 +38,7 @@
 (config-if) # crc 32
 (config-if) # pos framing <sdh|sonet>
 (config-if) # no ip directed-broadcast
-(config-if) # pos flag s1s0 <2|0>
+(config-if) # pos flag s1 s0 <2|0>
 ```
 
 ## Loopback接口配置
