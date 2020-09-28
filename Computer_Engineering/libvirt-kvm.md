@@ -17,7 +17,7 @@ virt-install \
 Stop VM
 
 ```bash
-virsh stop ibpe
+virsh shutdown ibpe
 ```
 
 And then find and delete `suorce file`,
