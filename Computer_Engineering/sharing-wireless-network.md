@@ -34,7 +34,6 @@ edit `hostapd.conf`
 
 ```
 interface=wlan1
-driver=nl80211
 ssid=Wifi_Lab
 channel=6
 ```
@@ -46,12 +45,20 @@ interface=wlan1
 dhcp-range=10.0.0.10,10.0.0.250,255.255.255.0,12h
 dhcp-option=3,10.0.0.1
 dhcp-option=6,10.0.0.1
+log-queries
+log-dhcp
+```
+
+edit fakehosts.conf
+
+```
+10.0.0.1 baidu.com
 ```
 
 fire up dns and dhcp server
 
 ```bash
-sudo dnsmasq -C dnsmasq.conf -d
+sudo dnsmasq -C dnsmasq.conf -H fakehosts.conf -d
 ```
 
 fire up the access point
