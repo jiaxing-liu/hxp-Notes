@@ -86,4 +86,23 @@ iptables --append FORWARD --in-interface wlan0 -j ACCEPT
 echo 1 > /proc/sys/net/ipv4/ip_forward
 ```
 
-Tips: you may replace wlan0 to tun0 to share VPN tunnel through WiFi.
+Tips: you may replace `wlan0` to `tun0` to share VPN tunnel through WiFi.
+
+## Trouble Shooting
+
+### Hotspot unstable
+
+edit `/etc/NetworkManager/NetworkManager.conf`, add `wlan1` to unmanaged
+
+```
+[keyfile]
+unmanaged-devices=interface-name:wlan1
+```
+
+and restart service
+
+```bash
+sudo systemctl restart NetworkManager
+```
+
+See also: <https://wiki.archlinux.org/index.php/software_access_point#NetworkManager_is_interfering>
