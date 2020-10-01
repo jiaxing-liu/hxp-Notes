@@ -1,0 +1,408 @@
+\section{波函数和薛定谔方程}
+
+\subsection{波函数}
+
+假设波函数$\Phi(x,y,z,t)$，单位体积内找到粒子的概率是$\md W$，则
+
+\begin{equation*}
+  \begin{aligned}
+    \md W \left( x, y, z, t \right) = C \left| \Phi \left( x, y, z, t \right) \right|^2 \md \tau
+  \end{aligned}
+\end{equation*}
+
+其中$\md \tau = \md x \md y \md z$，则概率密度
+
+\begin{equation*}
+  \begin{aligned}
+    w \left( x, y, z, t \right) = \dfrac{\md W \left( x, y, z, t \right)}{\md \tau} = C \left| \Phi \left( x, y, z, t \right) \right|^2
+  \end{aligned}
+\end{equation*}
+
+由于
+
+\begin{equation*}
+  \begin{aligned}
+    \int_{\infty} w \left( x, y, z, t \right) \md \tau = \int_{\infty} C \left| \Phi \left( x, y, z, t \right) \right|^2 \md \tau = 1
+  \end{aligned}
+\end{equation*}
+
+定义归一化波函数
+
+\begin{equation*}
+  \begin{aligned}
+    \Psi \left( x, y, z, t \right) = \sqrt{C} \Phi \left( x, y, z, t \right) = w \left( x, y, z, t \right)
+  \end{aligned}
+\end{equation*}
+
+归一化波函数刚好等于概率密度。
+
+\subsection{薛定谔方程}
+
+动量和能量可以表示为
+
+\begin{equation*}
+  \begin{aligned}
+    E = i \hbar \dfrac{\partial}{\partial t} \quad\quad \quad\quad p = - i \hbar \nabla
+  \end{aligned}
+\end{equation*}
+
+力场中粒子动量和能量的关系
+
+\begin{equation*}
+  \begin{aligned}
+    E = \dfrac{p^2}{2 \mu} + U (r) \quad\quad  \Rightarrow \quad\quad E \Psi = \dfrac{p^2}{2\mu} \Psi + U (r) \Psi  
+  \end{aligned}
+\end{equation*}
+
+代入可得
+
+\begin{equation*}
+  \begin{aligned}
+    E \Psi = i \hbar \dfrac{\partial \Psi}{\partial t} = - \dfrac{\hbar^2}{2\mu} \nabla^2 \Psi + U (r) \Psi  
+  \end{aligned}
+\end{equation*}
+
+即薛定谔方程$\hat{H} \Psi = E \Psi$
+
+\subsection{概率流密度矢量}
+
+定义概率流密度矢量
+
+\begin{equation}
+  \label{eq:概率流密度矢量}
+  \begin{aligned}
+    \vec{J} = \dfrac{\hbar}{2 i \mu} \left| \Psi \left( \vec{r}, t \right) \right|^2 \nabla \ln \left[ \dfrac{\Psi \left( \vec{r}, t \right)}{\Psi^{*} \left( \vec{r}, t \right)}  \right]
+  \end{aligned}
+\end{equation}
+
+概率守恒定律
+
+\begin{equation*}
+  \begin{aligned}
+    \dfrac{\partial w}{\partial t} + \nabla \cdot \vec{J} = 0 
+  \end{aligned}
+\end{equation*}
+
+\subsection{一维无限深势阱}
+
+势能为
+
+\begin{equation*}
+  \begin{aligned}
+    V \left( x \right) =
+  \end{aligned}
+  \left\{
+  \begin{aligned}
+    &\infty&&x<0 \\
+    &0&&0<x<a \\
+    &\infty&&x>a
+  \end{aligned}
+  \right.
+\end{equation*}
+
+定态能量为
+
+\begin{equation*}
+  \begin{aligned}
+    E_n = \dfrac{\pi^2 \hbar^2}{2 \mu a^2} n^2 \quad\quad n = 1,2,3,\dots 
+  \end{aligned}
+\end{equation*}
+
+定态波函数为
+
+\begin{equation*}
+  \begin{aligned}
+    \Psi_n \left( x \right) =
+  \end{aligned}
+  \left\{
+  \begin{aligned}
+    & 0 && x<0 \\
+    & \sqrt{\dfrac{2}{a} } \sin \left( \dfrac{n \pi x}{a}  \right) && 0<x<a \\
+    & 0  && x>a
+  \end{aligned}
+  \right.
+\end{equation*}
+
+\subsection{一维线性谐振子}
+
+薛定谔方程可以写为
+
+\begin{equation*}
+  \begin{aligned}
+    \dfrac{\hbar^2}{2 \mu} \dfrac{\md^2 \Psi}{\md x^2}  + \left( E - \dfrac{\mu \omega^2}{2} x^2  \right) \Psi = 0  
+  \end{aligned}
+\end{equation*}
+
+令$\alpha = \sqrt{\left( \mu \omega \right)/\hbar}$，方程简化为
+
+\begin{equation*}
+  \begin{aligned}
+    \dfrac{\md^2 \Psi}{\md x^2}  + \left\{ \dfrac{2 \mu E}{\hbar^2} - \alpha^2 x^2  \right\} \Psi = 0
+  \end{aligned}
+\end{equation*}
+
+引入$\xi=\alpha x$，则
+
+\begin{equation*}
+  \begin{aligned}
+    \dfrac{\md^2 \Psi}{\md x^2} = \dfrac{\md}{\md \xi} \left[ \dfrac{\md}{\md \xi} \Psi \right] \cdot \dfrac{\md \xi}{\md x} \cdot \dfrac{\md \xi}{\md x} = \dfrac{\md^2 \Psi}{\md \xi^2} \cdot \alpha^2 
+  \end{aligned}
+\end{equation*}
+
+方程改写为
+
+\begin{equation*}
+  \begin{aligned}
+    \alpha^2 \cdot \dfrac{\md^2 \Psi}{\md \xi^2} + \left\{ \dfrac{2 \mu E}{\hbar^2} - \xi^2  \right\} \Psi = 0 
+  \end{aligned}
+\end{equation*}
+
+令$\lambda = \left( 2 \mu E \right) / \left( \hbar^2 \alpha^2 \right) = \left( 2 E \right) / \left( \hbar \omega \right)$，方程简化为
+
+\begin{equation}
+  \label{eq:简化后的谐振子}
+  \begin{aligned}
+    \dfrac{\md^2 \Psi}{\md \xi^2} + \left( \lambda - \xi^2 \right) \Psi = 0 
+  \end{aligned}
+\end{equation}
+
+当$\xi \rightarrow \infty$时，方程的渐进解为$\Psi = \exp \left[ \pm \xi^2 / 2  \right]$，由于波函数要求当$\xi$无限大时，函数为零，指数上只能取负号，即$\Psi = \exp \left[ - \xi^2/ 2  \right]$。接下来设方程的解为
+
+\begin{equation*}
+  \begin{aligned}
+    \Psi \left( \xi \right) = H \left( \xi \right) \exp \left[ - \xi^2 / 2 \right]
+  \end{aligned}
+\end{equation*}
+
+求二阶导数得
+
+\begin{equation*}
+  \begin{aligned}
+    \dfrac{\md^2 \Psi}{\md \xi^2} = \left\{ - H - 2 \xi \dfrac{\md H}{\md \xi} + \xi^2 H + \dfrac{\md^2 H}{\md \xi^2}   \right\} \exp \left[ - \xi^2 / 2 \right] 
+  \end{aligned}
+\end{equation*}
+
+带入方程\ref{eq:简化后的谐振子}，得到
+
+\begin{equation*}
+  \begin{aligned}
+    \left\{ - H - 2 \xi \dfrac{\md H}{\md \xi} + \xi^2 H + \dfrac{\md^2 H}{\md \xi^2}   \right\} \exp \left[ - \xi^2 / 2 \right] - \left( \lambda - \xi^2 \right) H \exp \left[ - \xi^2 / 2 \right] = 0
+  \end{aligned}
+\end{equation*}
+
+即
+
+\begin{equation}
+  \label{eq:谐振子方程最终形式}
+  \begin{aligned}
+    \dfrac{\md^2 H}{\md \xi^2} - 2 \xi \dfrac{\md H}{\md \xi} + \left( \lambda - 1 \right)H = 0  
+  \end{aligned}
+\end{equation}
+
+把$H \left( \xi \right)$展开成$\xi$的级数
+
+\begin{equation*}
+  \begin{aligned}
+    H &= a_0 \xi^0 + a_1 \xi^1 + a_2 \xi^2 + a_3 \xi^3 + a_4 \xi^4 + \dots + a_n \xi^n \\
+    \dfrac{\md H}{\md \xi} &= a_1 \xi^0 + 2a_2 \xi^1 + 3a_3 \xi^2 + 4a_4 \xi^3 + \dots + na_n \xi^{n-1} + \left( n + 1 \right) a_{n+1} \xi^n \\
+    \dfrac{\md^2 H}{\md \xi^2} &= 2a_2 \xi^0 + 6a_3 \xi^1 + 12a_4 \xi^2  + \dots + n(n-1)a_n \xi^{n-2} + \left( n + 1 \right) n a_{n+1} \xi^{n-1} + \left( n + 2 \right) \left( n + 1 \right) a_{n+2} \xi^n \\
+  \end{aligned}
+\end{equation*}
+
+进而有
+
+\begin{equation*}
+  \begin{aligned}
+    \left( \lambda - 1 \right) H &=\left( \lambda - 1 \right) a_0 \xi^0 +\left( \lambda - 1 \right) a_1 \xi^1 +\left( \lambda - 1 \right) a_2 \xi^2 +\left( \lambda - 1 \right) a_3 \xi^3 +\left( \lambda - 1 \right) a_4 \xi^4 + \dots +\left( \lambda - 1 \right) a_n \xi^n \\
+    - 2 \xi \dfrac{\md H}{\md \xi} &= - 2 a_1 \xi^1 - 4 a_2 \xi^2 - 6a_3 \xi^3 - 8 a_4 \xi^4 + \dots - 2n a_n \xi^{n} - 2 \left( n + 1 \right) a_{n+1} \xi^{n+1} \\
+    \dfrac{\md^2 H}{\md \xi^2} &= 2a_2 \xi^0 + 6a_3 \xi^1 + 12a_4 \xi^2  + \dots + n(n-1)a_n \xi^{n-2} + \left( n + 1 \right) n a_{n+1} \xi^{n-1} + \left( n + 2 \right) \left( n + 1 \right) a_{n+2} \xi^n \\
+  \end{aligned}
+\end{equation*}
+
+代人方程\ref{eq:谐振子方程最终形式}，方程中$\xi$的同幂次项要都分别等于零才能成立，于是有
+
+\begin{equation*}
+  \begin{aligned}
+    \left( n + 2 \right) \left( n + 1 \right) a_{n+2} - 2 n a_n + \left( \lambda - 1 \right) a_n = 0
+  \end{aligned}
+\end{equation*}
+
+及递推关系
+
+\begin{equation*}
+  \begin{aligned}
+    a_{n+2} = \dfrac{2 n + 1 - \lambda}{\left( n + 1 \right) \left( n + 2 \right)} a_n 
+  \end{aligned}
+\end{equation*}
+
+要想使得方程的解$H \left( \xi \right)$是有限项的，必须在$n$取某一项时，$2n+1- \lambda = 0$，这样后面根据递推关系，如果$n$是奇数，后面所有的奇数项都为零，这时让$a_0$为零，解就是有限项的。如果$n$是偶数。后面所有的偶数项都为零，这时让$a_1$为零，解就是有限项的。
+
+而当$2n+1- \lambda = 0$时，$\lambda$只能取奇数。即$\lambda = \dfrac{2E}{\hbar \omega} = 2 n + 1 $
+
+所以谐振子的能量是量子化的，只能取
+
+\begin{equation*}
+  \begin{aligned}
+    E_n = \hbar \omega \left( n + \dfrac{1}{2}  \right)
+  \end{aligned}
+\end{equation*}
+
+\subsection{势垒隧穿}
+
+考虑一维方势垒
+
+\begin{equation*}
+  \begin{aligned}
+    V \left( x \right) = 
+  \end{aligned}
+  \left\{
+  \begin{aligned}
+    &V_0&&0<x<a \\
+    &0&&x<0,x>a
+  \end{aligned}
+  \right.
+\end{equation*}
+
+薛定谔方程为
+
+\begin{equation*}
+  \begin{aligned}
+    & - \dfrac{\hbar^2}{2 \mu} \Psi'' = E \Psi && x<0,x>a \\
+    & - \dfrac{\hbar^2}{2 \mu} \Psi'' = \left( E - V_0 \right) \Psi && 0<x<a
+  \end{aligned}
+\end{equation*}
+
+波函数的解为
+
+\begin{equation*}
+  \begin{aligned}
+    \Psi \left( x \right) = 
+  \end{aligned}
+  \left\{
+  \begin{aligned}
+    & \exp \left[ ikx \right] + r \exp \left[ -ikx \right] && x<0 \\
+    & A \sinh \left[ \kappa \left( x - a \right) \right] + B \cosh \left[ \kappa \left( x - a \right) \right] && 0<x<a \\
+    & t \exp \left[ ika \right] && x>a
+  \end{aligned}
+  \right.
+\end{equation*}
+
+其中$k^2=2\mu E / \hbar^2$，$\kappa^2 = 2 \mu \left( V_0 - E \right) / \hbar^2$，$r$是透射率，$t$是反射率。边界处波函数及其一阶导数连续，在$x=0$处，有
+
+\begin{equation}
+  \label{eq:势垒隧穿1}
+  \begin{aligned}
+    & 1 + r = - A \sinh \left[ \kappa a \right] + B \cosh \left[ \kappa a \right] \\
+    & ik - ikr = \kappa \left\{ A \cosh \left[ \kappa a \right] - B \sinh \left[ \kappa a \right] \right\}
+  \end{aligned}
+\end{equation}
+
+在$x=a$处，有
+
+\begin{equation}
+  \label{eq:势垒隧穿2}
+  \begin{aligned}
+    & t \exp \left[ ika \right] = B \\
+    & A \kappa = ikt \exp \left[ ika \right]
+  \end{aligned}
+\end{equation}
+
+先用方程\ref{eq:势垒隧穿2}得到
+
+\begin{equation*}
+  \begin{aligned}
+    ikB = \kappa A
+  \end{aligned}
+\end{equation*}
+
+带入方程\ref{eq:势垒隧穿1}，得到
+
+\begin{equation}
+  \label{eq:势垒隧穿3}
+  \begin{aligned}
+    & 1 + r = - \dfrac{i k}{\kappa} B \sinh \left[ \kappa a \right] + B \cosh \left[ \kappa a \right] \\
+    & 1 - r = \dfrac{\kappa}{i k} \left\{ \dfrac{i k}{\kappa} B \cosh \left[ \kappa a \right] - B \sinh \left[ \kappa a \right]  \right\} 
+  \end{aligned}
+\end{equation}
+
+方程\ref{eq:势垒隧穿3}上下两式相加，得到
+
+\begin{equation*}
+  \begin{aligned}
+    2 = 2 B \cosh \left[ \kappa a \right] - \dfrac{i k}{\kappa} B \sinh \left[ \kappa a \right] - \dfrac{\kappa}{i k} B \sinh \left[ \kappa a \right] = 2 B \cosh \left[ \kappa a \right] + i B \left\{ \dfrac{\kappa}{k} - \dfrac{k}{\kappa}   \right\} \sinh \left[ \kappa a \right]
+  \end{aligned}
+\end{equation*}
+
+先解得
+
+\begin{equation*}
+  \begin{aligned}
+    B = t \exp \left[ i k a \right] = \dfrac{2}{2 \cosh \left[ \kappa a \right] + i \left\{ \dfrac{\kappa}{k} - \dfrac{k}{\kappa}   \right\} \sinh \left[ \kappa a \right]} 
+  \end{aligned}
+\end{equation*}
+
+所以
+
+\begin{equation}
+  \label{eq:势垒隧穿4}
+  \begin{aligned}
+    t = \dfrac{2}{2 \cosh \left[ \kappa a \right] + i \left\{ \dfrac{\kappa}{k} - \dfrac{k}{\kappa}   \right\} \sinh \left[ \kappa a \right]} \cdot \exp \left[ -i ka \right]
+  \end{aligned}
+\end{equation}
+
+像光学那样定义透射率$T=|t|^2= tt^{*}$，反射率$R=|r|^2=rr^{*}$
+
+\begin{equation*}
+  \begin{aligned}
+    T = tt^{*} = 1 - R = 1 - rr^{*}
+  \end{aligned}
+\end{equation*}
+
+带入方程\ref{eq:势垒隧穿4}，得到
+
+\begin{equation*}
+  \begin{aligned}
+    T &= \dfrac{2}{2 \cosh \left[ \kappa a \right] + i \left\{ \dfrac{\kappa}{k} - \dfrac{k}{\kappa}   \right\} \sinh \left[ \kappa a \right]} \cdot \dfrac{2}{2 \cosh \left[ \kappa a \right] - i \left\{ \dfrac{\kappa}{k} - \dfrac{k}{\kappa}   \right\} \sinh \left[ \kappa a \right]} \cdot \exp \left[ -ika + ika \right] \\
+    &= \dfrac{4}{4 \cosh^2 \left[ \kappa a \right] + \left\{ \dfrac{\kappa}{k} - \dfrac{k}{\kappa}   \right\}^2 \sinh^2 \left[ \kappa a \right]} 
+  \end{aligned}
+\end{equation*}
+
+利用公式$\cosh^2 x - \sinh^2 x = 1$，可得
+
+\begin{equation*}
+  \begin{aligned}
+    T &= \dfrac{4}{4 \left\{ 1 + \sinh^2 \left[ \kappa a \right] \right\} + \left\{ \dfrac{\kappa}{k} - \dfrac{k}{\kappa}   \right\}^2 \sinh^2 \left[ \kappa a \right]} = \dfrac{4}{4 + \left\{ \left[ \dfrac{\kappa}{k} - \dfrac{k}{\kappa}   \right]^2 + 4 \right\} \sinh^2 \left[ \kappa a \right]} \\
+    &= \dfrac{4}{4 + \left\{ \dfrac{\kappa}{k} + \dfrac{k}{\kappa}   \right\} \sinh^2 \left[ \kappa a \right]} = \dfrac{1}{1 + \dfrac{1}{4} \left\{ \dfrac{\kappa}{k} + \dfrac{k}{\kappa}   \right\} \sinh^2 \left[ \kappa a \right] }  
+  \end{aligned}
+\end{equation*}
+
+概率密度计算公式（方程\ref{eq:概率流密度矢量}）在一维条件下为
+
+\begin{equation*}
+  \begin{aligned}
+    J_x = \dfrac{\hbar \left| \Psi \left( x,t \right) \right|^2}{2i\mu} \dfrac{\partial}{\partial x} \ln \left[ \dfrac{\Psi \left( x,t \right)}{\Psi^{*} \left( x,t \right)}  \right]  
+  \end{aligned}
+\end{equation*}
+
+入射、透射、反射波为
+
+\begin{equation*}
+  \begin{aligned}
+    \Psi_i = \exp \left[ ikx \right] \quad\quad 
+    \Psi_r = r \exp \left[ -ikx \right] \quad\quad 
+    \Psi_t = t \exp \left[ ikx \right]
+  \end{aligned}
+\end{equation*}
+
+代人计算得到入射、透射、反射的概率流密度
+
+\begin{equation*}
+  \begin{aligned}
+    J_{xi} = \dfrac{\hbar k}{\mu} \quad\quad J_{xr} = - \dfrac{\hbar k}{\mu} rr^{*} \quad\quad J_{xt} = \dfrac{\hbar k}{\mu} tt^{*}   
+  \end{aligned}
+\end{equation*}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "Qumntum_Mechanics"
+%%% End:
