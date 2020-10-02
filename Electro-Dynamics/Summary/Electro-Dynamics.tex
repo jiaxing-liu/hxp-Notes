@@ -1,4 +1,4 @@
-\documentclass{book}
+\documentclass{article}
 
 % Chinese Support using xeCJK
 % \usepackage{xeCJK}
@@ -49,13 +49,23 @@
 %\renewcommand{\si}[1]{\  \Oldsi{#1}}
 \newcommand{\si}[1]{\  \mathrm{#1}}
 
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{本文档TeX源代码地址:https://github.com/hxp-plus/Notes/tree/master/Electro-Dynamics/Summary}
+\rfoot{第 \thepage 页}
+\renewcommand{\headrulewidth}{1pt}
+\renewcommand{\footrulewidth}{1pt}
+
 \usepackage{authblk}
-\title{量子力学}
-\author{Xiping Hu}
+\title{电动力学学习笔记}
+\author{胡喜平}
 \affil{https://hxp.plus/}
+\date{1970年1月1日}
 
 \begin{document}
-\maketitle
-\tableofcontents
-\include{Chapter1}
+\maketitle\thispagestyle{fancy}
+
+\input{section1}
+
 \end{document} 
