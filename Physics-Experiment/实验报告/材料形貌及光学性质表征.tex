@@ -55,7 +55,7 @@
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \fancyhf{}
-\lhead{本文档TeX源代码地址:GitHub源码地址}
+\lhead{本文档TeX源码地址:https://github.com/hxp-plus/Notes/tree/master/Physics-Experiment/实验报告}
 \rfoot{第 \thepage 页}
 \renewcommand{\headrulewidth}{1pt}
 \renewcommand{\footrulewidth}{1pt}
@@ -338,20 +338,56 @@ https://github.com/hxp-plus/band-gap-fitting
 
 具体程序的用法，我录制了一个视频README.mp4，可以参考
 
-这个程序输出了下面四个图像：
+这个程序先输出的两个图像如下
 
+\begin{figure}[H]
+  \centering
+  \begin{subfigure}{.49\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{禁带宽度数据处理程序/figures/original_data/original_data}
+    \caption{对原始数据进行绘图}
+  \end{subfigure}
+  \begin{subfigure}{.49\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{禁带宽度数据处理程序/figures/graph_needed_to_solve_band_gap/graph_needed_to_solve_band_gap}
+    \caption{绘制需要解禁带宽度的图}
+  \end{subfigure}
+\end{figure}
+
+我们在弹出的输入框指定程序在x轴3到3.5之间缩放，得到缩放的图像如下
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{禁带宽度数据处理程序/figures/graph_needed_to_solve_band_gap_zoomed/graph_needed_to_solve_band_gap_zoomed}
+  \caption{程序缩放后的图像}
+\end{figure}
+
+之后程序弹出两个输入框，输入范围3.05-3.25和3.3-3.5，进行线性拟合，得到下面的图像
+
+\begin{figure}[H]
+  \centering
+  \begin{subfigure}{.49\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{禁带宽度数据处理程序/figures/fitting_result/fitting_result}
+    \caption{线性拟合后的图像}
+  \end{subfigure}
+  \begin{subfigure}{.49\textwidth}
+    \centering
+    \includegraphics[width=\linewidth]{figures/禁带宽度测量}
+    \caption{线性拟合缩放过的图像}
+  \end{subfigure}
+\end{figure}
+
+从图像上看出两段线性拟合大致与x轴相交于3.05和3.23，取3.05和3.23的平均值3.14即禁
+带宽度。
 
 \subsection{实验中遇到的问题及解决方法}
 
+实验中遇到了原子力显微镜自动进针没有自动停止导致探针损坏的情况，应当是激光没有照
+射到悬臂上导致的。
 
-
-\section{实验小结}
-\subsection{体会或收获}
-\subsection{实验建议}
-内容
 \section{参考文献}
 \begin{itemize}[leftmargin=0pt]
-  \item[] 作者，题目，期刊名或书名，页码，出版时间
-  \item[] 其他作者，题目，期刊名或书名，页码，出版时间
+  \item[] 近代物理实验讲义
 \end{itemize}
 \end{document} 
