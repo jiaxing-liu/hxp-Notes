@@ -66,35 +66,35 @@ http {
     }
 
         server {
-	
-	server_name pan.hxp.plus;
-	autoindex on;
-	charset utf-8;
-	root /usr/share/nginx/html;
 
-	location /ray {
-	        proxy_redirect off;
-	        proxy_pass http://127.0.0.1:10000;
-	        proxy_http_version 1.1;
-	        proxy_set_header Upgrade $http_upgrade;
-	        proxy_set_header Connection "upgrade";
-	        proxy_set_header Host $http_host;
-	        # Show realip in v2ray access.log
-	        proxy_set_header X-Real-IP $remote_addr;
-	        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-	}
-	
-	location /panel {
-	        proxy_redirect off;
-	        proxy_pass https://127.0.0.1:9090;
-	        proxy_http_version 1.1;
+    server_name pan.hxp.plus;
+    autoindex on;
+    charset utf-8;
+    root /usr/share/nginx/html;
+
+    location /ray {
+            proxy_redirect off;
+            proxy_pass http://127.0.0.1:10000;
+            proxy_http_version 1.1;
+            proxy_set_header Upgrade $http_upgrade;
+            proxy_set_header Connection "upgrade";
+            proxy_set_header Host $http_host;
+            # Show realip in v2ray access.log
+            proxy_set_header X-Real-IP $remote_addr;
+            proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    }
+
+    location /panel {
+            proxy_redirect off;
+            proxy_pass https://127.0.0.1:9090;
+            proxy_http_version 1.1;
                 proxy_set_header Upgrade $http_upgrade;
                 proxy_set_header Connection "upgrade";
                 proxy_set_header Host $http_host;
-	}
-        
+    }
+
                 location / {
-                               
+
         }
 
 
@@ -113,7 +113,7 @@ http {
     } # managed by Certbot
 
 
-	server_name pan.hxp.plus;
+    server_name pan.hxp.plus;
     listen 80;
     return 404; # managed by Certbot
 
@@ -135,6 +135,7 @@ Origins = https://pan.hxp.plus http://127.0.0.1:9090
 UrlRoot = /panel/
 LoginTitle = hxp-us-server
 ```
+
 Change the compression behavior of pcp in `/etc/pcp/pmlogger/control`, uncomment
 
 ```
