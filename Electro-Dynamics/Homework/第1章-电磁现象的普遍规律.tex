@@ -1,0 +1,469 @@
+\documentclass{article}
+
+% Chinese Support using xeCJK
+% \usepackage{xeCJK}
+% \setCJKmainfont{SimSun}
+
+% Chinese Support using CTeX
+\usepackage{ctex}
+
+% Math Support
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{wasysym}
+\newcommand{\angstrom}{\text{\normalfont\AA}}
+
+\usepackage{fancyhdr}
+
+% Graphics Support
+\usepackage{graphicx}
+\usepackage{float}
+
+% Reduced page margin
+\usepackage{geometry}
+\geometry{a4paper,scale=0.8}
+
+\usepackage{caption}
+\usepackage{subcaption}
+
+% d and e should be math operators
+\newcommand*{\dif}{\mathop{}\!\mathrm{d}}
+\newcommand*{\md}{\mathop{}\!\mathrm{d}}
+\newcommand*{\me}{\mathrm{e}}
+\newcommand*{\mh}{\mathrm{h}}
+\newcommand*{\Jmath}{J}
+
+% No indent for each paragraph
+\usepackage{parskip}
+\setlength{\parindent}{0cm}
+
+% Bold style for Greek letters
+\usepackage{bm}
+\let\Oldmathbf\mathbf
+\renewcommand{\mathbf}[1]{\boldsymbol{\Oldmathbf{#1}}}
+
+% More space for dfrac in cell
+\usepackage{cellspace}
+\setlength{\cellspacetoplimit}{5pt}
+\setlength{\cellspacebottomlimit}{5pt}
+
+% SI units
+\newcommand{\si}[1]{\  \mathrm{#1}}
+
+% Multi-line author information
+\usepackage{authblk}
+\author{物理（4+4）1801 \quad 胡喜平 \quad 学号 U201811966}
+
+\affil{网站 https://hxp.plus/ \quad 邮件 hxp201406@gmail.com}
+
+\title{《电动力学》课后习题——第一章\ 电磁现象的基本规律}
+
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{源码地址：https://github.com/hxp-plus/Notes/blob/master/Eletro-Dynamics/Homework/}
+\rfoot{第 \thepage 页}
+\renewcommand{\headrulewidth}{1pt}
+\renewcommand{\footrulewidth}{1pt}
+
+\begin{document}
+
+\maketitle\thispagestyle{fancy}
+
+\paragraph{1.1}
+
+根据算符$\nabla$的微分性与矢量性，推导下列公式：
+
+\begin{equation}
+  \begin{aligned}
+    \label{eq:q1}
+    \nabla \left( \vec{A} \cdot \vec{B} \right) = \vec{B} \times \left( \nabla \cdot \vec{A} \right) + \left( \vec{B} \cdot \nabla \right) \vec{A} + \vec{A} \times \left( \nabla \times \vec{B}  \right) 
+  \end{aligned}
+\end{equation}
+
+\begin{equation}
+  \label{eq:q2}
+  \begin{aligned}
+    \vec{A} \times \left( \nabla \times \vec{A} \right) = \dfrac{1}{2} \nabla A^2 - \left( \vec{A} \cdot \nabla \right) \vec{A} 
+  \end{aligned}
+\end{equation}
+
+\paragraph{解}
+
+\begin{equation}
+  \label{eq:1}
+  \begin{aligned}
+    \nabla \left( \vec{A} \cdot \vec{B} \right) = \left( \partial_i \vec{e}_i \right) \left( A_j B_j  \right) = \left( A_j \partial_i B_j + B_j \partial_i A_j \right) \vec{e}_i
+  \end{aligned}
+\end{equation}
+
+\begin{equation}
+  \label{eq:2}
+  \begin{aligned}
+    \left( \vec{B} \cdot \nabla \right) \vec{A} = \left( B_i \vec{e}_i \cdot \partial_j \vec{e}_j  \right) \vec{A} = \left( \delta_{ij} B_i \partial_j \right) \vec{A} = \left( B_i \partial_i  \right) \left( A_j \vec{e}_j \right) = B_i \partial_i A_j \vec{e}_j
+  \end{aligned}
+\end{equation}
+
+同理
+
+\begin{equation}
+  \label{eq:3}
+  \begin{aligned}
+    \left( \vec{A} \cdot \nabla \right) \vec{B} = A_i \partial_i B_j \vec{e}_j
+  \end{aligned}
+\end{equation}
+
+\begin{equation}
+  \label{eq:4}
+  \begin{aligned}
+    \vec{B} \times \left( \nabla \times \vec{A} \right) &= \vec{B} \times \left( \epsilon_{ijk} \partial_i A_j \vec{e}_k \right) = \epsilon_{mnl} B_m \left( \epsilon_{ijk} \partial_i A_j \vec{e}_k \right)_n \vec{e}_l = \epsilon_{mnl} B_m \epsilon_{ijn} \partial_i A_j \vec{e}_l = \epsilon_{lmn} \epsilon_{ijn} B_m \partial_i A_j \vec{e}_l\\ &= \left( B_m \partial_l A_m - B_m \partial_m A_l \right) \vec{e}_l
+  \end{aligned}
+\end{equation}
+
+同理
+
+\begin{equation}
+  \label{eq:5}
+  \begin{aligned}
+    \vec{A} \times \left( \nabla \times \vec{B} \right) = \left( A_m \partial_l B_m - A_m \partial_m B_l \right) \vec{e}_l
+  \end{aligned}
+\end{equation}
+
+式（\ref{eq:2}）（\ref{eq:3}）（\ref{eq:4}）（\ref{eq:5}）相加，显然等于式（\ref{eq:1}），因此式（\ref{eq:q1}）得证。
+
+\begin{equation}
+  \label{eq:6}
+  \begin{aligned}
+    \vec{A} \times \left( \nabla \times \vec{A} \right) &= \vec{A} \times \left[ \left( \partial_i \vec{e}_i \right) \times \left( A_j \vec{e}_j \right) \right] = \vec{A} \times \left( \epsilon_{ijk} \partial_i A_j \vec{e}_k \right) = \left( A_l \vec{e}_l \right) \times \left( \epsilon_{ijk} \partial_{ijk} \partial_i A_j \vec{e}_k \right) \\ &= \epsilon_{ijk} \epsilon_{lkn} A_l \partial_i A_j \vec{e}_n = \epsilon_{ijk} \epsilon_{nlk} A_l \partial_i A_j \vec{e}_n = \left( \delta_{in} \delta_{jl} - \delta_{il} \delta_{jn} \right) A_l \partial_i A_j \vec{e}_n \\ &= A_j \partial_i A_j \vec{e}_i 
+  \end{aligned}
+\end{equation}
+
+\begin{equation}
+  \label{eq:7}
+  \begin{aligned}
+    \left( \vec{A} \cdot \nabla \right) \vec{A} = \left( A_i \partial_i \right) \left( A_j \vec{e}_j \right) = A_j \partial_i A_j \vec{e}_j
+  \end{aligned}
+\end{equation}
+
+显然，式（\ref{eq:6}）和（\ref{eq:7}）是相等的，得证。
+
+\paragraph{1.2}
+
+设$u$是空间坐标$x,y,z$的函数，证明：
+
+\begin{equation*}
+  \begin{aligned}
+    \nabla f \left( u \right) = \dfrac{\md f}{\md u} \nabla u 
+  \end{aligned}
+\end{equation*}
+
+\begin{equation*}
+  \begin{aligned}
+    \nabla \cdot \vec{A} \left( u \right) = \nabla u \cdot \dfrac{\md \vec{A}}{\md u} 
+  \end{aligned}
+\end{equation*}
+
+\begin{equation*}
+  \begin{aligned}
+    \nabla \times \vec{A} \left( u \right) = \nabla u \times \dfrac{\md \vec{A}}{\md u} 
+  \end{aligned}
+\end{equation*}
+
+\paragraph{解}
+
+\begin{equation*}
+  \begin{aligned}
+    \nabla f = \partial_i f_i \vec{e}_i = \dfrac{\partial}{\partial x_i} f_i \vec{e}_i = \dfrac{\partial f_i}{\partial u} \dfrac{\partial u}{\partial x_i} \vec{e}_i = \dfrac{\md f}{\md u} \nabla u     
+  \end{aligned}
+\end{equation*}
+
+\begin{equation*}
+  \begin{aligned}
+    \nabla \cdot \vec{A} = \partial_i A_i = \dfrac{\partial A_i}{\partial x_i} = \dfrac{\partial A_i}{\partial _u} \dfrac{\partial u}{\partial x_i} = \nabla u \cdot \dfrac{\md \vec{A}}{\md u}   
+  \end{aligned}
+\end{equation*}
+
+\begin{equation*}
+  \begin{aligned}
+    \nabla \times \vec{A} = \epsilon_{ijk} \partial_i A_j \vec{e}_k = \epsilon_{ijk} \dfrac{\partial u}{\partial x_i} \dfrac{\partial A_j}{\partial u} \vec{e}_k = \nabla u \times \dfrac{\md \vec{A}}{\md u}  
+  \end{aligned}
+\end{equation*}
+
+\paragraph{1.3}
+
+设$r=\sqrt{\left( x - x' \right)^2 + \left( y - y' \right)^2 + \left( z - z' \right)^2}$为源点$x'$到$x$的距离，$\vec{r}$的方向规定为源点指向场点。
+
+（1）证明以下结果，并体会对源变数求微商（$\nabla' = \vec{e}_i \dfrac{\partial}{\partial x_i'} $）和对场变数求微商（$\nabla = \vec{e}_i \dfrac{\partial }{\partial x_i} $）的关系。
+
+\begin{equation*}
+  \begin{aligned}
+    \nabla \vec{r} = - \nabla' \vec{r} = \dfrac{\vec{r}}{r} 
+  \end{aligned}
+\end{equation*}
+
+\begin{equation*}
+  \begin{aligned}
+    \nabla \dfrac{1}{r} = - \nabla' \dfrac{1}{r} = - \dfrac{\vec{r}}{r^3}   
+  \end{aligned}
+\end{equation*}
+
+\begin{equation*}
+  \begin{aligned}
+    \nabla \times \dfrac{\vec{r}}{r^3} = 0 
+  \end{aligned}
+\end{equation*}
+
+\begin{equation*}
+  \begin{aligned}
+    \nabla \cdot \dfrac{\vec{r}}{r^3} = - \nabla' \cdot \dfrac{\vec{r}}{r^3} = 0  
+  \end{aligned}
+\end{equation*}
+
+\paragraph{解}
+
+因为
+
+\begin{equation*}
+  \begin{aligned}
+    \nabla = \partial_i = \dfrac{\partial}{\partial x_i} = \dfrac{\partial}{\partial x'_i} \dfrac{\partial x'_i}{\partial x_i} = - \dfrac{\partial}{\partial x'_i} = - \nabla   
+  \end{aligned}
+\end{equation*}
+
+所以
+
+\begin{equation*}
+  \begin{aligned}
+    \nabla r = - \nabla' r
+  \end{aligned}
+\end{equation*}
+
+\begin{equation*}
+  \begin{aligned}
+    \nabla \dfrac{1}{r} = - \nabla' \dfrac{1}{r}
+  \end{aligned}
+\end{equation*}
+
+\begin{equation*}
+  \begin{aligned}
+    \nabla \times \dfrac{\vec{r}}{r^3} = 0 
+  \end{aligned}
+\end{equation*}
+
+\begin{equation*}
+  \begin{aligned}
+    \nabla \cdot \dfrac{\vec{r}}{r^3} = - \nabla' \cdot \dfrac{\vec{r}}{r^3} 
+  \end{aligned}
+\end{equation*}
+
+只需要证明
+
+\begin{equation}
+  \label{eq:a311}
+  \begin{aligned}
+    \nabla \vec{r} = \dfrac{\vec{r}}{r} 
+  \end{aligned}
+\end{equation}
+
+\begin{equation}
+  \label{eq:a312}
+  \begin{aligned}
+    \nabla \dfrac{1}{r} = - \dfrac{\vec{r}}{r^3}   
+  \end{aligned}
+\end{equation}
+
+\begin{equation}
+  \label{eq:a313}
+  \begin{aligned}
+    \nabla \times \dfrac{\vec{r}}{r^3} = 0 
+  \end{aligned}
+\end{equation}
+
+\begin{equation}
+  \label{eq:a314}
+  \begin{aligned}
+    \nabla \cdot \dfrac{\vec{r}}{r^3}  = 0  
+  \end{aligned}
+\end{equation}
+
+对于（\ref{eq:a311}）
+
+\begin{equation*}
+  \begin{aligned}
+    \nabla r = \partial_i \sqrt{ \Sigma \left( x_i - x_i' \right)^2} \vec{e}_i = \dfrac{x_i}{r} \vec{e}_i = \dfrac{\vec{r}}{r}  
+  \end{aligned}
+\end{equation*}
+
+对于（\ref{eq:a312}）
+
+\begin{equation*}
+  \begin{aligned}
+    \nabla \dfrac{1}{r} = - \dfrac{1}{r^2} \nabla r = - \dfrac{\vec{r}}{r^3} 
+  \end{aligned}
+\end{equation*}
+
+对于（\ref{eq:a313}）
+
+\begin{equation*}
+  \begin{aligned}
+    \nabla \times \dfrac{\vec{r}}{r^3} = \epsilon_{ijk} \partial_i \left( \dfrac{\vec{r}}{r^3}  \right)_j \vec{e}_k = \epsilon_{ijk} \partial_i \left( \dfrac{x_j}{r^3}  \right) \vec{e}_k = 0
+  \end{aligned}
+\end{equation*}
+
+对于（\ref{eq:a314}）
+
+\begin{equation*}
+  \begin{aligned}
+    \nabla \cdot \dfrac{\vec{r}}{r^3}  &= \partial_i \left( \dfrac{x_i}{r^3}  \right) = \dfrac{r^3 \partial_i x_i - x_i \partial_i r^3}{r^6} = \dfrac{r^3 \partial_i x_i - 3 r^2 x_i \partial_i r}{r^6 } = \dfrac{r^3 - 3 r^2 x_i \dfrac{x_i}{r} }{r^6} = \dfrac{r^3 - 3 r x_i^2  }{r^6}  \\
+    &= \dfrac{r^3 - 3 r x_1^2  }{r^6} + \dfrac{r^3 - 3 r x_2^2  }{r^6} + \dfrac{r^3 - 3 r x_3^2  }{r^6} = \dfrac{3 r^3 - 3r \left( x_1^2 + x_2^2 + x_3^2 \right)}{r^6} = 0
+  \end{aligned}
+\end{equation*}
+
+由于分母上有$r$，当$r=0$时，不一定成立。
+
+（2）求$\nabla \cdot \vec{r}$，$\nabla \times \vec{r}$，$\left( \vec{a} \cdot \nabla \right) \vec{r}$，$\nabla \left( \vec{a} \cdot \vec{r} \right)$，$\nabla \cdot \left[ \vec{E}_0 \sin \left( \vec{k} \cdot \vec{r} \right) \right]$，$\nabla \times \left[ \vec{E}_0 \sin \left( \vec{k} \cdot \vec{r} \right) \right]$，$\vec{a}$、$\vec{k}$、$\vec{E}_0$是常矢量。
+
+\paragraph{解}
+
+\begin{equation*}
+  \begin{aligned}
+    \nabla \cdot \vec{r} = \partial_i r_i = 3
+  \end{aligned}
+\end{equation*}
+
+\begin{equation*}
+  \begin{aligned}
+    \nabla \times \vec{r} = \epsilon_{ijk} \partial_i x_j \vec{e}_k = 0
+  \end{aligned}
+\end{equation*}
+
+\begin{equation*}
+  \begin{aligned}
+    \left( \vec{a} \cdot \nabla \right) \vec{r} = a_i \partial_i x_i \vec{e}_i = a_i \vec{e}_i = \vec{a}
+  \end{aligned}
+\end{equation*}
+
+\begin{equation*}
+  \begin{aligned}
+    \nabla \left( \vec{a} \cdot \vec{r} \right) = \partial_i \left( a_j r_j \right) \vec{e}_i = \left[ a_j \partial_i x_j + x_j \partial_i a_j \right] = a_j \partial_i x_j = a_i \partial_i x_i \vec{e}_i = a_i \vec{e}_i = \vec{a}
+  \end{aligned}
+\end{equation*}
+
+\begin{equation*}
+  \begin{aligned}
+    \nabla \cdot \left[ \vec{E}_0 \sin \left( \vec{k} \cdot \vec{r} \right) \right] = \partial_i E_{0i} \sin \left( k_i x_i \right) = E_{0i} \cos \left( k_i x_i \right) k_i = \vec{k} \cdot \vec{E}_0 \cos \left( \vec{k} \cdot \vec{r} \right) 
+  \end{aligned}
+\end{equation*}
+
+\begin{equation*}
+  \begin{aligned}
+    \nabla \times \left[ \vec{E}_0 \sin \left( \vec{k} \cdot \vec{r} \right) \right] = \epsilon_{ijk} \partial_i E_{0j} \sin \left( k_j x_j \right) \vec{e}_k = \epsilon_{ijk} E_{0j} \cos \left( k_m x_m \right) k_i \vec{e}_k = \vec{k} \times \vec{E}_0 \cos \left( \vec{k} \cdot \vec{r} \right)
+  \end{aligned}
+\end{equation*}
+
+\paragraph{1.4}
+
+利用高斯定理证明
+
+\begin{equation*}
+  \begin{aligned}
+    \int_V \md V \nabla \times \vec{f} = \oint_S \md \vec{S} \times \vec{f} 
+  \end{aligned}
+\end{equation*}
+
+利用斯托克斯定理证明
+
+\begin{equation*}
+  \begin{aligned}
+    \int_S \md \vec{S} \times \nabla \varphi = \oint_L \varphi \md \vec{l}
+  \end{aligned}
+\end{equation*}
+
+\paragraph{解}
+
+引入常矢量$\vec{c}$
+
+\begin{equation*}
+  \begin{aligned}
+    \int_V \md V \nabla \times \vec{f} \cdot \vec{c} = \int_V \vec{c} \cdot \left( \nabla \times \vec{f} \right) \md V = \int_V \nabla \cdot \left( \vec{f} \times \vec{c} \right) \md V = \oint_S \left( \vec{f} \times \vec{c} \right) \cdot \md \vec{S} = \oint_S \md \vec{S} \times \vec{f} \cdot \vec{c}
+  \end{aligned}
+\end{equation*}
+
+\begin{equation*}
+  \begin{aligned}
+    \int_S \md \vec{S} \times \nabla \varphi \cdot \vec{c} = \int_S \nabla \varphi \times \vec{c} \cdot \md \vec{S} = \int_L \nabla \times \left( \varphi \vec{c} \right) \cdot \md \vec{S} = \oint_L \varphi \vec{c} \cdot \md \vec{l} = \oint_L \varphi \md \vec{l} \cdot \vec{c}
+  \end{aligned}
+\end{equation*}
+
+因为$\vec{c}$是任意的
+
+\begin{equation*}
+  \begin{aligned}
+    \int_V \md V \nabla \times \vec{f} = \oint_S \md \vec{S} \times \vec{f} 
+  \end{aligned}
+\end{equation*}
+
+\begin{equation*}
+  \begin{aligned}
+    \int_S \md \vec{S} \times \nabla \varphi = \oint_L \varphi \md \vec{l}
+  \end{aligned}
+\end{equation*}
+
+\paragraph{1.5}
+
+已知一个电荷系统的电偶极矩为
+
+\begin{equation*}
+  \begin{aligned}
+    \vec{p} \left( t \right) = \int_V \rho \left( \vec{x}', t \right) \vec{x}' \md V'
+  \end{aligned}
+\end{equation*}
+
+利用电荷守恒定律$\nabla \cdot \vec{\Jmath} + \dfrac{\partial \rho}{\partial t} = 0 $证明
+
+\begin{equation*}
+  \begin{aligned}
+    \dfrac{\md \vec{p}}{\md t} = \int_V \vec{\Jmath} \left( \vec{x}', t \right) \md V' 
+  \end{aligned}
+\end{equation*}
+
+\paragraph{解}
+
+\begin{equation*}
+  \begin{aligned}
+    \dfrac{\md \vec{p}}{\md t} &= \int_V \dfrac{\md \rho \left( \vec{x}', t \right) }{\md t} \vec{x}' \md V' = - \int_V \left( \nabla' \cdot \vec{\Jmath} \right) \vec{x}' \md V' = - \int_V \left( \nabla' \cdot \vec{\Jmath} \vec{x}' \right) - \vec{\Jmath} \left( \nabla' \vec{x}' \right) \md V' \\
+    &= - \oint_S \vec{\Jmath} \vec{x}' \cdot \md \vec{S} + \int_V \vec{\Jmath} \md V' = \int_V \vec{\Jmath} \md V'
+  \end{aligned}
+\end{equation*}
+
+\paragraph{1.6}
+
+若$\vec{m}$是常矢量，证明除$R=0$以外，矢量$\vec{A} = \dfrac{\vec{m} \times \vec{R}}{R^3} $的旋度等于标量$\varphi = \dfrac{\vec{m} \cdot \vec{R}}{R^3} $的梯度的负值，即
+
+\begin{equation*}
+  \begin{aligned}
+    \nabla \times \vec{A} = - \nabla \varphi
+  \end{aligned}
+\end{equation*}
+
+\paragraph{解}
+
+\begin{equation*}
+  \begin{aligned}
+    \nabla \times \vec{A} &= \nabla \times \left( \vec{m} \times \dfrac{\vec{R}}{R^3}  \right) = \left( \dfrac{\vec{R}}{R^3} \cdot \nabla  \right) \vec{m} + \left( \nabla \cdot \dfrac{\vec{R}}{R^3}  \right) \vec{m} - \left( \vec{m} \cdot \nabla \right)\dfrac{\vec{R}}{R^3} - \left( \nabla \cdot \vec{m} \right) \dfrac{\vec{R}}{R^3} \\
+    &= \left( \nabla \cdot \dfrac{\vec{R}}{R^3}  \right) \vec{m} - \left( \vec{m} \cdot \nabla \right) \dfrac{\vec{R}}{R^3} = - \left( \vec{m} \cdot \nabla \right) \dfrac{\vec{R}}{R^3}  
+  \end{aligned}
+\end{equation*}
+
+\begin{equation*}
+  \begin{aligned}
+    - \nabla \varphi &= - \nabla \left( \dfrac{\vec{m} \cdot \vec{R}}{R^3}  \right) = - \vec{m} \times \left( \nabla \times \dfrac{\vec{R}}{R^3}  \right) - \left( \vec{m} \cdot \nabla \right) \dfrac{\vec{R}}{R^3} - \dfrac{\vec{R}}{R^3} \times \left( \nabla \times \vec{m} \right) - \left( \dfrac{\vec{R}}{R^3} \cdot \nabla  \right) \vec{m} \\
+    &= - \vec{m} \times \left( \nabla \times \dfrac{\vec{R}}{R^3}  \right) - \left( \vec{m} \cdot \nabla \right) \dfrac{\vec{R}}{R^3} = - \left( \vec{m} \cdot \nabla \right) \dfrac{\vec{R}}{R^3}  
+  \end{aligned}
+\end{equation*}
+
+得证
+
+
+
+
+\end{document} 
