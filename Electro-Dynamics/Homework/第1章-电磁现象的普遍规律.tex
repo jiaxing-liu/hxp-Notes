@@ -463,7 +463,222 @@
 
 得证
 
+\paragraph{1.7}
 
+有一内外半径为$r_1$和$r_2$的空心介质球，介质的电容率为$\varepsilon$，是介质内均匀带静自由电荷密度$\rho_f$，求：
+
+（1）空间各点的电场
+
+（2）极化体电荷和极化面电荷分布
+
+\paragraph{解}
+
+在$r < r_1$时
+
+\begin{equation*}
+  \begin{aligned}
+    \oint_S \vec{D} \cdot \md \vec{S} = \int_V \rho_f \md V
+    \Rightarrow
+    4\pi r^2 D = 0
+    \Rightarrow
+    \vec{D} = 0
+    \Rightarrow
+    \vec{E} = 0
+  \end{aligned}
+\end{equation*}
+
+在$r_1 < r < r_2$时
+
+\begin{equation*}
+  \begin{aligned}
+    \oint_S \vec{D} \cdot \md \vec{S} = \int_V \rho_f \md V
+    \Rightarrow
+    4\pi r^2 D = \dfrac{4}{3} \pi \left( r^3 - r_1^3 \right) \rho_f
+    \Rightarrow
+    \vec{D} = \dfrac{r^3 - r_1^3}{3 r^3} \rho_f \vec{r} 
+    \Rightarrow
+    \vec{E} = \dfrac{r^3 - r_1^3}{3 \varepsilon r^3} \rho_f \vec{r}
+  \end{aligned}
+\end{equation*}
+
+在$r > r_2$时
+
+\begin{equation*}
+  \begin{aligned}
+    \oint_S \vec{D} \cdot \md \vec{S} = \int_V \rho_f \md V
+    \Rightarrow
+    4\pi r^2 D = \dfrac{4}{3} \pi \left( r_2^3 - r_1^3 \right) \rho_f
+    \Rightarrow
+    \vec{D} = \dfrac{r_2^3 - r_1^3}{3 r^3} \rho_f \vec{r}
+    \Rightarrow
+    \vec{D} = \dfrac{r_2^3 - r_1^3}{3 \varepsilon_0 r^3} \rho_f \vec{r}
+  \end{aligned}
+\end{equation*}
+
+在$r_1 <r < r_2$时
+
+\begin{equation*}
+  \begin{aligned}
+    D &= \varepsilon_0 E + P
+    \Rightarrow
+    P = D - \varepsilon_0 E = D \left( 1 - \dfrac{\varepsilon_0}{\varepsilon}  \right)
+    \Rightarrow
+    \vec{P} = \left( 1 - \dfrac{\varepsilon_0}{\varepsilon}  \right) \dfrac{r^3 - r_1^3}{3r^3} \rho_f \vec{r} \\
+    &\Rightarrow
+    \rho_P = - \nabla \cdot \vec{P} = - \left( 1 - \dfrac{\varepsilon_0}{\varepsilon}  \right) \rho_f
+  \end{aligned}
+\end{equation*}
+
+在$r = r_2$时
+
+\begin{equation*}
+  \begin{aligned}
+    \sigma_P = - \vec{e}_n \cdot \left( \vec{P}_3 - \vec{P}_2 \right) = \left( 1 - \dfrac{\varepsilon_0}{\varepsilon}  \right) \dfrac{r_2^3 - r_1^3}{3 r_2^2} \rho_f  
+  \end{aligned}
+\end{equation*}
+
+在$r = r_1$时
+
+\begin{equation*}
+  \begin{aligned}
+    \sigma_P = - \vec{e}_n \cdot \left( \vec{P}_2 - \vec{P}_1 \right) = 0
+  \end{aligned}
+\end{equation*}
+
+\paragraph{1.8}
+
+内外半径分别为$r_1$和$r_2$的无穷长中空导体圆柱，沿轴向流有恒定均匀自由电流$\vec{\Jmath}_f$，导体磁导率为$\mu$，求磁感应强度和磁化电流
+
+\paragraph{解}
+
+在$r<r_1$时
+
+\begin{equation*}
+  \begin{aligned}
+    \oint \vec{H} \cdot \md \vec{l} = I_f + \dfrac{\md}{\md t} \int_S \vec{D} \cdot \md \vec{S}
+    \Rightarrow
+    \vec{H} = 0
+    \Rightarrow
+    \vec{B} = 0
+  \end{aligned}
+\end{equation*}
+
+在$r_1<r<r_2$时
+
+\begin{equation*}
+  \begin{aligned}
+    \oint \vec{H} \cdot \md \vec{l} = I_f + \dfrac{\md}{\md t} \int_S \vec{D} \cdot \md \vec{S}
+    \Rightarrow
+    2\pi r H = \pi \left( r^2 - r_1^2 \right) J_f
+    \Rightarrow
+    \vec{H} = \dfrac{r^2 - r_1^2}{2 r^2 } \vec{\Jmath}_f \times \vec{r} 
+    \Rightarrow
+    \vec{B} = \mu \dfrac{r^2 - r_1^2}{2 r^2 } \vec{\Jmath}_f \times \vec{r}
+  \end{aligned}
+\end{equation*}
+
+在$r>r_2$时
+
+\begin{equation*}
+  \begin{aligned}
+    \oint \vec{H} \cdot \md \vec{l} = I_f + \dfrac{\md}{\md t} \int_S \vec{D} \cdot \md \vec{S}
+    \Rightarrow
+    2\pi r H = \pi \left( r_2^2 - r_1^2 \right) J_f
+    \Rightarrow
+    \vec{H} = \dfrac{r_2^2 - r_1^2}{2 r^2 } \vec{\Jmath}_f \times \vec{r} 
+    \Rightarrow
+    \vec{B} = \mu_0 \dfrac{r_2^2 - r_1^2}{2 r^2 } \vec{\Jmath}_f \times \vec{r}
+  \end{aligned}
+\end{equation*}
+
+当$r_1 < r < r_2$时
+
+\begin{equation*}
+  \begin{aligned}
+    \vec{\Jmath}_m = \nabla \times \vec{M} = \left( \dfrac{\mu}{\mu_0} - 1  \right) \nabla \times \vec{H} = \left( \dfrac{\mu}{\mu_0} - 1  \right) \vec{\Jmath}_f
+  \end{aligned}
+\end{equation*}
+
+当$r=r_2$时
+
+\begin{equation*}
+  \begin{aligned}
+    \vec{\alpha}_M = \vec{e}_r \times \left( \vec{M}_3 - \vec{M}_2 \right) = - \left( \dfrac{\mu}{\mu_0} - 1  \right) \vec{e}_r \times \vec{H}_3 = - \left( \dfrac{\mu}{\mu_0} - 1  \right) \dfrac{r_2^2 - r_1^2}{ 2 r_2^2} \vec{\Jmath}_f 
+  \end{aligned}
+\end{equation*}
+
+当$r=r_1$时
+
+\begin{equation*}
+  \begin{aligned}
+    \vec{\alpha}_M = \vec{e}_r \times \left( \vec{M}_2 - \vec{M}_1 \right) = 0
+  \end{aligned}
+\end{equation*}
+
+
+\paragraph{1.9}
+
+证明均匀介质内部的极化电荷体密度$\rho_P$总是等于自由电荷体密度$\rho_f$的$- \left( 1 - \dfrac{\varepsilon_0}{\varepsilon}  \right)$倍
+
+\paragraph{解}
+
+\begin{equation*}
+  \begin{aligned}
+    \varepsilon E = D \Rightarrow \nabla \cdot \varepsilon E = \nabla \cdot D \Rightarrow \varepsilon \varepsilon_0 \nabla \cdot E = \varepsilon_0 \nabla \cdot D \Rightarrow \varepsilon \left( \rho_P + \rho_f \right) = \varepsilon_0 \rho_f \Rightarrow \rho_P = - \left( 1 - \dfrac{\varepsilon_0}{\varepsilon}  \right) \rho_f
+  \end{aligned}
+\end{equation*}
+
+\paragraph{1.10}
+
+证明两个闭合的恒定电流圈之间的相互作用力大小相等，方向相反（但两个电流元之间的相互作用力一般不服从牛顿第三定律）
+
+\paragraph{解}
+
+设两个电流圈的电流为$I_1$和$I_2$
+
+\begin{equation*}
+  \begin{aligned}
+    \vec{F}_{12}
+    &= \oint_{L2} I_2 \md \vec{l}_2 \times \dfrac{\mu_0}{4\pi} \oint_{L1} \dfrac{I_1 \md \vec{l}_1 \times \vec{r}_{12}}{r_{12}^3}
+    = \dfrac{\mu_0 I_1 I_2}{4 \pi} \oint_{L2} \oint_{L1} \dfrac{\md \vec{l}_2 \times \md \vec{l}_1 \times \vec{r}_{12}}{r_{12}^3}\\
+    &= \dfrac{\mu_0 I_1 I_2}{4 \pi} \oint_{L2} \oint_{L1} \dfrac{\left( \md \vec{l}_2 \cdot \vec{r}_{12} \right) \md \vec{l}_1 - \left( \md \vec{l}_2 \cdot \md \vec{l}_1 \right) \vec{r}_{12}}{r_{12}^3}
+  \end{aligned}
+\end{equation*}
+
+因为
+
+\begin{equation*}
+  \begin{aligned}
+    \oint_{L1} \oint_{L2} \dfrac{\left( \md \vec{l}_2 \cdot \vec{r}_{12} \right) \md \vec{l}_1}{r_{12}^3}
+    = \oint_{L1} \left[ \oint_{L2} \dfrac{\vec{r}_{12}}{r_{12}^3} \cdot \md \vec{l}_2 \right] \md \vec{l}_1
+    = \oint_{L1} \left[ \oint_{S2} \nabla \times \dfrac{\vec{r}_{12}}{r_{12}^3} \cdot \md \vec{S}_2 \right] \md \vec{l}_1
+    = 0
+  \end{aligned}
+\end{equation*}
+
+所以
+
+\begin{equation*}
+  \begin{aligned}
+    \vec{F}_{12} = - \dfrac{\mu_0 I_1 I_2}{4 \pi} \oint_{L2} \oint_{L1} \dfrac{\md \vec{l}_2 \cdot \md \vec{l}_1}{r^3} \vec{r}_{12}
+  \end{aligned}
+\end{equation*}
+
+同理
+
+\begin{equation*}
+  \begin{aligned}
+    \vec{F}_{21} = - \dfrac{\mu_0 I_2 I_1}{4 \pi} \oint_{L1} \oint_{L2} \dfrac{\md \vec{l}_1 \cdot \md \vec{l}_2}{r^3} \vec{r}_{21}
+  \end{aligned}
+\end{equation*}
+
+其中$r_{12} = - r_{21}$，因此
+
+\begin{equation*}
+  \begin{aligned}
+    \vec{F}_{21} = - \vec{F}_{12}
+  \end{aligned}
+\end{equation*}
 
 
 \end{document} 
