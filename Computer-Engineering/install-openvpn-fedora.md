@@ -51,8 +51,6 @@ And use telnet to manage
 telnet localhost 7505
 ```
 
-
-
 ## Add or Remove User
 
 Just simply run the installation script again
@@ -65,6 +63,56 @@ Just simply run the installation script again
 
 ```base
 echo "ifconfig-push 10.8.0.50 255.255.255.0" > /etc/openvpn/ccd/<vpn-username>
+```
+
+## Tracking user connects
+
+make a directory under where all users may visit
+
+```bash
+mkdir /etc/openvpn/scripts/
+```
+
+edit `/etc/openvpn/server.conf`, add
+
+```bash
+script-security 2
+client-connect /etc/openvpn/scripts/user-connect.sh
+client-disconnect /etc/openvpn/scripts/user-disconnect.sh
+```
+
+and add `/etc/openvpn/scripts/user-connect.sh`
+
+```bash
+#!/bin/sh
+
+user=$common_name
+remote_ip=$trusted_ip
+local_ip=$ifconfig_pool_remote_ip
+
+echo '[CONNECT]' $(date) $user $remote_ip $local_ip >>/var/log/openvpn/connectlog.txt
+```
+
+add `/etc/openvpn/scripts/user-disconnect.sh`
+
+```bash
+#!/bin/sh
+
+user=$common_name
+remote_ip=$trusted_ip
+local_ip=$ifconfig_pool_remote_ip
+
+echo '[DISCONNECT]' $(date) $user $remote_ip $local_ip >>/var/log/openvpn/connectlog.txt
+```
+
+add permissions and restart
+
+```bash
+touch /var/log/openvpn/connectlog.txt
+chmod 666 
+chmod a+x /etc/openvpn/scripts/user-connect.sh 
+chmod a+x /etc/openvpn/scripts/user-disconnect.sh
+systemctl restart openvpn-server@server.service
 ```
 
 ## Client
