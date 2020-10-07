@@ -680,5 +680,356 @@
   \end{aligned}
 \end{equation*}
 
+\paragraph{1.11}
+
+平行班电容器内有两层介质，它们的厚度分别为$l_1$和$l_2$，电容率为$\varepsilon_1$和$\varepsilon_2$，在两板接上电动势为$\mathcal{E}$的电池，求
+
+（1）电容器两板的自由电荷面密度$\omega_f$
+
+（2）介质分界面上的自由电荷面密度$\omega_f$
+
+若介质是漏电的，电导率分别为$\sigma_1$和$\sigma_2$，当电流达到恒定时，上述两问题结果如何？
+
+\paragraph{解}
+
+边值关系
+
+\begin{equation*}
+  \begin{aligned}
+    \omega_f = \vec{e}_n \cdot \left( \vec{D}_2 - \vec{D}_1 \right)
+  \end{aligned}
+\end{equation*}
+
+其中
+
+\begin{equation}
+  \label{eq:a1111}
+  \begin{aligned}
+    \mathcal{E} = l_1 \dfrac{D_1}{\varepsilon_1} + l_2 \dfrac{D_2}{\varepsilon_2}   
+  \end{aligned}
+\end{equation}
+
+对于两个极板
+
+\begin{equation}
+  \label{eq:a1112}
+  \begin{aligned}
+    \omega_{f1} = D_1
+    \quad\quad
+    \omega_{f2} = - D_2
+  \end{aligned}
+\end{equation}
+
+对于介质分界面
+
+\begin{equation}
+  \label{eq:a1113}
+  \begin{aligned}
+    \omega_{f3} = D_2 - D_1 = 0
+  \end{aligned}
+\end{equation}
+
+由式（\ref{eq:a1111}）（\ref{eq:a1112}）（\ref{eq:a1113}）可得
+
+\begin{equation*}
+  \begin{aligned}
+    \omega_{f1} = \dfrac{\mathcal{E}}{\dfrac{l_1}{\varepsilon_1} + \dfrac{l_2}{\varepsilon_2}  } = - \omega_{f2} 
+  \end{aligned}
+\end{equation*}
+
+介质漏电时，设电流密度$J$，式（\ref{eq:a1111}）应当改为
+
+\begin{equation*}
+  \begin{aligned}
+    \mathcal{E} = l_1 E_1 + l_2 E_2 = \left( \dfrac{l_1}{\sigma_1} + \dfrac{l_2}{\sigma_2}   \right) J
+  \end{aligned}
+\end{equation*}
+
+同时
+
+\begin{equation*}
+  \begin{aligned}
+    D_1 = \varepsilon_1 \dfrac{J}{\sigma_1}
+    \quad\quad
+    D_2 = \varepsilon_2 \dfrac{J}{\sigma_2}  
+  \end{aligned}
+\end{equation*}
+
+解得
+
+\begin{equation*}
+  \begin{aligned}
+    \omega_{f1} = \dfrac{\varepsilon_1 \sigma_2}{\sigma_2 l_1 + \sigma_1 l_2} \mathcal{E}
+  \end{aligned}
+\end{equation*}
+
+\begin{equation*}
+  \begin{aligned}
+    \omega_{f2} = - \dfrac{\varepsilon_2 \sigma_1}{\sigma_2 l_1 + \sigma_1 l_2} \mathcal{E}
+  \end{aligned}
+\end{equation*}
+
+\begin{equation*}
+  \begin{aligned}
+    \omega_{f3} = \dfrac{\varepsilon_2 \sigma_1 - \varepsilon_1 \sigma_2}{\sigma_2 l_1 + \sigma_1 l_2} 
+  \end{aligned}
+\end{equation*}
+
+\paragraph{1.12}
+
+证明
+
+（1）当两种绝缘介质的分界面上不带自由电荷时，电场线的曲折满足
+
+\begin{equation*}
+  \begin{aligned}
+    \dfrac{\tan \theta_2}{\tan \theta_1} = \dfrac{\varepsilon_2}{\varepsilon_1}  
+  \end{aligned}
+\end{equation*}
+
+其中$\varepsilon_1$和$\varepsilon_2$分别为两种介质的介电常数，$\theta_1$和$\theta_2$分别为界面两侧电场线与法线的夹角。
+
+（2）当两种导电介质内流有恒定电流时，分界面上电场线的曲折满足：
+
+\begin{equation*}
+  \begin{aligned}
+    \dfrac{\tan \theta_1}{\tan \theta_2} = \dfrac{\sigma_2}{\sigma_1}  
+  \end{aligned}
+\end{equation*}
+
+边值关系为
+
+\begin{equation*}
+  \begin{aligned}
+    \varepsilon_1 E_{1n} = \varepsilon_2 E_{2n}
+  \end{aligned}
+\end{equation*}
+
+\begin{equation*}
+  \begin{aligned}
+    E_{1t} = E_{2t}
+  \end{aligned}
+\end{equation*}
+
+即
+
+\begin{equation*}
+  \begin{aligned}
+    \varepsilon_1 E_1 \sin \theta_1 = \varepsilon_2 E_2 \sin \theta_2
+  \end{aligned}
+\end{equation*}
+
+\begin{equation*}
+  \begin{aligned}
+    E_1 \cos \theta_1 = E_2 \cos \theta_2
+  \end{aligned}
+\end{equation*}
+
+因此
+
+\begin{equation*}
+  \begin{aligned}
+    \dfrac{\tan \theta_1}{\tan \theta_2} = \dfrac{\varepsilon_2}{\varepsilon_1}  
+  \end{aligned}
+\end{equation*}
+
+当有恒定电流时
+
+\begin{equation*}
+  \begin{aligned}
+    \sigma_1 E_{1n} = J_n
+    \quad\quad
+    \sigma_2 E_{2n} = J_n
+    \quad\quad
+    E_{1t} = E_{2t}
+  \end{aligned}
+\end{equation*}
+
+所以
+
+\begin{equation*}
+  \begin{aligned}
+     \dfrac{\tan \theta_1}{\tan \theta_2} = \dfrac{\sigma_2}{\sigma_1}  
+  \end{aligned}
+\end{equation*}
+
+\paragraph{1.13}
+
+试用边值关系证明：在绝缘介质与导体的分界面上，在静电情况下，导体外表面的电场线总是垂直于导体表面。在恒定电流情况下，导体内表面电场线总是平行于导体表面。
+
+\paragraph{解}
+
+由边值关系
+
+\begin{equation*}
+  \begin{aligned}
+    D_{2n} = \sigma_f
+    \quad\quad
+    E_{2t} = 0
+  \end{aligned}
+\end{equation*}
+
+导体外部
+
+\begin{equation*}
+  \begin{aligned}
+    \vec{E}_2 = \dfrac{\vec{D}_2}{\varepsilon} = \dfrac{\sigma_f}{\varepsilon} \vec{e}_n  
+  \end{aligned}
+\end{equation*}
+
+介质界面两侧法向电流应当是连续的
+
+\begin{equation*}
+  \begin{aligned}
+    J_{1n} = J_{2n}
+  \end{aligned}
+\end{equation*}
+
+所以介质内法向电场
+
+\begin{equation*}
+  \begin{aligned}
+    E_{2n} = \dfrac{J_{2n}}{\sigma_2} = 0 
+  \end{aligned}
+\end{equation*}
+
+\paragraph{1.14}
+
+内外半径分别为$a$和$b$的无限长圆柱型电容器，单位长度荷电为$\lambda_f$，板间填充电导率为$\sigma$的非磁性物质
+
+（1）证明在介质中任何一点的传导电流与位移电流完全抵消，因此内部无磁场。
+
+（2）求$\lambda_f$随时间的衰减规律。
+
+（3）求轴与相距为$r$的地方能量耗散功率密度。
+
+（4）求长度为$l$的一段介质总的能量耗散功率，并证明它等于这段的静电减少率。
+
+\paragraph{解}
+
+在介质中有
+
+\begin{equation*}
+  \begin{aligned}
+    \vec{D} = \dfrac{\lambda_f}{2 \pi r} \vec{e}_r
+    \quad\quad
+    \vec{E} = \dfrac{\vec{D}}{\varepsilon} = \dfrac{\lambda_f}{2 \pi \varepsilon r} \vec{e}_r  
+  \end{aligned}
+\end{equation*}
+
+因此
+
+\begin{equation}
+  \label{eq:a1141}
+  \begin{aligned}
+    \vec{\Jmath}_f = \sigma \vec{E} = \dfrac{\sigma \lambda_f}{2 \pi \varepsilon r} \vec{e}_r 
+    \quad\quad
+    \vec{\Jmath}_D = \dfrac{\partial \vec{D}}{\partial t} = \dfrac{1}{2 \pi r} \dfrac{\partial \lambda_f}{\partial t} \vec{e}_r  
+  \end{aligned}
+\end{equation}
+
+又因为
+
+\begin{equation*}
+  \begin{aligned}
+    \nabla \cdot \vec{D} = \rho_f
+    \quad\quad
+    \nabla \cdot \vec{\Jmath}_f + \dfrac{\partial \lambda_f}{\partial t} = 0 
+  \end{aligned}
+\end{equation*}
+
+即
+
+\begin{equation*}
+  \begin{aligned}
+    - \dfrac{\lambda_f}{2 \pi r^2} = \rho_f
+    \Rightarrow
+    \dfrac{\partial \rho_f}{\partial t} = - \dfrac{1}{2 \pi r^2} \dfrac{\partial \lambda_f}{\partial t}   
+  \end{aligned}
+\end{equation*}
+
+\begin{equation*}
+  \begin{aligned}
+    \nabla \cdot \vec{\Jmath}_f = - \dfrac{\sigma \lambda_f}{2 \pi \varepsilon r^2} 
+  \end{aligned}
+\end{equation*}
+
+所以
+
+\begin{equation*}
+  \begin{aligned}
+    - \dfrac{\sigma \lambda_f}{2 \pi \varepsilon r^2} - \dfrac{1}{2 \pi r^2} \dfrac{\partial \lambda_f}{\partial t} = 0 
+  \end{aligned}
+\end{equation*}
+
+即
+
+\begin{equation*}
+  \begin{aligned}
+    \dfrac{\partial \lambda_f}{\partial t} = - \dfrac{\sigma}{\varepsilon} \lambda_f  
+  \end{aligned}
+\end{equation*}
+
+代入式\ref{eq:a1141}可得
+
+\begin{equation*}
+  \begin{aligned}
+    \vec{\Jmath}_D + \vec{\Jmath}_f = 0
+  \end{aligned}
+\end{equation*}
+
+传导电流和位移电流完全抵消。
+
+因为
+
+\begin{equation*}
+  \begin{aligned}
+    \nabla \times \vec{H} = \vec{\Jmath}_f + \dfrac{\partial \vec{D}}{\partial t} 
+  \end{aligned}
+\end{equation*}
+
+所以电容器内无磁场。
+
+$\lambda_f$衰减的规律为：
+
+\begin{equation*}
+  \begin{aligned}
+    \lambda_f \left( t \right) = \lambda_f \left( 0 \right) \exp \left[ - \dfrac{\sigma}{\varepsilon} t  \right]
+  \end{aligned}
+\end{equation*}
+
+介质中能量耗散的功率密度为
+
+\begin{equation*}
+  \begin{aligned}
+    p = \vec{\Jmath}_f \cdot \vec{E} = \sigma E^2 = \sigma \left( \dfrac{\lambda_f}{2 \pi \varepsilon r}  \right)^2
+  \end{aligned}
+\end{equation*}
+
+长为$l$的介质耗散功率为
+
+\begin{equation*}
+  \begin{aligned}
+    \int_a^b 2 \pi r l p \md r = \dfrac{\sigma l \lambda_f^2}{2 \pi \varepsilon^2} \ln \dfrac{b}{a}  
+  \end{aligned}
+\end{equation*}
+
+电场能量密度变化率为
+
+\begin{equation*}
+  \begin{aligned}
+    \dfrac{\partial}{\partial t } \left[ \dfrac{1}{2} \vec{E} \cdot \vec{D}  \right] = \dfrac{\partial}{\partial t} \left[ \dfrac{1}{2} \dfrac{\lambda_f^2}{\varepsilon \left( 2 \pi r \right)^2}   \right]  = - \sigma \left( \dfrac{\lambda_f}{2 \pi \varepsilon r}  \right)^2
+  \end{aligned}
+\end{equation*}
+
+长为$l$的介质电场能量变化率为
+
+\begin{equation*}
+  \begin{aligned}
+    \int_a^b - \sigma \left( \dfrac{\lambda_f}{2 \pi \varepsilon r}  \right)^2 \md r = - \dfrac{\sigma l \lambda_f^2}{2 \pi \varepsilon^2} \ln \dfrac{b}{a}  
+  \end{aligned}
+\end{equation*}
+
+介质耗散的能量恰好等于电场减少的能量
 
 \end{document} 
