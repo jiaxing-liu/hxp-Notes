@@ -1,0 +1,188 @@
+\documentclass{article}
+
+% Chinese Support using xeCJK
+% \usepackage{xeCJK}
+% \setCJKmainfont{SimSun}
+
+% Chinese Support using CTeX
+\usepackage{ctex}
+
+% Math Support
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{wasysym}
+\newcommand{\angstrom}{\text{\normalfont\AA}}
+
+\usepackage{fancyhdr}
+
+% Graphics Support
+\usepackage{graphicx}
+\usepackage{float}
+
+% Reduced page margin
+\usepackage{geometry}
+\geometry{a4paper,scale=0.8}
+
+\usepackage{caption}
+\usepackage{subcaption}
+
+% d and e should be math operators
+\newcommand*{\dif}{\mathop{}\!\mathrm{d}}
+\newcommand*{\md}{\mathop{}\!\mathrm{d}}
+\newcommand*{\me}{\mathrm{e}}
+\newcommand*{\mh}{\mathrm{h}}
+
+% No indent for each paragraph
+\usepackage{parskip}
+\setlength{\parindent}{0cm}
+
+% Bold style for Greek letters
+\usepackage{bm}
+\let\Oldmathbf\mathbf
+\renewcommand{\mathbf}[1]{\boldsymbol{\Oldmathbf{#1}}}
+
+% More space for dfrac in cell
+\usepackage{cellspace}
+\setlength{\cellspacetoplimit}{5pt}
+\setlength{\cellspacebottomlimit}{5pt}
+
+% SI units
+\newcommand{\si}[1]{\  \mathrm{#1}}
+
+% Multi-line author information
+\usepackage{authblk}
+\author{物理（4+4）1801 \quad 胡喜平 \quad 学号 U201811966}
+
+\affil{网站 https://hxp.plus/ \quad 邮件 hxp201406@gmail.com}
+
+\title{《量子力学教程》课后习题——第二章\ 波函数和薛定谔方程}
+
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{源码地址：https://github.com/hxp-plus/Notes/blob/master/Qumntum-Mechenics/Homework/}
+\rfoot{第 \thepage 页}
+\renewcommand{\headrulewidth}{1pt}
+\renewcommand{\footrulewidth}{1pt}
+
+\begin{document}
+
+\maketitle\thispagestyle{fancy}
+
+
+\paragraph{2.1}
+
+证明在定态中，概率流密度与时间无关。
+
+\paragraph{解}
+
+\paragraph{2.2}
+
+由下列两定态波函数计算概率流密度。
+
+\begin{equation*}
+  \begin{aligned}
+    \psi_1 = \dfrac{1}{r} \exp \left[ i k r \right]
+    \quad\quad \quad\quad \quad\quad 
+    \psi_2 = \dfrac{1}{r} \exp \left[ - i k r \right] 
+  \end{aligned}
+\end{equation*}
+
+从所得结果说明$\psi_1$表示向外传播的球面波，$\psi_2$表示向内（即向原点）传播的球面波。
+
+\paragraph{解}
+
+\paragraph{2.3}
+
+一粒子在一维势场
+
+\begin{equation*}
+  \begin{aligned}
+    U \left( x \right) =
+  \end{aligned}
+  \left\{
+  \begin{aligned}
+    & \infty && x<0 \\
+    & 0 && 0 \leq x \leq a \\
+    & \infty && x>a
+  \end{aligned}
+  \right.
+\end{equation*}
+
+中运动，求粒子的能级和对应的波函数。
+
+\paragraph{解}
+
+\paragraph{2.4}
+
+证明下式中的归一化因子是$A'=\dfrac{1}{\sqrt{a}} $
+
+\begin{equation*}
+  \begin{aligned}
+    \psi_n =
+  \end{aligned}
+  \left\{
+  \begin{aligned}
+    & A' \sin \dfrac{n\pi}{2a} \left( x + a \right) && \left| x \right| < a \\
+    & 0 && \left| x \right| \geq a
+  \end{aligned}
+  \right.
+\end{equation*}
+
+\paragraph{解}
+
+\paragraph{2.5}
+
+求一维谐振子处在第一激发态时概率最大的位置。
+
+\paragraph{解}
+
+\paragraph{2.6}
+
+在一维势场中运动的粒子，势能对原点对称：$U \left( x \right) = U \left( x \right)$，证明粒子的定态波函数具有确定的宇称。
+
+\paragraph{解}
+
+\paragraph{2.7}
+
+一粒子在一维深势阱
+
+\begin{equation*}
+  \begin{aligned}
+    U \left( x \right) =
+  \end{aligned}
+  \left\{
+  \begin{aligned}
+    & U_0 > 0 && \left| x \right| > a \\
+    & 0 && \left| x \right| \leq a
+  \end{aligned}
+  \right.
+\end{equation*}
+
+中运动，求束缚态（$0<E<U_0$）的能级所满足的方程。
+
+\paragraph{解}
+
+\paragraph{2.8}
+
+分子间的范德瓦尔斯力所产生的势能可以近似地表示为
+
+\begin{equation*}
+  \begin{aligned}
+    U \left( x  \right) = 
+  \end{aligned}
+  \left\{
+  \begin{aligned}
+    & \infty && x<0 \\
+    & U_0 && 0 \leq x < a \\
+    & - U_1 && a \leq x \leq b \\
+    & 0 && b < x
+  \end{aligned}
+  \right.
+\end{equation*}
+
+求束缚态的能级所满足的方程。
+
+\paragraph{解}
+
+\end{document} 
