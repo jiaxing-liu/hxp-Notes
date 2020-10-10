@@ -32,6 +32,7 @@
 \newcommand*{\md}{\mathop{}\!\mathrm{d}}
 \newcommand*{\me}{\mathrm{e}}
 \newcommand*{\mh}{\mathrm{h}}
+\newcommand*{\Jmath}{J}
 
 % No indent for each paragraph
 \usepackage{parskip}
@@ -69,12 +70,31 @@
 
 \maketitle\thispagestyle{fancy}
 
-
 \paragraph{2.1}
 
 证明在定态中，概率流密度与时间无关。
 
 \paragraph{解}
+
+定态波函数为
+
+\begin{equation*}
+  \begin{aligned}
+    \psi \left( r,t \right) = \psi \left( r \right) \exp \left[ - \dfrac{i E}{\hbar} t  \right]
+  \end{aligned}
+\end{equation*}
+
+概率流密度为
+
+\begin{equation*}
+  \begin{aligned}
+    J &= \dfrac{\hbar}{2i \mu} \left| \psi \left( r \right) \right|^2 \nabla \ln \left\{ \dfrac{\psi \left( r \right)}{\psi^{*} \left( r \right)} \exp \left[ - \dfrac{2 i E}{\hbar}t  \right]  \right\}
+    =\dfrac{\hbar}{2i\mu} \left| \psi \left( r \right) \right|^2 \nabla \left\{ \ln \left[ \dfrac{\psi \left( r \right)}{\psi^{*} \left( r \right)}  \right] + \dfrac{2iEt}{\hbar}  \right\} \\
+    &= \dfrac{\hbar}{2i\mu} \left| \psi \left( r \right) \right|^2 \nabla \ln \left[ \dfrac{\psi \left( r \right)}{\psi^{*} \left( r \right)}  \right]
+  \end{aligned}
+\end{equation*}
+
+与时间无关。
 
 \paragraph{2.2}
 
@@ -91,6 +111,20 @@
 从所得结果说明$\psi_1$表示向外传播的球面波，$\psi_2$表示向内（即向原点）传播的球面波。
 
 \paragraph{解}
+
+\begin{equation*}
+  \begin{aligned}
+    \vec{\Jmath}_1 = \dfrac{\hbar}{2 i \mu} \left| \psi \right|^2  \nabla \ln \dfrac{\psi}{\psi^{*}} = \dfrac{\hbar}{2i\mu} \dfrac{1}{r^2} \nabla \left( 2ikr \right) = \dfrac{\hbar k}{\mu r^2} \vec{e}_r 
+  \end{aligned}
+\end{equation*}
+
+\begin{equation*}
+  \begin{aligned}
+    \vec{\Jmath}_2 = \dfrac{\hbar}{2 i \mu} \left| \psi \right|^2  \nabla \ln \dfrac{\psi}{\psi^{*}} = \dfrac{\hbar}{2i\mu} \dfrac{1}{r^2} \nabla \left( -2ikr \right) = - \dfrac{\hbar k}{\mu r^2} \vec{e}_r 
+  \end{aligned}
+\end{equation*}
+
+$\psi_1$是沿着$\vec{e}_r$方向传播的，$\psi_2$是沿着$\vec{e}_r$相反方向传播的。
 
 \paragraph{2.3}
 
@@ -113,6 +147,101 @@
 
 \paragraph{解}
 
+在$0<x<a$时，薛定谔方程
+
+\begin{equation*}
+  \begin{aligned}
+    - \dfrac{\hbar^2}{2\mu} \dfrac{\md^2 \psi}{\md x^2} = E \psi  
+  \end{aligned}
+\end{equation*}
+
+即
+
+\begin{equation*}
+  \begin{aligned}
+    \dfrac{\md^2 \psi}{\md x^2} - \dfrac{\hbar^2}{2 \mu E} \psi = 0  
+  \end{aligned}
+\end{equation*}
+
+设
+
+\begin{equation*}
+  \begin{aligned}
+    \psi = A \cos \alpha x + B \sin \alpha x
+  \end{aligned}
+\end{equation*}
+
+代入解得
+
+\begin{equation*}
+  \begin{aligned}
+    \psi = A \cos \alpha x + B \sin \alpha x
+    \quad\quad
+    \quad\quad
+    \alpha = \sqrt{\dfrac{2 \mu E}{\hbar^2} }
+  \end{aligned}
+\end{equation*}
+
+由波函数连续条件
+
+\begin{equation*}
+  \begin{aligned}
+    \psi|_{x=0} = \psi|_{x=a} = 0
+  \end{aligned}
+\end{equation*}
+
+得到
+
+\begin{equation*}
+  \begin{aligned}
+    A=0
+    \quad\quad
+    \quad\quad
+    B \sin \alpha a = 0
+    \Rightarrow
+    \sqrt{\dfrac{2 \mu E}{\hbar^2} } = \alpha = \dfrac{n\pi}{a} 
+    \Rightarrow
+    E_n = \dfrac{\pi^2 \hbar^2}{2 \mu a^2} n^2 
+  \end{aligned}
+\end{equation*}
+
+由波函数归一化条件
+
+\begin{equation*}
+  \begin{aligned}
+    \int_0^a \left[ B \sin \dfrac{n \pi}{a} x  \right]^2 \md x
+    = B^2 \int_0^a \dfrac{1 - \cos \dfrac{2n\pi}{a}x}{2} \md x
+    = \dfrac{B^2}{2} a = 1 
+  \end{aligned}
+\end{equation*}
+
+解得
+
+\begin{equation*}
+  \begin{aligned}
+    B = \sqrt{\dfrac{2}{a} } 
+  \end{aligned}
+\end{equation*}
+
+因此波函数为
+
+\begin{equation*}
+  \begin{aligned}
+    \psi_n \left( x \right) = 
+  \end{aligned}
+  \left\{
+  \begin{aligned}
+    & \sqrt{\dfrac{2}{a}  } \sin \dfrac{n \pi}{a}x && 0< x < a \\
+    & 0 && x<0,x>a
+  \end{aligned}
+  \right.
+\end{equation*}
+
+
+
+
+
+
 \paragraph{2.4}
 
 证明下式中的归一化因子是$A'=\dfrac{1}{\sqrt{a}} $
@@ -131,17 +260,108 @@
 
 \paragraph{解}
 
+\begin{equation*}
+  \begin{aligned}
+    \int_{-a}^a \left[ A' \sin \dfrac{n\pi}{a} \left( x + a \right)  \right]^2 \md x
+    = \dfrac{A'^2}{2} \int_{-a}^a \left[ 1 - \cos \dfrac{2n\pi}{a} \left( x +a \right)  \right] \md x
+    = A'^2 a = 1
+    \Rightarrow
+    A' = \dfrac{1}{\sqrt{a}} 
+  \end{aligned}
+\end{equation*}
+
 \paragraph{2.5}
 
 求一维谐振子处在第一激发态时概率最大的位置。
 
 \paragraph{解}
 
+对应能量$E_n$的波函数是
+
+\begin{equation*}
+  \begin{aligned}
+    \psi_n \left( \xi \right)
+    = N_n \exp \left[ - \dfrac{\xi^2}{2}  \right] H_n \left( \xi \right)
+    \quad\quad
+    \xi = \alpha x
+    \quad\quad
+    N_n
+    = \left( \dfrac{\alpha}{\pi^{\frac{1}{2} } 2^n n!}  \right)^{\frac{1}{2} }
+  \end{aligned}
+\end{equation*}
+
+$n=1$时
+
+\begin{equation*}
+  \begin{aligned}
+    \psi_1 \left( x \right)
+    = \left( \dfrac{\alpha}{2\sqrt{\pi}}  \right)^{\frac{1}{2}} \exp \left[ - \dfrac{\alpha^2}{2} x^2  \right] \cdot 2\alpha x
+  \end{aligned}
+\end{equation*}
+
+概率为
+
+\begin{equation*}
+  \begin{aligned}
+    w \left( x \right)
+    = \left| \psi \left( x \right) \right|^2
+    = \dfrac{2 \alpha^3}{\sqrt{\pi}} x^2 \exp \left[ - \alpha^2 x^2 \right]
+  \end{aligned}
+\end{equation*}
+
+对概率求导数
+
+\begin{equation*}
+  \begin{aligned}
+    \dfrac{\md w \left( x \right)}{\md x}
+    = \dfrac{4 \alpha^3}{\sqrt{\pi}} \left[ x \left( 1 - \alpha^2 x^2 \right) \right] \exp \left[ -a^2 x^2 \right]
+  \end{aligned}
+\end{equation*}
+
+\begin{equation*}
+  \begin{aligned}
+    \dfrac{\md^2 w \left( x \right)}{\md x^2}
+    = \dfrac{4\alpha^3}{\sqrt{\pi}} \left( 2 \alpha^4 - 5 \alpha^2 x^2 + 1 \right) \exp \left[ - \alpha^2 x^2 \right]
+  \end{aligned}
+\end{equation*}
+
+只有当$x=\pm \dfrac{1}{\alpha} $时，$\dfrac{\md w \left( x \right)}{\md x} = 0$且$\dfrac{\md^2 w \left( x \right)}{\md x^2} < 0 $，因此最大概率位置$x=\pm \dfrac{1}{\alpha} $
+
 \paragraph{2.6}
 
-在一维势场中运动的粒子，势能对原点对称：$U \left( x \right) = U \left( x \right)$，证明粒子的定态波函数具有确定的宇称。
+在一维势场中运动的粒子，势能对原点对称：$U \left( - x \right) = U \left( x \right)$，证明粒子的定态波函数具有确定的宇称。
 
 \paragraph{解}
+
+薛定谔方程为
+
+\begin{equation*}
+  \begin{aligned}
+    \dfrac{\md^2 \psi \left( x \right)}{\md x^2} + \dfrac{2 \mu}{\hbar^2} \left[ E - U \left( x \right) \right] \psi \left( x \right) = 0  
+  \end{aligned}
+\end{equation*}
+
+\begin{equation*}
+  \begin{aligned}
+    \dfrac{\md^2 \psi \left( -x \right)}{\md x^2} + \dfrac{2 \mu}{\hbar^2} \left[ E - U \left( x \right) \right] \psi \left( -x \right) = 0  
+  \end{aligned}
+\end{equation*}
+
+$\psi \left( x \right)$和$\psi \left( -x \right)$是一个方程的解，它们的线性组合也是方程的解。因此下面两个方程是薛定谔方程的解
+
+\begin{equation*}
+  \begin{aligned}
+    \psi_e \left( x \right) = \psi \left( x \right) + \psi \left( -x \right)
+  \end{aligned}
+\end{equation*}
+
+\begin{equation*}
+  \begin{aligned}
+    \psi_o \left( x \right) = \psi \left( x \right) - \psi \left( -x \right)
+  \end{aligned}
+\end{equation*}
+
+其中$\psi_e \left( x \right)$是偶函数，$\psi_o \left( x \right)$是奇函数。因此有确定的宇称。
 
 \paragraph{2.7}
 
