@@ -31,12 +31,12 @@ subscription-manager attach
 Clean YUM and cache :
 
 ```
-sudo yum clean all
-sudo rm -r /var/cache/yum
+sudo dnf clean all
+sudo rm -r /var/cache/dnf
 ```
 
 Update the resources :
 
 ```
-sudo yum upgrade
+sudo dnf upgrade
 ```
