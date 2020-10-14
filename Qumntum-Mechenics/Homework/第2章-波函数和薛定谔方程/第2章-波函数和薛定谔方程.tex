@@ -1,5 +1,4 @@
 \documentclass{article}
-
 % Chinese Support using xeCJK
 % \usepackage{xeCJK}
 % \setCJKmainfont{SimSun}
@@ -65,6 +64,8 @@
 \rfoot{第 \thepage 页}
 \renewcommand{\headrulewidth}{1pt}
 \renewcommand{\footrulewidth}{1pt}
+
+\usepackage{pdfpages}
 
 \begin{document}
 
@@ -373,15 +374,155 @@ $\psi \left( x \right)$和$\psi \left( -x \right)$是一个方程的解，它们
   \end{aligned}
   \left\{
   \begin{aligned}
-    & U_0 > 0 && \left| x \right| > a \\
+    & V_0 > 0 && \left| x \right| > a \\
     & 0 && \left| x \right| \leq a
   \end{aligned}
   \right.
 \end{equation*}
 
-中运动，求束缚态（$0<E<U_0$）的能级所满足的方程。
+中运动，求束缚态（$0<E<V_0$）的能级所满足的方程。
 
 \paragraph{解}
+
+（这个方法参考了附在后面的文档，文档节选自David A.B. Miller的Quantum Mechanics，我觉得这个方法比较有意思就研究了下）
+
+设波函数的解为
+
+\begin{equation*}
+  \begin{aligned}
+    \psi \left( x \right) =
+  \end{aligned}
+  \left\{
+  \begin{aligned}
+    & G \exp \left( \kappa x \right) && x<-a \\
+    & A \sin kx + B \cos kx && -a < x < a \\
+    & F \exp \left( - \kappa x \right)
+  \end{aligned}
+  \right.
+\end{equation*}
+
+其中
+
+\begin{equation*}
+  \begin{aligned}
+    & \kappa = \sqrt{2m \left( V_0 - E \right) / \hbar^2} \\
+    & k = \sqrt{2mE / \hbar^2}
+  \end{aligned}
+\end{equation*}
+
+设
+
+\begin{equation*}
+  \begin{aligned}
+    X_L &= \exp \left( - \kappa a \right) \\
+    S_L &= \sin \left( k a \right) \\
+    C_L &= \cos \left( k a \right)
+  \end{aligned}
+\end{equation*}
+
+连续性给出
+
+\begin{equation*}
+  \begin{aligned}
+    G X_L &= - AS_L + BC_L \\
+    F X_L &= A S_L + BC_L \\
+    \dfrac{\kappa}{k} GX_L &= AC_L + BS_L \\
+    - \dfrac{\kappa}{k} FX_L &= AC_L - BS_L
+  \end{aligned}
+\end{equation*}
+
+解出
+
+\begin{equation*}
+  \begin{aligned}
+    2BC_L &= \left( F + G \right) X_L \\
+    2BS_L &= \dfrac{\kappa}{k} \left( F + G \right) X_L 
+  \end{aligned}
+\end{equation*}
+
+有两组解
+
+\begin{equation*}
+  \begin{aligned}
+    \tan ka &= \dfrac{\kappa}{k} && F\neq -G \\
+    -\cot ka &= \dfrac{\kappa}{k} && F \neq G 
+  \end{aligned}
+\end{equation*}
+
+其中$F= G$和$F= -G$必须满足一个，否则无解。定义
+
+\begin{equation*}
+  \begin{aligned}
+    E_1^{\infty} &= \dfrac{\hbar^2}{2m} \left( \dfrac{2\pi}{a}  \right)^2 \\
+    \varepsilon &= \dfrac{E}{E_1^{\infty}} \\
+    v_0 &= \dfrac{V_0}{E_1^{\infty}} 
+  \end{aligned}
+\end{equation*}
+
+则
+
+\begin{equation*}
+  \begin{aligned}
+    \dfrac{\kappa}{k} &= \sqrt{\dfrac{v_0 - \varepsilon}{\varepsilon} } \\
+    k a &= \dfrac{\pi}{2} \sqrt{\dfrac{E}{E_1^{\infty}} } = \dfrac{\pi}{2} \sqrt{\varepsilon}  \\
+    \kappa a &= \dfrac{\pi}{2} \sqrt{\dfrac{V_0 - E}{E_1^{\infty}} } = \dfrac{\pi}{2} \sqrt{v_0 - \varepsilon}  
+  \end{aligned}
+\end{equation*}
+
+定义
+
+\begin{equation*}
+  \begin{aligned}
+    c_L &= \dfrac{C_L}{X_L} = \dfrac{\cos \left( \pi \sqrt{\varepsilon} / 2 \right)}{\exp \left( - \pi \sqrt{v_0 - \varepsilon} / 2 \right)} \\
+    s_L &= \dfrac{S_L}{X_L} = \dfrac{\sin \left( \pi \sqrt{\varepsilon} / 2 \right)}{\exp \left(  - \pi \sqrt{v_0 - \varepsilon}/2 \right)}  
+  \end{aligned}
+\end{equation*}
+
+当$F=G$时
+
+\begin{equation*}
+  \begin{aligned}
+    \sqrt{\varepsilon} \tan \left( \dfrac{\pi}{2} \sqrt{\varepsilon}  \right) = \sqrt{v_0 - \varepsilon}
+  \end{aligned}
+\end{equation*}
+
+波函数为
+
+\begin{equation*}
+  \begin{aligned}
+    \psi \left( x \right) = 
+  \end{aligned}
+  \left\{
+  \begin{aligned}
+    & B c_L \exp \left(2 \pi \sqrt{v_0 - \varepsilon} \cdot \dfrac{x}{a}  \right) \\
+    & B \cos \left( 2 \pi \sqrt{\varepsilon} \cdot \dfrac{x}{a}  \right) \\
+    & B c_L \exp \left( - 2 \pi \sqrt{v_0 - \varepsilon} \cdot \dfrac{x}{a}  \right)
+  \end{aligned}
+  \right.
+\end{equation*}
+
+当$F=-G$时
+
+\begin{equation*}
+  \begin{aligned}
+    - \sqrt{\varepsilon} \cot \left( \dfrac{\pi}{2} \sqrt{\varepsilon}  \right) = \sqrt{v_0 - \varepsilon}
+  \end{aligned}
+\end{equation*}
+
+波函数为
+
+\begin{equation*}
+  \begin{aligned}
+    \psi \left( x \right) = 
+  \end{aligned}
+  \left\{
+  \begin{aligned}
+    & - A s_L \exp \left(2 \pi \sqrt{v_0 - \varepsilon} \cdot \dfrac{x}{a}  \right) \\
+    & A \sin \left( 2 \pi \sqrt{\varepsilon} \cdot \dfrac{x}{a}  \right) \\
+    & A s_L \exp \left( - 2 \pi \sqrt{v_0 - \varepsilon} \cdot \dfrac{x}{a}  \right)
+  \end{aligned}
+  \right.
+\end{equation*}
 
 \paragraph{2.8}
 
@@ -404,5 +545,93 @@ $\psi \left( x \right)$和$\psi \left( -x \right)$是一个方程的解，它们
 求束缚态的能级所满足的方程。
 
 \paragraph{解}
+
+设波函数的解为
+
+\begin{equation*}
+  \begin{aligned}
+    \psi \left( x \right) =
+  \end{aligned}
+  \left\{
+  \begin{aligned}
+    & 0 && x<0 \\
+    & A \exp \left( \kappa_0 x \right) - A \exp \left( - \kappa_0 x \right) && 0<x<a \\
+    & C \sin kx + D \cos kx && a<x<b \\
+    & G \exp \left( - \kappa_2 x \right) && x>b
+  \end{aligned}
+  \right.
+\end{equation*}
+
+其中
+
+\begin{equation*}
+  \begin{aligned}
+    \kappa_0 &= \sqrt{2 m \left( U_0 - E \right) / \hbar^2} \\
+    k &= \sqrt{ 2m \left( U_1 + E \right) / \hbar^2 } \\
+    \kappa_2 &= \sqrt{-2mE/ \hbar^2}
+  \end{aligned}
+\end{equation*}
+
+波函数边界连续条件给出
+
+\begin{equation*}
+  \begin{aligned}
+    & A \exp \left( \kappa_0 a \right) - A \exp \left( - \kappa_0 a \right) = C \sin ka + D \cos ka \\
+    & \kappa_0 A \exp \left( \kappa_0 a \right) + \kappa_0 A = kC \cos ka - kD \sin ka \\
+    & G \exp \left(  - \kappa_2 b \right) = C \sin kb - D \cos kb \\
+    & - \kappa_2 G \exp \left( - \kappa_2 b \right) = k C \cos kb - kD \sin kb
+  \end{aligned}
+\end{equation*}
+
+即
+
+\begin{equation*}
+  \begin{aligned}
+    \left[
+      \begin{array}{cccc}
+       2\sinh \kappa_0 a & -\sin ka & -\cos ka & 0 \\
+       2\kappa_0 \cosh \kappa_0 a & - k \cos ka & k\sin ka & 0 \\
+       0 & - \sin kb & -\cos kb & \exp \left( - \kappa_2 b \right) \\
+       0 & - k \cos kb & k \sin kb & - \kappa_2 \exp \left( - \kappa_2 b \right)
+      \end{array}
+    \right ]
+  \end{aligned}
+  \begin{aligned}
+    \left[
+      \begin{array}{c}
+       A \\
+       C \\
+       D \\
+       G 
+      \end{array}
+    \right ]
+    =0 
+  \end{aligned}
+\end{equation*}
+
+波函数有解的条件是
+
+\begin{equation*}
+  \begin{aligned}
+    \left|
+      \begin{array}{cccc}
+       2\sinh \kappa_0 a & -\sin ka & -\cos ka & 0 \\
+       2\kappa_0 \cosh \kappa_0 a & - k \cos ka & k\sin ka & 0 \\
+       0 & - \sin kb & -\cos kb & \exp \left( - \kappa_2 b \right) \\
+       0 & - k \cos kb & k \sin kb & - \kappa_2 \exp \left( - \kappa_2 b \right)
+      \end{array}
+    \right|
+  \end{aligned}
+\end{equation*}
+
+即能量需满足关系
+
+\begin{equation*}
+  \begin{aligned}
+    \tan k \left( b - a \right) = \dfrac{k \kappa_0 \coth \kappa_0 a + k \kappa_2}{k^2 - \kappa_0 \kappa_2 \coth \kappa_0 a} 
+  \end{aligned}
+\end{equation*}
+
+\includepdf[pages={1-4},angle=0]{量子力学作业2-7不用行列式的解法.pdf}
 
 \end{document} 
