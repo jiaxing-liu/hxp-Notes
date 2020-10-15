@@ -40,3 +40,11 @@ Update the resources :
 ```
 sudo dnf upgrade
 ```
+
+Install epel
+
+```
+yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
+ARCH=$( /bin/arch )
+subscription-manager repos --enable "codeready-builder-for-rhel-8-${ARCH}-rpms"
+```
