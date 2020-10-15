@@ -25,7 +25,7 @@ Attach to subscription :
 subscription-manager role --set="Red Hat Enterprise Linux Workstation"
 subscription-manager service-level --set="Self-Support"
 subscription-manager usage --set="Development/Test"
-subscription-manager attach
+subscription-manager attach --pool <pool_id>
 ```
 
 Clean YUM and cache :
@@ -45,6 +45,4 @@ Install epel
 
 ```
 yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
-ARCH=$( /bin/arch )
-subscription-manager repos --enable "codeready-builder-for-rhel-8-${ARCH}-rpms"
 ```
