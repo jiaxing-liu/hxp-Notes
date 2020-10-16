@@ -25,7 +25,7 @@ Attach to subscription :
 subscription-manager role --set="Red Hat Enterprise Linux Workstation"
 subscription-manager service-level --set="Self-Support"
 subscription-manager usage --set="Development/Test"
-subscription-manager attach
+subscription-manager attach --pool <pool_id>
 ```
 
 Clean YUM and cache :
@@ -39,4 +39,10 @@ Update the resources :
 
 ```
 sudo dnf upgrade
+```
+
+Install epel
+
+```
+yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
 ```
