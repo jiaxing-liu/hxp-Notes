@@ -28,6 +28,12 @@ subscription-manager usage --set="Development/Test"
 subscription-manager attach --pool <pool_id>
 ```
 
+Set release ver
+
+```
+subscription-manager release --set 8
+```
+
 Clean YUM and cache :
 
 ```
