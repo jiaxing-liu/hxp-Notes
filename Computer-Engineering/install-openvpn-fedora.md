@@ -18,8 +18,8 @@ Then run it:
 After that you have a vpn, but you still need to do the routing so that clients can connect to internet
 
 ```bash
-sh /etc/iptables/add-openvpn-rules.sh
-sysctl -w net.ipv4.ip_forward=1
+sh /etc/iptables/add-openvpn-rules.sh;
+sysctl -w net.ipv4.ip_forward=1;
 ```
 
 Check the routing by
@@ -108,11 +108,11 @@ echo '[DISCONNECT]' $(date) $user $remote_ip $local_ip >>/var/log/openvpn/connec
 add permissions and restart
 
 ```bash
-touch /var/log/openvpn/connectlog.txt
-chmod 666 
-chmod a+x /etc/openvpn/scripts/user-connect.sh 
-chmod a+x /etc/openvpn/scripts/user-disconnect.sh
-systemctl restart openvpn-server@server.service
+touch /var/log/openvpn/connectlog.txt;
+chmod 666 /var/log/openvpn/connectlog.txt;
+chmod a+x /etc/openvpn/scripts/user-connect.sh;
+chmod a+x /etc/openvpn/scripts/user-disconnect.sh;
+systemctl restart openvpn-server@server.service;
 ```
 
 ## Client
