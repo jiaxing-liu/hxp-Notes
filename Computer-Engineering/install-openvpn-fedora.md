@@ -15,6 +15,8 @@ Then run it:
 ./openvpn-install.sh
 ```
 
+### Route with iptables (decrypted)
+
 After that you have a vpn, but you still need to do the routing so that clients can connect to internet
 
 ```bash
@@ -27,6 +29,22 @@ Check the routing by
 ```bash
 iptables -t nat -L -n -v
 sysctl net.ipv4.ip_forward
+```
+
+#### Save iptables
+
+```bash
+yum install iptables-services
+systemctl enable iptables
+service iptables save
+```
+
+### Route with firewalld
+
+```bash
+firewall-cmd --permanent --add-masquerade
+systemctl restart firewalld
+firewall-cmd --reload
 ```
 
 ### Add log and management feature to vpn
@@ -160,4 +178,11 @@ Linux client cannot get DNS resolution proxied: Add these to your `client.conf`
 script-security 2
 up /usr/share/openvpn/contrib/pull-resolv-conf/client.up
 down /usr/share/openvpn/contrib/pull-resolv-conf/client.down
+```
+
+Delete these lines
+
+```
+ignore-unknown-option block-outside-dns
+setenv opt block-outside-dns # Prevent Windows 10 DNS leak
 ```
