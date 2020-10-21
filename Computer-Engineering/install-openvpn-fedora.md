@@ -126,11 +126,11 @@ echo '[DISCONNECT]' $(date) $user $remote_ip $local_ip >>/var/log/openvpn/connec
 add permissions and restart
 
 ```bash
-touch /var/log/openvpn/connectlog.txt;
-chmod 666 /var/log/openvpn/connectlog.txt;
-chmod a+x /etc/openvpn/scripts/user-connect.sh;
-chmod a+x /etc/openvpn/scripts/user-disconnect.sh;
-systemctl restart openvpn-server@server.service;
+touch /var/log/openvpn/connectlog.txt
+chmod 666 /var/log/openvpn/connectlog.txt
+chmod a+x /etc/openvpn/scripts/user-connect.sh
+chmod a+x /etc/openvpn/scripts/user-disconnect.sh
+systemctl restart openvpn-server@server.service
 ```
 
 ## Client
