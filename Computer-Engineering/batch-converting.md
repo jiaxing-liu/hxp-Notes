@@ -14,13 +14,19 @@ target_dir=$1
 cd $target_dir;
 for file in `ls *.mkv`;
 do
-    cp "$file" "../mp4convert/$file";
-done
-cd ../$target_dir;
-for file in `ls *.mkv`;
-do
-    filename=$(echo $file | cut -f -1 -d '.');
-    ffmpeg -i $file $filename.mp4;
+    mv "$file" "../mp4convert/$file";
 done
 cd ..
+```
+
+```bash
+target_dir=$1;
+cd mp4convert;
+for file in `ls *.mkv`;
+do
+    filename=${file%.*};
+    ffmpeg -i $file "../$target_dir/$filename.mp4";
+done
+cd ..
+
 ```
