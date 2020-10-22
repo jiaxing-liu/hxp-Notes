@@ -1,0 +1,153 @@
+\documentclass{article}
+
+% Chinese Support using xeCJK
+% \usepackage{xeCJK}
+% \setCJKmainfont{SimSun}
+
+% Chinese Support using CTeX
+\usepackage{ctex}
+
+% Math Support
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{wasysym}
+\newcommand{\angstrom}{\text{\normalfont\AA}}
+
+\usepackage{fancyhdr}
+
+% Graphics Support
+\usepackage{graphicx}
+\usepackage{float}
+
+% Reduced page margin
+\usepackage{geometry}
+\geometry{a4paper,scale=0.8}
+
+\usepackage{caption}
+\usepackage{subcaption}
+
+% d and e should be math operators
+\newcommand*{\dif}{\mathop{}\!\mathrm{d}}
+\newcommand*{\md}{\mathop{}\!\mathrm{d}}
+\newcommand*{\me}{\mathrm{e}}
+\newcommand*{\mh}{\mathrm{h}}
+\newcommand*{\Jmath}{J}
+
+% No indent for each paragraph
+\usepackage{parskip}
+\setlength{\parindent}{0cm}
+
+% Bold style for Greek letters
+\usepackage{bm}
+\let\Oldmathbf\mathbf
+\renewcommand{\mathbf}[1]{\boldsymbol{\Oldmathbf{#1}}}
+
+% More space for dfrac in cell
+\usepackage{cellspace}
+\setlength{\cellspacetoplimit}{5pt}
+\setlength{\cellspacebottomlimit}{5pt}
+
+% SI units
+\newcommand{\si}[1]{\  \mathrm{#1}}
+
+% Multi-line author information
+\usepackage{authblk}
+\author{物理（4+4）1801 \quad 胡喜平 \quad 学号 U201811966}
+
+\affil{网站 https://hxp.plus/ \quad 邮件 hxp201406@gmail.com}
+
+\title{《电动力学》课后习题——第一章\ 电磁现象的基本规律}
+
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{源码地址：https://github.com/hxp-plus/Notes/blob/master/Electro-Dynamics/Homework/}
+\rfoot{第 \thepage 页}
+\renewcommand{\headrulewidth}{1pt}
+\renewcommand{\footrulewidth}{1pt}
+
+\begin{document}
+
+\maketitle\thispagestyle{fancy}
+
+\paragraph{2.1}
+
+半径为$R$的电介质球，极化强度为$\vec{P}=K \dfrac{\vec{r}}{r^2} $，电容率为$\epsilon$
+
+（1）计算束缚电荷的体密度和面密度
+
+（2）计算自由电荷体密度
+
+（3）计算球外和球内的电势
+
+（4）求该带电介质球产生的静电场总能量
+
+\paragraph{解}
+
+
+
+\paragraph{2.2}
+
+贼均匀外电场中置入半径为$R_0$的导体球，试用分离变量法求下列两种情况的电势：
+
+（1）导体球上接有电池，使球与地保持电势差$\varphi$
+
+（2）导体球上带总电荷$Q$
+
+\paragraph{解}
+
+
+
+\paragraph{2.4}
+
+均匀介质球（电容率为$\varepsilon_1$）的中心置一自由电偶极子$\vec{p}_f$，球外充满了另一种介质（电容率为$\varepsilon_2$），求空间各点电势和极化电荷分布。
+
+提示：$\varphi = \dfrac{\vec{p}_f \cdot \vec{R}}{ 4 \pi \varepsilon_1 R^3} + \varphi' $，而$\varphi'$满足拉普拉斯方程
+
+\paragraph{解}
+
+
+
+\paragraph{2.8}
+
+半径为$R_0$的导体球外充满均匀绝缘介质$\varepsilon$，导体球接地，离球心$a$处（$a>R_0$）置一点电荷$Q_f$，试用分离变量法求空间各点电势，证明所得结果与镜像法结果相同
+
+\paragraph{解}
+
+
+
+\paragraph{2.11}
+
+在接地的导体平面上有一半径为$a$的半球凸部，半球的球心在导体平面上，点电荷$Q$位于系统的对称轴上，并与平面相距为$b$（$b>a$），试用镜像法求空间电势
+
+\paragraph{解}
+
+
+
+
+\paragraph{2.12}
+
+有一点电荷$Q$位于两个相互垂直的接地导体平面所围成的直角空间内，它到两个平面的距离为$a$和$b$，求空间电势
+
+\paragraph{解}
+
+
+
+
+\paragraph{2.18}
+
+一半径为$R_0$的球面，在球坐标$0<\theta< \dfrac{\pi}{2} $的半球面上电势为$\varphi_0$，在$\dfrac{\pi}{2} < \theta < \pi $的半球面上电势为$-\varphi_0$，球空间各点电势
+
+\paragraph{解}
+
+
+
+
+\paragraph{2.19}
+
+上题能用格林函数解吗？结果如何？
+
+\paragraph{解}
+
+
+\end{document} 
