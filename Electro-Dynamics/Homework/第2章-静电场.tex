@@ -57,7 +57,7 @@
 
 \affil{网站 https://hxp.plus/ \quad 邮件 hxp201406@gmail.com}
 
-\title{《电动力学》课后习题——第一章\ 电磁现象的基本规律}
+\title{《电动力学》课后习题——第二章\ 静电场}
 
 \pagestyle{fancy}
 \fancyhf{}
@@ -84,19 +84,146 @@
 
 \paragraph{解}
 
+计算束缚电荷密度，只需要对极化强度求梯度
 
+\begin{equation*}
+  \begin{aligned}
+    \rho_p = - \nabla \cdot \vec{P} = \dfrac{K}{r^2} 
+  \end{aligned}
+\end{equation*}
+
+面电荷密度用电场的边值关系求解
+
+\begin{equation*}
+  \begin{aligned}
+    \sigma_p = - \vec{e}_n \cdot \left( 0 - \vec{P} \right) = \dfrac{k}{r} 
+  \end{aligned}
+\end{equation*}
+
+在自由电荷密度为
+
+\begin{equation*}
+  \begin{aligned}
+    \rho_f &= - \nabla \cdot \vec{D} = - \nabla \cdot \left( \varepsilon_0 \vec{E} + \vec{P} \right)
+    = - \nabla \cdot \left( \dfrac{\varepsilon_0}{\varepsilon_0 \chi_e} + 1   \right) \vec{P}
+    = - \nabla \cdot \left( \dfrac{\varepsilon_0}{\varepsilon_0 \left( \varepsilon_r - 1 \right) } +1 \right) \vec{P} \\
+    &= - \nabla \cdot \left( \dfrac{\varepsilon_0}{\varepsilon - \varepsilon_0} + 1 \right) \vec{P}
+    = - \nabla \cdot \dfrac{\varepsilon}{\varepsilon - \varepsilon_0} \vec{P} = \dfrac{\varepsilon}{\varepsilon - \varepsilon_0} \left( - \nabla \vec{P} \right)
+    = \dfrac{\varepsilon}{\varepsilon - \varepsilon_0} \dfrac{K}{r^2}
+  \end{aligned}
+\end{equation*}
+
+球内的电场为
+
+\begin{equation*}
+  \begin{aligned}
+    \vec{E}_i = \dfrac{\vec{P}}{\varepsilon_0 \chi_e} = \dfrac{\vec{P}}{\varepsilon_0 \left( \varepsilon_r - 1 \right)} = \dfrac{\vec{P}}{\varepsilon - \varepsilon_0} 
+    = \dfrac{K}{\varepsilon - \varepsilon_0} \cdot \dfrac{\vec{r}}{r^2}  
+  \end{aligned}
+\end{equation*}
+
+球外电场为
+
+\begin{equation*}
+  \begin{aligned}
+    \vec{E}_o = \dfrac{\int_0^R 4 \pi r^2 \rho_f \md r }{4 \pi \varepsilon_0 r^3} \vec{r}
+    = \dfrac{\int_0^R r^2  \dfrac{\varepsilon}{\varepsilon - \varepsilon_0} \dfrac{K}{r^2} \md r }{\varepsilon_0 r^3} \vec{r}
+    = \int_0^R   \dfrac{\varepsilon K }{\varepsilon_0 \left( \varepsilon - \varepsilon_0 \right) } \md r \cdot \dfrac{\vec{r}}{r^3} 
+    = \dfrac{\varepsilon K R}{\varepsilon_0 \left( \varepsilon - \varepsilon_0 \right)} \cdot \dfrac{\vec{r}}{r^3} 
+  \end{aligned}
+\end{equation*}
+
+球外电势为
+
+\begin{equation*}
+  \begin{aligned}
+    \varphi_o = \int_r^{\infty} \vec{E}_o \md \vec{r} = \dfrac{\varepsilon K R}{\varepsilon_0 \left( \varepsilon - \varepsilon_0 \right)} \dfrac{1}{r}  
+  \end{aligned}
+\end{equation*}
+
+球内电势为
+
+\begin{equation*}
+  \begin{aligned}
+    \varphi_i = \int_R^{\infty} \vec{E}_o \md \vec{r} + \int_r^R \vec{E}_i \md \vec{r} = \dfrac{K}{\varepsilon - \varepsilon_0} \left[ \ln \dfrac{R}{r} + \dfrac{\varepsilon}{\varepsilon_0}   \right] 
+  \end{aligned}
+\end{equation*}
+
+总能量为
+
+\begin{equation*}
+  \begin{aligned}
+    W = \dfrac{1}{2} \int_0^R 4 \pi r^2 \varepsilon \vec{E}_i^2 \md r
+    + \dfrac{1}{2} \int_R^{\infty} 4 \pi r^2 \varepsilon_0 \vec{E}_o^2 \md r
+    = 2 \pi \varepsilon R \left( \dfrac{K}{\varepsilon - \varepsilon_0}  \right)^2
+    \left( 1 + \dfrac{\varepsilon}{\varepsilon_0}  \right)
+  \end{aligned}
+\end{equation*}
 
 \paragraph{2.2}
 
-贼均匀外电场中置入半径为$R_0$的导体球，试用分离变量法求下列两种情况的电势：
+在均匀外电场中置入半径为$R_0$的导体球，试用分离变量法求下列两种情况的电势：
 
-（1）导体球上接有电池，使球与地保持电势差$\varphi$
+（1）导体球上接有电池，使球与地保持电势差$\Phi_0$
 
 （2）导体球上带总电荷$Q$
 
 \paragraph{解}
 
+导体边界电势为$\Phi_0$时，设解为
 
+\begin{equation*}
+  \begin{aligned}
+    \varphi =
+    & \sum_n \left( a_n R^n + \dfrac{b_n}{R_n^{n+1}} \right) P_n \left( \cos \theta \right)
+  \end{aligned}
+\end{equation*}
+
+边界条件为
+
+\begin{equation*}
+  \begin{aligned}
+    & \left. \varphi \right|_{r= \infty} = - E_0 R \cos \theta \\
+    & \left. \varphi \right|_{r=R_0} = \Phi_0
+  \end{aligned}
+\end{equation*}
+
+代入边界条件得出
+
+\begin{equation*}
+  \begin{aligned}
+    &a_1= - E_0 && \\
+    &a_n = 0 && n \neq 1 \\
+    &b_0 = \Phi_0 R_0 &&\\
+    &b_1 = E_0 R_0^3 &&\\
+    &b_n = 0 && n \neq 0,1
+  \end{aligned}
+\end{equation*}
+
+所以
+
+\begin{equation*}
+  \begin{aligned}
+    \varphi = \Phi_0 R_0 - E_0 \left( R - \dfrac{R_0^3}{R^2}  \right) \cos \theta
+  \end{aligned}
+\end{equation*}
+
+当没有外接电池而是在导体球上放置电荷$Q$时，球面电势为
+
+\begin{equation*}
+  \begin{aligned}
+    \Phi_0' = \dfrac{Q}{4 \pi \varepsilon_0} 
+  \end{aligned}
+\end{equation*}
+
+方程和边界条件相同，因此
+
+\begin{equation*}
+  \begin{aligned}
+    \varphi = \Phi_0' R_0 - E_0 \left( R - \dfrac{R_0^3}{R^2}  \right) \cos \theta
+    = \dfrac{Q}{4 \pi \varepsilon_0} R_0 - E_0 \left( R - \dfrac{R_0^3}{R^2}  \right) \cos \theta
+  \end{aligned}
+\end{equation*}
 
 \paragraph{2.4}
 
@@ -106,7 +233,82 @@
 
 \paragraph{解}
 
+电偶极子产生的电势为
 
+\begin{equation*}
+  \begin{aligned}
+    \varphi = \dfrac{\vec{p}_f \cdot \vec{R}}{4 \pi \varepsilon_0 R^3} 
+  \end{aligned}
+\end{equation*}
+
+设
+
+\begin{equation*}
+  \begin{aligned}
+    \varphi_i &= \dfrac{p_f\cos \theta}{4\pi \varepsilon_1 R^2} + \sum_n a_n R^n P_n \left( \cos \theta \right) && R < R_0 \\
+    \varphi_o &= \dfrac{p_f\cos \theta}{4\pi \varepsilon_2 R^2} + \sum_n \dfrac{b_n}{R^{n+1}}  P_n \left( \cos \theta \right) && R > R_0 
+  \end{aligned}
+\end{equation*}
+
+因为边界上电势连续
+
+\begin{equation*}
+  \begin{aligned}
+    \dfrac{p_f\cos \theta}{4\pi \varepsilon_1 R_0^2} + \sum_n a_n R_0^n P_n \left( \cos \theta \right)
+    =
+    \dfrac{p_f\cos \theta}{4\pi \varepsilon_2 R_0^2} + \sum_n \dfrac{b_n}{R_0^{n+1}}  P_n \left( \cos \theta \right)
+  \end{aligned}
+\end{equation*}
+
+\begin{equation*}
+  \begin{aligned}
+    \varepsilon_1 \left\{ - \dfrac{2p_f\cos \theta}{4\pi \varepsilon_1 R_0^3} + \sum_n n a_n R_0^{n-1} P_n \left( \cos \theta \right) \right\}
+    =
+    \varepsilon_2 \left\{ - \dfrac{2p_f\cos \theta}{4\pi \varepsilon_2 R_0^3} - \sum_n \left( n + 1 \right) \dfrac{b_n}{R_0^{n+2}}  P_n \left( \cos \theta \right) \right\}
+  \end{aligned}
+\end{equation*}
+
+
+当$n=1$时
+
+\begin{equation*}
+  \begin{aligned}
+    \dfrac{p_f}{4\pi \varepsilon_1 R_0^2} + a_1 R_0 
+    =
+    \dfrac{p_f}{4\pi \varepsilon_2 R_0^2} + \dfrac{b_1}{R_0^2} 
+  \end{aligned}
+\end{equation*}
+
+\begin{equation*}
+  \begin{aligned}
+    \varepsilon_1 \left\{- \dfrac{2p_f}{4\pi \varepsilon_1 R_0^3} + a_1 \right\}
+    =
+    \varepsilon_2 \left\{ - \dfrac{2p_f}{4\pi \varepsilon_2 R_0^3} - 2 \dfrac{b_1}{R_0^3} \right\}
+    \Rightarrow
+    \varepsilon_1 a_1
+    =
+    - \dfrac{2 \varepsilon_2 b_1}{R_0^3}
+  \end{aligned}
+\end{equation*}
+
+解得
+
+\begin{equation*}
+  \begin{aligned}
+    a_1 = \dfrac{\left( \varepsilon_1 - \varepsilon_2 \right) p_f}{2\pi \varepsilon_1 \left( \varepsilon_1 + 2 \varepsilon_2 \right) R_0^3} 
+    \quad\quad
+    b_1 = \dfrac{\left( \varepsilon_2 - \varepsilon_1 \right) p_f}{4\pi \varepsilon_2 \left( \varepsilon_1 + 2\varepsilon_2 \right)} 
+  \end{aligned}
+\end{equation*}
+
+当$n \neq 1$时，$a_n = b_n = 0$，因此方程的解为
+
+\begin{equation*}
+  \begin{aligned}
+    \varphi_i &= \dfrac{p_f \cos \theta}{4\pi \varepsilon_1 R^2} + \dfrac{\left( \varepsilon_1 - \varepsilon_2 \right) p_f \cos \theta}{2\pi \varepsilon_1 \left( \varepsilon_1 + 2 \varepsilon_2 \right) R_0^3} R  && R < R_0 \\
+    \varphi_o &= \dfrac{p_f \cos \theta}{4\pi \varepsilon_2 R^2} + \dfrac{\left( \varepsilon_2 - \varepsilon_1 \right) p_f \cos \theta}{4\pi \varepsilon_2 \left( \varepsilon_1 + 2\varepsilon_2 \right)} \dfrac{1}{R^2}  && R > R_0 
+  \end{aligned}
+\end{equation*}
 
 \paragraph{2.8}
 
@@ -114,7 +316,88 @@
 
 \paragraph{解}
 
+球内电势为零，设球外电势为
 
+\begin{equation*}
+  \begin{aligned}
+    \varphi = \dfrac{Q_f}{4 \pi \varepsilon_0 r} + \sum_n \dfrac{b_n}{R^{n+1}} P_n \left( \cos \theta \right)  
+  \end{aligned}
+\end{equation*}
+
+当$R<a$时，展开
+
+\begin{equation*}
+  \begin{aligned}
+    \dfrac{1}{r} = \dfrac{1}{\sqrt{R^2 + a^2 - 2 R a \cos \theta}}
+    = \dfrac{1}{a} \sum _n \left( \dfrac{R}{a}  \right)^n P_n \left( \cos \theta \right) 
+  \end{aligned}
+\end{equation*}
+
+因为$R_0 < a$，代入得到
+
+\begin{equation*}
+  \begin{aligned}
+    \varphi = \dfrac{Q_f}{4 \pi \varepsilon_0} \dfrac{1}{a} \sum _n \left( \dfrac{R}{a}  \right)^n P_n \left( \cos \theta \right) + \sum_n \dfrac{b_n}{R^{n+1}} P_n \left( \cos \theta \right)
+    = \left[ \sum _n \dfrac{Q_f}{4 \pi \varepsilon_0} \dfrac{R^n}{a^{n+1}} + \dfrac{b_n}{R^{n+1}} \right] P_n \left( \cos \theta \right)
+  \end{aligned}
+\end{equation*}
+
+当$R=R_0$时，$\varphi =0$
+
+\begin{equation*}
+  \begin{aligned}
+    \dfrac{Q_f}{4 \pi \varepsilon_0} \dfrac{R_0^n}{a^{n+1}} + \dfrac{b_n}{R_0^{n+1}} = 0
+    \Rightarrow
+    b_n = - \dfrac{Q_f}{4 \pi \varepsilon_0} \dfrac{R_0^{2n+1}}{a^{n+1}}
+  \end{aligned}
+\end{equation*}
+
+因此方程的解为
+
+\begin{equation}
+  \label{eq:a281}
+  \begin{aligned}
+    \varphi = \dfrac{Q_f}{4 \pi \varepsilon_0} \left[ \dfrac{1}{r}  - \sum_n \dfrac{R_0^{2n+1}}{a^{n+1}} \dfrac{1}{R^{n+1}} P_n \left( \cos \theta \right) \right]
+  \end{aligned}
+\end{equation}
+
+用电像法时只需要在$b=\dfrac{R_0^2}{a} $处放置$q_f=-\dfrac{R_0}{a} Q_f $的电荷，空间各点电势为
+
+\begin{equation}
+  \label{eq:a282}
+  \begin{aligned}
+    \varphi = \dfrac{Q_f}{4\pi \varepsilon_0} \left[ \dfrac{1}{r} - \dfrac{R_0}{a} \dfrac{1}{r'}    \right] 
+  \end{aligned}
+\end{equation}
+
+其中
+\begin{equation*}
+  \begin{aligned}
+    \dfrac{1}{r'} = \dfrac{1}{\sqrt{R^2 + b^2 - 2 R b \cos \theta}}
+  \end{aligned}
+\end{equation*}
+
+因为$b<R$，展开式为
+
+
+\begin{equation*}
+  \begin{aligned}
+    \dfrac{1}{\sqrt{R^2 + b^2 - 2 R b \cos \theta}} =
+    \dfrac{1}{R} \sum _n \left( \dfrac{b}{R}  \right)^n P_n \left( \cos \theta \right) 
+    = \dfrac{1}{R} \sum _n \left( \dfrac{R_0^2}{aR}  \right)^n P_n \left( \cos \theta \right)
+    = \sum_n \dfrac{R_0^{2n}}{a^n} \dfrac{1}{R^{n+1}} P_n \left( \cos \theta \right)
+  \end{aligned}
+\end{equation*}
+
+代入式（\ref{eq:a282}）得到
+
+\begin{equation*}
+  \begin{aligned}
+    \varphi = \dfrac{Q_f}{4\pi \varepsilon_0} \left[ \dfrac{1}{r} - \dfrac{R_0}{a} \sum_n \dfrac{R_0^{2n}}{a^n} \dfrac{1}{R^{n+1}} P_n \left( \cos \theta \right)  \right]
+  \end{aligned}
+\end{equation*}
+
+和分离变量法的结果式（\ref{eq:a281}）相同
 
 \paragraph{2.11}
 
