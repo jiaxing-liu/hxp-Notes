@@ -405,8 +405,14 @@
 
 \paragraph{解}
 
+在原点的下方距离为$a$的地方放置一个电量为$-Q$的电荷，距离为$\dfrac{a^2}{b} $的地方放置一个$+qa/b$的电荷。之后在原点上方$\dfrac{a^2}{b} $处放置一个$-qa/b$的电荷，电势为
 
-
+\begin{equation*}
+  \begin{aligned}
+    \varphi = \dfrac{Q}{4\pi \varepsilon_0} & \left[ \dfrac{1}{\sqrt{x^2 + y^2 + \left( z-b \right)^2}} - \dfrac{1}{\sqrt{x^2 + y^2 + \left( z + b \right)^2}} \right. \\
+     & \left. - \dfrac{a/b}{\sqrt{x^2 + y^2 + \left( z - a^2/b \right)^2}} + \dfrac{a/b}{\sqrt{x^2 + y^2 + \left( z + a^2/b \right)^2}}   \right]
+  \end{aligned}
+\end{equation*}
 
 \paragraph{2.12}
 
@@ -414,14 +420,109 @@
 
 \paragraph{解}
 
+在$(0,-a,b)$、$(0,a,-b)$、$(0,-a,-b)$各放置三个虚拟电荷$-Q$、$-Q$、$+Q$，电势为
 
-
+\begin{equation*}
+  \begin{aligned}
+    \varphi = \dfrac{Q}{4\pi \varepsilon_0} & \left\{
+    \left[ \left( x-a \right)^2 + \left( y-b \right)^2 + z^2 \right]^{-1/2}
+    + \left[ \left( x+a \right)^2 + \left( y+b \right)^2 + z^2 \right]^{-1/2}
+    \right. \\
+    &\left.
+    - \left[ \left( x+a \right)^2 + \left( y-b \right)^2 + z^2 \right]^{-1/2}
+    - \left[ \left( x-a \right)^2 + \left( y+b \right)^2 + z^2 \right]^{-1/2} 
+    \right\}
+  \end{aligned}
+\end{equation*}
 
 \paragraph{2.18}
 
 一半径为$R_0$的球面，在球坐标$0<\theta< \dfrac{\pi}{2} $的半球面上电势为$\varphi_0$，在$\dfrac{\pi}{2} < \theta < \pi $的半球面上电势为$-\varphi_0$，球空间各点电势
 
+提示：
+
+\begin{equation*}
+  \begin{aligned}
+    \int_0^1 P_n \left( x \right) \md x = \left. \dfrac{P_{n+1} \left( x \right) - P_{n-1} \left( x \right)}{2n+1} \right|_0^1
+  \end{aligned}
+\end{equation*}
+
+\begin{equation*}
+  \begin{aligned}
+    P_n \left( 1 \right) = 1
+  \end{aligned}
+\end{equation*}
+
+\begin{equation*}
+  \begin{aligned}
+    P_n \left( 0 \right) =
+  \end{aligned}
+  \left\{
+  \begin{aligned}
+    &0 && n=2k+1 \\
+    & \left( -1 \right)^{n/2} \dfrac{1 \cdot 3 \cdot 5 \cdots \left( n-1 \right)}{2 \cdot 4 \cdot 6 \cdots n} && n=2k 
+  \end{aligned}
+  \right.
+\end{equation*}
+
 \paragraph{解}
+
+设电势为
+
+\begin{equation*}
+  \begin{aligned}
+    \varphi_i &= \sum_n a_n R^n P \left( \cos \theta \right) && R<R_0 \\
+    \varphi_o &= \sum_n \dfrac{b_n}{R^{n+1}} P_n \left( \cos \theta \right) && R>R_0 
+  \end{aligned}
+\end{equation*}
+
+将$\varphi_i$展开
+
+\begin{equation*}
+  \begin{aligned}
+    \varphi_i \left( x \right) = \sum_n \dfrac{2n+1}{2} \int_{-1}^{+1} \varphi_i \left( x \right) P_n \left( x \right) \md x P \left( x \right) 
+  \end{aligned}
+\end{equation*}
+
+比较系数得
+
+\begin{equation*}
+  \begin{aligned}
+    \dfrac{2n+1}{2} \int_{-1}^{+1} \varphi_i \left( x \right) P_n \left( x \right) \md x
+    = a_n R^n
+  \end{aligned}
+\end{equation*}
+
+在$R=R_0$处
+
+\begin{equation*}
+  \begin{aligned}
+    a_n R^n &=
+    \dfrac{2n+1}{2} \left[ - \int_{-1}^{0} \varphi_0 \left( x \right) P_n \left( x \right) \md x + \int_{0}^{+1} \varphi_0 \left( x \right) P_n \left( x \right) \md x \right]
+    = \left( 2n+1 \right) \varphi_0 \left( x \right) \int_0^1 P_n \left( x \right) \md x \\
+    &= \left( 2n+1 \right) \varphi_0 \left( x \right) \left. \left[ \dfrac{P_{n+1} \left( x \right) - P_{n-1} \left( x \right)}{2n+1} \right] \right|_0^1 \\
+    &= \varphi_0 \left( x \right) \left. \left[  P_{n+1} \left( x \right) - P_{n-1} \left( x \right) \right] \right|_0^1
+  \end{aligned}
+\end{equation*}
+
+其中
+
+\begin{equation*}
+  \begin{aligned}
+    \left. \left[  P_{n+1} \left( x \right) - P_{n-1} \left( x \right) \right] \right|_0^1
+    &= P_{n+1} \left( 1 \right) - P_{n-1} \left( 1 \right) - P_{n+1} \left( x \right) + P_{n-1} \left( 0 \right) = P_{n-1} \left( 0 \right) - P_{n+1} \left( 0 \right) 
+  \end{aligned}
+\end{equation*}
+
+当$n=2k+1$时
+
+\begin{equation*}
+  \begin{aligned}
+    \left. \left[  P_{n+1} \left( x \right) - P_{n-1} \left( x \right) \right] \right|_0^1
+    &= \left( -1 \right)^{k+1} \dfrac{1 \cdot 3 \cdot 5 \cdots \left( 2k+1 \right)}{2 \cdot 4 \cdot 6 \cdots (2k+2)}
+    - \left( -1 \right)^{k} \dfrac{1 \cdot 3 \cdot 5 \cdots \left( 2k-1 \right)}{2 \cdot 4 \cdot 6 \cdots 2k}
+  \end{aligned}
+\end{equation*}
 
 
 
