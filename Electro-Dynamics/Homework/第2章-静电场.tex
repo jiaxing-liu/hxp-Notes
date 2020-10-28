@@ -476,7 +476,7 @@
   \end{aligned}
 \end{equation*}
 
-将$\varphi_i$展开
+下面求解球内电势分布，将$\varphi_i$展开
 
 \begin{equation*}
   \begin{aligned}
@@ -497,11 +497,11 @@
 
 \begin{equation*}
   \begin{aligned}
-    a_n R^n &=
-    \dfrac{2n+1}{2} \left[ - \int_{-1}^{0} \varphi_0 \left( x \right) P_n \left( x \right) \md x + \int_{0}^{+1} \varphi_0 \left( x \right) P_n \left( x \right) \md x \right]
-    = \left( 2n+1 \right) \varphi_0 \left( x \right) \int_0^1 P_n \left( x \right) \md x \\
-    &= \left( 2n+1 \right) \varphi_0 \left( x \right) \left. \left[ \dfrac{P_{n+1} \left( x \right) - P_{n-1} \left( x \right)}{2n+1} \right] \right|_0^1 \\
-    &= \varphi_0 \left( x \right) \left. \left[  P_{n+1} \left( x \right) - P_{n-1} \left( x \right) \right] \right|_0^1
+    a_n R_0^n &=
+    \dfrac{2n+1}{2} \left[ - \int_{-1}^{0} \varphi_i \left( x \right) P_n \left( x \right) \md x + \int_{0}^{+1} \varphi_i \left( x \right) P_n \left( x \right) \md x \right]
+    = \left( 2n+1 \right) \varphi_i \left( x \right) \int_0^1 P_n \left( x \right) \md x \\
+    &= \left( 2n+1 \right) \varphi_i \left( x \right) \left. \left[ \dfrac{P_{n+1} \left( x \right) - P_{n-1} \left( x \right)}{2n+1} \right] \right|_0^1 \\
+    &= \varphi_i \left( x \right) \left. \left[  P_{n+1} \left( x \right) - P_{n-1} \left( x \right) \right] \right|_0^1
   \end{aligned}
 \end{equation*}
 
@@ -514,18 +514,117 @@
   \end{aligned}
 \end{equation*}
 
-当$n=2k+1$时
+当$n$为偶数时，$P_{n-1}=P_{n+1}=0$，$a_n=0$，当$n$为奇数时
+
+\begin{equation*}
+  \begin{aligned}
+    P_{n-1} \left( 0 \right) &= \left( -1  \right)^{\left( n-1 \right)/ 2} \cdot \dfrac{1 \cdot 3 \cdot 5 \dots \left( n-2 \right)}{2 \cdot 4 \cdot 6 \dots \left( n-1 \right)}  \\
+    P_{n+1} \left( 0 \right) &= \left( -1  \right)^{\left( n+1 \right)/ 2} \cdot \dfrac{1 \cdot 3 \cdot 5 \dots \left( n-2 \right)}{2 \cdot 4 \cdot 6 \dots \left( n-1 \right)} \cdot \dfrac{n}{n+1}   
+  \end{aligned}
+\end{equation*}
+
+因此
+
+\begin{equation*}
+  \begin{aligned}
+    a_n R_0^n &=
+    P_{n-1} \left( 0 \right) - P_{n+1} \left( 0 \right) \\
+    &= \left( -1  \right)^{\left( n-1 \right)/ 2} \cdot \dfrac{1 \cdot 3 \cdot 5 \dots \left( n-2 \right)}{2 \cdot 4 \cdot 6 \dots \left( n-1 \right)} \cdot \left[ 1 + \dfrac{n}{n+1}  \right] \\
+    &= \left( -1  \right)^{\left( n-1 \right)/ 2} \cdot \dfrac{1 \cdot 3 \cdot 5 \dots \left( n-2 \right)}{2 \cdot 4 \cdot 6 \dots \left( n-1 \right)} \cdot \dfrac{2n+1}{n+1}
+  \end{aligned}
+\end{equation*}
+
+球内电势为
+
+\begin{equation*}
+  \begin{aligned}
+    \varphi_i &= \sum_n \left[ \left( -1  \right)^{\left( n-1 \right)/ 2} \cdot \dfrac{1 \cdot 3 \cdot 5 \dots \left( n-2 \right)}{2 \cdot 4 \cdot 6 \dots \left( n-1 \right)} \cdot \dfrac{2n+1}{n+1}
+ \right] \dfrac{R^n}{R_0^n}  P \left( \cos \theta \right) && R<R_0, n=2k+1
+  \end{aligned}
+\end{equation*}
+
+下面求解球外电势分布，将$\varphi_o$展开
+
+\begin{equation*}
+  \begin{aligned}
+    \varphi_o \left( x \right) = \sum_n \dfrac{2n+1}{2} \int_{-1}^{+1} \varphi_o \left( x \right) P_n \left( x \right) \md x P \left( x \right) 
+  \end{aligned}
+\end{equation*}
+
+比较系数得
+
+\begin{equation*}
+  \begin{aligned}
+    \dfrac{2n+1}{2} \int_{-1}^{+1} \varphi_o \left( x \right) P_n \left( x \right) \md x
+    = \dfrac{b_n}{R^{n+1}} 
+  \end{aligned}
+\end{equation*}
+
+在$R=R_0$处
+
+\begin{equation*}
+  \begin{aligned}
+    \dfrac{b_n}{R_0^{n+1}}  &=
+    \dfrac{2n+1}{2} \left[ - \int_{-1}^{0} \varphi_o \left( x \right) P_n \left( x \right) \md x + \int_{0}^{+1} \varphi_o \left( x \right) P_n \left( x \right) \md x \right]
+    = \left( 2n+1 \right) \varphi_o \left( x \right) \int_0^1 P_n \left( x \right) \md x \\
+    &= \left( 2n+1 \right) \varphi_o \left( x \right) \left. \left[ \dfrac{P_{n+1} \left( x \right) - P_{n-1} \left( x \right)}{2n+1} \right] \right|_0^1 \\
+    &= \varphi_o \left( x \right) \left. \left[  P_{n+1} \left( x \right) - P_{n-1} \left( x \right) \right] \right|_0^1
+  \end{aligned}
+\end{equation*}
+
+其中
 
 \begin{equation*}
   \begin{aligned}
     \left. \left[  P_{n+1} \left( x \right) - P_{n-1} \left( x \right) \right] \right|_0^1
-    &= \left( -1 \right)^{k+1} \dfrac{1 \cdot 3 \cdot 5 \cdots \left( 2k+1 \right)}{2 \cdot 4 \cdot 6 \cdots (2k+2)}
-    - \left( -1 \right)^{k} \dfrac{1 \cdot 3 \cdot 5 \cdots \left( 2k-1 \right)}{2 \cdot 4 \cdot 6 \cdots 2k}
+    &= P_{n+1} \left( 1 \right) - P_{n-1} \left( 1 \right) - P_{n+1} \left( x \right) + P_{n-1} \left( 0 \right) = P_{n-1} \left( 0 \right) - P_{n+1} \left( 0 \right) 
   \end{aligned}
 \end{equation*}
 
+当$n$为偶数时，$P_{n-1}=P_{n+1}=0$，$a_n=0$，当$n$为奇数时
 
+\begin{equation*}
+  \begin{aligned}
+    P_{n-1} \left( 0 \right) &= \left( -1  \right)^{\left( n-1 \right)/ 2} \cdot \dfrac{1 \cdot 3 \cdot 5 \dots \left( n-2 \right)}{2 \cdot 4 \cdot 6 \dots \left( n-1 \right)}  \\
+    P_{n+1} \left( 0 \right) &= \left( -1  \right)^{\left( n+1 \right)/ 2} \cdot \dfrac{1 \cdot 3 \cdot 5 \dots \left( n-2 \right)}{2 \cdot 4 \cdot 6 \dots \left( n-1 \right)} \cdot \dfrac{n}{n+1}   
+  \end{aligned}
+\end{equation*}
 
+因此
+
+\begin{equation*}
+  \begin{aligned}
+    \dfrac{b_n}{R_0^{n+1}}  &=
+    P_{n-1} \left( 0 \right) - P_{n+1} \left( 0 \right) \\
+    &= \left( -1  \right)^{\left( n-1 \right)/ 2} \cdot \dfrac{1 \cdot 3 \cdot 5 \dots \left( n-2 \right)}{2 \cdot 4 \cdot 6 \dots \left( n-1 \right)} \cdot \left[ 1 + \dfrac{n}{n+1}  \right] \\
+    &= \left( -1  \right)^{\left( n-1 \right)/ 2} \cdot \dfrac{1 \cdot 3 \cdot 5 \dots \left( n-2 \right)}{2 \cdot 4 \cdot 6 \dots \left( n-1 \right)} \cdot \dfrac{2n+1}{n+1}
+  \end{aligned}
+\end{equation*}
+
+球外电势为
+
+\begin{equation*}
+  \begin{aligned}
+    \varphi_o &= \sum_n \left[ \left( -1  \right)^{\left( n-1 \right)/ 2} \cdot \dfrac{1 \cdot 3 \cdot 5 \dots \left( n-2 \right)}{2 \cdot 4 \cdot 6 \dots \left( n-1 \right)} \cdot \dfrac{2n+1}{n+1}
+ \right] \dfrac{R_0^{n+1}}{R^{n+1}}  P \left( \cos \theta \right) && R>R_0, n=2k+1
+  \end{aligned}
+\end{equation*}
+
+综上
+
+\begin{equation*}
+  \begin{aligned}
+    \varphi = 
+  \end{aligned}
+  \left\{
+  \begin{aligned}
+    &\sum_n \left[ \left( -1  \right)^{\left( n-1 \right)/ 2} \cdot \dfrac{1 \cdot 3 \cdot 5 \dots \left( n-2 \right)}{2 \cdot 4 \cdot 6 \dots \left( n-1 \right)} \cdot \dfrac{2n+1}{n+1}
+ \right] \dfrac{R^n}{R_0^n}  P \left( \cos \theta \right) && R<R_0, n=2k+1 \\
+    &\sum_n \left[ \left( -1  \right)^{\left( n-1 \right)/ 2} \cdot \dfrac{1 \cdot 3 \cdot 5 \dots \left( n-2 \right)}{2 \cdot 4 \cdot 6 \dots \left( n-1 \right)} \cdot \dfrac{2n+1}{n+1}
+ \right] \dfrac{R_0^{n+1}}{R^{n+1}}  P \left( \cos \theta \right) && R>R_0, n=2k+1
+  \end{aligned}
+  \right.
+\end{equation*}
 
 \paragraph{2.19}
 
