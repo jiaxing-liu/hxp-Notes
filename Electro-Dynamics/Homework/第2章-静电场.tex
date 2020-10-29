@@ -626,6 +626,22 @@
   \right.
 \end{equation*}
 
+将$n$换成$k$
+
+\begin{equation*}
+  \begin{aligned}
+    \varphi = 
+  \end{aligned}
+  \left\{
+  \begin{aligned}
+    &\varphi_0 \sum_k \left[ \left( -1  \right)^k \cdot \dfrac{1 \cdot 3 \cdot 5 \dots \left( 2k-1 \right)}{2 \cdot 4 \cdot 6 \dots \left( 2k+2 \right)} \cdot \left( 4k+3 \right)
+ \right] \dfrac{R^{2k+1}}{R_0^{2k+1}}  P_{2k+1} \left( \cos \theta \right) && R<R_0\\
+    &\varphi_0 \sum_k \left[ \left( -1  \right)^k \cdot \dfrac{1 \cdot 3 \cdot 5 \dots \left( 2k-1 \right)}{2 \cdot 4 \cdot 6 \dots \left( 2k+2 \right)} \cdot \left( 4k+3 \right)
+ \right] \dfrac{R_0^{2k+2}}{R^{2k+2}}  P_{2k+1} \left( \cos \theta \right) && R>R_0
+  \end{aligned}
+  \right.
+\end{equation*}
+
 \paragraph{2.19}
 
 上题能用格林函数解吗？结果如何？
@@ -702,21 +718,86 @@
 \begin{equation*}
   \begin{aligned}
     \varphi_o &=
-    \varphi_0 \sum_{n=0}^{n=+\infty}  \left[ \left( -1  \right)^{\left( n-1 \right)/ 2} \cdot \dfrac{1 \cdot 3 \cdot 5 \dots \left( n-2 \right)}{2 \cdot 4 \cdot 6 \dots \left( n-1 \right)} \cdot \dfrac{2n+1}{n+1} \right] \dfrac{R_0^{n+1} }{R^{n+1}} P_n \left( x \right) && R>R_0,n=2k+1
+    \varphi_0 \sum_n \left[ \left( -1  \right)^{\left( n-1 \right)/ 2} \cdot \dfrac{1 \cdot 3 \cdot 5 \dots \left( n-2 \right)}{2 \cdot 4 \cdot 6 \dots \left( n-1 \right)} \cdot \dfrac{2n+1}{n+1} \right] \dfrac{R_0^{n+1} }{R^{n+1}} P_n \left( x \right) && R>R_0,n=2k+1
   \end{aligned}
 \end{equation*}
 
-\section{以下是草稿}
-
-在内外，电势为
+在球内，格林函数可以展开为
 
 \begin{equation*}
   \begin{aligned}
-    \varphi_o &=
-    \varphi_0 \sum_{n=- \infty}^{n=-1}  \left[ \left( -1  \right)^{\left( n-1 \right)/ 2} \cdot \dfrac{1 \cdot 3 \cdot 5 \dots \left( n-2 \right)}{2 \cdot 4 \cdot 6 \dots \left( n-1 \right)} \cdot \dfrac{2n+1}{n+1} \right] \dfrac{R^n }{R_0^n} P_n \left( x \right) \\
-    &= \varphi_0 \sum_{n=+1}^{n=+ \infty}  \left[ \left( -1  \right)^{\left( n-1 \right)/ 2} \cdot \dfrac{1 \cdot 3 \cdot 5 \dots \left( n-2 \right)}{2 \cdot 4 \cdot 6 \dots \left( n-1 \right)} \cdot \dfrac{2n+1}{n+1} \right] \dfrac{R_0^n }{R^n} P_n \left( x \right) \\
-    &= \varphi_0 \sum_{n=0}^{n=+ \infty}  \left[ \left( -1  \right)^{\left( n-1 \right)/ 2} \cdot \dfrac{1 \cdot 3 \cdot 5 \dots \left( n-2 \right)}{2 \cdot 4 \cdot 6 \dots \left( n-1 \right)} \cdot \dfrac{2n+1}{n+1} \right] \dfrac{R_0^{n+1} }{R^{n+1}} P_n \left( x \right) && R>R_0,n=2k+1
+    G \left( x', x \right) &= 
+      \dfrac{1}{4\pi \varepsilon_0} \left\{ \left[ \left( R^2 + R'^2 - 2 R R' \cos \alpha \right) \right]^{-0.5} -
+      \left[ \left( \dfrac{R R'}{R_0}  \right)^2 + R_0^2 - 2 RR' \cos \alpha \right]^{-0.5}
+    \right\} \\
+    &= \dfrac{1}{4\pi \varepsilon_0} \sum_n \left[ \dfrac{R^n}{R'^{n+1}} - \dfrac{\left( RR'/R_0 \right)^n}{R_0^{n+1}}   \right] P_n \left( x \right) P_n \left( x' \right) \\
+    \dfrac{\partial G}{\partial R'} &=
+    - \dfrac{1}{4\pi \varepsilon_0} \sum_n \left[ \dfrac{n+1}{R'^{n+2}} R^n + \dfrac{nR^n R'^{n-1}}{R_0^{2n+1}} \right] P_n \left( x \right) P_n \left( x' \right)
   \end{aligned}
+\end{equation*}
+
+\begin{equation*}
+  \begin{aligned}
+    \left. \dfrac{\partial G}{\partial R'} \right|_{R'=R_0} &=
+    - \dfrac{1}{4\pi \varepsilon_0} \sum_n \left[ \dfrac{n+1}{R_0^{n+2}} R^n + \dfrac{nR^n R_0^{n-1}}{R_0^{2n+1}} \right] P_n \left( x \right) P_n \left( x' \right) \\
+    &= - \dfrac{1}{4\pi \varepsilon_0} \sum_n \left[ \dfrac{n+1}{R_0^{n+2}} R^n + \dfrac{nR^n }{R_0^{n+2}} \right] P_n \left( x \right) P_n \left( x' \right) \\
+    &= - \dfrac{1}{4\pi \varepsilon_0} \sum_n \left[ \left( 2n+1 \right) \dfrac{R^n }{R_0^{n+2}} \right] P_n \left( x \right) P_n \left( x' \right)
+  \end{aligned}
+\end{equation*}
+
+同理
+
+\begin{equation*}
+  \begin{aligned}
+    \varphi \left( x \right) &= \varepsilon_0 \oint_S \varphi \left( x' \right) \dfrac{\partial G}{\partial R'} R_0^2 \md x' \md \phi'
+    = 2 \pi \varepsilon_0 R_0^2 \int_{+1}^{-1} \varphi \left( x' \right) \dfrac{\partial G}{\partial R'} \md x' \\
+    &= 2 \pi \varepsilon_0 R_0^2 \int_{+1}^{-1} \varphi \left( x' \right) \left[ - \dfrac{1}{4\pi \varepsilon_0} \sum_n \left[ \left( 2n+1 \right) \dfrac{R^n }{R_0^{n+2}} \right] P_n \left( x \right) P_n \left( x' \right) \right] \md x' \\
+    &= 4 \pi \varepsilon_0 R_0^2 \int_{+1}^{0} \varphi_0  \left[ - \dfrac{1}{4\pi \varepsilon_0} \sum_n \left[ \left( 2n+1 \right) \dfrac{R^n }{R_0^{n+2}} \right] P_n \left( x \right) P_n \left( x' \right) \right] \md x' \\
+    &= \int_0^1 \varphi_0  \left[ \sum_n \left[ \left( 2n+1 \right) \dfrac{R^n }{R_0^n} \right] P_n \left( x \right) P_n \left( x' \right) \right] \md x' \\
+    &= \varphi_0 \sum_n  \left[ \left( 2n+1 \right) \dfrac{R^n }{R_0^n} \right] P_n \left( x \right) \int_0^1  P_n \left( x' \right) \md x' \\
+    &= \varphi_0 \sum_n  \left[  \dfrac{R^n }{R_0^n} \right] P_n \left( x \right) \left( 2n+1 \right) \int_0^1  P_n \left( x' \right) \md x' \\
+    &= \varphi_0 \sum_n  \left[ \dfrac{R^n }{R_0^n} \right] P_n \left( x \right) \left[ \left( -1  \right)^{\left( n-1 \right)/ 2} \cdot \dfrac{1 \cdot 3 \cdot 5 \dots \left( n-2 \right)}{2 \cdot 4 \cdot 6 \dots \left( n-1 \right)} \cdot \dfrac{2n+1}{n+1} \right] \\
+    &= \varphi_0 \sum_n  \left[ \left( -1  \right)^{\left( n-1 \right)/ 2} \cdot \dfrac{1 \cdot 3 \cdot 5 \dots \left( n-2 \right)}{2 \cdot 4 \cdot 6 \dots \left( n-1 \right)} \cdot \dfrac{2n+1}{n+1} \right] \dfrac{R^n }{R_0^n} P_n \left( x \right) 
+  \end{aligned}
+\end{equation*}
+
+其中$n$为奇数。在球内，电势为
+
+\begin{equation*}
+  \begin{aligned}
+    \varphi_i &=
+    \varphi_0 \sum_n \left[ \left( -1  \right)^{\left( n-1 \right)/ 2} \cdot \dfrac{1 \cdot 3 \cdot 5 \dots \left( n-2 \right)}{2 \cdot 4 \cdot 6 \dots \left( n-1 \right)} \cdot \dfrac{2n+1}{n+1} \right] \dfrac{R^n }{R_0^n} P_n \left( x \right) && R<R_0,n=2k+1
+  \end{aligned}
+\end{equation*}
+
+因此
+
+\begin{equation*}
+  \begin{aligned}
+    \varphi =
+  \end{aligned}
+  \left\{
+  \begin{aligned}
+    &\varphi_0 \sum_n \left[ \left( -1  \right)^{\left( n-1 \right)/ 2} \cdot \dfrac{1 \cdot 3 \cdot 5 \dots \left( n-2 \right)}{2 \cdot 4 \cdot 6 \dots \left( n-1 \right)} \cdot \dfrac{2n+1}{n+1} \right] \dfrac{R^n }{R_0^n} P_n \left( x \right) && R<R_0,n=2k+1 \\
+    &\varphi_0 \sum_n \left[ \left( -1  \right)^{\left( n-1 \right)/ 2} \cdot \dfrac{1 \cdot 3 \cdot 5 \dots \left( n-2 \right)}{2 \cdot 4 \cdot 6 \dots \left( n-1 \right)} \cdot \dfrac{2n+1}{n+1} \right] \dfrac{R_0^{n+1} }{R^{n+1}} P_n \left( x \right) && R>R_0,n=2k+1
+  \end{aligned}
+  \right.
+\end{equation*}
+
+将$n$换成$k$
+
+\begin{equation*}
+  \begin{aligned}
+    \varphi = 
+  \end{aligned}
+  \left\{
+  \begin{aligned}
+    &\varphi_0 \sum_k \left[ \left( -1  \right)^k \cdot \dfrac{1 \cdot 3 \cdot 5 \dots \left( 2k-1 \right)}{2 \cdot 4 \cdot 6 \dots \left( 2k+2 \right)} \cdot \left( 4k+3 \right)
+ \right] \dfrac{R^{2k+1}}{R_0^{2k+1}}  P_{2k+1} \left( \cos \theta \right) && R<R_0\\
+    &\varphi_0 \sum_k \left[ \left( -1  \right)^k \cdot \dfrac{1 \cdot 3 \cdot 5 \dots \left( 2k-1 \right)}{2 \cdot 4 \cdot 6 \dots \left( 2k+2 \right)} \cdot \left( 4k+3 \right)
+ \right] \dfrac{R_0^{2k+2}}{R^{2k+2}}  P_{2k+1} \left( \cos \theta \right) && R>R_0
+  \end{aligned}
+  \right.
 \end{equation*}
 
 \end{document} 
