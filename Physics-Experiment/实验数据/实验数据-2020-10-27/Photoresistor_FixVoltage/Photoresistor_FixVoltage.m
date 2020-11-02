@@ -32,5 +32,5 @@ function AnalyzeData(photoresistor_volt)
         num2str(photoresistor_volt) ' V']);
 
     saveas(gcf,...
-        ['figures/photoresistance_' num2str(photoresistor_volt) 'V'], 'epsc');
+        ['figures/photoresistor_' num2str(photoresistor_volt) 'V'], 'epsc');
 end

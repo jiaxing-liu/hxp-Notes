@@ -32,5 +32,5 @@ function AnalyzeData(Lux)
     title(['Light Intensity: ' ...
         num2str(Lux) ' Lux']);
 
-    saveas(gcf,['figures/photoresistance_' num2str(Lux) 'Lux'], 'epsc');
+    saveas(gcf,['figures/photoresistor_' num2str(Lux) 'Lux'], 'epsc');
 end
