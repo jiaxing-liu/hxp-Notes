@@ -23,6 +23,8 @@ function AnalyzeData(Lux)
     phototransistor_voltage=powersource_voltage-sampling_voltage;
     phototransistor_ampere=sampling_voltage./sampling_resistor;
     phototransistor_omega=phototransistor_voltage./phototransistor_ampere;
+    disp(['resistance of ' num2str(Lux) ' Lux:']);
+    disp(phototransistor_omega);
     figure
     plot(phototransistor_voltage, phototransistor_ampere,'-*');
     ylabel('Current of Phototransistor (A)');

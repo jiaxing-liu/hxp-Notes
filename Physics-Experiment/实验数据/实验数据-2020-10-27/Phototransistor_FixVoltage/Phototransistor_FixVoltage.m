@@ -22,6 +22,8 @@ function AnalyzeData(phototransistor_volt)
     
     phototransistor_ampere=sample_voltage./sampling_resistor;
     phototransistor_omega=phototransistor_volt./phototransistor_ampere;
+    disp(['resistance of ' num2str(phototransistor_volt) ' V:']);
+    disp(phototransistor_omega);
     figure
     plot(light_intensity, phototransistor_ampere,'-*');
     xlabel('Light Intensity (Lux)');

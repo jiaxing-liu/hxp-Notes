@@ -22,6 +22,8 @@ function AnalyzeData(photodiode_volt)
     
     photodiode_ampere=sample_voltage./sampling_resistor;
     photodiode_omega=photodiode_volt./photodiode_ampere;
+    disp(['resistance of ' num2str(photodiode_volt) ' V :']);
+    disp(photodiode_omega);
     figure
     plot(light_intensity, photodiode_ampere,'-*');
     xlabel('Light Intensity (Lux)');

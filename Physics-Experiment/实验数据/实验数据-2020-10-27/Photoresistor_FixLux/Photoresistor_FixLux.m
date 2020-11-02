@@ -23,6 +23,8 @@ function AnalyzeData(Lux)
     photoresistance_voltage=PowerSource_Voltage-Sampling_resistor_Voltage;
     photoresistance_ampere=Sampling_resistor_Voltage./sampling_resistor;
     photoresistance_omega=photoresistance_voltage./photoresistance_ampere;
+    disp(['resistance of ' num2str(Lux) ' Lux:']);
+    disp(photoresistance_omega);
     figure
     plot(photoresistance_voltage,photoresistance_ampere, '-*');
     ylabel('Current of Photoresistance (A)');

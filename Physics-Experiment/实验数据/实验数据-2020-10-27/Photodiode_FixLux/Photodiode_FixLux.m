@@ -23,6 +23,8 @@ function AnalyzeData(Lux)
     photodiode_voltage=powersource_voltage-sampling_voltage;
     photodiode_ampere=sampling_voltage./sampling_resistor;
     photodiode_omega=photodiode_voltage./photodiode_ampere;
+    disp(['resistance of ' num2str(Lux) ' Lux:']);
+    disp(photodiode_omega);
     figure
     plot(photodiode_voltage, photodiode_ampere,'-*');
     ylabel('Current of Photodiode (A)');
