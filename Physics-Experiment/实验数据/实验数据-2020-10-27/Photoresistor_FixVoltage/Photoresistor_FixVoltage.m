@@ -17,17 +17,17 @@ for i = [2 4 6 8 10]
 end
 
 function AnalyzeData(photoresistor_volt)
-    Sampling_resistor=981.3;
+    sampling_resistor=981.3;
     load(['data/photoresistor_' num2str(photoresistor_volt) 'V.mat']);
     
-    Photoresistance_Ampere=sample_resistor_voltage./Sampling_resistor;
-    Photoresistance_Omega=photoresistor_volt./Photoresistance_Ampere
+    photoresistance_ampere=sample_resistor_voltage./sampling_resistor;
+    photoresistance_omega=photoresistor_volt./photoresistance_ampere;
     figure
-    plot(light_intensity, Photoresistance_Ampere,'-*');
+    plot(light_intensity, photoresistance_ampere,'-*');
     xlabel('Light Intensity (Lux)');
     ylabel('Current of Photoresistance (A)');
-    title(['Resistance: ' ...
-        num2str(mean(Photoresistance_Omega)) ' (\Omega)']);
+    title(['Voltage of Photoresistor: ' ...
+        num2str(photoresistor_volt) ' V']);
 
     saveas(gcf,...
         ['figures/photoresistance_' num2str(photoresistor_volt) 'V'], 'epsc');
