@@ -297,7 +297,278 @@ $r$的期望值为
   \end{aligned}
 \end{equation*}
 
+\paragraph{3.7}
 
+归一化因子
 
+\begin{equation*}
+  \begin{aligned}
+    A^2 = \dfrac{1}{\int_{-\infty}^{+\infty} \left| \psi \left( x \right) \right|^2 \md x}
+    = 4\lambda^3
+  \end{aligned}
+\end{equation*}
+
+动量分布概率幅为
+
+\begin{equation*}
+  \begin{aligned}
+    c \left( p \right)
+    = \int_{-\infty}^{+\infty} \dfrac{1}{\sqrt{2\pi \hbar}} \me^{i \frac{px}{\hbar} } \psi \left( x \right) \md x
+    = \dfrac{2 \lambda^{3/2}}{\sqrt{2\pi \hbar}} \cdot \dfrac{1}{\left( \lambda + ip/\hbar \right)^2}  
+  \end{aligned}
+\end{equation*}
+
+动量概率的分布函数为
+
+\begin{equation*}
+  \begin{aligned}
+    w \left( p \right) = \left| c \left( p \right) \right|^2 = \dfrac{2 \lambda^3 \hbar^3}{\pi} \dfrac{1}{\left( \hbar^2 \lambda^2 + p^2 \right)^2}  
+  \end{aligned}
+\end{equation*}
+
+动量的期望值为
+
+\begin{equation*}
+  \begin{aligned}
+    \overline{p} = \int p w \left( p \right) \md p = 0
+  \end{aligned}
+\end{equation*}
+
+\paragraph{3.8}
+
+归一化因子
+
+\begin{equation*}
+  \begin{aligned}
+    A^2 = \dfrac{1}{\int_0^a x^2 \left( a-x \right)^2} \md x = \dfrac{30}{a^5}  
+  \end{aligned}
+\end{equation*}
+
+能量的概率幅度为
+
+\begin{equation*}
+  \begin{aligned}
+    c_n = \int_0^a \sqrt{\dfrac{2}{a} } \sin \dfrac{n\pi x}{a} Ax \left( a-x \right) \md x
+    = \dfrac{4 \sqrt{15}}{n^3 \pi^3} \left[ 1 - \left( -1 \right)^n \right] 
+  \end{aligned}
+\end{equation*}
+
+能量的概率分布为
+
+\begin{equation*}
+  \begin{aligned}
+    w_n = \left| c_n \right|^2 = 
+  \end{aligned}
+  \left\{
+  \begin{aligned}
+    & \dfrac{960}{n^6 \pi^6}&&n=2k+1 \\
+    & 0 && n=2k
+  \end{aligned}
+  \right.
+\end{equation*}
+
+能量的期望值为
+
+\begin{equation*}
+  \begin{aligned}
+    \overline{E} = \sum_{n=2k+1} w_n E_n 
+    = \dfrac{480 \hbar^2}{m a^2 \pi^4} \sum_{n=2k+1} \dfrac{1}{n^4}  
+    = \dfrac{5\hbar^2}{ma^2} 
+  \end{aligned}
+\end{equation*}
+
+\paragraph{3.9}
+
+氢原子处在$\psi_{2,1,0}$和$\psi_{2,1,-1}$两种状态，其中$c_{2,1,0}=\frac{1}{2} $，$c_{2,1,-1}=-\frac{\sqrt{3}}{2} $。能量的期望值为
+
+\begin{equation*}
+  \begin{aligned}
+    E = \sum \left| c_{nlm}^2 \right| E_1 / n^2 = - \dfrac{m e_s^4}{8 \hbar^2}
+  \end{aligned}
+\end{equation*}
+
+角动量平方期望值为
+
+\begin{equation*}
+  \begin{aligned}
+    \overline{L^2} = \sum \left( c_{nlm}^2 \right) l \left( l+1 \right) \hbar^2
+    = 2 \hbar^2
+  \end{aligned}
+\end{equation*}
+
+角动量$z$分量的期望值为
+
+\begin{equation*}
+  \begin{aligned}
+    \overline{L_z}
+    = \sum \left( c_{nlm}^2 \right) m \hbar
+    = - \dfrac{3}{4} \hbar 
+  \end{aligned}
+\end{equation*}
+
+\paragraph{3.10}
+
+将势能代入径向方程，考虑无穷远处势能为零，以及球对称性（$l=0$）
+
+\begin{equation*}
+  \left\{
+  \begin{aligned}
+    & \dfrac{\md^2}{\md r^2} R + \dfrac{2}{r} \dfrac{\md}{\md r}R + k^2R = 0    && r<a \\
+    & R=0 && r>a
+  \end{aligned}
+  \right.
+\end{equation*}
+
+另$x=kr$
+
+\begin{equation*}
+  \begin{aligned}
+    & R'' + \dfrac{2}{x} R' + R = 0 \\ 
+    & R \left( ka \right) = 0
+  \end{aligned}
+\end{equation*}
+
+另$u=xR$
+
+\begin{equation*}
+  \left\{
+  \begin{aligned}
+    & u'' + u = 0 \\
+    & u \left( 0 \right) = u \left( ka \right) = 0
+  \end{aligned}
+  \right.
+\end{equation*}
+
+通解为
+
+\begin{equation*}
+  \begin{aligned}
+    u = A \sin x + B \cos x = A \sin kr + B \cos kr
+  \end{aligned}
+\end{equation*}
+
+代入边界条件
+
+\begin{equation*}
+  \begin{aligned}
+    \sin ka = 0
+    \Rightarrow
+    k_n  = n\pi /a
+  \end{aligned}
+\end{equation*}
+
+本征函数和能量为
+
+\begin{equation*}
+  \begin{aligned}
+    E_n &= \dfrac{\hbar^2 \pi^2 n^2}{2ma^2} \\
+    R_n &= A \dfrac{u}{x} = A \dfrac{\sin k_nr}{k_n r}  
+  \end{aligned}
+\end{equation*}
+
+归一化因子为
+
+\begin{equation*}
+  \begin{aligned}
+    A = \dfrac{1}{\sqrt{\int_0^a \left| R_n \right|^2 r^2 \md r}}
+    = k_n \sqrt{2/a}
+  \end{aligned}
+\end{equation*}
+
+波函数为
+
+\begin{equation*}
+  \begin{aligned}
+    \psi_{n,0,0} = R_{n,0} \left( r \right) Y_{00} \left( \theta, \varphi \right)
+    = A \dfrac{\sin k_n r}{k_n r} \cdot \dfrac{1}{\sqrt{4\pi}}
+    = \dfrac{1}{\sqrt{2\pi a}} \dfrac{\sin k_n r}{r}  
+  \end{aligned}
+\end{equation*}
+
+\paragraph{3.11}
+
+由于$\overline{p}=0$，$\overline{p^2}=\dfrac{5}{4} \hbar^2 k^2 $
+
+\begin{equation*}
+  \begin{aligned}
+    \overline{\left( \Delta p \right)^2} = \overline{p^2} - \overline{p}^2 = \dfrac{5}{4} \hbar^2 k^2 
+  \end{aligned}
+\end{equation*}
+
+\begin{equation*}
+  \begin{aligned}
+    \overline{x} &= \int_{-\infty}^{+\infty} \psi^{*} x \psi \md x = A^2 \int_{-\infty}^{+\infty} x \left[ \sin^2 kx + \dfrac{1}{2} \cos kx  \right]^2 \md x = 0 \\
+    \overline{x^2} &= \int_{-\infty}^{+\infty} \psi^{*} x^2 \psi \md x = A^2 \int_{-\infty}^{+\infty} x^2 \left[ \sin^2 kx + \dfrac{1}{2} \cos kx  \right]^2 \md x = \infty \\
+  \end{aligned}
+\end{equation*}
+
+\begin{equation*}
+  \begin{aligned}
+    \overline{\left( \Delta x \right)^2} =  \overline{x^2} - \overline{x}^2 = \infty
+  \end{aligned}
+\end{equation*}
+
+所以
+
+\begin{equation*}
+  \begin{aligned}
+    \overline{\left( \Delta x \right)^2} \cdot \overline{\left( \Delta p \right)^2} = \infty
+  \end{aligned}
+\end{equation*}
+
+\paragraph{3.12}
+
+\begin{equation*}
+  \begin{aligned}
+    \overline{x} &= \int_{-\infty}^{+\infty} \psi^{*} x \psi \md x = \dfrac{1}{\sqrt{2\pi \xi^2}} \int_{-\infty}^{+\infty} x \me^{-x^2 / \left( 2 \xi^2 \right)} \md x = 0 \\
+    \overline{x^2} &= \int_{-\infty}^{+\infty} \psi^{*} x^2 \psi \md x = \dfrac{1}{\sqrt{2\pi \xi^2}} \int_{-\infty}^{+\infty} x^2 \me^{-x^2 / \left( 2 \xi^2 \right)} \md x = \xi^2 \\
+    \overline{p} &= \int_{-\infty}^{+\infty} \psi^{*} \dfrac{\hbar}{i} \dfrac{\md}{\md x}   \psi \md x = p_0 \\
+    \overline{p^2} &= \int_{-\infty}^{+\infty} \psi^{*} \left( \dfrac{\hbar}{i} \dfrac{\md}{\md x} \right)  \psi \md x = p_0^2 + \dfrac{\hbar^2}{4 \xi^2}
+  \end{aligned}
+\end{equation*}
+
+不确定性关系为
+
+\begin{equation*}
+  \begin{aligned}
+    \overline{\left( \Delta x \right)^2} \cdot \overline{\left( \Delta p \right)^2}
+    = \left( \overline{x^2} - \overline{x}^2 \right) \cdot \left( \overline{p^2} - \overline{p}^2 \right)
+    = \dfrac{\hbar^2}{4} 
+  \end{aligned}
+\end{equation*}
+
+\paragraph{3.13}
+
+不确定性关系为
+
+\begin{equation*}
+  \begin{aligned}
+    p \cdot r = \hbar
+  \end{aligned}
+\end{equation*}
+
+氢原子的能量为
+
+\begin{equation*}
+  \begin{aligned}
+    E = \dfrac{p^2}{2m} - \dfrac{e_s^2}{r} = \dfrac{\hbar^2}{2mr^2} - \dfrac{e_s^2}{r}    
+  \end{aligned}
+\end{equation*}
+
+当
+
+\begin{equation*}
+  \begin{aligned}
+    r= \dfrac{\hbar^2}{me_s^2} 
+  \end{aligned}
+\end{equation*}
+
+时，能量取得最小值
+
+\begin{equation*}
+  \begin{aligned}
+    E_{min} = - \dfrac{me_s^4}{2 \hbar^2} = - 13.6 \si{eV} 
+  \end{aligned}
+\end{equation*}
 
 \end{document} 
