@@ -1,0 +1,303 @@
+\documentclass{article}
+
+% Chinese Support using xeCJK
+% \usepackage{xeCJK}
+% \setCJKmainfont{SimSun}
+
+% Chinese Support using CTeX
+\usepackage{ctex}
+
+% Math Support
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{wasysym}
+\newcommand{\angstrom}{\text{\normalfont\AA}}
+
+\usepackage{fancyhdr}
+
+% Graphics Support
+\usepackage{graphicx}
+\usepackage{float}
+\restylefloat{table}
+
+
+% Reduced page margin
+\usepackage{geometry}
+\geometry{a4paper,scale=0.8}
+
+\usepackage{caption}
+\usepackage{subcaption}
+
+% d and e should be math operators
+\newcommand*{\dif}{\mathop{}\!\mathrm{d}}
+\newcommand*{\md}{\mathop{}\!\mathrm{d}}
+\newcommand*{\me}{\mathrm{e}}
+\newcommand*{\mh}{\mathrm{h}}
+
+
+\newcommand*{\Jmath}{J}
+
+% No indent for each paragraph
+% \usepackage{parskip}
+% \setlength{\parindent}{0cm}
+
+% Bold style for Greek letters
+\usepackage{bm}
+\let\Oldmathbf\mathbf
+\renewcommand{\mathbf}[1]{\boldsymbol{\Oldmathbf{#1}}}
+
+% More space for dfrac in cell
+\usepackage{cellspace}
+\setlength{\cellspacetoplimit}{5pt}
+\setlength{\cellspacebottomlimit}{5pt}
+
+% SI units
+\newcommand{\si}[1]{\  \mathrm{#1}}
+
+% Multi-line author information
+\usepackage{authblk}
+\author{物理（4+4）1801 \quad 胡喜平 \quad 学号 U201811966}
+
+\affil{网站 https://hxp.plus/ \quad 邮件 hxp201406@gmail.com}
+
+\title{《量子力学教程》课后习题——第三章\ 量子力学中的力学量}
+
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{源码地址：https://github.com/hxp-plus/Notes/blob/master/Qumntum-Mechenics/Homework/}
+\rfoot{第 \thepage 页}
+\renewcommand{\headrulewidth}{1pt}
+\renewcommand{\footrulewidth}{1pt}
+
+\begin{document}
+
+\maketitle\thispagestyle{fancy}
+
+\paragraph{3.1}
+
+\begin{equation*}
+  \begin{aligned}
+    \overline{U} = \dfrac{1}{2} m \omega \overline{x^2} = \dfrac{1}{2} m \omega^2 \dfrac{\alpha}{\sqrt{\pi}} \int_{-\infty}^{+\infty} \me^{- \frac{1}{2}  \alpha^2 x^2} x^2 \me^{- \frac{1}{2}  \alpha^2 x^2} \md x =  \dfrac{1}{2} m \omega^2 \dfrac{\alpha}{\sqrt{\pi}} \cdot \dfrac{\sqrt{\pi}}{\alpha} \dfrac{1}{2\alpha^2} = \dfrac{1}{4} \dfrac{m \omega^2}{\alpha^2}       
+  \end{aligned}
+\end{equation*}
+
+其中用到高斯积分公式
+
+\begin{equation*}
+  \begin{aligned}
+    \int_{-\infty}^{+\infty} x^{2n} \me^{-\alpha x^2} \md x = \sqrt{\dfrac{\pi}{\alpha} } \dfrac{\left( 2n-1 \right)!!}{\left( 2\alpha \right)^n} 
+  \end{aligned}
+\end{equation*}
+
+同理
+
+\begin{equation*}
+  \begin{aligned}
+    \overline{T} &= \dfrac{\alpha}{\sqrt{\pi}} \int_{-\infty}^{+\infty} \me^{-\frac{1}{2} \alpha^2 x^2 } \dfrac{- \hbar}{2m} \dfrac{\md^2}{\md x^2} \me^{- \frac{1}{2} \alpha^2 x^2 } \md x
+    = - \dfrac{\alpha \hbar}{2m\sqrt{\pi}} \int_{-\infty}^{+\infty} \me^{- \frac{1}{2} \alpha x^2} \cdot \alpha^2 \left( \alpha^2 x^2 - 1 \right) \cdot \me^{- \frac{1}{2} \alpha^2 x^2} \md x \\
+    &= - \dfrac{\alpha^3 \hbar}{2 m \sqrt{\pi}} \int_{-\infty}^{+\infty} \left( \alpha^2 x^2 -1 \right) \me^{- \alpha^2 x^2} \md x
+    = - \dfrac{\alpha^2 \hbar}{2m \sqrt{\pi}} \int_{- \infty}^{+ \infty} \left( \alpha^2 x^2 - 1 \right) \me^{- \alpha^2 x^2} \md \left( \alpha x \right) \\
+    &= - \dfrac{\alpha^2 \hbar}{2m \sqrt{\pi}} \left[ \dfrac{\sqrt{\pi}}{2} - \sqrt{\pi} \right] 
+    = \dfrac{1}{4} \dfrac{\hbar \alpha^2}{m}
+    = \dfrac{\hbar \omega}{4} 
+  \end{aligned}
+\end{equation*}
+
+动量的概率密度为
+
+\begin{equation*}
+  \begin{aligned}
+    c \left( p \right) = \int_{-\infty}^{+\infty} \dfrac{1}{\sqrt{2\pi \hbar}} \me^{ipx/h} \sqrt{\dfrac{\alpha}{\pi^{1/2}} } \me^{- \frac{1}{2} \alpha^2 x^2} \md x = \sqrt{\dfrac{1}{\alpha \hbar \sqrt{\pi}} } \me^{- \frac{p^2}{2 \alpha^2 \hbar^2} } 
+  \end{aligned}
+\end{equation*}
+
+动量概率的分布函数为
+
+\begin{equation*}
+  \begin{aligned}
+    w \left( p \right) = \left| c \left( p \right) \right|^2 = \dfrac{1}{\alpha \hbar \sqrt{\pi}} \me^{- \frac{p^2}{\alpha^2 \hbar^2} } 
+  \end{aligned}
+\end{equation*}
+
+\paragraph{3.2}
+
+$r$的期望值为
+
+\begin{equation*}
+  \begin{aligned}
+    \overline{r} = \iiint \psi \left( r \right) r \psi \left( r \right) \sin \theta r ^2 \md \theta \md r \md \phi = \dfrac{3}{2} a_0 
+  \end{aligned}
+\end{equation*}
+
+势能$U$的期望值为
+
+\begin{equation*}
+  \begin{aligned}
+    \overline{U} = \iint \md \Omega \int_0^{\infty} \psi \left( r \right) - \dfrac{e_s^2}{r} \psi \left( r \right) r^2 \md r = - \dfrac{e_s^2}{a_0} 
+  \end{aligned}
+\end{equation*}
+
+动能$T$的期望值为
+
+\begin{equation*}
+  \begin{aligned}
+    \overline{T} = \iint \md \Omega \int_0^{\infty} \left[ \psi \left( r \right) \dfrac{- \hbar}{2mr} \dfrac{\partial^2 }{\partial r^2} r \psi \left( r \right)   \right] r^2 \md r = \dfrac{e_s^2}{2 a_0} 
+  \end{aligned}
+\end{equation*}
+
+在最概然半径处，径向概率取级值
+
+\begin{equation*}
+  \begin{aligned}
+    \dfrac{\md}{\md r} \left[ w \left( r \right) \right] =
+    \dfrac{\md }{\md r} \left[ R^2 \left( r \right) r^2 \right] = \dfrac{\md}{\md r} \left[ \dfrac{4\me^{-2r/a_0}}{a_0^3} r^2 \right] = 0
+    \Rightarrow
+    r = a_0
+  \end{aligned}
+\end{equation*}
+
+动量分布的概率幅为
+
+\begin{equation*}
+  \begin{aligned}
+    c \left( p \right) = \iiint \dfrac{1}{\left( \sqrt{2\pi \hbar} \right)^3} \me^{- i \frac{p \cdot r}{\hbar} } \psi \left( r \right) \md r 
+  \end{aligned}
+\end{equation*}
+
+动量的概率密度为
+
+\begin{equation*}
+  \begin{aligned}
+    w \left( p \right) = \left| c \left( p \right) \right|^2 = \dfrac{8 a_0^3 \hbar^5}{\pi^2 \left( \hbar^2 + a_0^2 p^2 \right)^4} 
+  \end{aligned}
+\end{equation*}
+
+\paragraph{3.3}
+
+概率流密度公式为
+
+\begin{equation*}
+  \begin{aligned}
+    \vec{\Jmath} = \dfrac{i \hbar}{2m} \left( \psi \nabla \psi^{*} - \psi^{*} \nabla \psi \right) 
+  \end{aligned}
+\end{equation*}
+
+其中
+
+\begin{equation*}
+  \begin{aligned}
+    \nabla \psi_{nlm} = \left( -1 \right)^m N_{lm} \left[ e_r P_l^m \me^{im\phi} \dfrac{\partial R_{nl}}{\partial r} + e_{\theta} \dfrac{R_{nl} \me^{im\phi}}{r} \dfrac{\partial P_l^m}{r \sin \theta} + e_{\phi} \dfrac{R_{nl} P_l^m}{r \sin \theta}  \dfrac{\partial \me^{im\phi}}{\partial \phi}     \right]
+  \end{aligned}
+\end{equation*}
+
+因此
+
+\begin{equation*}
+  \begin{aligned}
+    \vec{\Jmath} \left( \vec{r}, t \right) =
+    \dfrac{i \hbar}{2m_e } \left[ \left( N_{lm} R_{nl} P_l^m \right)^2 \left( \dfrac{-2 im}{r \sin \theta}  \right) e_\varphi \right]
+    = \dfrac{\hbar m}{m_e r \sin \theta} \left| \psi_{nlm} \right|^2 e_{\varphi}
+  \end{aligned}
+\end{equation*}
+
+即
+
+\begin{equation*}
+  \begin{aligned}
+    &J_{er} = 0 \\
+    &J_{e\varphi} =  \dfrac{\hbar m}{m_e r \sin \theta} \left| \psi_{nlm} \right|^2 e_{\varphi}
+  \end{aligned}
+\end{equation*}
+
+\paragraph{3.4}
+
+\begin{equation*}
+  \begin{aligned}
+    \md M = J_e r \md r \md \theta \cdot \pi r^2 \sin^2 \theta = - \dfrac{\pi e \hbar m}{m_e} w_{nl} r^2 \sin \theta \md r \md \varphi \md \theta 
+  \end{aligned}
+\end{equation*}
+
+\begin{equation*}
+  \begin{aligned}
+    M = \iint \md M = - \dfrac{e \hbar m}{2m_e} 
+  \end{aligned}
+\end{equation*}
+
+\paragraph{3.5}
+
+转子的哈密顿算符为
+
+\begin{equation*}
+  \begin{aligned}
+    H = L^2 / \left( 2I \right)
+  \end{aligned}
+\end{equation*}
+
+定轴转动，薛定谔方程为
+
+\begin{equation*}
+  \begin{aligned}
+    \dfrac{\hat{L}^2}{2I} \psi = - \dfrac{\hbar^2}{2 I} \dfrac{\md^2 \psi}{\md \varphi^2} = E \left( \varphi \right)  
+  \end{aligned}
+\end{equation*}
+
+和一维粒子相同可以解出
+
+\begin{equation*}
+  \begin{aligned}
+    E_m = \dfrac{m^2 \hbar^2}{2I} 
+  \end{aligned}
+\end{equation*}
+
+定点转动时
+
+\begin{equation*}
+  \begin{aligned}
+    - \dfrac{\hbar^2}{2I} \nabla^2 \psi = E \psi 
+  \end{aligned}
+\end{equation*}
+
+边界条件为
+
+\begin{equation*}
+  \begin{aligned}
+    \psi \left( \theta, \varphi + 2\pi \right) = \psi \left( \theta, \varphi \right)
+  \end{aligned}
+\end{equation*}
+
+且在无穷远处有界，因此
+
+\begin{equation*}
+  \begin{aligned}
+    E_l = \dfrac{l \left( l+1 \right) \hbar^2}{2I} 
+  \end{aligned}
+\end{equation*}
+
+\paragraph{3.6}
+
+函数是周期函数，只需要在一个周期内求动能和动量的期望
+
+\begin{equation*}
+  \begin{aligned}
+    A^2 = \dfrac{1}{\int_0^{\pi/k} \left| \psi \left( x \right) \right|^2 \md x} = \dfrac{2k}{\pi} 
+  \end{aligned}
+\end{equation*}
+
+\begin{equation*}
+  \begin{aligned}
+    \overline{p} = \int_0^{\pi/k} \psi^{*} \left( x \right) \left( - i \hbar \right) \dfrac{\md}{\md x} \psi \left( x \right) \md x = 0    
+  \end{aligned}
+\end{equation*}
+
+\begin{equation*}
+  \begin{aligned}
+    \overline{T} = \overline{\dfrac{p^2}{2m} } =
+    \int_0^{\pi/k} \psi^{*} \left( x \right) \dfrac{- \hbar^2}{2m} \dfrac{\md^2}{\md x^2} \psi \left( x \right) \md x = \dfrac{5\pi \hbar^2 k}{16m} A^2 = \dfrac{5 \hbar^2 k^2}{8m}    
+  \end{aligned}
+\end{equation*}
+
+
+
+
+\end{document} 
