@@ -54,6 +54,8 @@
 \author{物理（4+4）1801 \quad  胡喜平 \quad U201811966}
 \affil{个人网站 https://hxp.plus/ \quad 电子邮件 hxp201406@gmail.com}
 
+\usepackage{pdfpages}
+
 \title{综合物理实验预习笔记——综合光学实验}
 
 \pagestyle{fancy}
@@ -117,6 +119,10 @@ LED是一种半导体二极管，当PN结加入反向电压时，少数载流子
   \end{subfigure}
 \end{figure}
 
+\section{实验准备}
 
+测量法拉第旋转角涉及多组数据的测量，而且测量后需要立即绘制图像，因此我准备了后面的程序来自动调用LaTeX来绘制实验数据的表格，并且调用gnuplot绘制图像，插入在表格后面，生成pdf
+
+\includepdf[pages=1-]{pdfs/综合光学实验程序.pdf}
 
 \end{document} 
