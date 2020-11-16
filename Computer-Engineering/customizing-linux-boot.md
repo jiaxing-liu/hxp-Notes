@@ -34,8 +34,8 @@ HOOKS="base udev resume autodetect modconf block filesystems keyboard fsck"
 
 Save the file. run
 
-```
-`mkinitcpio -p linux`
+```bash
+mkinitcpio -p linux
 ```
 
 to generate initramfs.
