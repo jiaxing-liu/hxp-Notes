@@ -13,3 +13,4 @@
 *.toc
 auto/
 *\#*
+**/_region_.tex
