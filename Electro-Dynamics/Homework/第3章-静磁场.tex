@@ -1,0 +1,233 @@
+\documentclass{article}
+
+% Chinese Support using xeCJK
+% \usepackage{xeCJK}
+% \setCJKmainfont{SimSun}
+
+% Chinese Support using CTeX
+\usepackage{ctex}
+
+% Math Support
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{wasysym}
+\newcommand{\angstrom}{\text{\normalfont\AA}}
+
+\usepackage{fancyhdr}
+
+% Graphics Support
+\usepackage{graphicx}
+\usepackage{float}
+
+% Reduced page margin
+\usepackage{geometry}
+\geometry{a4paper,scale=0.8}
+
+\usepackage{caption}
+\usepackage{subcaption}
+
+% d and e should be math operators
+\newcommand*{\dif}{\mathop{}\!\mathrm{d}}
+\newcommand*{\md}{\mathop{}\!\mathrm{d}}
+\newcommand*{\me}{\mathrm{e}}
+\newcommand*{\mh}{\mathrm{h}}
+\newcommand*{\Jmath}{J}
+
+% No indent for each paragraph
+\usepackage{parskip}
+\setlength{\parindent}{0cm}
+
+% Bold style for Greek letters
+\usepackage{bm}
+\let\Oldmathbf\mathbf
+\renewcommand{\mathbf}[1]{\boldsymbol{\Oldmathbf{#1}}}
+
+% More space for dfrac in cell
+\usepackage{cellspace}
+\setlength{\cellspacetoplimit}{5pt}
+\setlength{\cellspacebottomlimit}{5pt}
+
+% SI units
+\newcommand{\si}[1]{\  \mathrm{#1}}
+
+% Multi-line author information
+\usepackage{authblk}
+\author{物理（4+4）1801 \quad 胡喜平 \quad 学号 U201811966}
+
+\affil{网站 https://hxp.plus/ \quad 邮件 hxp201406@gmail.com}
+
+\title{《电动力学》课后习题——第二章\ 静电场}
+
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{源码地址：https://github.com/hxp-plus/Notes/blob/master/Electro-Dynamics/Homework/}
+\rfoot{第 \thepage 页}
+\renewcommand{\headrulewidth}{1pt}
+\renewcommand{\footrulewidth}{1pt}
+
+\begin{document}
+
+\maketitle\thispagestyle{fancy}
+
+\paragraph{3.1}
+
+试用$\vec{A}$表示一个沿着$z$方向的均匀的恒定磁场$\vec{B}_0$，写出$\vec{A}$的两种不同的表示式，证明二者之差是无旋场。
+
+\paragraph{解}
+
+磁矢势的定义为
+
+\begin{equation*}
+  \nabla \times \vec{A} = \vec{B}
+\end{equation*}
+
+其中
+
+\begin{equation*}
+  \vec{B} = B_0 \hat{z}
+\end{equation*}
+
+所以
+
+\begin{equation*}
+  \nabla \cdot \vec{A} =
+  \left( \frac{\partial A_{z}}{\partial y} - \frac{\partial A_{y}}{\partial z} \right) \vec{\imath}
+  + \left( \frac{\partial A_{x}}{\partial z} - \frac{\partial A_{z}}{\partial x} \right) \vec{\jmath}
+  + \left( \frac{\partial A_{y}}{\partial x} - \frac{\partial A_{x}}{\partial y} \right) \vec{k}
+\end{equation*}
+
+其中两组磁矢势为
+
+\begin{equation*}
+  \begin{aligned}
+    \vec{A}_1 &= -B_0 y \hat{x} + 2 z \hat{y} + 2 y \hat{z} \\
+    \vec{A}_2 &= 2 z \hat{x} + B_0 x \hat{y} + 2 x \hat{z}
+  \end{aligned}
+\end{equation*}
+
+两组磁矢势的差为
+
+\begin{equation*}
+  \begin{aligned}
+    \vec{A}_1 - \vec{A}_2 = 
+    \left( - B_{0} y - 2z \right) \hat{x} + \left( 2z - B_0 x \right) \hat{y} + \left( 2y - 2x \right) \hat{z}
+  \end{aligned}
+\end{equation*}
+
+很容易看出
+
+\begin{equation*}
+  \begin{aligned}
+    \nabla \times \left( \vec{A}_1 - \vec{A}_2 \right) = 0
+  \end{aligned}
+\end{equation*}
+
+\paragraph{3.3}
+
+假设有无穷长的线电流$I$沿着$z$轴流动，以$z<0$空间充满磁导率为$\mu$的均匀介质，$z>0$区域为真空，试用唯一性定理求次感应强度$\vec{B}$，然后求解磁化电流分布。
+
+\paragraph{解}
+
+使用柱坐标，介质在下真空在上，交界处$z=0$，空间中的点和原点距离为$r$。磁场环路定理为
+
+\begin{equation*}
+  \begin{aligned}
+    \oint \vec{H} \cdot \md \vec{l} = \mu_0 I
+  \end{aligned}
+\end{equation*}
+
+空间磁场强度的分布为
+
+\begin{equation*}
+  \begin{aligned}
+    \vec{H} = \frac{I}{2 \pi r}
+  \end{aligned}
+\end{equation*}
+
+因此磁感应强度为
+
+\begin{equation*}
+  \begin{aligned}
+    B = 
+  \end{aligned}
+  \left\{
+  \begin{aligned}
+    & \frac{\mu_{0} I}{2\pi r} && z>0 \\
+    & \frac{\mu I}{2 \pi r} && z<0
+  \end{aligned}
+  \right.
+\end{equation*}
+
+磁感应强度的方向由右手螺旋定则确定。取一个四角坐标为$(r,\delta z)$、$(r+\delta r, \delta z)$、$(r+\delta r, -\delta z)$、$(r, -\delta z)$的小积分面，当$z>0$时有磁极化电流，密度为$\alpha_M$，则
+
+\begin{equation*}
+  \begin{aligned}
+    \left( \frac{\mu_{0} I}{2\pi r} - \frac{\mu I}{2\pi r} \right) \times 2 \delta z \delta r
+    = \mu_0 \alpha_M \times 2 \delta z \delta r
+  \end{aligned}
+\end{equation*}
+
+因此
+
+\begin{equation*}
+  \begin{aligned}
+    \alpha_M = \frac{I}{2\pi r} \left( 1 - \frac{\mu}{\mu_{0}} \right)
+  \end{aligned}
+\end{equation*}
+
+方向为$\vec{e}_r$的反方向，因此
+
+\begin{equation*}
+  \begin{aligned}
+    \vec{\alpha}_M = \frac{I}{2\pi r} \left( \frac{\mu}{\mu_{0}} - 1 \right) \vec{e}_r
+  \end{aligned}
+\end{equation*}
+
+\paragraph{3.7}
+
+半径为$a$的无限长圆柱导体上有恒定电流$\vec{\Jmath}$均匀分布于截面上，试解磁矢势$\vec{A}$的微分方程，设导体的磁导率为$\mu_0$，导体外的磁导率为$\mu$
+
+\paragraph{解}
+
+体系是上下平移对称的，只需要极坐标。极坐标下的拉普拉斯算子为
+
+\begin{equation*}
+  \begin{aligned}
+    \nabla^2 = \frac{1}{r} \frac{\partial}{\partial r} \left( r \frac{\partial}{\partial r} \right)
+    + \frac{1}{r} \frac{\partial}{\partial \theta} \left( \frac{1}{r} \frac{\partial}{\partial \theta} \right)
+    = \frac{\partial^{2}}{\partial r^2} + \frac{1}{r} \frac{\partial}{\partial r} + \frac{1}{r^{2}} \frac{\partial^{2}}{\partial \theta^2}
+  \end{aligned}
+\end{equation*}
+
+磁矢势微分方程为
+
+\begin{equation*}
+  \begin{aligned}
+    \nabla^2 \vec{A} = - \mu \vec{\Jmath}
+  \end{aligned}
+\end{equation*}
+
+\paragraph{3.9}
+
+将一个磁导率为$\mu$，半径为$R_0$的球体，放入均匀磁场$\vec{H}_0$内，求总磁感应强度$\vec{B}$和诱导磁矩$\vec{m}$
+
+\paragraph{解}
+
+
+\paragraph{3.13}
+
+有一个均匀带电的薄导体壳，半径为$R_0$，总电荷为$Q$，使球壳自身绕着某一直径以角速度$\omega$转动，求球内外磁场$\vec{B}$
+
+\paragraph{解}
+
+
+\end{document} 
+
+
+
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
