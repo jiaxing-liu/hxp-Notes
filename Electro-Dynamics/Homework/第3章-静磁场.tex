@@ -401,6 +401,80 @@ $r=R_0$时有边界条件
 
 \paragraph{解}
 
+在球外，可以将球看成一个个环形电流，球面上线电流密度为
+
+\begin{equation*}
+  \begin{aligned}
+    \alpha_M = \frac{q \omega}{4 \pi R_0^2} R_0 \sin \theta \vec{e}_{\phi}
+  \end{aligned}
+\end{equation*}
+
+总的磁偶极矩是
+
+\begin{equation*}
+  \begin{aligned}
+    m = \int_0^{\pi} \pi \left( R_0 \sin \theta \right)^2 \alpha_M R_0 \md \theta
+    = \frac{q \omega}{4} R_0^2 \int_0^{\pi} \sin^3 \theta \md \theta
+    = \frac{q \omega R_0^2}{3}
+  \end{aligned}
+\end{equation*}
+
+方向是和转轴的方向相同。因此球外的磁标势为
+
+\begin{equation*}
+  \begin{aligned}
+    \varphi_o = \frac{\vec{m} \cdot \vec{R}}{4\pi R^{3}} = \frac{m \cos \theta}{4 \pi R^{2}}
+  \end{aligned}
+\end{equation*}
+
+磁感应强度为
+
+\begin{equation*}
+  \begin{aligned}
+    \vec{B}_o = - \mu_0 \nabla \varphi_o = \frac{\mu_{0}}{4\pi} \left[ \frac{3 \left( \vec{m} \cdot \vec{R} \right)\vec{R}}{R^{5}} - \frac{\vec{m}}{R^{3}} \right] 
+  \end{aligned}
+\end{equation*}
+
+设球内磁标势为
+
+\begin{equation*}
+  \begin{aligned}
+    \varphi_i = \sum_n a_{n} R^{n} P_n \left( \cos \theta \right)
+  \end{aligned}
+\end{equation*}
+
+因为球内和球外交界处有自由电流，不能引入磁标势，但是可以用g磁场边值关系。法向磁场的连续性条件为
+
+\begin{equation*}
+  \begin{aligned}
+    & \sum_n n a_{n} R_0^{n-1} P_n \left( \cos \theta \right) = - 2 \frac{m \cos \theta}{4\pi R_0^{3}}
+  \end{aligned}
+\end{equation*}
+
+因此
+
+\begin{equation*}
+  \begin{aligned}
+    a_1 &= - \frac{m}{2\pi R_0^3} \\
+    a_n &= 0 && n \neq 1
+  \end{aligned}
+\end{equation*}
+
+因此球内磁标势为
+
+\begin{equation*}
+  \begin{aligned}
+    \varphi_i = - \frac{m}{2\pi R_0^3} R \cos \theta = - \frac{\vec{m} \cdot \vec{R}}{2\pi R_{0}^{3}}
+  \end{aligned}
+\end{equation*}
+
+磁感应强度为
+
+\begin{equation*}
+  \begin{aligned}
+    \vec{B}_i = - \mu_0 \nabla \varphi_i = \frac{\mu_0 \vec{m}}{2\pi R_{0}^{3}}
+  \end{aligned}
+\end{equation*}
 
 \end{document} 
 
