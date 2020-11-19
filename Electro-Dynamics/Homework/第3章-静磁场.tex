@@ -208,12 +208,192 @@
   \end{aligned}
 \end{equation*}
 
+由于系统轴对称
+
+\begin{equation*}
+  \begin{aligned}
+    & \frac{1}{r} \frac{\partial A_i}{\partial r} \left( r \frac{\partial A_{i}}{\partial r} \right) = - \mu_0 J \\
+    & \frac{1}{r} \frac{\partial A_o}{\partial r} \left( r \frac{\partial A_{o}}{\partial r} \right) = 0
+  \end{aligned}
+\end{equation*}
+
+$A_o$是导体外磁矢势，$A_i$是导体内磁矢势，当$r=a$时，边值关系为
+
+\begin{equation*}
+  \begin{aligned}
+    & \vec{A}_i = \vec{A}_o \\
+    & \hat{r} \times \left( \frac{1}{\mu} \nabla \times \vec{A}_o \right) - \hat{r} \times \left( \frac{1}{\mu_{0}} \nabla \times A_i \right) = \alpha_M
+  \end{aligned}
+\end{equation*}
+
+由于系统是轴对称的，而且电流只有径向方向，且磁矢势的零点选择在任何地方都不影响，在边界
+
+\begin{equation*}
+  \begin{aligned}
+    & A_i = A_o = 0 \\
+    & \frac{1}{\mu} \frac{\md A_{o}}{\md r} = \frac{1}{\mu_{0}} \frac{\md A_{i}}{\md r}
+  \end{aligned}
+\end{equation*}
+
+对磁矢势微分方程进行积分，得到
+
+\begin{equation*}
+  \begin{aligned}
+    & r \frac{\partial A_{i}}{\partial r} + \frac{1}{2} \mu_0 J r^2 = C_1
+    \Rightarrow \frac{\partial A_{i}}{\partial r} = - \frac{1}{2} \mu_0 J r - \frac{C_{1}}{r}
+    \Rightarrow A_i = - \frac{\mu_0}{4} J r^2 - C_1 \ln r + C_3
+    \\
+    & r \frac{\partial A_{o}}{\partial r} = C_2
+    \Rightarrow \frac{\partial A_{o}}{\partial r} = \frac{C_{2}}{r}
+    \Rightarrow A_o = C_2 \ln r + C_4
+  \end{aligned}
+\end{equation*}
+
+带入$r=a$时的边界条件和$r=0$时磁矢势是有限值的条件
+
+\begin{equation*}
+  \begin{aligned}
+    & C_1 = 0 \\
+    & - \frac{\mu_0}{4} J a^2 - C_1 \ln a + C_3 = 0 \\
+    & C_2 \ln a + C_4 = 0 \\
+    & \frac{C_2 / a}{\mu} = \frac{- \frac{\mu_0}{2} J a - C_1 / a}{\mu_{0}}
+  \end{aligned}
+\end{equation*}
+
+解得
+
+\begin{equation*}
+  \begin{aligned}
+    & C_1 = 0 \\
+    & C_2 = - \frac{\mu}{2} J a^2 \\
+    & C_3 = \frac{\mu_{0}}{4} J a^2 \\
+    & C_4 = \frac{\mu}{2} J a^2 \ln a
+  \end{aligned}
+\end{equation*}
+
+所以
+
+\begin{equation*}
+  \begin{aligned}
+    A_i &= \frac{\mu_{0}}{4} J \left( a^2 - r^2 \right) \\
+    A_o &= \frac{\mu}{2} J a^2 \left( \ln a - \ln r \right)
+  \end{aligned}
+\end{equation*}
+
 \paragraph{3.9}
 
 将一个磁导率为$\mu$，半径为$R_0$的球体，放入均匀磁场$\vec{H}_0$内，求总磁感应强度$\vec{B}$和诱导磁矩$\vec{m}$
 
 \paragraph{解}
 
+用磁标势，球里面的磁标势为$\varphi_i$，球外边的磁标势为$\varphi_o$
+
+\begin{equation*}
+  \begin{aligned}
+    \nabla^2 \varphi_i = \nabla^2 \varphi_o = 0
+  \end{aligned}
+\end{equation*}
+
+$r=R_0$时有边界条件
+
+\begin{equation*}
+  \begin{aligned}
+    \varphi_i &= \varphi_o \\
+    \mu \frac{\partial \varphi_{i}}{\partial r} &= \mu_0 \frac{\partial \varphi_{o}}{\partial r}
+  \end{aligned}
+\end{equation*}
+
+设
+
+\begin{equation*}
+  \begin{aligned}
+    \varphi_i &= \sum_n a_n r^n P_n \left( \cos \theta \right) \\
+    \varphi_o &= - H_0 r P_1 \left( \cos \theta \right) + \sum_n \frac{b_{n}}{r^{n+1}} P_n \left( \cos \theta \right)
+  \end{aligned}
+\end{equation*}
+
+代入边界条件
+
+\begin{equation*}
+  \begin{aligned}
+    \sum_n a_n R^n P_n \left( \cos \theta \right) &= - H_0 R P_1 \left( \cos \theta \right) + \sum_n \frac{b_{n}}{R^{n+1}} P_n \left( \cos \theta \right) \\
+    \frac{\mu}{\mu_{0}} \sum_n n a_n R^{n-1} P_n \left( \cos \theta \right) &= - H_0 P_1 \left( \cos \theta \right) - \sum_n \left( n + 1 \right) \frac{b_{n}}{R^{n+2}} P_n \left( \cos \theta \right)
+  \end{aligned}
+\end{equation*}
+
+比较系数得出
+
+\begin{equation*}
+  \begin{aligned}
+    a_1 R &= - H_0 R + \frac{b_{1}}{R^{2}} \\
+    \frac{\mu}{\mu_{0}} a_1 &= - H_0 - 2 \frac{b_{1}}{R^{3}}
+  \end{aligned}
+\end{equation*}
+
+和
+
+\begin{equation*}
+  \begin{aligned}
+    a_n = b_n = 0 && n \neq 1
+  \end{aligned}
+\end{equation*}
+
+解得
+
+\begin{equation*}
+  \begin{aligned}
+    a_1 &= - \frac{3 \mu_{0}}{2 \mu_{0} + \mu} H_0 \\
+    b_1 &= \frac{\mu - \mu_{0}}{2\mu_0 + \mu} H_0 R_0^3 \\
+    a_n &= b_n = 0 && n \neq 1
+  \end{aligned}
+\end{equation*}
+
+带回磁标势表达式
+
+\begin{equation*}
+  \begin{aligned}
+    \varphi_i &= \sum_n a_n r^n P_n \left( \cos \theta \right)
+    = - \frac{3 \mu_{0}}{2 \mu_{0} + \mu} H_0 r \cos \theta \\
+    \varphi_o &= - H_0 r P_1 \left( \cos \theta \right) + \sum_n \frac{b_{n}}{r^{n+1}} P_n \left( \cos \theta \right)
+    = - H_0 r \cos \theta + \frac{\mu - \mu_{0}}{2\mu_0 + \mu} \cdot \frac{H_0 R_0^3 \cos \theta}{r^{2}}
+  \end{aligned}
+\end{equation*}
+
+重写表达式为矢量形式
+
+\begin{equation*}
+  \begin{aligned}
+    \varphi_i &= - \frac{3 \mu_{0}}{2 \mu_{0} + \mu} \vec{H}_0 \cdot \vec{r} \\
+    \varphi_o &= - \vec{H}_0 \cdot \vec{r} + \frac{\mu - \mu_{0}}{2\mu_0 + \mu} \cdot \frac{R_0^3 }{r^{3}} \vec{H}_0 \cdot \vec{r}
+  \end{aligned}
+\end{equation*}
+
+求梯度得到磁感应强度
+
+\begin{equation*}
+  \begin{aligned}
+    \vec{B}_i &= - \mu \nabla \varphi_i = \frac{3 \mu \mu_{0}}{2\mu_{0} + \mu} \vec{H}_0 \\
+    \vec{B}_o &= - \mu_0 \nabla \varphi_o = \mu_0 \vec{H}_0 - \frac{\mu \left( \mu - \mu_0 \right) R_0^3}{2 \mu_0  \mu} \left[ \frac{\vec{H}}{r^{3}} - \frac{3 \left( \vec{H} \cdot \vec{r} \right) \vec{r}}{r^5} \right] 
+  \end{aligned}
+\end{equation*}
+
+介质的磁极化强度
+
+\begin{equation*}
+  \begin{aligned}
+    \vec{M} = \left( \frac{\mu}{\mu_{0}} - 1 \right) \frac{B_{i}}{\mu}
+    = \left(\frac{\mu}{\mu_{0}} - 1 \right) \frac{3 \mu_{0}}{2\mu_{0} + \mu} \vec{H}_0 
+    = \frac{3 \left( \mu - \mu_0 \right)}{2\mu_{0} + \mu} \vec{H}_0 
+  \end{aligned}
+\end{equation*}
+
+磁化电流为
+
+\begin{equation*}
+  \begin{aligned}
+    \frac{4}{3} \pi R_0^3 \vec{M} = \frac{4 \pi R_0^3 \left( \mu - \mu_0 \right)}{2\mu_{0} + \mu} \vec{H}_0
+  \end{aligned}
+\end{equation*}
 
 \paragraph{3.13}
 
