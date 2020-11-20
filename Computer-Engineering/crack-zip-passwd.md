@@ -10,7 +10,8 @@ I used Ark to perform this action.
 
 ### Step 1: Create hash file
 
-```
+```bash
+sudo pacman -S john
 zip2john file.zip | cut -d ":" -f 2 > zip.hash
 ```
 
@@ -18,13 +19,14 @@ zip2john file.zip | cut -d ":" -f 2 > zip.hash
 
 My laptop do not have Nvidia or AMD GPU, only Intel processer is installed. So I need to install opencl driver by
 
-```
+```bash
 sudo pacman -S intel-compute-runtime
 ```
 
 Try hashcat benchmark
 
-```
+```bash
+sudo pacman -S hashcat
 hashcat --benchmark --force
 ```
 
@@ -32,7 +34,7 @@ hashcat --benchmark --force
 
 Observe the hash
 
-```
+```bash
 cat zip.hash
 ```
 
@@ -53,7 +55,7 @@ a32d5f98bdaa426f1c58122eaf6c3269b*c658ddbebd8d31abba1c*$/zip2$:破解必读.txt:
 
 at the end of the hash, which indicates that the signature is `zip2`, to determine which hash code to use, use `grep`
 
-```
+```bash
 hashcat --help | grep zip --ignore-case
 ```
 
@@ -78,6 +80,6 @@ The hash code for `zip` is `13600`.
 
 Then we start cracking. Since I have known that the password contains 4 digits consists of lower-case letters and numbers.
 
-```
+```bash
 hashcat -a 3 -m 13600 --force file.hash -1 '?d?l' '?1?1?1?1'
 ```
