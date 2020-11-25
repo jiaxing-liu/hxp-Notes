@@ -88,4 +88,4 @@ and restart nginx
 systemctl restart nginx
 ```
 
-the default username and password for qbittorrt is`admin` and `adminadmin`
+the default username and password for qbittorrent is`admin` and `adminadmin`
