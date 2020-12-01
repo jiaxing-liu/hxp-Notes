@@ -5,7 +5,7 @@
 Create Disk Image
 
 ```bash
-qemu-img create -f qcow2 ubuntu-disk.cow 20G
+qemu-img create -f qcow2 ubuntu-disk.cow2 20G
 ```
 
 Rezize Image with
