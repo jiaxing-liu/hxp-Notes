@@ -1,0 +1,39 @@
+【综述内容简述】
+【*Revisiting the Central Dogma One Molecule at a TIme, 2011】
+可以看其中的boxes，里面写了研究方法，大标题是具体的生物步骤，对应的生化过程和动力学机制
+
+【*Using pharmacological chaperones to restore proteostasis, 2014】
+用药理学分子伴侣去重建蛋白质稳态，一个看上去很漂亮的药理学Review
+
+【*Globular Protein Folding In Vitro and In Vivo, 2016】
+好东西啊，体内体外蛋白质折叠，模型，体内限制
+
+【*Folding and Misfolding of Human Membrane Proteins in Health and Disease: From Single Molecules to Cellular Proteostasis, 2018】
+2 膜蛋白和水溶蛋白的不同点
+3 膜蛋白折叠动力学
+5 对人类疾病的影响，连接药物分子动力学
+6 其他影响，操纵分子，如分子伴侣介绍
+7 未来方向
+
+【*Protein Folding: Then and Now, 2008】
+蛋白质折叠动力学，中间态，展开太，对蛋白质聚集和人类疾病的影响
+
+【*Mechanical Processed in Biochemistry, 2004】
+机械过程的影响，力的影响
+1 对反应的影响，动力学
+2 力驱动展开
+3 内部力，分子马达
+4 酶催化
+
+【*Single molecule force spectroscopy using polyproteins】
+1 基本的生物问题
+2 AFM 应用能力
+3 多聚蛋白，材料
+4 应用，未来方向
+
+【*Single-Molecule Studies of Protein Folding, 2008】
+不同的研究方法
+
+【*Protein Folding Problem, 50 Years On】
+最近五十年，蛋白质折叠的综述，包括几大问题和目前研究近况，对计算机模型的介绍稍微详细
+
