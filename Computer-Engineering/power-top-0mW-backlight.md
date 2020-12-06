@@ -18,7 +18,19 @@ xset -d :0 dpms force off
 
 then tapped touchpad and screen went on, just as **[marcelopm](https://github.com/marcelopm)** said in this [issue](https://github.com/fenrus75/powertop/issues/62) on GitHub.
 
-The final solution was to calibrate powertop with
+I also edited `/etc/default/grub`, added
+
+```
+GRUB_CMDLINE_LINUX="acpi_backlight=vendor"
+```
+
+and regenerated `grub.cfg` by
+
+```bash
+sudo grub-mkconfig /boot/grub/grub.cfg
+```
+
+The final solution was it and to calibrate powertop with
 
 ```bash
 sudo powertop --calibrate
