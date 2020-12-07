@@ -49,22 +49,35 @@
 
 % Multi-line author information
 \usepackage{authblk}
-\author{物理4+4 1801 \quad 胡喜平 \quad U201811966}
-\affil{https://hxp.plus/}
+\author{物理4+4 1801 \quad 胡喜平 \quad U201811966 \quad https://hxp.plus/ \quad hxp201406@gmail.com}}
+\date{}
+% Keywords command
+\providecommand{\keywords}[1]
+{
+  \textbf{关键词:} #1
+}
 
 \title{计算机在蛋白质三维结构预测中的应用}
 
 \begin{document}
 
 \maketitle
-
-\section{Abstract 引言}
+\begin{center}
+  \Large\textbf{Abstract}
+\end{center}
 
 Proteins are basic units of life, consisting of amino acids. As far as our human know, there are about 20 different types of amino acids associates with life, the in-sequence amino acids folds automatically into proteins with unique structure and function. Although the chemists have revealed us the forces between every two of the amino acids, but as for a protein, there are thousands of amino acids. Whenever a new amino acids joins, each of the previous ones changes position, the whole protein's structure changes, so the question becomes difficult and may not be solved by simply calculating the forces between each of the two amino acids, even if we have compute clouds consists of thousands of compute nodes. So we need algorithms to simplify our compute in predicting structure of proteins with given amino acid sequences.
 
-蛋白质是生命活动的基本单元，它由氨基酸组成。而目前人类已知的构成生命体中蛋白质的氨基酸一共只有20余种，这些氨基酸按照顺序拼接在一起形成肽链，肽链自动折叠成具有三维空间结构的蛋白质。而氨基酸分子之间的相互作用，分子化学已经能够解释。但是对于成百上千的氨基酸按照顺序形成的蛋白质，每多一个氨基酸，肽链形成的空间结构就会改变，不同氨基酸之间链接时的相对方向和距离就会改变，这个问题就会变得无比复杂，即使人类的云计算集群有上千台计算节点，依旧不能处理这样的问题。因此需要一些算法来简化分子预测时的运算。最新新兴起的人工智能与机器学习技术被应用在了已知氨基酸序列的蛋白质结构预测中。
+\begin{center}
+  \Large\textbf{摘要}
+\end{center}
 
-\section{用计算机研究蛋白质折叠的意义}
+蛋白质是生命活动的基本单元，它由氨基酸组成。而目前人类已知的构成生命体中蛋白质的氨基酸一共只有20余种，这些氨基酸按照顺序拼接在一起形成肽链，肽链自动折叠成具有三维空间结构的蛋白质。而氨基酸分子之间的相互作用，分子化学已经能够解释。但是对于成百上千的氨基酸按照顺序形成的蛋白质，每多一个氨基酸，肽链形成的空间结构就会改变，不同氨基酸之间链接时的相对方向和距离就会改变，这个问题就会变得无比复杂，即使人类的云计算集群有上千台计算节点，依旧不能处理这样的问题。因此需要一些算法来简化分子预测时的运算。最新新兴起的人工智能与机器学习技术被应用在了已知氨基酸序列的蛋白质结构预测中。
+\newline\newline
+\noindent\!\!\!\!
+\keywords{蛋白质的折叠，计算机模拟}
+
+\section{引言}
 
 蛋白质的折叠一直是困扰物理学家和生物学家很久的问题。现在依旧没有解决的问题主要有三个方面：为什么特定氨基酸序列能折叠成特定的三维蛋白质空间结构；为什么蛋白质折叠的速度比我们预想的要快，以及如何根据氨基酸序列得到折叠成的蛋白质空间结构、如何从已知的蛋白质结构反推出它的氨基酸序列。
 
