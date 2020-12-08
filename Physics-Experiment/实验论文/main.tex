@@ -1,0 +1,136 @@
+ \documentclass{article}
+
+% Chinese Support using xeCJK
+%\usepackage{xeCJK}
+%\setCJKmainfont{SimSun}
+
+% Chinese Support using CTeX
+\usepackage{ctex}
+\usepackage{multicol}
+% Math Support
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{wasysym}
+\newcommand{\angstrom}{\text{\normalfont\AA}}
+
+% Graphics Support
+\usepackage{graphicx}
+\usepackage{float}
+
+% Reduced page margin
+\usepackage{geometry}
+\geometry{a4paper,scale=0.8}
+
+\usepackage{caption}
+\usepackage{subcaption}
+
+% d and e should be math operators
+\newcommand*{\dif}{\mathop{}\!\mathrm{d}}
+\newcommand*{\md}{\mathop{}\!\mathrm{d}}
+\newcommand*{\me}{\mathrm{e}}
+
+% No indent for each paragraph
+% \usepackage{parskip}
+% \setlength{\parindent}{0cm}
+
+% Bold style for Greek letters
+\usepackage{bm}
+\let\Oldmathbf\mathbf
+\renewcommand{\mathbf}[1]{\boldsymbol{\Oldmathbf{#1}}}
+
+% More space for dfrac in cell
+\usepackage{cellspace}
+\setlength{\cellspacetoplimit}{5pt}
+\setlength{\cellspacebottomlimit}{5pt}
+
+% SI units
+\newcommand{\si}[1]{\  \mathrm{#1}}
+
+% Multi-line author information
+\usepackage{authblk}
+\author{物理4+4 1801 \quad 胡喜平 \quad U201811966 \quad https://hxp.plus/ \quad hxp201406@gmail.com}
+\date{}
+% Keywords command
+\providecommand{\keywords}[1]
+{
+  \textbf{关键词:} #1
+}
+
+\title{全息影像技术的原理及应用}
+
+\begin{document}
+
+\maketitle
+
+\begin{center}
+  \Large\textbf{摘要}
+\end{center}
+
+全息影像技术指的是制作全息图的技术。全息图指的是记录光在某一点相位和强度的图像，是一个二维的图像，通常是明暗交替变化的。传统的图像只能记录光在某一平面的光强和颜色（即波长），全息图目前不能记录一种以上的波长信息，至少现在的只有一个颜色的全息影像技术仅允许一个特定的波长。但是全息图可以记录光的相位和光强。全息影响技术在信息的高密度存储、光学显微镜、安全与加密领域有一些有意义的应用，而且现在开始发展的3D全息技术在AR等领域有重大应用。
+\newline\newline
+\noindent\!\!\!\!
+\keywords{全息影像、全息原理}
+
+\begin{multicols}{2}
+
+\section{引言}
+
+全息影像技术指的是拍摄和复现全息图的技术，其中需要的工具是一个相干的激光光源、一个摄像机来记录参考光和物体发出的光叠加生成的干涉图像，一个空间光调制器用来复现全息图像。下面介绍全息影像技术的具体细节，包括具体实现的原理以及目前该技术的不足。
+
+\section{二维全息图的构建与再现}
+
+\subsection{构建全息图}
+
+全息图的构建原理是光的干涉，激光器发出相干的激光，之后通过扩束器和凸透镜将很窄的激光变为比物体宽的平行相干光束。
+
+相干的平行光分为两束，一束直接通过分束镜和反射镜到感光器件上，称为参考光。另一束照射到物体上并反射，反射后的光到达感光器件上，称为测量光。测量光和参考光在感光器件上干涉，形成干涉图样。
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.9\linewidth]{figures/全息图的构建}
+  \caption{全息图的构建光路}
+\end{figure}
+
+其中感光的器件可以用一些化学材料，也可以用光传感器。使用感光材料制作全息传感器的时候需要考虑材料对激光的敏感程度、材料对光强的响应是不是线性的，以及拍摄全息图的时候的噪声是否足够小。综合考虑这几种因素之后才能确保得到清晰度高的图像。
+
+其次，全息装置的容错率是及其微小的，环境的微小变化，例如压强、温度，都会对精密的全息图造成影响，而一个微小的影响就足以让全息图没有办法复现。当然实验台要稳定，如果实验仪器发生了振动，那会造成更大的影响。
+
+得到的全息图应当是交替变化的亮暗条纹，其中亮的地方表示参考光和测量光干涉相长，相位相同。暗的地方表示参考光和测量光相位相反，相互干涉抵消。因此通过拍摄全息图，把光的相位信息和强度信息合并成成为一个光的强度信息。
+
+在用光路构建全息图的时候，有一个技巧就是在放置物体之前，先将光路仔细调节使得感光器件上形成干涉条纹，而且条纹越细得到的干涉图样就越好。我们在做实验的时候得到的这个结论。而且在实验中观察到放入物体后干涉条纹发生了弯曲。因此可能是图像的信息和干涉条纹的弯曲有关，条纹密集程度和图像分辨率正相关。
+
+\subsection{再现全息图}
+
+前面我们得到的全息图是来自物体的光和参考光叠加的光强分布。为了再现全息图我们需要想办法在已知参考光全部信息和参考光与来自物体的测量光叠加干涉后的光强信息的情况下，得到来自物体的测量光。
+
+很显然，我们如果能在全息图中干涉后的光中减去参考光，就能得到来自物体的测量光。全息图再现的装置如下
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=0.9\linewidth]{figures/全息图的再现}
+  \caption{全息图的再现光路}
+\end{figure}
+
+仔细与全息图的构建光路相比，可以发现：这个再现的光路和在全息图构建光路中遮挡住照射物体的光时的光路一样。
+\section{三维全息技术的发展}
+
+\section{前景与展望}
+
+
+\end{multicols}
+
+\begin{thebibliography}{99}  
+\bibitem{ref1} Holography - Wikipedia, https://en.wikipedia.org/wiki/Holography
+\bibitem{ref2} Holography - an overview, Science Direct, https://www.sciencedirect.com/topics/physics-and-astronomy/holography
+\bibitem{ref3} Holographic Sensors: Three-Dimensional Analyte-Sensitive Nanostructures and Their Applications, https://pubs.acs.org/doi/10.1021/cr500116a
+  
+\end{thebibliography}
+
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:
