@@ -3,7 +3,7 @@
 remove all the spaces from filename:
 
 ```bash
-for f in *; do mv "$f" `echo $f | tr ' ' '_'`; done
+for f in *; do mv "$f" "$(echo $f | tr ' ' '_')"; done
 ```
 
 convert all mkv to mp4:
