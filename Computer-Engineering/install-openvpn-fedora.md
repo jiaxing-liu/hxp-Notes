@@ -1,4 +1,4 @@
-# Install Openvpn on Fedora
+# Install OpenVPN on Fedora
 
 ## Server
 
@@ -141,7 +141,7 @@ Download the ovpn file
 scp root@vpn-server:/root/<vpn-username>.ovpn .
 ```
 
-Install Openvpn
+Install OpenVPN
 
 ```bash
 yum install openvpn
@@ -172,7 +172,7 @@ Every time I add the vpn via kde gui, it fails. Maybe there are some bugs in imp
 
 ## Troubleshooting
 
-Linux client cannot get DNS resolution proxied: Add these to your `client.conf`
+Linux client cannot get DNS resolution proxied: Add these to your `<vpn-username>.ovpn`
 
 ```
 script-security 2
@@ -185,4 +185,34 @@ Delete these lines
 ```
 ignore-unknown-option block-outside-dns
 setenv opt block-outside-dns # Prevent Windows 10 DNS leak
+```
+
+you may also install `openvpn-update-systemd-resolved` if it doesn't work.
+
+```bash
+yay -S openvpn-update-systemd-resolved openresolv
+```
+
+enable systemd-resolved by
+
+```bash
+sudo systemctl enable systemd-resolved --now
+```
+
+after installing, add these lines to your vpn config
+
+```
+script-security 2
+setenv PATH /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
+up /etc/openvpn/scripts/update-systemd-resolved
+up-restart
+down /etc/openvpn/scripts/update-systemd-resolved
+down-pre
+```
+## Increase Stability
+Add these in client config
+```
+keepalive 3 9
+connect-retry 3	3
+;persist-tun
 ```
