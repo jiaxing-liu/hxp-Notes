@@ -55,6 +55,18 @@ And enable `xhost`
 xhost +local:
 ```
 
+Copy all your fonts:
+
+```bash
+cp -a /usr/share/fonts/* /var/lib/machines/matlab-debian9/usr/share/fonts/
+```
+
+Then shell into the container and run
+
+```bash
+fc-cache -f -v
+```
+
 Then run `Firefox` inside container
 
 ```bash
@@ -77,8 +89,10 @@ sudo mount -t iso9660 'Matlab98R2020a_Linux 64.iso' /mnt/matlab
 boot into the container
 
 ```bash
-sudo systemd-nspawn -b -D /var/lib/machines/matlab-debian9
+sudo systemd-nspawn -b -D /var/lib/machines/matlab-debian9 --bind=/mnt/matlab
 ```
+
+if you encounter an error message "archive is not a ZIP archive" during MATLAB installation, remove the `-b` option
 
 install requisite libraries
 
