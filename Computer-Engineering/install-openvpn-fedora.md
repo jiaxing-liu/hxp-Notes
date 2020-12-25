@@ -83,6 +83,8 @@ Just simply run the installation script again
 echo "ifconfig-push 10.8.0.50 255.255.255.0" > /etc/openvpn/ccd/<vpn-username>
 ```
 
+or edit `ipp.txt` if there is a line `ifconfig-pool-persist ipp.txt` in `server.conf`
+
 ## Tracking user connects
 
 make a directory under where all users may visit
