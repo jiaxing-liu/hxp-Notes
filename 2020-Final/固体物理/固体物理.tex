@@ -199,7 +199,7 @@ $B$，$n$，$M$为常数，马德隆常数
 \end{equation*}
 
 \subsubsection{晶面指数}
-晶面与基矢截距为$\frac{a_1}{h_1}$，$\frac{a_2}{h_2}$，$\frac{a_3}{h_3}$的晶面为
+晶面与基矢截距为$a_1/h_1$，$a_2/h_2$，$a_3/h_3$的晶面为
 \begin{equation*}
   \left( h_1h_2h_3 \right)
 \end{equation*}
@@ -208,53 +208,234 @@ $B$，$n$，$M$为常数，马德隆常数
 
 \subsubsection{倒格子定义}
 
-\begin{equation}
-  \vec{b}_1 = \frac{2\pi}{\Omega} \left( \vec{a}_2 \times \vec{a}_3 \right)
-\end{equation}
-
-\begin{equation}
-  \vec{b}_2 = \frac{2\pi}{\Omega} \left( \vec{a}_3 \cdot \vec{a}_1 \right)
-\end{equation}
-
-\begin{equation}
-  \vec{b}_3 = \frac{2\pi}{\Omega} \left( \vec{a}_1 \times \vec{a}_2 \right)
-\end{equation}
+\begin{equation*}
+  \begin{aligned}
+    \vec{b}_1 = \frac{2\pi}{\Omega} \left( \vec{a}_2 \times \vec{a}_3 \right) \\
+    \vec{b}_2 = \frac{2\pi}{\Omega} \left( \vec{a}_3 \times \vec{a}_1 \right) \\
+    \vec{b}_3 = \frac{2\pi}{\Omega} \left( \vec{a}_1 \times \vec{a}_2 \right)
+  \end{aligned}
+\end{equation*}
 
 \subsubsection{倒格矢}
 
-\begin{equation}
+\begin{equation*}
   \vec{K}_h = h_1 \vec{b}_1 + h_2 \vec{b}_2 + h_3 \vec{b}_3
-\end{equation}
+\end{equation*}
 
 \section{晶体的衍射}
 
 \subsection{劳厄衍射方程}
 
-\begin{equation}
+\begin{equation*}
   \vec{R}_l \cdot \left( \vec{k} - \vec{k}_0 \right) = 2\pi n
-\end{equation}
+\end{equation*}
 
 \subsection{布拉格衍射方程}
 
-\begin{equation}
+\begin{equation*}
   2d \sin \theta = n\lambda
-\end{equation}
+\end{equation*}
 
 \subsection{倒格子空间两种衍射方程的表述}
 
-\begin{equation}
+\begin{equation*}
   \vec{k} - \vec{k}_0 = n \vec{K}_h
-\end{equation}
+\end{equation*}
 
 \subsection{布里渊表述}
 
 $\vec{G}$为倒格矢
 
-\begin{equation}
+\begin{equation*}
   \vec{G} \cdot \left( \vec{k} + \frac{\vec{G}}{2} \right) = 0
-\end{equation}
+\end{equation*}
 
 所有的倒格矢$\vec{G}$的垂直平分线构成布里渊区
+
+\section{原子振动}
+
+\subsection{单原子链}
+
+\subsubsection{运动方程}
+
+\begin{equation*}
+  m \frac{\md^2 x_n}{\md t^2} = \beta \left( x_{n+1} + x_{n-1} - 2x_n \right)
+\end{equation*}
+
+令$\omega=\left( 2\beta/m \right)^{1/2}$，方程的解为
+
+\begin{equation*}
+  x=A\exp \left[ - i \left( \omega t - qna \right) \right]
+\end{equation*}
+
+\subsubsection{格波}
+
+\begin{equation*}
+  \lambda = \frac{2\pi}{q} \quad\quad\quad v_p = \frac{\omega}{q}
+\end{equation*}
+
+\subsubsection{色散关系}
+
+把运动方程的解代入运动方程，得到
+
+\begin{equation*}
+  \omega = 2 \sqrt{\frac{\beta}{m}} \left| \sin \frac{qa}{2} \right|  
+\end{equation*}
+
+\subsubsection{长波极限}
+
+当$\lambda \rightarrow \infty$时
+
+\begin{equation*}
+  \omega = qa \sqrt{\frac{\beta}{m}} 
+\end{equation*}
+
+弹性模量$K$，介质密度$a$
+
+\begin{equation*}
+  a \sqrt{\frac{\beta}{m}} = \sqrt{\frac{K}{\rho}} = \sqrt{\frac{\beta a}{m/a}}  
+\end{equation*}
+
+\subsubsection{短波极限}
+
+当$qa/2 \rightarrow \pm \pi /2$时
+
+\begin{equation*}
+  v_g = \frac{\md \omega}{\md q} = 0 \quad\quad\quad v_p = \frac{\omega}{q} = \frac{2}{q} \sqrt{\frac{\beta}{m}} 
+\end{equation*}
+
+\subsubsection{波恩-卡门周期性条件}
+
+$N$个原子组成的原子链
+
+\begin{equation*}
+  qNa = \pi l
+\end{equation*}
+
+$l$是整数，一个布里渊区里面
+
+\begin{equation*}
+  - \frac{\pi}{a} < q \leq \frac{\pi}{a} \Rightarrow - \frac{N}{2} < l \leq \frac{N}{2}
+\end{equation*}
+
+\subsection{双原子链}
+
+\subsubsection{运动方程}
+
+\begin{equation*}
+  \begin{aligned}
+    m \frac{\md^2 x_{2n+1}}{\md t^2} &= \beta \left( x_{2n+2} + x_{2n} - 2 x_{2n+1} \right) \\
+    M \frac{\md^2 x_{2n+2}}{\md t^2} &= \beta \left( x_{2n+3} + x_{2n+1} - 2 x_{2n+2} \right)
+  \end{aligned}
+\end{equation*}
+
+解为
+
+\begin{equation*}
+  \begin{aligned}
+    x_{2n+1} &= A \exp \left[ i \left( q \left( 2n+1 \right)a-\omega t \right) \right] \\
+    x_{2n+2} &= B \exp \left[ i \left( q \left( 2n+2 \right)a-\omega t \right) \right]
+  \end{aligned}
+\end{equation*}
+
+\subsubsection{色散关系}
+
+将解代入方程，得到
+
+\begin{equation*}
+  \left|
+    \begin{aligned}
+      2\beta - m \omega^2 && -2\beta \cos \left( qa \right) \\
+      -2\beta \cos \left( qa \right) && 2\beta -M\omega^2
+    \end{aligned}
+  \right| =0 
+\end{equation*}
+
+解出$\omega_+$为光学波，$\omega_-$为声学波
+
+\subsubsection{波矢取值范围}
+
+\begin{equation*}
+  2qNa=2\pi l
+\end{equation*}
+
+$l$是整数，将$q$限制在
+
+\begin{equation*}
+  - \frac{\pi}{2a} < q \leq \frac{\pi}{2a}
+\end{equation*}
+
+$l$范围
+
+\begin{equation*}
+  - \frac{N}{2} < l \leq \frac{N}{2}
+\end{equation*}
+
+\subsection{原子振动的量子理论}
+
+\subsubsection{声子}
+
+能量
+
+\begin{equation*}
+  \hbar \omega
+\end{equation*}
+
+动量
+
+\begin{equation*}
+  \hbar \vec{q}
+\end{equation*}
+
+\subsubsection{格波能量}
+
+\begin{equation*}
+  \varepsilon_{qs} = \left( n_{qs} + \frac{1}{2} \right) \hbar \omega_s \left( \vec{q} \right)
+\end{equation*}
+
+\subsection{晶格比热的模型}
+
+\subsubsection{爱因斯坦模型}
+
+\begin{equation*}
+  C_V = 3Nk_B f_E \left( \frac{\theta_E}{T} \right)
+\end{equation*}
+
+其中
+
+\begin{equation*}
+  \begin{aligned}
+    f_E \left( \frac{\theta_E}{T} \right) &= \left( \frac{\theta_E}{T} \right)^2 \frac{\me^{\frac{\theta_E}{T}}}{\left( \me^{\frac{\theta_E}{T}} -1 \right)^2} \\
+    \theta_E &= \frac{\hbar \omega_E}{k_B}
+  \end{aligned}
+\end{equation*}
+
+\subsubsection{德拜模型}
+
+\begin{equation*}
+  C_V = 3Nk_B f_D \left( \frac{T}{\theta_D} \right)
+\end{equation*}
+
+其中
+
+\begin{equation*}
+  \begin{aligned}
+    f_D \left( T / \omega \right) &= 3 \left( \frac{T}{\theta_D}  \right)^3 \int_0^{\theta_D / T} \frac{\xi^4 \me^{\xi}}{\left( \me^{\xi} - 1 \right)^2} \md \xi \\
+    \xi &= \frac{\hbar \omega_m}{k_B T}
+  \end{aligned}
+\end{equation*}
+
+
+
+
+
+
+
+
+
+
+
+
 
 \end{multicols}
 
