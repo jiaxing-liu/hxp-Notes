@@ -387,6 +387,12 @@ $l$范围
   \hbar \vec{q}
 \end{equation*}
 
+频率为$\omega$的声子数目
+
+\begin{equation*}
+  n \left( \omega \right) = \frac{1}{\me^{\hbar \omega / k_B T} - 1}
+\end{equation*}
+
 \subsubsection{格波能量}
 
 \begin{equation*}
@@ -424,6 +430,145 @@ $l$范围
     \xi &= \frac{\hbar \omega_m}{k_B T}
   \end{aligned}
 \end{equation*}
+
+声子的分布函数为
+
+\begin{equation*}
+  g \left( \omega \right) = \frac{3 V}{2\pi^2 \bar{v}^3} \omega^2
+\end{equation*}
+
+声子频率上限为
+
+\begin{equation*}
+  \omega_m = \bar{v} \left[ 6\pi^2 \left( \frac{N}{V} \right) \right]^{1/3}
+\end{equation*}
+
+\section{金属电子论}
+
+\subsection{电子的能量}
+
+\begin{equation*}
+  \varepsilon_n = \frac{h^2}{2mL^2} \left( n_x^2 + n_y^2 + n_z^2 \right) = \frac{\hbar}{2m} \left( k_x^2 + k_y^2 + k_z^2 \right) 
+\end{equation*}
+
+\subsection{状态空间}
+
+\begin{equation*}
+  \frac{1}{\Delta \vec{k}} = \frac{V}{8\pi^3}
+\end{equation*}
+
+\subsection{能态密度}
+
+能量为$\varepsilon$的电子在一个半径为
+
+\begin{equation*}
+  k = \frac{\sqrt{2m\varepsilon} }{\hbar}
+\end{equation*}
+
+的球面上，能量处于$\varepsilon$到$\varepsilon + \md \varepsilon$之间电子数目为
+
+\begin{equation*}
+  \md N = 2\cdot \frac{V}{8\pi^3}\cdot 4\pi k^2 \md k = 4\pi V \left( \frac{2m}{h^2} \right)^{3/2} \varepsilon^{1/2} \md \varepsilon
+\end{equation*}
+
+能态密度
+
+\begin{equation*}
+  g \left( \varepsilon \right) = \frac{\md N}{\md \varepsilon} = C \varepsilon^{1/2}
+\end{equation*}
+
+其中
+
+\begin{equation*}
+  C = 4\pi V \left( \frac{2m}{h^2} \right)^{3/2}
+\end{equation*}
+
+\subsection{费米面}
+
+\begin{equation*}
+  nV = 2\cdot \frac{V}{8\pi^3}\cdot \frac{4}{3} \pi \cdot \left( k_F^0 \right)^3 \Rightarrow k_F^0 = \left( 3\pi^2 n \right)^{1/3}
+\end{equation*}
+
+\subsection{费米面相关的物理量}
+
+费米能
+
+\begin{equation*}
+  \varepsilon_F^0 = \frac{\hbar^2 \left( k_F^0 \right)^2}{2m}
+\end{equation*}
+
+费米动量
+
+\begin{equation*}
+  p_F^0 = \hbar k_F^0
+\end{equation*}
+
+费米速度
+
+\begin{equation*}
+  v_F^0 = \frac{\hbar k_F^0}{m}
+\end{equation*}
+
+费米温度
+
+\begin{equation*}
+  T_F^0 = \frac{\varepsilon_F^0}{k_B}
+\end{equation*}
+
+基态能量
+
+\begin{equation*}
+  E_0 = 2\cdot \frac{V}{8\pi^3} \int_0^{k_F^0} \frac{\hbar^2 k^2}{2m} \cdot 4\pi k^2 \md k
+\end{equation*}
+
+\subsection{费米-狄拉克统计}
+
+\begin{equation*}
+  f \left( \varepsilon \right) = \frac{1}{\me^{\left( \varepsilon - \varepsilon_F \right)/k_B T} + 1}
+\end{equation*}
+
+积分近似公式
+
+\begin{equation*}
+  \int_0^{\infty} G \left( \varepsilon \right) \left( - \frac{\partial f}{\partial \varepsilon} \right) \md \varepsilon = G \left( \varepsilon_F \right) + \frac{\pi^2}{6} \left( k_B T \right)^2 G'' \left( \varepsilon_F \right)
+\end{equation*}
+
+通常遇到积分的式子，先分布积分，之后使用这个公式
+
+\subsection{费米能随温度的变化关系}
+
+\begin{equation*}
+  \varepsilon_F = \varepsilon_F^0 \left[ 1 - \frac{\pi^2}{12} \left( \frac{k_B T}{\varepsilon_F^0} \right)^2 \right]
+\end{equation*}
+
+\subsection{金属自由电子气的能量}
+
+\begin{equation*}
+  E = \frac{3}{5} N \varepsilon_F^0 \left[ 1 + \frac{5\pi^2}{12} \left( k_B T / \varepsilon_F^0 \right)^2 \right]
+\end{equation*}
+
+\subsection{金属自由电子气的比热}
+
+\begin{equation*}
+  C_V^e = \frac{\partial E}{\partial T} = \frac{\pi^2}{2} Nk_B \left( k_BT / \varepsilon_F^0 \right)
+\end{equation*}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
