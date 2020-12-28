@@ -14,3 +14,7 @@ MSYH.TTC,Microsoft YaHer UI
 ```
 
 To the beginning of the key, then logout and log in back.
+
+Then go to Control Panel -> Region -> Administrative -> Change system locale
+
+And change locale to "Chinese (Simplified, China)"
