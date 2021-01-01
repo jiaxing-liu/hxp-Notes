@@ -218,3 +218,11 @@ keepalive 3 9
 connect-retry 3	3
 ;persist-tun
 ```
+
+Add route
+
+```bash
+firewall-cmd --add-forward-port=port=800:proto=tcp:toport=80:toaddr=10.8.0.2
+firewall-cmd --runtime-to-permanent
+```
+
