@@ -10,6 +10,7 @@ Do what README says.
 
 ```bash
 sudo dnf install cmake meson glib2-devel systemd-devel readline-devel check libtool iw
+sudo dnf install gstreamer1-libav
 ```
 
 ### Test compatibilities
@@ -17,11 +18,13 @@ sudo dnf install cmake meson glib2-devel systemd-devel readline-devel check libt
 ```bash
 cd res
 sudo ./test-hardware-capabilities.sh
+sudo ./test-viewer.sh
 ```
 
 ### Make and install
 
 ```bash
+sudo cp org.freedesktop.miracle.conf /etc/dbus-1/system.d/
 mkdir build
 cd build/
 ../autogen.sh g --prefix=/usr
