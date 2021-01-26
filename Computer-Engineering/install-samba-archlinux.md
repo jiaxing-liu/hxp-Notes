@@ -109,6 +109,8 @@ Sample configuration of samba:
 ;  delete user from group script = /usr/sbin/deluser %u %g
 ;  delete group script = /usr/sbin/groupdel %g
 
+server min protocol = CORE
+
 
 #============================ Share Definitions ==============================
 [homes]
@@ -260,4 +262,11 @@ sudo systemctl restart smb
 ```
 
 And access shared folder by typing `//<your_ip>/<shared_folder_name>` in windows file explorer.
+
+## Optional: Install wsdd
+
+```bash
+yay -S wsdd
+sudo systemctl enable --now wsdd
+```
 
