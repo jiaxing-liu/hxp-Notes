@@ -1,30 +1,30 @@
-# Deploying OpenStack Cluster on CentOS Stream with packstack
+# Deploying OpenStack Cluster on CentOS 8 with packstack
 
  ## Environment Description
 
-5 CentOS Stream with external network access is needed. The following table describes the hardware requirements.
+5 CentOS 8.3 with external network access is needed. The following table describes the hardware requirements.
 
 | Role       | hostname   | IP address   | CPU    | RAM  | Disk  |
 | ---------- | ---------- | ------------ | ------ | ---- | ----- |
-| Controller | controller | 192.168.0.10 | 2vCPUs | 8GB  | 100GB |
-| Compute    | compute01  | 192.168.0.20 | 4vCPUs | 16GB | 200GB |
-| Compute    | compute02  | 192.168.0.21 | 4vCPUs | 16GB | 200GB |
-| Network    | network    | 192.168.0.30 | 2vCPUs | 8GB  | 100GB |
-| NTP        | ntp        | 192.168.0.40 | 1vCPU  | 2GB  | 20GB  |
+| Controller | controller | 192.168.8.10 | 2vCPUs | 8GB  | 100GB |
+| Compute    | compute01  | 192.168.8.20 | 4vCPUs | 16GB | 200GB |
+| Compute    | compute02  | 192.168.8.21 | 4vCPUs | 16GB | 200GB |
+| Network    | network    | 192.168.8.30 | 2vCPUs | 8GB  | 100GB |
+| NTP        | ntp        | 192.168.8.40 | 1vCPU  | 2GB  | 20GB  |
 
 Network configuration is described below
 
-- Gateway IP Address: 192.168.0.1
-- Subnet Address: 192.168.0.0/24
-- Available IP Address: 192.168.0.50 - 150
-- DNS Server: 192.168.0.1
+- Gateway IP Address: 192.168.8.1
+- Subnet Address: 192.168.8.0/24
+- Available IP Address: 192.168.8.50 - 150
+- DNS Server: 192.168.8.1
 
 ## Set Static IP Address
 
 On all hosts
 
 ```bash
-[root@192 ~]# nmcli connection modify ens33 ipv4.method manual ipv4.addresses <ip_addr>/24 ipv4.dns 192.168.0.1 ipv4.gateway 192.168.0.1 autoconnect yes
+[root@192 ~]# nmcli connection modify ens33 ipv4.method manual ipv4.dns 192.168.8.1 ipv4.gateway 192.168.8.1 autoconnect yes ipv4.addresses <ip_addr>/24
 [root@192 ~]# nmcli connection up ens33 
 ```
 
@@ -37,6 +37,7 @@ Write `/etc/hosts`
 # See hosts(5) for details.
 #
 127.0.0.1    localhost
+::1          localhost
 
 192.168.0.10 controller
 192.168.0.20 compute01
@@ -79,7 +80,7 @@ On ntp, edit `/etc/chrony.conf`
 
 ```bash
 # Allow NTP client access from local network.
-allow 192.168.0.0/24
+allow 192.168.8.0/24
 ```
 
 On other servers, edit `/etc/chrony.conf`
@@ -110,10 +111,10 @@ On all OpenStack attenders
 
 ```bash
 for server in {controller,compute01,compute02,network};do ssh root@$server "dnf config-manager --enable powertools";done
-for server in {controller,compute01,compute02,network};do ssh root@$server "dnf install -y epel-release";done
-for server in {controller,compute01,compute02,network};do ssh root@$server "dnf -y update";done
+for server in {controller,compute01,compute02,network};do ssh root@$server "dnf remove -y epel-release";done
 for server in {controller,compute01,compute02,network};do ssh root@$server "sudo dnf install -y https://www.rdoproject.org/repos/rdo-release.el8.rpm";done
-for server in {controller,compute01,compute02,network};do ssh root@$server "sudo dnf install -y centos-release-openstack-victoria";done
+# Not needed but rdo project recommend to install
+# for server in {controller,compute01,compute02,network};do ssh root@$server "sudo dnf install -y centos-release-openstack-victoria";done
 for server in {controller,compute01,compute02,network};do ssh root@$server "dnf -y update";done
 ```
 
@@ -165,9 +166,253 @@ CONFIG_NETWORK_HOSTS=192.168.0.30
 
 ## Deploy with answer file
 
-On controller
+on controller
 
 ```bash
 packstack --answer-file /root/answers.txt --timeout=3000
+```
+
+## Permit Non-admin User to View Instance Status
+
+on controller, edit `/etc/nova/policy.json`, add
+
+```
+"os_compute_api:os-extended-server-attributes": ""
+```
+
+See also <https://docs.openstack.org/nova/latest/configuration/policy.html>
+
+## Add bash-completion
+
+```bash
+openstack complete | sudo tee /etc/bash_completion.d/osc.bash_completion > /dev/null
+```
+
+## Bridge Network to External
+
+on network node, edit `/etc/sysconfig/network-scripts/ifcfg-ens33`
+
+```
+TYPE=OVSPort
+NAME=ens33
+DEVICE=ens33
+ONBOOT=yes
+TYPE=OVSPort
+DEVICETYPE=ovs
+OVS_BRIDGE=br-ex
+```
+
+create `/etc/sysconfig/network-scripts/ifcfg-br-ex`
+
+```
+DEVICE=br-ex
+BOOTPROTO=none
+ONBOOT=yes
+TYPE=OVSBridge
+DEVICETYPE=ovs
+USERCTL=yes
+PEERDNS=yes
+IPV6INIT=no
+IPADDR=192.168.8.10
+PREFIX=24
+GATEWAY=192.168.8.1
+DNS1=192.168.8.1
+```
+
+restart network
+
+```bash
+systemctl restart network
+```
+
+## Modify noVNC Address
+
+on all compute nodes, edit `/etc/nova/nova.conf`
+
+```
+server_proxyclient_address=<compute_node_ip>
+```
+
+restart service
+
+```bash
+systemctl restart openstack-nova-compute.service
+```
+
+## Test the deployment
+
+on controller
+
+```bash
+source ~/keystonerc_admin
+```
+
+see all services
+
+```bash
+openstack service list
+```
+
+create private network
+
+```bash
+openstack network create private
+```
+
+create subnet for private network
+
+```bash
+openstack subnet create \
+--network private \
+--allocation-pool start=172.10.10.50,end=172.10.10.200 \
+--dns-nameserver 223.5.5.5 \
+--dns-nameserver 223.6.6.6 \
+--subnet-range 172.10.10.0/24 private_subnet
+```
+
+create public network
+
+```bash
+openstack network create \
+--provider-network-type flat \
+--provider-physical-network extnet \
+--external public
+```
+
+create subnet for public network
+
+```bash
+openstack subnet create \
+--network public \
+--allocation-pool start=192.168.8.50,end=192.168.8.150 \
+--no-dhcp \
+--subnet-range 192.168.8.0/24 public_subnet
+```
+
+create a router
+
+```bash
+openstack router create private_router
+```
+
+add router gateway
+
+```bash
+openstack router set --external-gateway public private_router
+```
+
+link router to subnet
+
+```bash
+openstack router add subnet private_router private_subnet
+```
+
+on network node, to show router information, run
+
+```bash
+ip netns show
+```
+
+to check connectivity, run
+
+```bash
+ip netns exec qrouter-<your_router_uuid_above> ping -c 1 baidu.com
+```
+
+on controller, fire up an instance
+
+```bash
+mkdir images
+cd images
+wget http://download.cirros-cloud.net/0.5.1/cirros-0.5.1-x86_64-disk.img
+```
+
+upload image
+
+```bash
+openstack image create \
+--disk-format qcow2 \
+--container-format bare --public \
+--file ./cirros-0.5.1-x86_64-disk.img "Cirros-0.5.1"
+```
+
+list images
+
+```bash
+openstack image list
+```
+
+create a security group
+
+```bash
+openstack security group create permit_all --description "Allow all ports"
+openstack security group rule create --protocol TCP --dst-port 1:65535 --remote-ip 0.0.0.0/0 permit_all
+openstack security group rule create --protocol ICMP --remote-ip 0.0.0.0/0 permit_all
+```
+
+list security group
+
+```bash
+openstack security group list
+```
+
+upload a ssh key
+
+```bash
+openstack keypair create --public-key ~/.ssh/id_rsa.pub admin
+```
+
+list ssh keys
+
+```bash
+openstack keypair list
+```
+
+list flavors
+
+```bash
+openstack flavor list
+```
+
+launch instance
+
+```bash
+openstack server create \
+--flavor m1.tiny \
+--image "Cirros-0.5.1" \
+--network private \
+--key-name admin \
+--security-group permit_all \
+mycirros
+```
+
+list all servers
+
+```bash
+openstack server list
+```
+
+allocate a floating IP
+
+```bash
+openstack floating ip create public
+```
+
+list all floating IPs
+
+```bash
+openstack floating ip list
+```
+
+assign floating IP to instance
+
+```bash
+openstack server add floating ip mycirros 192.168.8.60
+```
+
+shell into instance
+
+```bash
+ssh cirros@192.168.8.60
 ```
 
