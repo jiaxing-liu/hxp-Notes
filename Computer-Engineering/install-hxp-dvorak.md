@@ -3,6 +3,7 @@
 ## Step 0: Change keyboard layout in GNOME
 
 Go to `GNOME Settings -> Region & Language -> Add an Input Source -> English(United States) -> English(programmer Dvorak)`
+Go to `gnome tweak tools -> Keyboard & Mouse -> Additional Layout Options -> Layout of numernic keyboard -> Phone and ATM Style`
 
 ## Step 1: Backup keymap
 
@@ -82,4 +83,5 @@ and apply changes by
 ```bash
 xmodmap .Xmodmap
 ```
+
 
