@@ -1,0 +1,148 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 实验报告模板.tex                                                           %%
+%% author: hxp<hxp201406@gmail.com>                                           %%
+%% 按照基础物理实验老师发的模板更改形成                                       %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 备注：刚刚的注释刚好是80行，编写代码的时候不要超过80行，就是你的代码不要超 %%
+%% 过我注释里面最后面的“%”，超过请换行。                                      %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% 模板现在开始，请根据注释把相应的位置更改成对应的内容                       %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\documentclass{ctexart}
+
+\usepackage{ctex}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{wasysym}
+\newcommand{\angstrom}{\text{\normalfont\AA}}  % 定义了原子物理的A
+\usepackage{graphicx}
+\usepackage{float}
+\restylefloat{table}
+\usepackage{geometry}
+\geometry{a4paper,scale=0.8}  % 定义页面大小是A4，缩放是0.8
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+
+\newcommand*{\md}{\mathop{}\!\mathrm{d}}   % 定义微分算子，直立体的d
+\newcommand*{\me}{\mathrm{e}}              % 定义自然对数e，同样应当是直立体
+
+% 如果你想要每一段的开头不要空两格，注释掉下面这两行
+% \usepackage{parskip}
+% \setlength{\parindent}{0cm}
+
+% 默认的\mathbf对希腊字母不生效，这里改下
+\usepackage{bm}
+\let\Oldmathbf\mathbf
+\renewcommand{\mathbf}[1]{\boldsymbol{\Oldmathbf{#1}}}
+
+% 表格默认格内内容和边框没有留出距离，显示分数的时候，分数的上下会贴到边框上
+% 因此我增加了表格内容和边框的最短距离是5像素
+\usepackage{cellspace}
+\setlength{\cellspacetoplimit}{5pt}
+\setlength{\cellspacebottomlimit}{5pt}
+
+% \si命令是用来写单位的，单位需要和之前的数字有一个空格的距离，而且应当直立体
+% 用法：5 \si{km/h}
+\newcommand{\si}[1]{\  \mathrm{#1}}
+
+% 日期不要显示
+\date{}
+
+%% 标题三号黑体，作者信息为班级姓名学号
+\newcommand{\generatetitle}[4]{\title{\zihao{3}\heiti#1} \author{#2 \quad\quad #3 \quad\quad #4} \maketitle}
+
+%% 所有的引言、实验内容与数据处理啥的，用section
+\ctexset {
+  section = {
+    format = \raggedright\zihao{4}\heiti,  % 设置所有section的字号为四号黑体左对齐
+    name={,、},                            % 序号后跟顿号
+    aftername={\hspace{0pt}},              % 修改序号和标题直接的间距为零
+    number=\chinese{section},              % 设置序号为中文
+  },
+  subsection = {
+    format = \raggedright\zihao{5}\heiti,  % 设置所有subsection的字号为五号黑体左对齐
+    number={},              % 设置序号为没有序号
+  }
+}
+
+%% 实验背景、实验目的啥的，用subsection
+\ctexset {
+  subsection = {
+    format = \raggedright\zihao{5}\heiti,  % 所有subsection的字号为五号黑体左对齐
+    number={},                             % 设置序号为没有序号
+  }
+}
+
+%% 实验背景、实验目的啥的，用subsection
+\ctexset {
+	subsubsection = {
+		format = \zihao{5}\heiti ,  % 所有subsection的字号为五号黑体左对齐
+		number = \phantom{【}\arabic{subsubsection}.\!\!\!\!,                             % 设置序号为没有序号
+	}
+}
+
+%% 把subsection之间加上中括号
+\let\oldsubsection\subsection
+\renewcommand{\subsection}[1]{\oldsubsection{\!\!\!\!\!\!【#1】}}
+
+%% 摘要和关键词用paragraph
+
+\ctexset {
+  paragraph = {
+    format = \raggedright\zihao{5}\heiti,  % 所有paragraph的字号为五号黑体左对齐
+    number={},                             % 设置序号为没有序号
+  }
+}
+
+%% 把paragraph之间加上中括号
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1：\!\!\!\!\!\!}}
+
+%% 再把参考文献的序号去掉
+\makeatletter
+\renewcommand\@biblabel[1]{}
+\makeatother
+
+\begin{document}
+\generatetitle{实验项目}{物理4+4}{胡喜平}{U201811966}
+
+\paragraph{摘要}
+摘要内容
+% 关键词
+\paragraph{关键词}
+关键词，不少于三个
+\section{引言}
+\subsection{实验背景}
+内容
+\subsection{实验目的}
+\section{实验内容与数据处理}
+\subsection{实验原理}
+\subsubsection{这是一个subsubsection标题}
+内容
+\subsubsection{这是另一个subsubsection标题}
+内容
+\subsection{实验内容}
+\subsection{实验方法和内容}
+\subsection{实验结果的分析和结论}
+\subsection{实验中遇到的问题及解决方法}
+\section{实验小结}
+\subsection{体会或收获}
+\subsection{实验建议}
+内容
+\section{参考文献}
+\begin{itemize}[leftmargin=0pt]
+  \item[] 作者，题目，期刊名或书名，页码，出版时间
+  \item[] 其他作者，题目，期刊名或书名，页码，出版时间
+\end{itemize}
+\end{document} 
