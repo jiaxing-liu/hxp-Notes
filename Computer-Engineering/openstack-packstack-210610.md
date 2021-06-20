@@ -303,6 +303,8 @@ openstack subnet create \
 --network public \
 --allocation-pool start=192.168.8.50,end=192.168.8.150 \
 --no-dhcp \
+--gateway 192.168.8.2 \
+--dns-nameserver 192.168.8.2 \
 --subnet-range 192.168.8.0/24 public_subnet
 ```
 
