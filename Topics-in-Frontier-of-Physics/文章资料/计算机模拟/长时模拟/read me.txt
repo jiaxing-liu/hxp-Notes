@@ -1,4 +1,0 @@
-【Long-Time Protein Folding Dynamics from Short-Time Molecular Dynamics Simulations】
-来自一个诡异的杂志，2006年，引用115
-查询来源：Ken A Dill
-主要讲蛋白质折叠时间尺度和研究尺度之间的差距如何解决，长时间稳态动力学可以被马尔科夫链描述，主要讲长时模拟

@@ -1,6 +1,0 @@
-【Improved protein structure predition using predicted inter-residue orientations】
-nature2020大的一篇文章，alphafold进行蛋白质结构预测
-但是知乎上也有评论实际上没有算法的突破，主要就是神经网络和算力的提升
-
-【AlphaFold: Improved protein structure predition using potentials from deep learning】
-上面那篇文章具体方法上的介绍
