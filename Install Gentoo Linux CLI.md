@@ -94,7 +94,7 @@ emerge --sync
 
 ```bash
 eselect profile list
-eselect profile set 2
+eselect profile set 1
 ```
 
 ## Updating the @world set
