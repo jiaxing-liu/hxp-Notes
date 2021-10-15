@@ -9,7 +9,7 @@ printf "g\nn\n1\n\n+256M\nt\nuefi\nn\n2\n\n+4G\nt\n2\nswap\nn\n3\n\n\nt\n3\nlinu
 ```bash
 mkfs.vfat -F 32 /dev/nvme0n1p1
 mkswap /dev/nvme0n1p2
-mkfs.ext4 /dev/nvme0n1p3
+mkfs.ext4 -F /dev/nvme0n1p3
 ```
 
 ## Mount filesystem
@@ -71,6 +71,9 @@ mount --make-slave /mnt/gentoo/run
 
 ```bash
 chroot /mnt/gentoo /bin/bash
+```
+
+```
 source /etc/profile
 ```
 
@@ -91,7 +94,7 @@ emerge --sync
 
 ```bash
 eselect profile list
-eselect profile set 2
+eselect profile set 1
 ```
 
 ## Updating the @world set
