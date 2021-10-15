@@ -25,7 +25,7 @@ mount /dev/nvme0n1p3 /mnt/gentoo/
 ```bash
 ntpd -q -g
 cd /mnt/gentoo
-wget https://mirrors.hlug.cn/gentoo/releases/amd64/autobuilds/20211010T170540Z/stage3-amd64-openrc-20211010T170540Z.tar.xz
+wget http://mirrors.hlug.cn/gentoo/releases/amd64/autobuilds/20211010T170540Z/stage3-amd64-openrc-20211010T170540Z.tar.xz
 tar xpvf stage3-*.tar.xz --xattrs-include='*.*' --numeric-owner
 ```
 
@@ -214,7 +214,7 @@ mkdir /boot/EFI/boot
 cp /boot/EFI/gentoo/grubx64.efi /boot/EFI/boot/bootx64.efi
 ```
 
-### Adding a user for daily use
+## Adding a user for daily use
 
 ```bash
 useradd -m -G users,wheel,audio -s /bin/bash hxp
