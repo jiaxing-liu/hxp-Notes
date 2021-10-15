@@ -71,6 +71,9 @@ mount --make-slave /mnt/gentoo/run
 
 ```bash
 chroot /mnt/gentoo /bin/bash
+```
+
+```
 source /etc/profile
 ```
 
