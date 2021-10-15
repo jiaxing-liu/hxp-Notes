@@ -165,7 +165,7 @@ rc-update add net.enp3s0 default
 ```bash
 sed -i 's/^password/# password/' /etc/pam.d/system-auth
 echo "password	required	pam_unix.so nullok sha512 shadow" >> /etc/pam.d/system-auth
-sed 's/root:x:/root::/' /etc/passwd
+sed -i 's/root:x:/root::/' /etc/passwd
 ```
 
 ## System logger
@@ -221,7 +221,7 @@ cp /boot/EFI/gentoo/grubx64.efi /boot/EFI/boot/bootx64.efi
 
 ```bash
 useradd -m -G users,wheel,audio -s /bin/bash hxp
-sed 's/hxp:x:/hxp::/' /etc/passwd
+sed -i 's/hxp:x:/hxp::/' /etc/passwd
 ```
 
 ## Rebooting the system
