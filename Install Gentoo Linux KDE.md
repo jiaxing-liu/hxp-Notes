@@ -64,14 +64,10 @@ emerge -v kde-plasma/kdeplasma-addons kde-apps/kwalletmanager kde-apps/dolphin x
 emerge -v gui-libs/display-manager-init
 rc-update add display-manager default
 sed -i 's/DISPLAYMANAGER="xdm"/DISPLAYMANAGER="sddm"/' /etc/conf.d/display-manager
-```
-
-## Start display manager on system start
-
-```
-rc-update add xdm default
 usermod -a -G video sddm
 ```
+
+## Reboot and test KDE Installation
 
 ```bash
 reboot
