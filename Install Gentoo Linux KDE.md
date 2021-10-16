@@ -53,6 +53,7 @@ echo "USE=\"harfbuzz bindist mmx sse sse2 mmxext dbus udev branding icu python X
 emerge --changed-use --deep @world
 # Install Plasma desktop only
 emerge -v kde-plasma/plasma-desktop
+emerge -v xdm
 # Install all plasma apps and addons
 # emerge -v kde-plasma/plasma-meta
 # emerge -v kde-plasma/kdeplasma-addons kde-apps/kwalletmanager kde-apps/dolphin x11-misc/sddm kde-plasma/systemsettings kde-plasma/kscreen kde-plasma/konsole
