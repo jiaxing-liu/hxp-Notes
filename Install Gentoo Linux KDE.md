@@ -54,6 +54,8 @@ emerge --changed-use --deep @world
 # Install Plasma desktop only
 emerge -v kde-plasma/plasma-desktop
 emerge -v xdm
+dispatch-conf
+emerge -v kde-plasma/kdeplasma-addons kde-apps/kwalletmanager kde-apps/dolphin x11-misc/sddm kde-plasma/systemsettings kde-plasma/kscreen kde-apps/konsole
 # Install all plasma apps and addons
 # emerge -v kde-plasma/plasma-meta
 # emerge -v kde-plasma/kdeplasma-addons kde-apps/kwalletmanager kde-apps/dolphin x11-misc/sddm kde-plasma/systemsettings kde-plasma/kscreen kde-plasma/konsole
@@ -63,7 +65,7 @@ emerge -v xdm
 ## Change display manager
 
 ```bash
-sed -i 's/^DISPLAYMANAGER=.*/DISPLAYMANAGER="sddm"/' /etc/conf.d/xdm
+echo 'DISPLAYMANAGER="sddm"' >/etc/conf.d/xdm
 ```
 
 ## Start display manager on system start
