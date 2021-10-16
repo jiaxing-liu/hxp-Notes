@@ -53,7 +53,6 @@ echo "USE=\"harfbuzz bindist mmx sse sse2 mmxext dbus udev branding icu python X
 emerge --changed-use --deep @world
 # Install Plasma desktop only
 emerge -v kde-plasma/plasma-desktop
-emerge -v xdm
 dispatch-conf
 emerge -v kde-plasma/kdeplasma-addons kde-apps/kwalletmanager kde-apps/dolphin x11-misc/sddm kde-plasma/systemsettings kde-plasma/kscreen kde-apps/konsole
 
@@ -62,7 +61,8 @@ emerge -v kde-plasma/kdeplasma-addons kde-apps/kwalletmanager kde-apps/dolphin x
 ## Change display manager
 
 ```bash
-echo 'DISPLAYMANAGER="sddm"' >/etc/conf.d/xdm
+emerge -v gui-libs/display-manager-init
+rc-update add display-manager default
 ```
 
 ## Start display manager on system start
