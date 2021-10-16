@@ -51,9 +51,12 @@ gpasswd -a hxp video
 ```bash
 echo "USE=\"harfbuzz bindist mmx sse sse2 mmxext dbus udev branding icu python X acpi display-manager sddm gtk handbook libkms wallpapers pulseaudio legacy-systray gtk2 gtk3 -gtk -gnome\"" >> /etc/portage/make.conf
 emerge --changed-use --deep @world
-emerge -v kde-plasma/plasma-meta
-emerge -v kde-plasma/kdeplasma-addons kde-apps/kwalletmanager kde-apps/dolphin x11-misc/sddm kde-plasma/systemsettings kde-plasma/kscreen kde-plasma/konsole
-emerge -v kde-apps/kde-apps-meta
+# Install Plasma desktop only
+emerge -v kde-plasma/plasma-desktop
+# Install all plasma apps and addons
+# emerge -v kde-plasma/plasma-meta
+# emerge -v kde-plasma/kdeplasma-addons kde-apps/kwalletmanager kde-apps/dolphin x11-misc/sddm kde-plasma/systemsettings kde-plasma/kscreen kde-plasma/konsole
+# emerge -v kde-apps/kde-apps-meta
 ```
 
 ## Change display manager
