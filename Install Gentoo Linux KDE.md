@@ -59,7 +59,7 @@ emerge -v kde-apps/kde-apps-meta
 ## Change display manager
 
 ```bash
-sed -i 's/^DISPLAYMANAGER=/DISPLAYMANAGER="sddm"/' /etc/conf.d/xdm
+sed -i 's/^DISPLAYMANAGER=.*/DISPLAYMANAGER="sddm"/' /etc/conf.d/xdm
 ```
 
 ## Start display manager on system start
