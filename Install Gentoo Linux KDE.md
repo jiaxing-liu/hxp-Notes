@@ -76,6 +76,6 @@ reboot
 # Install all plasma apps and addons
 ```bash
 emerge -v kde-plasma/plasma-meta
-emerge -v kde-plasma/kdeplasma-addons kde-apps/kwalletmanager kde-apps/dolphin x11-misc/sddm kde-plasma/systemsettings kde-plasma/kscreen kde-plasma/konsole
+emerge -v kde-plasma/kdeplasma-addons kde-apps/kwalletmanager kde-apps/dolphin x11-misc/sddm kde-plasma/systemsettings kde-plasma/kscreen kde-apps/konsole
 emerge -v kde-apps/kde-apps-meta
 ```
