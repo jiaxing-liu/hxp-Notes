@@ -82,3 +82,10 @@ rc-update del dhcpcd default
 rc-service NetworkManager start
 rc-update add NetworkManager default
 ```
+
+
+
+```bash
+emerge -avuND --keep-going  @world --exclude="openssl nodejs http-parser"
+```
+
