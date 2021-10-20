@@ -8,6 +8,7 @@
 Host *
     StrictHostKeyChecking no
     UserKnownHostsFile=/dev/null
+    LogLevel ERROR
 ```
 
 

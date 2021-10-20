@@ -54,8 +54,8 @@ emerge --changed-use --deep @world
 # Install Plasma desktop only
 emerge -v kde-plasma/plasma-desktop
 dispatch-conf
+chmod +s /sbin/unix_chkpwd
 emerge -v kde-plasma/kdeplasma-addons kde-apps/kwalletmanager kde-apps/dolphin x11-misc/sddm kde-plasma/systemsettings kde-plasma/kscreen kde-apps/konsole
-
 ```
 
 ## Change display manager
@@ -81,11 +81,15 @@ emerge -v net-misc/networkmanager
 rc-update del dhcpcd default
 rc-service NetworkManager start
 rc-update add NetworkManager default
+emerge firefox kde-apps/kde-apps-meta
 ```
 
-
+If openssl slot confilcts in installing `kde-apps/kde-apps-meta`, run
 
 ```bash
-emerge -avuND --keep-going  @world --exclude="openssl nodejs http-parser"
+echo 'USE="postproc harfbuzz mmx sse sse2 mmxext dbus udev branding icu python X acpi display-manager sddm gtk handbook libkms wallpapers pulseaudio legacy-systray gtk2 -gtk -gnome"
+ABI_X86="(64)"' >> /etc/portage/make.conf
+emerge -avuND --keep-going  @world --exclude="openssl http-parser"
+emerge -avuND --keep-going  @world --exclude="nodejs"
 ```
 
