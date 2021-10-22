@@ -77,7 +77,7 @@ reboot
 ```bash
 emerge -v kde-plasma/plasma-meta
 emerge -v kde-plasma/kdeplasma-addons kde-apps/kwalletmanager kde-apps/dolphin x11-misc/sddm kde-plasma/systemsettings kde-plasma/kscreen kde-apps/konsole
-emerge -v net-misc/networkmanager
+emerge -v net-misc/networkmanager kde-plasma/plasma-nm
 rc-update del dhcpcd default
 rc-service NetworkManager start
 rc-update add NetworkManager default
