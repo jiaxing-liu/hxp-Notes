@@ -8,7 +8,7 @@ input="$1"
 echo $input
 while IFS= read -r line
 do
-    command $line
+    eval $line
     if [[ $? != 0 ]]
     then
         echo "Command $line failed. Abroted."
