@@ -22,5 +22,3 @@ echo "export QT_IM_MODULE=fcitx" >> ~/.xprofile
 echo "export XMODIFIERS=@im=fcitx" >> ~/.xprofile
 ```
 
-Then follow the instructions in <https://userbase.kde.org/Tutorials/Kimpanel> to activate KDE Input Method Panel.
-
