@@ -3,7 +3,7 @@
 ## Emerge
 
 ```bash
-echo 'net-misc/tigervnc server' >> cat /etc/portage/package.use/tigervnc
+echo 'net-misc/tigervnc server' >> /etc/portage/package.use/tigervnc
 emerge --update --newuse net-misc/tigervnc
 ```
 
