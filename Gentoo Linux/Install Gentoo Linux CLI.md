@@ -3,21 +3,22 @@
 ## Partitioning disk
 
 ```bash
-printf "g\nn\n1\n\n+256M\nt\nuefi\nn\n2\n\n+4G\nt\n2\nswap\nn\n3\n\n\nt\n3\nlinux\np\nw\n" | fdisk /dev/nvme0n1
+printf "g\nn\n1\n\n+256M\nt\nuefi\nn\n2\n\n+4G\nt\n2\nswap\nn\n3\n\n\nt\n3\nlinux\np\nw\n" | fdisk /dev/sda
+sync
 ```
 
 ```bash
-mkfs.vfat -F 32 /dev/nvme0n1p1
-mkswap /dev/nvme0n1p2
-mkfs.ext4 -F /dev/nvme0n1p3
+mkfs.vfat -F 32 /dev/sda1
+mkswap /dev/sda2
+mkfs.ext4 -F /dev/sda3
 ```
 
 ## Mount filesystem
 
 ```bash
-swapon /dev/nvme0n1p2
+swapon /dev/sda2
 mkdir -p /mnt/gentoo
-mount /dev/nvme0n1p3 /mnt/gentoo/
+mount /dev/sda3 /mnt/gentoo/
 ```
 
 ## Download and unpack tarball
@@ -25,21 +26,21 @@ mount /dev/nvme0n1p3 /mnt/gentoo/
 ```bash
 ntpd -q -g
 cd /mnt/gentoo
-wget http://mirrors.hlug.cn/gentoo/releases/amd64/autobuilds/20211010T170540Z/stage3-amd64-openrc-20211010T170540Z.tar.xz
+wget https://mirrors.tuna.tsinghua.edu.cn/gentoo/releases/amd64/autobuilds/20211010T170540Z/stage3-amd64-openrc-20211010T170540Z.tar.xz
 tar xpvf stage3-*.tar.xz --xattrs-include='*.*' --numeric-owner
 ```
 
 ## Configuring compile options
 
 ```bash
-sed -i.bak 's/COMMON_FLAGS="-O2 -pipe"/COMMON_FLAGS="-march=native -O2 -pipe"/' /mnt/gentoo/etc/portage/make.conf
+sed -i 's/COMMON_FLAGS="-O2 -pipe"/COMMON_FLAGS="-march=x86-64 -O2 -pipe"/' /mnt/gentoo/etc/portage/make.conf
 echo MAKEOPTS="\"-j$(nproc)\"" >> /mnt/gentoo/etc/portage/make.conf
 ```
 
 ## Set Gentoo mirror
 
 ```bash
-echo 'GENTOO_MIRRORS="http://mirrors.hlug.cn/gentoo/"' >> /mnt/gentoo/etc/portage/make.conf
+echo 'GENTOO_MIRRORS="https://mirrors.tuna.tsinghua.edu.cn/gentoo"' >> /mnt/gentoo/etc/portage/make.conf
 ```
 
 ## Configure eBuild repository
@@ -47,6 +48,7 @@ echo 'GENTOO_MIRRORS="http://mirrors.hlug.cn/gentoo/"' >> /mnt/gentoo/etc/portag
 ```bash
 mkdir --parents /mnt/gentoo/etc/portage/repos.conf
 cp /mnt/gentoo/usr/share/portage/config/repos.conf /mnt/gentoo/etc/portage/repos.conf/gentoo.conf
+sed -i 's/sync-uri = rsync:\/\/rsync.gentoo.org\/gentoo-portage/sync-uri = rsync:\/\/mirrors.tuna.tsinghua.edu.cn\/gentoo-portage/' /mnt/gentoo/etc/portage/repos.conf/gentoo.conf
 ```
 
 ## Copy DNS info
@@ -80,7 +82,7 @@ source /etc/profile
 ## Mounting the boot partition
 
 ```bash
-mount /dev/nvme0n1p1 /boot
+mount /dev/sda1 /boot
 ```
 
 ## Installing a Gentoo ebuild repository snapshot from the web
@@ -140,11 +142,11 @@ ls -l /usr/src/linux
 
 ```bash
 emerge sys-kernel/genkernel
-echo "/dev/nvme0n1p1	/boot	vfat	defaults	0 2" >> /etc/fstab
+echo "/dev/sda1	/boot	vfat	defaults	0 2" >> /etc/fstab
 genkernel all
 ls /boot/vmlinu* /boot/initramfs*
-echo "/dev/nvme0n1p2	swap	swap	defaults	0 0" >> /etc/fstab
-echo "/dev/nvme0n1p3	/	ext4	defaults	0 0" >> /etc/fstab
+echo "/dev/sda2	swap	swap	defaults	0 0" >> /etc/fstab
+echo "/dev/sda3	/	ext4	defaults	0 0" >> /etc/fstab
 ```
 
 ## Host and domain information
