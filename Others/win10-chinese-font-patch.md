@@ -10,7 +10,7 @@ Edit key `Segoe UI`, move
 
 ```
 MSYH.TTC,Microsoft YaHei UI,128,96
-MSYH.TTC,Microsoft YaHer UI
+MSYH.TTC,Microsoft YaHei UI
 ```
 
 To the beginning of the key, then logout and log in back.
