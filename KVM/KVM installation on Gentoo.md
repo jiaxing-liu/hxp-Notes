@@ -6,7 +6,7 @@ Add these USE flags in `/etc/portage/package.use/qemu`:
 
 ```
 app-emulation/qemu qemu_softmmu_targets_arm qemu_softmmu_targets_x86_64 qemu_softmmu_targets_sparc
-app-emulation/qemu qemu_user_targets_x86_64
+app-emulation/qemu qemu_user_targets_x86_64 spice usbredir
 app-emulation/qemu QEMU_SOFTMMU_TARGETS: arm x86_64 sparc QEMU_USER_TARGETS: x86_64
 ```
 
