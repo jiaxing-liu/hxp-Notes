@@ -25,6 +25,8 @@ A sample `/etc/samba/smb.conf` sharing user's home directory and `/data` directo
    server role = standalone server
    log file = /usr/local/samba/var/log.%m
    max log size = 50
+   server min protocol = NT1
+   ntlm auth = yes
 
 [homes]
    comment = Home Directories
@@ -58,6 +60,8 @@ sudo systemctl start smb
 sudo systemctl start wsdd
 sudo systemctl enable smb
 sudo systemctl enable wsdd
+sudo systemctl start nmb 
+sudo systemctl enable nmb
 ```
 
 ## References
