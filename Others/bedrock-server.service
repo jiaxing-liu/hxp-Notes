@@ -1,0 +1,14 @@
+[Unit]
+Description=Minecraft bedrock server daemon
+After=network.target sshd-keygen.target
+
+[Service]
+WorkingDirectory=/root/bedrock-server
+ExecStart=/root/bedrock-server/start.sh
+Restart=on-failure
+RestartSec=42s
+StandardOutput=file:/root/bedrock-server/stdout.log
+StandardError=file:/root/bedrock-server/stderr.log
+
+[Install]
+WantedBy=multi-user.target
